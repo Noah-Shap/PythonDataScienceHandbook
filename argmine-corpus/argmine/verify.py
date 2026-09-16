@@ -143,6 +143,18 @@ def views_agree(views: list[dict]) -> tuple[str, list[str], str]:
     return status, sorted(labels), note
 
 
+def _majority_doc_type(ordered: list[dict]) -> str:
+    """Most sources win. One bibliography filing a book as @inproceedings should not decide
+    what the work is."""
+    counts: dict[str, int] = {}
+    for rank, v in enumerate(ordered):
+        dt = v.get("doc_type") or ""
+        if dt:
+            # Earlier sources in SOURCE_PRIORITY break ties.
+            counts[dt] = counts.get(dt, 0) + 1 + (0.001 * (len(ordered) - rank))
+    return max(counts, key=lambda k: counts[k]) if counts else ""
+
+
 def _venue_richness(venue: str) -> int:
     """How much of a venue name a string actually spells out."""
     v = (venue or "").strip()
@@ -195,6 +207,7 @@ def merge_views(views: list[dict]) -> dict:
         title = title or v.get("title", "")
     if _venue_richness(best.get("venue", "")) >= _venue_richness(venue):
         venue = best.get("venue", "") or venue
+    doc_type = _majority_doc_type(ordered)
     return {
         "title": best.get("title") or title,
         "authors": authors or best.get("authors", []),
