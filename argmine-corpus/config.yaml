@@ -39,17 +39,47 @@ sources:
     sparse_paths: ["data"]
   bibcorpus:
     # Curated GitHub repositories that carry BibTeX bibliographies of the field.
-    # Discovered via GitHub search in phase 2; pinned by commit in corpus/bib_repos.json.
+    # Discovered via GitHub code search; pinned by commit in corpus/bib_repos.json.
     clone_root: "corpus/repos"
     max_repos: 60
-    max_bib_bytes: 8000000
+    max_bib_bytes: 64000000
+    # A bibliography file is treated as *curated* (and so usable as a co-citation
+    # signal) only when it is small enough to be a real reference list rather than a
+    # whole-venue dump. Big dumps still count for metadata corroboration.
+    curated_max_entries: 300
+    # Some bibliography repos are enormous (site builds, whole-DBLP dumps). After the
+    # clone, everything except the BibTeX (plus README/LICENCE) is deleted and the
+    # commit is recorded in corpus/bib_repos.json, so the evidence stays reproducible
+    # without keeping gigabytes on disk. A pruned clone is never re-cloned.
+    prune_after_clone: true
+    # Verbatim re-exports of the ACL Anthology's own BibTeX: they corroborate nothing
+    # the Anthology itself does not already say, and their volume files are not
+    # curated reference lists.
+    exclude_repos:
+      - "emorynlp/nlprankings"
+      - "chloelee1230/nlp_ranking"
+      - "acl-org/acl-anthology"
+    # Repos worth mining that the code-search hits do not surface directly.
+    include_repos:
+      - full_name: "TimKam/fantastic-arg-tools"
+        why: "survey of computational argumentation tools; tool inventory for area 6.6"
+      - full_name: "KashiwaByte/Awesome-LLM-Computational-Argumentation"
+        why: "curated list of LLM-era computational argumentation work (area 6.5)"
+      - full_name: "DAMO-NLP-SG/LLM-argumentation"
+        why: "ACL 2024 LLM-for-computational-argumentation code and references"
   github:
     search_cache: "corpus/github_search_cache.json"
     clone_root: "corpus/repos"
 
 scoring:
-  # A candidate is assigned every area scoring at least this share of its best area.
+  # A candidate is assigned its best-matching area, plus every other area scoring at
+  # least `area_share` of the best OR at least `area_min_norm` of the saturation point,
+  # so genuinely cross-area work counts toward both quotas.
   area_share: 0.6
+  area_min_norm: 0.4
+  keyword_saturation: 12.0
+  # Maximum hits taken from any one source for any one targeted query.
+  search_limit: 40
   weights:
     cites_norm: 0.25
     cocite: 0.35
@@ -359,6 +389,12 @@ downstream_tags: [dialogue, quality, schemes, formal, extraction, dataset, falla
 
 fetch:
   tier_priority: [1, 2, 3, 4]
+  # Open-access hosts the fetcher is allowed to download from. Anything resolved by
+  # Unpaywall or OpenAlex best_oa_location is open access by construction and is also
+  # allowed; nothing else is ever downloaded, so no publisher paywall is touched.
+  oa_hosts: ["arxiv.org", "aclanthology.org", "raw.githubusercontent.com",
+             "github.com", "openreview.net", "proceedings.mlr.press",
+             "ojs.aaai.org", "www.ijcai.org", "ceur-ws.org", "dl.acm.org/doi/pdf"]
   max_pdf_mb: 40
   guideline_patterns: ["*guideline*", "*annotation*", "*manual*", "*scheme*", "*codebook*"]
   repo_clone_depth: 1

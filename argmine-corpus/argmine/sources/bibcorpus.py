@@ -17,17 +17,31 @@ from __future__ import annotations
 
 import json
 import re
+import shutil
 import subprocess
 from pathlib import Path
 
 from rapidfuzz import fuzz, process
 
-from ..util import norm_title
+from ..util import iso_now, norm_title
 from . import bibtex
 from .base import candidate
 
+MARKER = ".argmine_clone.json"
+ENTRY_START_RE = re.compile(r"^[ \t]*@[A-Za-z]+[ \t]*[{(]", re.MULTILINE)
+SMALL_FILE_BYTES = 200_000
+# Cheap substring gate for the large multi-venue dumps: an entry that mentions none of
+# these is not argumentation literature and is not worth parsing. Small bibliographies
+# are always parsed in full, because their co-occurrence structure is the point.
+RELEVANCE_TERMS = (
+    "argumentation", "argumentative", "argument min", "argument quality", "argument graph",
+    "argument interchange", "argument structure", "counterargument", "counter-argument",
+    "fallac", "toulmin", "defeasible", "persuasi", "dialectic", "rhetoric", "debate",
+    "enthymeme", "phan minh dung", "acceptability of arguments", "changemyview",
+    "argument retrieval", "argument search", "claim detection", "stance",
+)
 ANTHOLOGY_KEY_RE = re.compile(r"^[a-z\-]+-(etal-)?(19|20)\d{2}-[a-z\-]+$")
-SCHEMA = 2
+SCHEMA = 4
 
 
 class BibCorpus:
@@ -39,6 +53,10 @@ class BibCorpus:
         self.clone_root = cfg.path(spec["clone_root"])
         self.max_bib_bytes = int(spec.get("max_bib_bytes", 8_000_000))
         self.max_repos = int(spec.get("max_repos", 60))
+        self.curated_max = int(spec.get("curated_max_entries", 300))
+        self.exclude = set(spec.get("exclude_repos", []))
+        self.prune = bool(spec.get("prune_after_clone", True))
+        self.include = list(spec.get("include_repos", []))
         self.repos_path = cfg.corpus / "bib_repos.json"
         self.index_path = cfg.corpus / "bib_index.json"
         self.entries: list[dict] = []
@@ -70,6 +88,34 @@ class BibCorpus:
         self.save_repos(repos)
         return entry
 
+    def discover_from_search_cache(self, gh, log=print) -> list[str]:
+        """Turn cached GitHub code-search hits (``*.bib`` files) into repos to mine.
+
+        Idempotent: repositories already listed in corpus/bib_repos.json are left alone,
+        and excluded repositories (verbatim ACL Anthology re-exports) are never added.
+        """
+        added = []
+        for query, payload in sorted(gh.cache.get("code_queries", {}).items()):
+            for item in payload.get("items", []):
+                full = item.get("repository", "")
+                if not full or full in self.exclude:
+                    continue
+                if any(r["full_name"] == full for r in self.load_repos()):
+                    continue
+                self.add_repo(full, why=f"carries {item.get('path', '*.bib')}",
+                              discovered_via=f"github-code-search:{query}")
+                added.append(full)
+        for spec in self.include:
+            if spec["full_name"] in self.exclude:
+                continue
+            if not any(r["full_name"] == spec["full_name"] for r in self.load_repos()):
+                self.add_repo(spec["full_name"], why=spec.get("why", "curated addition"),
+                              discovered_via="config:sources.bibcorpus.include_repos")
+                added.append(spec["full_name"])
+        if added:
+            log(f"  bib corpus: {len(added)} new repositories queued for cloning")
+        return added
+
     def clone_dir(self, full_name: str) -> Path:
         return self.clone_root / full_name.replace("/", "__")
 
@@ -79,6 +125,11 @@ class BibCorpus:
         repos, rest = all_repos[: self.max_repos], all_repos[self.max_repos:]
         for entry in repos:
             path = self.clone_dir(entry["full_name"])
+            marker = path / MARKER
+            if marker.exists():
+                entry["cloned"] = True
+                entry.setdefault("sha", json.loads(marker.read_text()).get("sha", ""))
+                continue
             if not (path / ".git").exists():
                 path.parent.mkdir(parents=True, exist_ok=True)
                 try:
@@ -96,8 +147,48 @@ class BibCorpus:
                                               capture_output=True, text=True, check=True).stdout.strip()
             except subprocess.CalledProcessError:
                 entry["sha"] = ""
+            if self.prune:
+                kept = self._prune_clone(path, entry["sha"])
+                entry["pruned_to_bibtex"] = True
+                entry["kept_files"] = kept
+                log(f"  pruned {entry['full_name']} to {kept} bibliography files")
         self.save_repos(repos + rest)
         return repos
+
+    def _prune_clone(self, path: Path, sha: str) -> int:
+        """Keep only the BibTeX (and README/LICENCE); record the commit in a marker file.
+
+        The bibliography evidence is what this source is for; the rest of a repository can
+        be gigabytes. The marker means the clone is never re-fetched.
+        """
+        keep_suffixes = {".bib"}
+        keep_names = {"README.md", "README.rst", "README.txt", "README", "LICENSE",
+                      "LICENSE.md", "LICENCE", "COPYING"}
+        kept = 0
+        for f in list(path.rglob("*")):
+            if f.is_symlink():
+                f.unlink(missing_ok=True)
+                continue
+            if not f.is_file():
+                continue
+            if f.suffix.lower() in keep_suffixes or f.name in keep_names:
+                kept += 1
+                continue
+            try:
+                f.unlink()
+            except OSError:
+                pass
+        shutil.rmtree(path / ".git", ignore_errors=True)
+        for d in sorted((d for d in path.rglob("*") if d.is_dir()), key=lambda x: -len(x.parts)):
+            try:
+                d.rmdir()
+            except OSError:
+                pass
+        (path / MARKER).write_text(json.dumps(
+            {"sha": sha, "pruned_at": iso_now(), "kept_files": kept,
+             "note": "clone pruned to BibTeX by argmine; delete this file to re-clone"},
+            indent=2) + "\n")
+        return kept
 
     # -- index -------------------------------------------------------------
     def _fingerprint(self) -> str:
@@ -118,13 +209,7 @@ class BibCorpus:
                 continue
             n_files = n_entries = 0
             for bib in sorted(path.rglob("*.bib")):
-                try:
-                    if bib.stat().st_size > self.max_bib_bytes:
-                        continue
-                    text = bib.read_text(encoding="utf-8", errors="replace")
-                except OSError:
-                    continue
-                parsed = bibtex.parse(text)
+                parsed, curated = self._parse_bib_file(bib)
                 if not parsed:
                     continue
                 rel = str(bib.relative_to(path))
@@ -148,9 +233,13 @@ class BibCorpus:
                     })
                     titles.append(nt)
                 if titles:
+                    ratio = round(anth_keys / max(len(titles), 1), 3)
                     files[file_id] = {
                         "repo": repo["full_name"], "path": rel, "n": len(titles),
-                        "anthology_ratio": round(anth_keys / max(len(titles), 1), 3),
+                        "anthology_ratio": ratio,
+                        # Only a real reference list is evidence that two works belong
+                        # together; a whole-venue or whole-anthology dump is not.
+                        "curated": bool(curated and ratio <= 0.8),
                         "titles": sorted(set(titles)),
                     }
                     n_files += 1
@@ -163,6 +252,37 @@ class BibCorpus:
         log(f"  bib corpus: {len(entries)} entries in {len(files)} bibliographies "
             f"from {len({e['repo'] for e in entries})} repositories")
         return len(entries)
+
+    def _parse_bib_file(self, bib: Path) -> tuple[list[dict], bool]:
+        """Parse one .bib file. Returns (entries, curated?).
+
+        Small bibliographies are parsed whole and count as curated reference lists.
+        Large dumps (whole venues, whole anthologies) are scanned entry by entry and only
+        the argumentation-relevant entries are parsed, which keeps a multi-gigabyte DBLP
+        mirror usable as a corroboration source without paying to parse all of it.
+        """
+        try:
+            if bib.stat().st_size > self.max_bib_bytes:
+                return [], False
+            text = bib.read_text(encoding="utf-8", errors="replace")
+        except OSError:
+            return [], False
+        starts = [m.start() for m in ENTRY_START_RE.finditer(text)]
+        if not starts:
+            return [], False
+        if len(starts) <= self.curated_max:
+            return bibtex.parse(text), True
+        low = text.lower()
+        if not any(term in low for term in RELEVANCE_TERMS):
+            return [], False
+        bounds = starts + [len(text)]
+        out = []
+        for i, begin in enumerate(starts):
+            chunk = text[begin:bounds[i + 1]]
+            if not any(term in chunk.lower() for term in RELEVANCE_TERMS):
+                continue
+            out.extend(bibtex.parse(chunk))
+        return out, False
 
     def _install(self, data: dict) -> None:
         self.entries = data["entries"]
@@ -215,14 +335,37 @@ class BibCorpus:
             repos.add(c["extra"]["repo"])
         return sorted(repos)
 
+    def search(self, query: str, limit: int = 40) -> list[dict]:
+        """Keyword search over bibliography titles: every query token must appear.
+
+        Ranked by how many distinct bibliographies list the work, which is a reasonable
+        stand-in for prominence when no citation counts are available.
+        """
+        tokens = [t for t in norm_title(query).split() if len(t) > 2]
+        if not tokens:
+            return []
+        hits = []
+        for nt in self._ntitles:
+            if all(t in nt for t in tokens):
+                hits.append((len(self.title_files.get(nt, ())), nt))
+        hits.sort(key=lambda kv: -kv[0])
+        out = []
+        for _n, nt in hits[:limit]:
+            rec = self.best_record(nt)
+            if rec:
+                out.append(rec)
+        return out
+
     def cofile_ids(self, title: str) -> set[str]:
         nt = self.match_title(title)
         return set(self.title_files.get(nt, set())) if nt else set()
 
     def cocited_titles(self, title: str) -> dict[str, int]:
-        """Normalised titles appearing in the same bibliographies, with co-occurrence counts."""
+        """Normalised titles appearing in the same *curated* bibliographies, with counts."""
         out: dict[str, int] = {}
         for fid in self.cofile_ids(title):
+            if not self.files.get(fid, {}).get("curated"):
+                continue
             for other in self.files.get(fid, {}).get("titles", ()):
                 out[other] = out.get(other, 0) + 1
         out.pop(norm_title(title), None)

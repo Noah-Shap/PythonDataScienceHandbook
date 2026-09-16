@@ -37,11 +37,13 @@ SCORING = """
 ## How an area is assigned
 
 `keyword` score: title and abstract are matched against the per-area vocabulary below.
-Each term carries a weight (3 = defining, 2 = strong, 1 = weak); an area's raw score is
-the sum of the weights it matches, normalised by the best-scoring area in the batch. A
-candidate is assigned every area whose raw score is at least {share:.0%} of its best
-area's score, so genuinely cross-area work (a dialogue corpus paper, say) counts toward
-both quotas.
+Each term carries a weight (3 = defining, 2 = strong, 1 = weak), doubled for a match in
+the title and halved for one in the venue name; an area's raw score is the sum of the
+weights it matches. The record's `keyword` component is its best area's raw score divided
+by a saturation constant ({saturation:g}), capped at 1. A candidate is assigned its best
+area plus every other area scoring at least {share:.0%} of the best or at least
+{min_norm:.0%} of saturation, so genuinely cross-area work (a dialogue corpus paper, say)
+counts toward both quotas.
 
 Total candidate score = {weights}. `cocite` is multiplied by {multipliers} for the areas
 listed, because those areas sit closest to the downstream debate-transcript database.
@@ -82,6 +84,8 @@ def render(cfg, registry=None, source_status: dict | None = None) -> str:
     out.append(GLOBAL.format(patterns=", ".join(f"`{p}`" for p in cfg["exclusions"]["domain_patterns"])))
     out.append(SCORING.format(
         share=float(cfg["scoring"].get("area_share", 0.6)),
+        saturation=float(cfg["scoring"].get("keyword_saturation", 12.0)),
+        min_norm=float(cfg["scoring"].get("area_min_norm", 0.4)),
         weights=", ".join(f"{k} {v}" for k, v in cfg["scoring"]["weights"].items()),
         multipliers=", ".join(f"{k} x{v}" for k, v in cfg["scoring"].get("area_cocite_multiplier", {}).items())
         or "nothing"))

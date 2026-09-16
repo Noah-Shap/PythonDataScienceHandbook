@@ -202,10 +202,23 @@ def resolve_views(ctx, title: str, year=None, authors=None, doi: str = "",
                 continue
             repo = v["extra"].get("repo", "?")
             prev = per_repo.get(repo)
-            if prev is None or _richness(v) > _richness(prev):
+            if prev is None or _rank(v, year) > _rank(prev, year):
                 per_repo[repo] = v
         out.extend(per_repo.values())
     return out
+
+
+def _rank(v: dict, year=None) -> tuple:
+    """Prefer the edition the caller asked about, then the most complete record.
+
+    Classics are re-issued (Toulmin 1958 / 2003), so a bibliography's year is only
+    evidence about the edition it lists; picking the closest one keeps the comparison
+    honest instead of manufacturing a year conflict.
+    """
+    proximity = 0
+    if year and v.get("year"):
+        proximity = -min(abs(int(v["year"]) - int(year)), 50)
+    return (proximity, _richness(v))
 
 
 def _richness(v: dict) -> int:
@@ -239,6 +252,7 @@ def resolve_oa_pdf(ctx, rec: dict) -> tuple[str, str]:
 # -- phase ----------------------------------------------------------------
 def run(ctx) -> dict:
     reg = ctx.registry
+    ctx.prepare_local_sources()
     todo = reg.with_status("candidate")
     summary = {"considered": len(todo), "verified": 0, "unverified": 0, "oa_resolved": 0}
     for rec in todo:

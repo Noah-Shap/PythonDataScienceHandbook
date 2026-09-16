@@ -143,8 +143,10 @@ class Registry:
             rec["aliases"] = sorted({a for a in rec.get("aliases", []) if a and a != rec["id"]})
             self.records[rec["id"]] = rec
             self._reindex()
+            self.unreject(rec)
             return rec, True
         merged = merge_records(existing, rec)
+        self.unreject(merged)
         self.records[merged["id"]] = merged
         if merged["id"] != existing["id"]:
             self.records.pop(existing["id"], None)
@@ -197,6 +199,20 @@ class Registry:
             "criteria_version": self.cfg.criteria_version,
             "rejected_at": iso_now(),
         }
+
+    def unreject(self, rec: dict) -> None:
+        """A record that is now in the registry is no longer a rejected candidate.
+
+        Seeds are re-resolved on every run, so a seed that was unresolvable when a source
+        was unavailable must not keep a stale rejection once it resolves.
+        """
+        keys = {rec.get("id")} | set(rec.get("aliases", []))
+        nt = norm_title(rec.get("title", ""))
+        for rid in list(self.rejected):
+            row = self.rejected[rid]
+            if rid in keys or (set(row.get("aliases", [])) & keys) or (
+                    nt and norm_title(row.get("title", "")) == nt):
+                self.rejected.pop(rid, None)
 
     def is_decided(self, rec: dict) -> str | None:
         """'registry' / 'rejected' / None. Rejections only bind at the current criteria_version."""

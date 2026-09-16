@@ -17,22 +17,32 @@ TITLE_MATCH = 88.0
 
 
 def _plausible(view: dict, seed: dict) -> bool:
-    """Guard against a source answering with a different work."""
-    if fuzz.token_set_ratio(norm_title(view["title"]), norm_title(seed["title"])) < TITLE_MATCH:
-        return False
-    if seed.get("year") and view.get("year") and abs(int(view["year"]) - int(seed["year"])) > 3:
+    """Guard against a source answering with a different work.
+
+    The year check is deliberately skipped when the title matches almost exactly and an
+    author surname matches: classics are re-issued (Toulmin 1958 / 2003), and a later
+    edition is the same work, not a different one.
+    """
+    title_sim = fuzz.token_set_ratio(norm_title(view["title"]), norm_title(seed["title"]))
+    if title_sim < TITLE_MATCH:
         return False
     want = {s.lower() for s in seed.get("authors", [])}
     have = surnames(view.get("authors"))
-    if want and have and not ({w.split()[-1] for w in want} & have):
+    author_ok = bool(want and have and ({w.split()[-1] for w in want} & have))
+    if want and have and not author_ok:
+        return False
+    strong = title_sim >= 97 and (author_ok or not want)
+    if not strong and seed.get("year") and view.get("year") \
+            and abs(int(view["year"]) - int(seed["year"])) > 3:
         return False
     return True
 
 
 def run(ctx) -> dict:
     cfg, reg = ctx.cfg, ctx.registry
+    prep = ctx.prepare_local_sources()
     summary = {"seeds": len(cfg["seeds"]), "verified": 0, "unverified": 0, "rejected": 0,
-               "added_ids": [], "corrections": []}
+               "added_ids": [], "corrections": [], "prepared": prep}
 
     for seed in cfg["seeds"]:
         views = [v for v in resolve_views(ctx, seed["title"], seed.get("year"),

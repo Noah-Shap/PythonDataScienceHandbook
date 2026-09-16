@@ -1,7 +1,708 @@
 {
-  "code_queries": {},
-  "missing": [
-    "repo:argument mining dataset"
-  ],
-  "repo_queries": {}
+  "code_queries": {
+    "\"An autonomous debating system\" extension:bib": {
+      "fetched_at": "2026-09-16T01:18:27+00:00",
+      "items": [
+        {
+          "path": "files/projectDebaterNature.bib",
+          "repository": "yufanghou/yufanghou.github.io"
+        },
+        {
+          "path": "debater.bib",
+          "repository": "danielhers/danielhers.github.io"
+        },
+        {
+          "path": "project-bib.bib",
+          "repository": "CogSciPrag/project_ideas"
+        },
+        {
+          "path": "orig.bib",
+          "repository": "borgr/publications"
+        },
+        {
+          "path": "papers.bib",
+          "repository": "m0re4u/paper-database"
+        }
+      ],
+      "total_count": 14,
+      "via": "mcp:github.search_code"
+    },
+    "\"Argumentation Mining: State of the Art and Emerging Trends\" extension:bib": {
+      "fetched_at": "2026-09-16T01:18:27+00:00",
+      "items": [
+        {
+          "path": "acl2019/paper/acl2019.bib",
+          "repository": "IKMLab/arct2"
+        },
+        {
+          "path": "a2/report/nlpreport.bib",
+          "repository": "Danysan1/ai-unibo-nlp-project"
+        },
+        {
+          "path": "tex/20250730/references.bib",
+          "repository": "nshkrdotcom/research_papers"
+        }
+      ],
+      "total_count": 27,
+      "via": "mcp:github.search_code"
+    },
+    "\"Whence inference\" Budzynska extension:bib": {
+      "fetched_at": "2026-09-16T01:18:27+00:00",
+      "items": [],
+      "total_count": 0,
+      "via": "mcp:github.search_code"
+    },
+    "\"Winning Arguments\" changemyview extension:bib": {
+      "fetched_at": "2026-09-16T01:18:27+00:00",
+      "items": [
+        {
+          "path": "data/acm-dl/www/www-2016.bib",
+          "repository": "boudinfl/acm-cr"
+        }
+      ],
+      "total_count": 1,
+      "via": "mcp:github.search_code"
+    },
+    "\"acceptability of arguments\" extension:bib": {
+      "fetched_at": "2026-09-16T00:57:51+00:00",
+      "items": [
+        {
+          "path": "doc/manual/manual.bib",
+          "repository": "carneades/carneades-3"
+        },
+        {
+          "path": "paper/latex/references.bib",
+          "repository": "ochyai/open-japan-politech-platform"
+        },
+        {
+          "path": "Publications/Papers/ICLP2022/main.bib",
+          "repository": "smucclaw/complaw"
+        },
+        {
+          "path": "Publications/Papers/CLAR2021/main.bib",
+          "repository": "smucclaw/complaw"
+        },
+        {
+          "path": "conf/stairs.bib",
+          "repository": "davidar/dblp.yaml"
+        },
+        {
+          "path": "AIG_paper/references.bib",
+          "repository": "aig-hagen/aig-templates"
+        },
+        {
+          "path": "conf/ecsqaru.bib",
+          "repository": "davidar/dblp.yaml"
+        },
+        {
+          "path": "lib/bib/deprecated.bib",
+          "repository": "slatex/sTeX"
+        },
+        {
+          "path": "UAI/UAI-1998.bib",
+          "repository": "lihebi/biber-dist"
+        },
+        {
+          "path": "deprecated.bib",
+          "repository": "KWARC/bibs"
+        },
+        {
+          "path": "IJCAI/IJCAI-2015.bib",
+          "repository": "lihebi/biber-dist"
+        }
+      ],
+      "total_count": 90,
+      "via": "mcp:github.search_code"
+    },
+    "\"annotated corpora of television debates\" OR \"US2016\" argumentation extension:bib": {
+      "fetched_at": "2026-09-16T01:18:27+00:00",
+      "items": [
+        {
+          "path": "papers.bib",
+          "repository": "m0re4u/paper-database"
+        }
+      ],
+      "total_count": 1,
+      "via": "mcp:github.search_code"
+    },
+    "\"argument mining\" extension:bib": {
+      "fetched_at": "2026-09-16T00:57:51+00:00",
+      "items": [
+        {
+          "path": "ir_datasets/docs/bibliography.bib",
+          "repository": "allenai/ir_datasets"
+        },
+        {
+          "path": "_bibliography/notebook/llm-annotation.bib",
+          "repository": "ljvmiranda921/ljvmiranda921.github.io"
+        },
+        {
+          "path": "_bibliography/notebook/langchain-annotation.bib",
+          "repository": "ljvmiranda921/ljvmiranda921.github.io"
+        },
+        {
+          "path": "dat/acl_anthology/bib/W17-51.bib",
+          "repository": "emorynlp/nlprankings"
+        },
+        {
+          "path": "conf/tafa.bib",
+          "repository": "davidar/dblp.yaml"
+        },
+        {
+          "path": "auto/argmining2017/papers.bib",
+          "repository": "jbingel/emnlp2017-handbook"
+        },
+        {
+          "path": "conf/comma.bib",
+          "repository": "davidar/dblp.yaml"
+        },
+        {
+          "path": "data-collection/bib/W16-28.bib",
+          "repository": "chloelee1230/nlp_ranking"
+        },
+        {
+          "path": "journals/kais.bib",
+          "repository": "davidar/dblp.yaml"
+        }
+      ],
+      "total_count": 338,
+      "via": "mcp:github.search_code"
+    },
+    "\"argument quality ranking\" gretz extension:bib": {
+      "fetched_at": "2026-09-16T01:18:27+00:00",
+      "items": [
+        {
+          "path": "manuscript/refs.bib",
+          "repository": "dimits-ts/synthetic_moderation_experiments"
+        },
+        {
+          "path": "Report_source_files/custom.bib",
+          "repository": "xinyannnnnnn/fact-driven-storytelling-with-llms"
+        },
+        {
+          "path": "paper/refs.bib",
+          "repository": "dimits-ts/llm_moderation_research"
+        },
+        {
+          "path": "src/tex/2404.13208.tex/colm2024_conference.bib",
+          "repository": "BarryMafu/LitLens"
+        }
+      ],
+      "total_count": 9,
+      "via": "mcp:github.search_code"
+    },
+    "\"argument quality\" extension:bib": {
+      "fetched_at": "2026-09-16T00:57:51+00:00",
+      "items": [
+        {
+          "path": "journals/oir.bib",
+          "repository": "davidar/dblp.yaml"
+        },
+        {
+          "path": "anthology/files/dumani-2020-ranking.bib",
+          "repository": "ir-anthology/ir-anthology.github.io"
+        },
+        {
+          "path": "data-collection/bib/W18-13.bib",
+          "repository": "chloelee1230/nlp_ranking"
+        },
+        {
+          "path": "REFERENCES.bib",
+          "repository": "nexuspllc/responsiveness-bench"
+        }
+      ],
+      "total_count": 52,
+      "via": "mcp:github.search_code"
+    },
+    "\"argumentation schemes\" extension:bib": {
+      "fetched_at": "2026-09-16T00:57:51+00:00",
+      "items": [
+        {
+          "path": "doc/manual/manual.bib",
+          "repository": "carneades/carneades-3"
+        },
+        {
+          "path": "conf/argnlp.bib",
+          "repository": "davidar/dblp.yaml"
+        },
+        {
+          "path": "conf/argmas.bib",
+          "repository": "davidar/dblp.yaml"
+        },
+        {
+          "path": "journals/ail.bib",
+          "repository": "davidar/dblp.yaml"
+        },
+        {
+          "path": "journals/aamas.bib",
+          "repository": "davidar/dblp.yaml"
+        }
+      ],
+      "total_count": 274,
+      "via": "mcp:github.search_code"
+    },
+    "\"inference anchoring theory\" extension:bib": {
+      "fetched_at": "2026-09-16T00:57:51+00:00",
+      "items": [
+        {
+          "path": "data-collection/bib/W19-45.bib",
+          "repository": "chloelee1230/nlp_ranking"
+        },
+        {
+          "path": "src/erg/erg.bib",
+          "repository": "exp2exp/exp2exp.github.io"
+        },
+        {
+          "path": "paper/references_synced.bib",
+          "repository": "mystreamer/lt2326-final-project"
+        },
+        {
+          "path": "paper/acl2019.bib",
+          "repository": "IKMLab/argalign1"
+        },
+        {
+          "path": "paper/references.bib",
+          "repository": "mystreamer/lt2326-final-project"
+        },
+        {
+          "path": "AFGCNv2/paper/references.bib",
+          "repository": "lmlearning/AFGraphLib"
+        }
+      ],
+      "total_count": 9,
+      "via": "mcp:github.search_code"
+    }
+  },
+  "missing": [],
+  "repo_queries": {
+    "TARGER argument tagging neural": {
+      "fetched_at": "2026-09-16T00:57:51+00:00",
+      "items": [
+        {
+          "archived": false,
+          "description": "Simple, type-safe access to the TARGER neural argument tagging APIs.",
+          "full_name": "webis-de/targer-api",
+          "language": "Python",
+          "stars": 1,
+          "topics": [],
+          "url": "https://github.com/webis-de/targer-api"
+        }
+      ],
+      "total_count": 1,
+      "via": "mcp:github.search_repositories"
+    },
+    "TweetyProject argumentation java library": {
+      "fetched_at": "2026-09-16T00:57:51+00:00",
+      "items": [
+        {
+          "archived": false,
+          "description": "TweetyProject is a collection of Java libraries that implement approaches to different areas of artificial intelligence.",
+          "full_name": "TweetyProjectTeam/TweetyProject",
+          "language": "Java",
+          "stars": 42,
+          "topics": [
+            "argumentation",
+            "artificial-intelligence",
+            "knowledge-representation"
+          ],
+          "url": "https://github.com/TweetyProjectTeam/TweetyProject"
+        }
+      ],
+      "total_count": 1,
+      "via": "mcp:github.search_repositories"
+    },
+    "argument mining dataset": {
+      "fetched_at": "2026-09-16T00:57:51+00:00",
+      "items": [
+        {
+          "archived": false,
+          "description": "Corresponding code repo for the paper at COLING 2020 - ARGMIN 2020: DebateSum: A large-scale argument mining and summarization dataset",
+          "full_name": "Hellisotherpeople/DebateSum",
+          "language": "Python",
+          "stars": 55,
+          "topics": [
+            "debate",
+            "debaters",
+            "evidence"
+          ],
+          "url": "https://github.com/Hellisotherpeople/DebateSum"
+        },
+        {
+          "archived": false,
+          "description": "",
+          "full_name": "Alaa-Ah/The-FinArg-Dataset-Argument-Mining-in-Financial-Earnings-Calls",
+          "language": "",
+          "stars": 7,
+          "topics": [],
+          "url": "https://github.com/Alaa-Ah/The-FinArg-Dataset-Argument-Mining-in-Financial-Earnings-Calls"
+        },
+        {
+          "archived": false,
+          "description": "Experiments on Argument Mining tasks over several datasets",
+          "full_name": "mit0110/argument_mining",
+          "language": "Jupyter Notebook",
+          "stars": 1,
+          "topics": [],
+          "url": "https://github.com/mit0110/argument_mining"
+        }
+      ],
+      "total_count": 27,
+      "via": "mcp:github.search_repositories"
+    },
+    "argument quality corpus": {
+      "fetched_at": "2026-09-16T00:57:51+00:00",
+      "items": [
+        {
+          "archived": false,
+          "description": "A corpus of 200 persuasive business model pitches annotated for argumentative components, argumentative quality score and argumentative relations.",
+          "full_name": "thiemowa/-argumentative_business_model_pitches",
+          "language": "",
+          "stars": 2,
+          "topics": [],
+          "url": "https://github.com/thiemowa/-argumentative_business_model_pitches"
+        },
+        {
+          "archived": false,
+          "description": "",
+          "full_name": "jayliqinzhang/A-Dutch-essay-corpus-with-argument-structures-and-quality-indicators",
+          "language": "",
+          "stars": 1,
+          "topics": [],
+          "url": "https://github.com/jayliqinzhang/A-Dutch-essay-corpus-with-argument-structures-and-quality-indicators"
+        },
+        {
+          "archived": false,
+          "description": "Code to reproduce the analysis of our paper Challenge or Empower: Revisiting Argumentation Quality in a News Editorial Corpus",
+          "full_name": "roxanneelbaff/conll2018_editorial_effect",
+          "language": "Python",
+          "stars": 0,
+          "topics": [],
+          "url": "https://github.com/roxanneelbaff/conll2018_editorial_effect"
+        }
+      ],
+      "total_count": 3,
+      "via": "mcp:github.search_repositories"
+    },
+    "argumentation framework solver tweety aspic": {
+      "fetched_at": "2026-09-16T00:57:51+00:00",
+      "items": [],
+      "total_count": 0,
+      "via": "mcp:github.search_repositories"
+    },
+    "computational argumentation": {
+      "fetched_at": "2026-09-16T00:57:51+00:00",
+      "items": [
+        {
+          "archived": false,
+          "description": "Accompanying code for our ACL-2017 publication on Neural End-to-End Learning for Computational Argumentation Mining",
+          "full_name": "UKPLab/acl2017-neural_end2end_am",
+          "language": "Python",
+          "stars": 59,
+          "topics": [],
+          "url": "https://github.com/UKPLab/acl2017-neural_end2end_am"
+        },
+        {
+          "archived": false,
+          "description": "",
+          "full_name": "shilida/Computational-Argumentation",
+          "language": "Python",
+          "stars": 12,
+          "topics": [],
+          "url": "https://github.com/shilida/Computational-Argumentation"
+        },
+        {
+          "archived": false,
+          "description": "[ACL2024] Exploring the Potential of Large Language Models in Computational Argumentation",
+          "full_name": "DAMO-NLP-SG/LLM-argumentation",
+          "language": "Python",
+          "stars": 18,
+          "topics": [
+            "argument-generation",
+            "argument-mining",
+            "computational-argumentation",
+            "llm"
+          ],
+          "url": "https://github.com/DAMO-NLP-SG/LLM-argumentation"
+        },
+        {
+          "archived": false,
+          "description": "A Survey of Computational Argumentation Tools",
+          "full_name": "TimKam/fantastic-arg-tools",
+          "language": "JavaScript",
+          "stars": 3,
+          "topics": [
+            "computational-argumentation",
+            "formal-arguments"
+          ],
+          "url": "https://github.com/TimKam/fantastic-arg-tools"
+        },
+        {
+          "archived": false,
+          "description": "Git repository for Aristotle - Computational Argumentation software",
+          "full_name": "fatecsp/aristotle",
+          "language": "Prolog",
+          "stars": 2,
+          "topics": [],
+          "url": "https://github.com/fatecsp/aristotle"
+        },
+        {
+          "archived": false,
+          "description": "The Hub of Computational Argumentation in the Era of LLM",
+          "full_name": "KashiwaByte/Awesome-LLM-Computational-Argumentation",
+          "language": "",
+          "stars": 5,
+          "topics": [],
+          "url": "https://github.com/KashiwaByte/Awesome-LLM-Computational-Argumentation"
+        }
+      ],
+      "total_count": 103,
+      "via": "mcp:github.search_repositories"
+    },
+    "fallacy detection dataset": {
+      "fetched_at": "2026-09-16T00:57:51+00:00",
+      "items": [
+        {
+          "archived": false,
+          "description": "Logical fallacy online detection tools",
+          "full_name": "tmakesense/logical-fallacy",
+          "language": "Jupyter Notebook",
+          "stars": 20,
+          "topics": [
+            "dataset",
+            "fallacies",
+            "logical-fallacies",
+            "machine-learning"
+          ],
+          "url": "https://github.com/tmakesense/logical-fallacy"
+        },
+        {
+          "archived": false,
+          "description": "A fallacy detection system using a custom generated dataset.",
+          "full_name": "ronitsriv/Fallacy-Detection",
+          "language": "Jupyter Notebook",
+          "stars": 0,
+          "topics": [
+            "logic",
+            "nlp-machine-learning"
+          ],
+          "url": "https://github.com/ronitsriv/Fallacy-Detection"
+        },
+        {
+          "archived": false,
+          "description": "Multimodal deep learning models to detect and classify argumentative fallacies in political debates, using the MM-USED-fallacy dataset",
+          "full_name": "AzkaQadir/multimodal-fallacy-detection",
+          "language": "Jupyter Notebook",
+          "stars": 0,
+          "topics": [],
+          "url": "https://github.com/AzkaQadir/multimodal-fallacy-detection"
+        },
+        {
+          "archived": false,
+          "description": "A modular and reusable NLP pipeline for the CLEF Touche 2026 Fallacy Detection task",
+          "full_name": "Team-Sophisma/touche-fallacy-pipeline",
+          "language": "Python",
+          "stars": 0,
+          "topics": [],
+          "url": "https://github.com/Team-Sophisma/touche-fallacy-pipeline"
+        }
+      ],
+      "total_count": 4,
+      "via": "mcp:github.search_repositories"
+    },
+    "org:UKPLab argument": {
+      "fetched_at": "2026-09-16T00:57:51+00:00",
+      "items": [
+        {
+          "archived": false,
+          "description": "",
+          "full_name": "UKPLab/acl2019-BERT-argument-classification-and-clustering",
+          "language": "Python",
+          "stars": 85,
+          "topics": [],
+          "url": "https://github.com/UKPLab/acl2019-BERT-argument-classification-and-clustering"
+        },
+        {
+          "archived": false,
+          "description": "The Argument Reasoning Comprehension Task: Source codes & Datasets",
+          "full_name": "UKPLab/argument-reasoning-comprehension-task",
+          "language": "Java",
+          "stars": 78,
+          "topics": [
+            "argumentation",
+            "nlp-machine-learning"
+          ],
+          "url": "https://github.com/UKPLab/argument-reasoning-comprehension-task"
+        },
+        {
+          "archived": false,
+          "description": "Code and data for ACL2016 article 'Which argument is more convincing? Analyzing and predicting convincingness of Web arguments using bidirectional LSTM' by Ivan Habernal and Iryna Gurevych",
+          "full_name": "UKPLab/acl2016-convincing-arguments",
+          "language": "Java",
+          "stars": 28,
+          "topics": [],
+          "url": "https://github.com/UKPLab/acl2016-convincing-arguments"
+        },
+        {
+          "archived": false,
+          "description": "Code for the paper 'Multi-Task Learning for Argumentation Mining in Low-Resource Settings'",
+          "full_name": "UKPLab/naacl18-multitask_argument_mining",
+          "language": "Python",
+          "stars": 39,
+          "topics": [],
+          "url": "https://github.com/UKPLab/naacl18-multitask_argument_mining"
+        },
+        {
+          "archived": false,
+          "description": "Controlling Argument Generation via topic, stance, and aspect",
+          "full_name": "UKPLab/controlled-argument-generation",
+          "language": "Python",
+          "stars": 32,
+          "topics": [
+            "argument-generation",
+            "argument-mining"
+          ],
+          "url": "https://github.com/UKPLab/controlled-argument-generation"
+        },
+        {
+          "archived": false,
+          "description": "Accompanying code for our ACL-2017 publication on Neural End-to-End Learning for Computational Argumentation Mining",
+          "full_name": "UKPLab/acl2017-neural_end2end_am",
+          "language": "Python",
+          "stars": 59,
+          "topics": [],
+          "url": "https://github.com/UKPLab/acl2017-neural_end2end_am"
+        },
+        {
+          "archived": false,
+          "description": "Argotario: a multi-lingual serious game to tackle fallacious argumentation",
+          "full_name": "UKPLab/argotario",
+          "language": "JavaScript",
+          "stars": 16,
+          "topics": [],
+          "url": "https://github.com/UKPLab/argotario"
+        },
+        {
+          "archived": false,
+          "description": "",
+          "full_name": "UKPLab/naacl2019-argument-annotations",
+          "language": "Java",
+          "stars": 4,
+          "topics": [],
+          "url": "https://github.com/UKPLab/naacl2019-argument-annotations"
+        },
+        {
+          "archived": false,
+          "description": "Code and data for EMNLP2016 article 'What makes a convincing argument? Empirical analysis and detecting attributes of convincingness in Web argumentation' by Ivan Habernal and Iryna Gurevych",
+          "full_name": "UKPLab/emnlp2016-empirical-convincingness",
+          "language": "Java",
+          "stars": 13,
+          "topics": [],
+          "url": "https://github.com/UKPLab/emnlp2016-empirical-convincingness"
+        }
+      ],
+      "total_count": 23,
+      "via": "mcp:github.search_repositories"
+    },
+    "org:webis-de argument": {
+      "fetched_at": "2026-09-16T00:57:51+00:00",
+      "items": [
+        {
+          "archived": false,
+          "description": "Machine Learning scripts for the identification of human values behind arguments.",
+          "full_name": "webis-de/acl22-identifying-the-human-values-behind-arguments",
+          "language": "Python",
+          "stars": 24,
+          "topics": [
+            "argument-mining",
+            "argumentation",
+            "human-values"
+          ],
+          "url": "https://github.com/webis-de/acl22-identifying-the-human-values-behind-arguments"
+        },
+        {
+          "archived": false,
+          "description": "Repository for the SIGIR'19 paper 'Argument Search: Assessing Argument Relevance.'",
+          "full_name": "webis-de/SIGIR-19",
+          "language": "Jupyter Notebook",
+          "stars": 4,
+          "topics": [],
+          "url": "https://github.com/webis-de/SIGIR-19"
+        },
+        {
+          "archived": false,
+          "description": "Code for the paper 'Argument from Old Man's View: Assessing Social Bias in Argumentation'.",
+          "full_name": "webis-de/argmining20-social-bias-argumentation",
+          "language": "Python",
+          "stars": 3,
+          "topics": [],
+          "url": "https://github.com/webis-de/argmining20-social-bias-argumentation"
+        },
+        {
+          "archived": false,
+          "description": "",
+          "full_name": "webis-de/acl21-ArgKG-argument-generation",
+          "language": "",
+          "stars": 2,
+          "topics": [],
+          "url": "https://github.com/webis-de/acl21-ArgKG-argument-generation"
+        },
+        {
+          "archived": false,
+          "description": "",
+          "full_name": "webis-de/acl21-counter-argument-generation-by-attacking-weak-premises",
+          "language": "Jupyter Notebook",
+          "stars": 2,
+          "topics": [],
+          "url": "https://github.com/webis-de/acl21-counter-argument-generation-by-attacking-weak-premises"
+        },
+        {
+          "archived": false,
+          "description": "",
+          "full_name": "webis-de/acl22-moral-debater-a-study-on-the-computational-generation-of-morally-framed-arguments",
+          "language": "Jupyter Notebook",
+          "stars": 3,
+          "topics": [],
+          "url": "https://github.com/webis-de/acl22-moral-debater-a-study-on-the-computational-generation-of-morally-framed-arguments"
+        },
+        {
+          "archived": false,
+          "description": "The code for the 'Computational Argumentation Synthesis as a Language Modeling Task' (INLG19)",
+          "full_name": "webis-de/inlg19-argumentation-synthesis",
+          "language": "",
+          "stars": 0,
+          "topics": [],
+          "url": "https://github.com/webis-de/inlg19-argumentation-synthesis"
+        },
+        {
+          "archived": false,
+          "description": "",
+          "full_name": "webis-de/argmining25-argument-classification",
+          "language": "Python",
+          "stars": 1,
+          "topics": [],
+          "url": "https://github.com/webis-de/argmining25-argument-classification"
+        },
+        {
+          "archived": false,
+          "description": "",
+          "full_name": "webis-de/emnlp23-argument-arrangement",
+          "language": "Python",
+          "stars": 0,
+          "topics": [],
+          "url": "https://github.com/webis-de/emnlp23-argument-arrangement"
+        },
+        {
+          "archived": false,
+          "description": "",
+          "full_name": "webis-de/argmining25-argument-segmentation",
+          "language": "Python",
+          "stars": 1,
+          "topics": [],
+          "url": "https://github.com/webis-de/argmining25-argument-segmentation"
+        }
+      ],
+      "total_count": 24,
+      "via": "mcp:github.search_repositories"
+    }
+  }
 }

@@ -82,3 +82,28 @@ class Context:
         if not self.dry_run:
             self.registry.save()
             self.http.save_status()
+
+    # -- local sources -----------------------------------------------------
+    def prepare_local_sources(self, log=None) -> dict:
+        """Make the local sources usable: clone and index the ACL Anthology, discover,
+        clone and index the BibTeX corroboration corpus. Idempotent and cheap on re-runs -
+        nothing is re-cloned and an index is rebuilt only when its clone's commit moves."""
+        log = log or self.log
+        if getattr(self, "_prepared", False):
+            return self._prepare_summary
+        out = {}
+        force = bool(getattr(self.args, "force_index", False))
+        enabled = set(self.cfg["sources"]["enabled"])
+        if "acl" in enabled:
+            if self.acl.ensure_clone(log=log):
+                out["acl_papers"] = self.acl.build_index(force=force, log=log)
+                out["acl_commit"] = self.acl.head()[:12]
+        if "bibcorpus" in enabled:
+            self.bib.discover_from_search_cache(self.gh, log=log)
+            repos = self.bib.ensure_clones(log=log)
+            out["bib_repos"] = sum(1 for r in repos if r.get("cloned"))
+            out["bib_entries"] = self.bib.build_index(force=force, log=log)
+        self.probe_sources()
+        self._prepared = True
+        self._prepare_summary = out
+        return out
