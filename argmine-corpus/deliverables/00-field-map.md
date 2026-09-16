@@ -5,21 +5,21 @@ regenerated with live counts by every subsequent run. Six areas, each with a def
 inclusion and exclusion criteria, the vocabulary used for keyword scoring, and a minimum
 quota out of the 250-entry cap.
 
-Generated: 2026-09-16T03:22:01+00:00 | criteria_version: 1
+Generated: 2026-09-16T03:22:41+00:00 | criteria_version: 1
 
 
 ## Areas
 
 | # | Area | Quota | In corpus |
 |---|------|-------|-----------|
-| 6.1 | Formal foundations (`formal`) | 30 | 0 |
-| 6.2 | Argument mining (NLP) (`mining`) | 60 | 0 |
-| 6.3 | Argument quality and evaluation (`quality`) | 40 | 0 |
-| 6.4 | Dialogue and debate (`dialogue`) | 40 | 0 |
-| 6.5 | LLM era, 2023-2026 (`llm`) | 40 | 0 |
-| 6.6 | Datasets, tools, annotation guidelines (`resources`) | 30 | 0 |
+| 6.1 | Formal foundations (`formal`) | 30 | 53 |
+| 6.2 | Argument mining (NLP) (`mining`) | 60 | 125 |
+| 6.3 | Argument quality and evaluation (`quality`) | 40 | 59 |
+| 6.4 | Dialogue and debate (`dialogue`) | 40 | 40 |
+| 6.5 | LLM era, 2023-2026 (`llm`) | 40 | 55 |
+| 6.6 | Datasets, tools, annotation guidelines (`resources`) | 30 | 67 |
 
-### 6.1 Formal foundations  `formal`  (quota >= 30, currently 0)
+### 6.1 Formal foundations  `formal`  (quota >= 30, currently 53)
 
 **Definition.** Representational theory of argument: Toulmin layout; Walton argumentation schemes and critical questions; Dung abstract argumentation and its semantics (grounded, preferred, stable, semi-stable, ideal); structured argumentation (ASPIC+, assumption-based argumentation, DeLP); the Argument Interchange Format (AIF) ontology; Inference Anchoring Theory (IAT).
 
@@ -29,7 +29,7 @@ Generated: 2026-09-16T03:22:01+00:00 | criteria_version: 1
 
 **Vocabulary.** weight 3: `abstract argumentation`, `admissible set`, `argument interchange format`, `argumentation framework`, `argumentation scheme`, `argumentation semantics`, `aspic`, `assumption-based argumentation`, `critical questions`, `defeasible logic programming`, `formal argumentation`, `grounded extension`, `inference anchoring theory`, `preferred extension`, `semi-stable`, `stable extension`, `structured argumentation`, `toulmin`; weight 2: `acceptability`, `aif`, `argument graph`, `attack relation`, `defeasible reasoning`, `delp`, `enthymeme`, `nonmonotonic`; weight 1: `dialectical`, `warrant`
 
-### 6.2 Argument mining (NLP)  `mining`  (quota >= 60, currently 0)
+### 6.2 Argument mining (NLP)  `mining`  (quota >= 60, currently 125)
 
 **Definition.** Extraction of argument structure from text: argumentative discourse unit segmentation; component classification (claim, premise, major claim); relation classification (support, attack); argument structure parsing; scheme classification; cross-domain and cross-lingual transfer.
 
@@ -39,7 +39,7 @@ Generated: 2026-09-16T03:22:01+00:00 | criteria_version: 1
 
 **Vocabulary.** weight 3: `argument component`, `argument extraction`, `argument mining`, `argument relation`, `argument segmentation`, `argument structure parsing`, `argumentation mining`, `argumentative discourse unit`, `claim detection`, `cross-domain argument`, `cross-lingual argument`, `premise`, `scheme classification`; weight 2: `argumentative`, `end-to-end argument`, `evidence detection`, `support and attack`; weight 1: `claim`, `discourse`, `sequence tagging`, `shared task`
 
-### 6.3 Argument quality and evaluation  `quality`  (quota >= 40, currently 0)
+### 6.3 Argument quality and evaluation  `quality`  (quota >= 40, currently 59)
 
 **Definition.** Quality taxonomies (logical, rhetorical, dialectical); convincingness and pairwise ranking; argument strength; fallacy detection and classification; stance and stance-taking as they bear on quality.
 
@@ -49,7 +49,7 @@ Generated: 2026-09-16T03:22:01+00:00 | criteria_version: 1
 
 **Vocabulary.** weight 3: `argument quality`, `argument ranking`, `argument strength`, `argumentation quality`, `cogency`, `convincingness`, `fallacious`, `fallacy`, `logical fallacy`, `more convincing`, `quality dimensions`, `quality ranking`; weight 2: `ad hominem`, `pairwise ranking`, `persuasiveness`, `quality assessment`, `reasonableness`, `stance`, `stance detection`; weight 1: `effectiveness`, `taxonomy`
 
-### 6.4 Dialogue and debate  `dialogue`  (quota >= 40, currently 0)
+### 6.4 Dialogue and debate  `dialogue`  (quota >= 40, currently 40)
 
 **Definition.** Dialogue games and protocols; IAT-annotated broadcast debates (Moral Maze, US2016, QT30); dialogical argument mining; reply structure and burden of proof; level-shifting and question-dodging phenomena; online argumentative dialogue (CMV, IAC, Kialo).
 
@@ -59,7 +59,7 @@ Generated: 2026-09-16T03:22:01+00:00 | criteria_version: 1
 
 **Vocabulary.** weight 3: `broadcast debate`, `burden of proof`, `change my view`, `changemyview`, `dialogical`, `dialogue game`, `dialogue protocol`, `illocutionary`, `inference anchoring theory`, `internet argument corpus`, `kialo`, `locution`, `moral maze`, `online debate`, `qt30`, `reply structure`, `televised debate`, `us2016`; weight 2: `cmv`, `debate`, `deliberation`, `disagreement`, `ethos`, `persuasive dialogue`, `question time`, `turn-taking`; weight 1: `conversation`, `transition`
 
-### 6.5 LLM era, 2023-2026  `llm`  (quota >= 40, currently 0)
+### 6.5 LLM era, 2023-2026  `llm`  (quota >= 40, currently 55)
 
 **Definition.** Large language models for argument mining, quality assessment, fallacy detection and argument generation; LLM-as-judge for argument quality; argument-based reasoning with LLMs; debate as an oversight or evaluation mechanism where it produces reusable argument representations.
 
@@ -69,7 +69,7 @@ Generated: 2026-09-16T03:22:01+00:00 | criteria_version: 1
 
 **Vocabulary.** weight 3: `argument generation`, `chatgpt`, `counter-argument generation`, `gpt-4`, `large language model`, `large language models`, `llm`, `llm as a judge`, `llm-as-judge`, `multi-agent debate`; weight 2: `chain-of-thought`, `gpt-3`, `in-context learning`, `instruction-tuned`, `prompting`, `retrieval-augmented`; weight 1: `few-shot`, `generative`, `zero-shot`
 
-### 6.6 Datasets, tools, annotation guidelines  `resources`  (quota >= 30, currently 0)
+### 6.6 Datasets, tools, annotation guidelines  `resources`  (quota >= 30, currently 67)
 
 **Definition.** Corpora, software and the annotation manuals behind them, treated as documents in their own right. Corpora include AAEC (persuasive essays), UKP sentential argument mining, IBM Debater datasets (ArgQ, evidence, claims), CMV (Tan et al.), IAC, args.me, Webis argument quality corpora, US2016, QT30, Moral Maze corpora, ArgMining shared-task data, Kialo-derived datasets and logical-fallacy datasets. Tools include AIFdb, OVA, ArgumenText, TARGER, Tweety and other argumentation libraries, and ASPIC+/DeLP implementations.
 
@@ -144,10 +144,10 @@ Supplementary per-area queries, added so the quotas in under-served areas have a
 
 ## Tier rubric
 
-- **T1** - Foundational / survey. Read in full: theory anchors, major surveys, canonical papers. (0 in corpus)
-- **T2** - Core method. Defines a task formulation, model, or evaluation still in use. (0 in corpus)
-- **T3** - Dataset / tool / annotation guideline, including the guideline documents themselves. (0 in corpus)
-- **T4** - Recent (2023-2026). LLM-era work; lower durability confidence, high build relevance. (0 in corpus)
+- **T1** - Foundational / survey. Read in full: theory anchors, major surveys, canonical papers. (12 in corpus)
+- **T2** - Core method. Defines a task formulation, model, or evaluation still in use. (76 in corpus)
+- **T3** - Dataset / tool / annotation guideline, including the guideline documents themselves. (37 in corpus)
+- **T4** - Recent (2023-2026). LLM-era work; lower durability confidence, high build relevance. (15 in corpus)
 
 ## Downstream tags
 

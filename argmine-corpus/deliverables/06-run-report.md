@@ -1,55 +1,54 @@
 # 06 - Run report
 
-Generated 2026-09-16T03:20:09+00:00 | cap 250 | criteria_version 1
+Generated 2026-09-16T03:22:41+00:00 | cap 250 | criteria_version 1
 
 ## 1. Counts
 
 - **250 entries** in the registry (cap 250); 140 verified, 110 pending verification
-- per area: mining 127, resources 70, quality 56, llm 55, formal 53, dialogue 40
-- per tier: T1 12, T2 74, T3 40, T4 14
-- per doc_type: conference 119, workshop 88, journal 36, chapter 3, book 2, preprint 1, unrecorded 1
+- per area: mining 125, resources 67, quality 59, llm 55, formal 53, dialogue 40
+- per tier: T1 12, T2 76, T3 37, T4 15
+- per doc_type: conference 119, workshop 87, journal 38, chapter 3, book 2, preprint 1
 - verification: unverified 110, verified 140
-- rejected (737 remembered): off_topic 449, below_cutoff 203, cap_reached 72, excluded_domain 11, seed_unresolved 2
+- rejected (716 remembered): off_topic 426, below_cutoff 203, cap_reached 73, excluded_domain 11, seed_unresolved 2, proceedings_volume 1
 - PDFs: 0 fetched, 250 manifest-only
 - repos cloned: 3; guideline/README documents retrieved: 3 (3 extracted to text)
 - chunks: 102 (0 full text, 8 guideline, 94 abstract)
-- chunk token histogram: 0-199: 56, 200-399: 45, 400-599: 1
+- chunk token histogram: 0-199: 57, 200-399: 44, 400-599: 1
 
-- annotations: 250 written this run, 0 unchanged; grounding fulltext 0, abstract 188, none 62 (an entry with no retrieved text carries no annotation, by rule)
+- annotations: 250 written this run, 0 unchanged; grounding fulltext 0, abstract 189, none 61 (an entry with no retrieved text carries no annotation, by rule)
 
 ## 2. Coverage gaps
 
 | Area | Quota | Verified | Pending | Met |
 |---|---|---|---|---|
 | formal | 30 | 30 | 23 | yes |
-| mining | 60 | 72 | 55 | yes |
-| quality | 40 | 29 | 27 | no |
+| mining | 60 | 71 | 54 | yes |
+| quality | 40 | 31 | 28 | no |
 | dialogue | 40 | 30 | 10 | no |
 | llm | 40 | 14 | 41 | no |
-| resources | 30 | 39 | 31 | yes |
+| resources | 30 | 36 | 31 | yes |
 
-Below quota, and why: **quality** 29/40 verified, 27 more admitted but pending; **dialogue** 30/40 verified, 10 more admitted but pending; **llm** 14/40 verified, 41 more admitted but pending. A pending entry is a registry record at status `candidate`: it was admitted and scored, but only one independent source could be reached for it. It is not rejected and needs no re-fetching - phase 3 processes exactly those records on the next run.
+Below quota, and why: **quality** 31/40 verified, 28 more admitted but pending; **dialogue** 30/40 verified, 10 more admitted but pending; **llm** 14/40 verified, 41 more admitted but pending. A pending entry is a registry record at status `candidate`: it was admitted and scored, but only one independent source could be reached for it. It is not rejected and needs no re-fetching - phase 3 processes exactly those records on the next run.
 
 **Important works that could not be verified** (seed-derived, or co-listed with this corpus in at least half as many curated bibliographies as the most co-listed candidate):
 
 - Modeling Appropriate Language in Argumentation (2023) - found by acl - only one independent source could be reached
 - Towards Argument Mining from Dialogue (2014) - found by bibcorpus:davidar/dblp.yaml - bibcorpus:lmlearning/AFGraphLib: venue mismatch ('COMMA' vs 'Frontiers in Artificial Inte…
-- ArgumenText: Argument Classification and Clustering in a Generalized Search Scenario (2020) - found by bibcorpus:NeWildeSache/argument-mining-in-the-web-archive - only one independent source could be reached
 - MARGOT: A web server for argumentation mining (2016) - found by bibcorpus:NeWildeSache/argument-mining-in-the-web-archive - only one independent source could be reached
-- The 11th Workshop on Argument Mining (2024) - found by bibcorpus:NeWildeSache/argument-mining-in-the-web-archive - only one independent source could be reached
+- ArgumenText: Argument Classification and Clustering in a Generalized Search Scenario (2020) - found by bibcorpus:NeWildeSache/argument-mining-in-the-web-archive - only one independent source could be reached
 
 **Scope-uncertain admissions (62).** Admitted at the lowest plausible tier and flagged here rather than dropped:
 
 - Corpus Wide Argument Mining - A Working Solution (T3) - no abstract retrieved, so scope was judged from the title and venue
-- Identifying Argumentative Discourse Structures in Persuasive Essays (T2) - no abstract retrieved, so scope was judged from the title and venue
 - Transformer-Based Argument Mining for Healthcare Applications (T2) - no abstract retrieved, so scope was judged from the title and venue
+- Annotating Argument Components and Relations in Persuasive Essays (T2) - no abstract retrieved, so scope was judged from the title and venue
 - Limited Generalizability in Argument Mining: State-Of-The-Art Models Learn… (T3) - no abstract retrieved, so scope was judged from the title and venue
 - Modeling Frames in Argumentation (T3) - weak vocabulary match (keyword 0.25)
-- Modeling Deliberative Argumentation Strategies on Wikipedia (T3) - weak vocabulary match (keyword 0.25)
 - Argumentation Mining (T2) - no abstract retrieved, so scope was judged from the title and venue
 - Context-Independent Claim Detection for Argument Mining (T2) - no abstract retrieved, so scope was judged from the title and venue
 - Building an Argument Search Engine for the Web (T3) - weak vocabulary match (keyword 0.17)
 - The CASS Technique for Evaluating the Performance of Argument Mining (T2) - no abstract retrieved, so scope was judged from the title and venue
+- Fill the Gap! Analyzing Implicit Premises between Claims from Online Debat… (T2) - no abstract retrieved, so scope was judged from the title and venue
 - ... and 52 more (`scope_uncertain` in registry.jsonl)
 
 ## 3. Seeds
@@ -58,30 +57,44 @@ Below quota, and why: **quality** 29/40 verified, 27 more admitted but pending; 
 
 **Verified as given** (nothing in the hypothesis had to change):
 
+- Argumentation Mining: State of the Art and Emerging Trends - `doi:10.1145/2850417`
 - Argumentation mining - `doi:10.2200/s00883ed1v01y201811hlt040`
+- Five Years of Argument Mining: a Data-driven Analysis - `doi:10.24963/ijcai.2018/766`
 - Argumentation Schemes - `doi:10.1017/cbo9780511802034`
 - On the Acceptability of Arguments and its Fundamental Role in Nonmonotonic Reasoning, Log… - `doi:10.1016/0004-3702(94)00041-x`
+- An introduction to argumentation semantics - `doi:10.1017/s0269888911000166`
 - The ASPIC+ framework for structured argumentation: a tutorial - `doi:10.1080/19462166.2013.869766`
+- Towards an Argument Interchange Format - `doi:10.1017/s0269888906001044`
 - Parsing Argumentation Structures in Persuasive Essays - `doi:10.1162/coli_a_00295`
+- Computational Argumentation Quality Assessment in Natural Language - `title:55893f7c5565660a055d8f689db3e97c66843203`
+- Which argument is more convincing? Analyzing and predicting convincingness of Web argumen… - `doi:10.18653/v1/p16-1150`
 - A large-scale dataset for argument quality ranking: Construction and analysis - `doi:10.1609/aaai.v34i05.6285`
+- Logical Fallacy Detection - `doi:10.18653/v1/2022.findings-emnlp.532`
+- An autonomous debating system - `doi:10.1038/s41586-021-03215-w`
+- QT30: A Corpus of Argument and Conflict in Broadcast Debate - `title:e4827cf79a5103f624f48b2e7d4a4ccc7ab6c0ea`
+- Winning Arguments: Interaction Dynamics and Persuasion Strategies in Good-Faith Online Di… - `doi:10.1145/2872427.2883081`
+- A Corpus for Research on Deliberation and Debate - `title:ae7588dc60be7ab8f03855ae779ec0f0519a8728`
 
 **Corrected from the sources** (the hypothesis was wrong; the sources win):
 
 | Entry | Field | Hypothesis | Verified | Sources |
 |---|---|---|---|---|
 | `doi:10.1162/coli_a_00364` | year | 2020 | 2019 | acl, bibcorpus:CogSciPrag/project_ideas, bibcorpus:ljvmiran… |
-| `doi:10.1145/2850417` | venue | ACM Transactions on Internet Technology | ACM Trans. Internet Technol. | bibcorpus:CogSciPrag/project_ideas, bibcorpus:Danysan1/ai-u… |
-| `doi:10.24963/ijcai.2018/766` | venue | IJCAI | Proceedings of the Twenty-Seventh International Joint Confe… | bibcorpus:KWARC/bibs, bibcorpus:m0re4u/paper-database, bibc… |
 | `title:df299e3284c272f02cac357fba80718526676f2a` | year | 1958 | 1960 | bibcorpus:IKMLab/arct2, bibcorpus:NeWildeSache/argument-min… |
-| `doi:10.1017/s0269888911000166` | venue | Knowledge Engineering Review | Knowledge Eng. Review | bibcorpus:davidar/dblp.yaml, bibcorpus:p4s3r0/argumentation… |
-| `doi:10.1017/s0269888906001044` | venue | Knowledge Engineering Review | The Knowledge Engineering Review | bibcorpus:KWARC/bibs, bibcorpus:davidar/dblp.yaml, bibcorpu… |
-| `title:55893f7c5565660a055d8f689db3e97c66843203` | venue | EACL | Proceedings of the 15th Conference of the European Chapter… | acl, bibcorpus:allenai/ir_datasets, bibcorpus:lihebi/biber-… |
-| `doi:10.18653/v1/p16-1150` | venue | ACL | Proceedings of the 54th Annual Meeting of the Association f… | acl, bibcorpus:lihebi/biber-dist, bibcorpus:xinyannnnnnn/fa… |
-| `doi:10.18653/v1/2022.findings-emnlp.532` | venue | Findings of EMNLP | Findings of the Association for Computational Linguistics:… | acl, bibcorpus:danny-v-nguyen/thesis, bibcorpus:edgar-demeu… |
-| `doi:10.1038/s41586-021-03215-w` | venue | Nature | Nat. | bibcorpus:CogSciPrag/project_ideas, bibcorpus:borgr/publica… |
-| `title:e4827cf79a5103f624f48b2e7d4a4ccc7ab6c0ea` | venue | LREC | Proceedings of the Thirteenth Language Resources and Evalua… | acl, bibcorpus:mystreamer/lt2326-final-project |
-| `doi:10.1145/2872427.2883081` | venue | WWW | Proceedings of the 25th International Conference on World W… | bibcorpus:boudinfl/acm-cr, bibcorpus:ir-anthology/ir-anthol… |
-| `title:ae7588dc60be7ab8f03855ae779ec0f0519a8728` | venue | LREC | Proceedings of the Eighth International Conference on Langu… | acl, bibcorpus:davidar/dblp.yaml |
+
+**Recorded in canonical form** (the hypothesis named the same venue, the sources spell it out):
+
+- `doi:10.1145/2850417` - venue: ACM Transactions on Internet Technology -> ACM Transactions on Internet Technology (TOIT)
+- `doi:10.24963/ijcai.2018/766` - venue: IJCAI -> Proceedings of the Twenty-Seventh International Joint Conference on Artificial…
+- `doi:10.1017/s0269888911000166` - venue: Knowledge Engineering Review -> The Knowledge Engineering Review
+- `doi:10.1017/s0269888906001044` - venue: Knowledge Engineering Review -> The Knowledge Engineering Review
+- `title:55893f7c5565660a055d8f689db3e97c66843203` - venue: EACL -> Proceedings of the 15th Conference of the European Chapter of the Association f…
+- `doi:10.18653/v1/p16-1150` - venue: ACL -> Proceedings of the 54th Annual Meeting of the Association for Computational Lin…
+- `doi:10.1609/aaai.v34i05.6285` - venue: AAAI -> Proceedings of the Thirty-Fourth AAAI Conference on Artificial Intelligence, AA…
+- `doi:10.18653/v1/2022.findings-emnlp.532` - venue: Findings of EMNLP -> Findings of the Association for Computational Linguistics: EMNLP 2022
+- `title:e4827cf79a5103f624f48b2e7d4a4ccc7ab6c0ea` - venue: LREC -> Proceedings of the Thirteenth Language Resources and Evaluation Conference
+- `doi:10.1145/2872427.2883081` - venue: WWW -> Proceedings of the 25th International Conference on World Wide Web, WWW 2016, M…
+- `title:ae7588dc60be7ab8f03855ae779ec0f0519a8728` - venue: LREC -> Proceedings of the Eighth International Conference on Language Resources and Ev…
 
 **Rejected** (no source could resolve them; nothing was invented to fill the gap):
 
@@ -100,15 +113,15 @@ Missing credentials: S2_API_KEY, GITHUB_TOKEN. Degradation: Semantic Scholar run
 
 ## 5. Expansion note
 
-- 275 scored candidates are waiting in `corpus/rejected.jsonl` (reason `below_cutoff` or `cap_reached`, at criteria_version 1).
+- 276 scored candidates are waiting in `corpus/rejected.jsonl` (reason `below_cutoff` or `cap_reached`, at criteria_version 1).
 - unexpanded frontier nodes: 121 of 140.
 - best waiting candidate: **More or less controlled elicitation of argumentative text: Enlarging a microtex…** (2018), score 0.3479 (cocite 0.0, keyword 0.7917, venue 1.0).
 - lowest admitted score in the registry: 0.2. Raising the cap promotes waiting candidates in score order, using metadata already stored - no API call, no re-scoring.
-- `python -m argmine run --cap 300` would consider all 275 of them.
+- `python -m argmine run --cap 300` would consider all 276 of them.
 
 ## 6. Changelog
 
-Run 1; previous run recorded at 2026-09-16T03:19:05+00:00.
+Run 1; previous run recorded at 2026-09-16T03:22:01+00:00.
 
 Added 250 entries:
 
@@ -141,9 +154,11 @@ Added 250 entries:
 - `doi:10.1145/2850417` - Argumentation Mining: State of the Art and Emerging Trends (2016, T1)
 - `doi:10.1145/2872427.2883081` - Winning Arguments: Interaction Dynamics and Persuasion Strategies in Good-Faith Onli… (2016, T2)
 - `doi:10.1145/3308558.3314127` - Can You Give Me a Reason?: Argument-Inducing Online Forum by Argument Mining (2019, T2)
+- `doi:10.1145/3331184.3331327` - Argument Search: Assessing Argument Relevance (2019, T2)
 - `doi:10.1162/coli_a_00276` - Argumentation Mining in User-Generated Web Discourse (2017, T3)
 - `doi:10.1162/coli_a_00295` - Parsing Argumentation Structures in Persuasive Essays (2017, T3)
 - `doi:10.1162/coli_a_00364` - Argument Mining: A Survey (2019, T1)
+- `doi:10.1162/coli_a_00502` - Can Large Language Models Transform Computational Social Science? (2024, T4)
 - `doi:10.1162/coli_a_00553` - UniASA: A Unified Generative Framework for Argument Structure Analysis (2025, TNone)
 - `doi:10.1162/tacl_a_00481` - End-to-end Argument Mining with Cross-corpora Multi-task Learning (2022, TNone)
 - `doi:10.1177/1461444807081230` - Democracy, deliberation and design: the case of online discussion forums (2007, T2)
@@ -164,14 +179,12 @@ Added 250 entries:
 - `doi:10.18653/v1/2021.argmining-1.9` - Citizen Involvement in Urban Planning - How Can Municipalities Be Supported in Evalu… (2021, TNone)
 - `doi:10.18653/v1/2021.eacl-main.55` - End-to-End Argument Mining as Biaffine Dependency Parsing (2021, T2)
 - `doi:10.18653/v1/2021.emnlp-main.515` - Hitting your MARQ: Multimodal ARgument Quality Assessment in Long Debate Video (2021, TNone)
-- `doi:10.18653/v1/2021.naacl-main.34` - Aspect-Controlled Neural Argument Generation (2021, T2)
 - `doi:10.18653/v1/2022.emnlp-main.560` - Multitask Instruction-based Prompting for Fallacy Recognition (2022, T2)
 - `doi:10.18653/v1/2022.emnlp-main.713` - A Generative Model for End-to-End Argument Mining with Reconstructed Positional Enco… (2022, TNone)
 - `doi:10.18653/v1/2022.findings-emnlp.306` - Graph Embeddings for Argumentation Quality Assessment (2022, TNone)
 - `doi:10.18653/v1/2022.findings-emnlp.532` - Logical Fallacy Detection (2022, T2)
 - `doi:10.18653/v1/2023.acl-long.238` - Modeling Appropriate Language in Argumentation (2023, TNone)
 - `doi:10.18653/v1/2023.argmining-1.1` - Detecting Argumentative Fallacies in the Wild: Problems and Limitations of Large Lan… (2023, T4)
-- `doi:10.18653/v1/2023.argmining-1.13` - IUST at ImageArg: The First Shared Task in Multimodal Argument Mining (2023, TNone)
 - ... and 190 more
 
 ---
@@ -180,12 +193,12 @@ Added 250 entries:
 
 | Phase | Seconds | Summary |
 |---|---|---|
-| 0 scaffold | 0.1 | cap=250, field_map=deliverables/00-field-map.md |
-| 1 seed | 24.0 |  |
-| 2 snowball | 28.1 | admitted=231, admitted_corroborated=121, already_decided=14 |
-| 3 verify | 0.1 | considered=231, oa_resolved=178, seconds=0.1 |
+| 0 scaffold | 0.0 | cap=250, field_map=deliverables/00-field-map.md |
+| 1 seed | 16.0 |  |
+| 2 snowball | 22.2 | admitted=231, admitted_corroborated=121, already_decided=16 |
+| 3 verify | 0.0 | considered=231, oa_resolved=176, seconds=0.0 |
 | 4 tier | 0.0 | considered=140, retiered=0, scope_uncertain=62 |
-| 5a fetch | 0.3 | guidelines=3, manifest=deliverables/05-fetch-manifest.csv, manifest_rows=250 |
+| 5a fetch | 0.1 | guidelines=3, manifest=deliverables/05-fetch-manifest.csv, manifest_rows=250 |
 | 5b extract | 0.0 | guidelines_extracted=3, no_pdf=140 |
 | 6 chunk | 0.0 | chunks=102, from_abstract=94, from_fulltext=0, from_guideline=8 |
 
@@ -322,16 +335,16 @@ Added 250 entries:
 
 Source combinations behind the registry. A `bibcorpus` label counts once per independent repository, and never for a verbatim re-export of the ACL Anthology:
 
-- acl, bibcorpus: 94
+- acl, bibcorpus: 92
 - acl: 90
-- bibcorpus: 66
+- bibcorpus: 68
 
 ## Appendix E - caching layers
 
 - layer 1, HTTP cache: metadata responses expire after 30 days, binaries never
 - layer 2, status gating: each phase processes only records at exactly its input status; fetch also skips a PDF whose sha256 matches, extract skips text whose source PDF hash is unchanged
 - layer 3, frontier memory: 19 of 140 nodes expanded, directions recorded per node
-- layer 4, decision memory: 737 rejected candidates kept with their scores at criteria_version 1; bumping it re-scores them without re-fetching anything
+- layer 4, decision memory: 716 rejected candidates kept with their scores at criteria_version 1; bumping it re-scores them without re-fetching anything
 
 ## Appendix F - limits of this run
 
