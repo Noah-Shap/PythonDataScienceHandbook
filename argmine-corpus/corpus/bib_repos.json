@@ -37,6 +37,18 @@
       "kept_files": 1
     },
     {
+      "full_name": "DFKI-NLP/dfki-nlp.github.io",
+      "url": "https://github.com/DFKI-NLP/dfki-nlp.github.io.git",
+      "why": "carries content/publication/binder-etal-2024-dfki/cite.bib",
+      "discovered_via": "github-code-search:\"Workshop on Argument Mining\" argmining extension:bib",
+      "sha": "692da05f0468da02a972eb04651c775dab5606df",
+      "bib_files": 97,
+      "bib_entries": 97,
+      "cloned": true,
+      "pruned_to_bibtex": true,
+      "kept_files": 100
+    },
+    {
       "full_name": "Danysan1/ai-unibo-nlp-project",
       "url": "https://github.com/Danysan1/ai-unibo-nlp-project.git",
       "why": "carries a2/report/nlpreport.bib",
@@ -97,6 +109,42 @@
       "kept_files": 1
     },
     {
+      "full_name": "NeWildeSache/argument-mining-in-the-web-archive",
+      "url": "https://github.com/NeWildeSache/argument-mining-in-the-web-archive.git",
+      "why": "carries latex/literature.bib",
+      "discovered_via": "github-code-search:\"argmining\" \"10.18653\" extension:bib",
+      "sha": "659ddc1de2b7309eaece358702c870275fb3b68d",
+      "bib_files": 2,
+      "bib_entries": 174,
+      "cloned": true,
+      "pruned_to_bibtex": true,
+      "kept_files": 19
+    },
+    {
+      "full_name": "RicoStaedeli/NLP2025_CQG",
+      "url": "https://github.com/RicoStaedeli/NLP2025_CQG.git",
+      "why": "carries Doc/Latex/custom.bib",
+      "discovered_via": "github-code-search:\"argmining\" \"10.18653\" extension:bib",
+      "sha": "d21d67bc2d7b1c802dabbeee6230fe69763c3cb8",
+      "bib_files": 1,
+      "bib_entries": 29,
+      "cloned": true,
+      "pruned_to_bibtex": true,
+      "kept_files": 3
+    },
+    {
+      "full_name": "StefanoColamonaco/StefanoColamonaco.github.io",
+      "url": "https://github.com/StefanoColamonaco/StefanoColamonaco.github.io.git",
+      "why": "carries _bibliography/papers.bib",
+      "discovered_via": "github-code-search:\"Workshop on Argument Mining\" argmining extension:bib",
+      "sha": "f82d6a97319a66f8df8755b26bd5ddd6d32db4ab",
+      "bib_files": 2,
+      "bib_entries": 4,
+      "cloned": true,
+      "pruned_to_bibtex": true,
+      "kept_files": 4
+    },
+    {
       "full_name": "TimKam/fantastic-arg-tools",
       "url": "https://github.com/TimKam/fantastic-arg-tools.git",
       "why": "survey of computational argumentation tools; tool inventory for area 6.6",
@@ -116,6 +164,18 @@
       "sha": "e67d9650ae4afb10ba18b3329694a9b2c2ec0f03",
       "bib_files": 1,
       "bib_entries": 1,
+      "cloned": true,
+      "pruned_to_bibtex": true,
+      "kept_files": 4
+    },
+    {
+      "full_name": "alessiopittiglio/alessiopittiglio.github.io",
+      "url": "https://github.com/alessiopittiglio/alessiopittiglio.github.io.git",
+      "why": "carries _bibliography/papers.bib",
+      "discovered_via": "github-code-search:\"Workshop on Argument Mining\" argmining extension:bib",
+      "sha": "c9eea6ab40083d5422b432ff9133b7068978e8ff",
+      "bib_files": 2,
+      "bib_entries": 2,
       "cloned": true,
       "pruned_to_bibtex": true,
       "kept_files": 4
@@ -169,6 +229,18 @@
       "kept_files": 9
     },
     {
+      "full_name": "corite/ir-documentation",
+      "url": "https://github.com/corite/ir-documentation.git",
+      "why": "carries bibliography/bibliography.bib",
+      "discovered_via": "github-code-search:\"Workshop on Argument Mining\" argmining extension:bib",
+      "sha": "027e44771f6127163ee23bc5a4ae16fd37af8f9c",
+      "bib_files": 2,
+      "bib_entries": 95,
+      "cloned": true,
+      "pruned_to_bibtex": true,
+      "kept_files": 3
+    },
+    {
       "full_name": "danielhers/danielhers.github.io",
       "url": "https://github.com/danielhers/danielhers.github.io.git",
       "why": "carries debater.bib",
@@ -203,6 +275,18 @@
       "cloned": true,
       "pruned_to_bibtex": true,
       "kept_files": 5589
+    },
+    {
+      "full_name": "deborahdore/deborahdore.github.io",
+      "url": "https://github.com/deborahdore/deborahdore.github.io.git",
+      "why": "carries _bibliography/papers.bib",
+      "discovered_via": "github-code-search:\"Workshop on Argument Mining\" argmining extension:bib",
+      "sha": "d82d67eeff5aad1ce86fca81931c0533d8dc793c",
+      "bib_files": 1,
+      "bib_entries": 5,
+      "cloned": true,
+      "pruned_to_bibtex": true,
+      "kept_files": 4
     },
     {
       "full_name": "dimits-ts/llm_moderation_research",
@@ -265,6 +349,18 @@
       "kept_files": 6
     },
     {
+      "full_name": "helemanc/helemanc.github.io",
+      "url": "https://github.com/helemanc/helemanc.github.io.git",
+      "why": "carries _bibliography/papers.bib",
+      "discovered_via": "github-code-search:\"Workshop on Argument Mining\" argmining extension:bib",
+      "sha": "f388417fbc3114f83966c05a20ac0b4b52ada6c8",
+      "bib_files": 2,
+      "bib_entries": 12,
+      "cloned": true,
+      "pruned_to_bibtex": true,
+      "kept_files": 4
+    },
+    {
       "full_name": "ir-anthology/ir-anthology.github.io",
       "url": "https://github.com/ir-anthology/ir-anthology.github.io.git",
       "why": "carries anthology/files/dumani-2020-ranking.bib",
@@ -287,6 +383,18 @@
       "cloned": true,
       "pruned_to_bibtex": true,
       "kept_files": 357
+    },
+    {
+      "full_name": "julia-zhou/Argmining",
+      "url": "https://github.com/julia-zhou/Argmining.git",
+      "why": "carries paper/acl2018.bib",
+      "discovered_via": "github-code-search:\"Workshop on Argument Mining\" argmining extension:bib",
+      "sha": "e1f84b3b6e8cd73cb89f0a6825fc00477cc8019d",
+      "bib_files": 1,
+      "bib_entries": 2,
+      "cloned": true,
+      "pruned_to_bibtex": true,
+      "kept_files": 2
     },
     {
       "full_name": "lefteriskat/Logical-Fallacy-Detection-Using-LLMs",
@@ -347,6 +455,18 @@
       "cloned": true,
       "pruned_to_bibtex": true,
       "kept_files": 4
+    },
+    {
+      "full_name": "mpoiaganova/poiaganova",
+      "url": "https://github.com/mpoiaganova/poiaganova.git",
+      "why": "carries _bibliography/papers.bib",
+      "discovered_via": "github-code-search:\"Workshop on Argument Mining\" argmining extension:bib",
+      "sha": "f9032f28cf49df21c26989595f6c36029ac48d2f",
+      "bib_files": 2,
+      "bib_entries": 3,
+      "cloned": true,
+      "pruned_to_bibtex": true,
+      "kept_files": 5
     },
     {
       "full_name": "mystreamer/lt2326-final-project",
@@ -443,6 +563,18 @@
       "cloned": true,
       "pruned_to_bibtex": true,
       "kept_files": 35
+    },
+    {
+      "full_name": "trails-dfki/trails-dfki.github.io",
+      "url": "https://github.com/trails-dfki/trails-dfki.github.io.git",
+      "why": "carries content/publication/binder-2024-dialam/cite.bib",
+      "discovered_via": "github-code-search:\"Workshop on Argument Mining\" argmining extension:bib",
+      "sha": "8480fa88ad9f3129dc99671b63e4b3c8a4c188a5",
+      "bib_files": 36,
+      "bib_entries": 36,
+      "cloned": true,
+      "pruned_to_bibtex": true,
+      "kept_files": 38
     },
     {
       "full_name": "ttmassa/ter",

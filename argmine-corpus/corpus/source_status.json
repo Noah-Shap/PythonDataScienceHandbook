@@ -19,7 +19,7 @@
   "bibcorpus": {
     "_probed_this_run": true,
     "reachable": true,
-    "reason": "40 bibliography repositories configured"
+    "reason": "51 bibliography repositories configured"
   },
   "crossref": {
     "_probed_this_run": true,
