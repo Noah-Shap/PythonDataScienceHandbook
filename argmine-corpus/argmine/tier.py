@@ -37,6 +37,10 @@ def choose_tier(cfg, rec: dict) -> int:
     year = int(rec.get("year") or 0)
     doc_type = rec.get("doc_type", "")
 
+    # A shared-task overview reads like a survey but is the task's resource paper.
+    if "shared task" in title or "semeval" in title or "task overview" in title:
+        return 3
+
     # T1: theory anchors, surveys, the canonical paper an area is built on.
     if any(m in title for m in FOUNDATIONAL_TITLE):
         return 1

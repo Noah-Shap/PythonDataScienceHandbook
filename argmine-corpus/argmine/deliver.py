@@ -220,7 +220,7 @@ def datasets_and_tools(ctx) -> str:
     recs = [r for r in reg.records.values()
             if r.get("verification", {}).get("status") == "verified"
             and (r.get("tier") == 3 or "dataset" in r.get("downstream_tags", []))]
-    recs.sort(key=lambda r: (-(r.get("year") or 0), r.get("title", "")))
+    recs.sort(key=lambda r: (r.get("tier") or 9, -(r.get("year") or 0), r.get("title", "")))
     out = ["# 02 - Datasets, tools and annotation guidelines", "",
            f"{len(recs)} resource entries. Every column is filled from text this pipeline "
            f"retrieved (abstract or full text) or from a cloned repository; where the retrieved "

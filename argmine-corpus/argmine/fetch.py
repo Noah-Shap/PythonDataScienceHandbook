@@ -23,6 +23,13 @@ from .util import iso_now, norm_text, safe_id
 
 STOP = {"the", "a", "an", "of", "for", "and", "in", "on", "to", "with", "from", "using",
         "via", "by", "at", "is", "are", "new", "towards", "toward", "into", "its", "their"}
+# Words every second repository in this field uses: matching on these alone is a
+# coincidence, not evidence that this repo belongs to this paper.
+GENERIC = {"argument", "arguments", "argumentation", "argumentative", "mining", "corpus",
+           "corpora", "dataset", "datasets", "data", "task", "tasks", "classification",
+           "detection", "identification", "analysis", "text", "neural", "model", "models",
+           "learning", "annotation", "annotated", "quality", "code", "paper", "nlp",
+           "language", "based", "large", "study", "approach"}
 
 
 def sha256_file(path: Path) -> str:
@@ -54,21 +61,25 @@ def link_repos(ctx) -> dict:
         if rec.get("tier") != 3 and "resources" not in rec.get("area", []):
             continue
         title_tokens = _tokens(rec.get("title", ""))
-        best, best_score = None, 0
+        best, best_key = None, None
         for full_name, it in seen.items():
             repo_tokens = _tokens(full_name.split("/")[-1].replace("-", " ").replace("_", " "))
             repo_tokens |= _tokens(it.get("description", ""))
             overlap = title_tokens & repo_tokens
-            score = len(overlap)
-            if score > best_score:
-                best, best_score = (full_name, overlap), score
-        if best and best_score >= 4:
-            full_name, overlap = best
+            distinctive = overlap - GENERIC
+            key = (len(distinctive), len(overlap))
+            if best_key is None or key > best_key:
+                best, best_key = (full_name, overlap, distinctive), key
+        # Either two words that are specific to this work, or a broad overlap that includes
+        # at least one specific word.
+        if best and (best_key[0] >= 2 or (best_key[0] >= 1 and best_key[1] >= 4)):
+            full_name, overlap, distinctive = best
             rec.setdefault("urls", {})["repo"] = f"https://github.com/{full_name}"
             rec["discovered_from"].append({"id": f"github:{full_name}", "via": f"github:{full_name}"})
             rec["verification"]["notes"] = (
                 rec["verification"].get("notes", "") +
-                f" repo linked on token overlap: {sorted(overlap)}").strip()
+                f" repo linked on distinctive title/description overlap: "
+                f"{sorted(distinctive)} (all shared words: {sorted(overlap)})").strip()
             linked[rec["id"]] = full_name
     return linked
 
