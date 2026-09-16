@@ -45,7 +45,7 @@ RELEVANCE_TERMS = (
     "argument", "premise", "walton",
 )
 ANTHOLOGY_KEY_RE = re.compile(r"^[a-z\-]+-(etal-)?(19|20)\d{2}-[a-z\-]+$")
-SCHEMA = 5
+SCHEMA = 6
 
 
 class BibCorpus:
@@ -237,6 +237,7 @@ class BibCorpus:
                 rel = str(bib.relative_to(path))
                 file_id = f"{repo['full_name']}:{rel}"
                 titles, anth_keys = [], 0
+                venue_years = {}
                 for e in parsed:
                     f = e["fields"]
                     title = f.get("title", "")
@@ -253,6 +254,8 @@ class BibCorpus:
                         "eprint": f.get("eprint", "") if f.get("archiveprefix", "").lower() == "arxiv" else "",
                         "key": e["key"], "repo": repo["full_name"], "file": rel, "file_id": file_id,
                     })
+                    vy = (norm_title(bibtex.venue(f))[:60], bibtex.year(f))
+                    venue_years[vy] = venue_years.get(vy, 0) + 1
                     abstract = f.get("abstract", "")
                     if len(abstract) > len(abstracts.get(nt, "")):
                         # Bibliographies exported from reference managers often carry the
@@ -262,12 +265,16 @@ class BibCorpus:
                     titles.append(nt)
                 if titles:
                     ratio = round(anth_keys / max(len(titles), 1), 3)
+                    top = max(venue_years.values()) / len(titles) if venue_years else 0.0
+                    proceedings = bool(len(titles) >= 20 and top >= 0.7)
                     files[file_id] = {
                         "repo": repo["full_name"], "path": rel, "n": len(titles),
-                        "anthology_ratio": ratio,
+                        "anthology_ratio": ratio, "venue_concentration": round(top, 3),
                         # Only a real reference list is evidence that two works belong
-                        # together; a whole-venue or whole-anthology dump is not.
-                        "curated": bool(curated and ratio <= 0.8),
+                        # together. A whole-venue dump is not: nearly every entry sharing
+                        # one venue and one year means these papers were published at the
+                        # same conference, not chosen as relevant to the same argument.
+                        "curated": bool(curated and ratio <= 0.8 and not proceedings),
                         "titles": sorted(set(titles)),
                     }
                     n_files += 1

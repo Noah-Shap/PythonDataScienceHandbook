@@ -157,11 +157,16 @@ def run(ctx) -> dict:
 
         for guideline in files.get("guidelines", []):
             gpath = cfg.path(guideline)
-            if not gpath.exists() or gpath.suffix.lower() not in (".md", ".txt", ".rst"):
+            if not gpath.exists() or gpath.suffix.lower() not in (".md", ".txt", ".rst", ".html"):
                 continue
             key = f"__{gpath.stem.split('__', 1)[-1]}"
             out = cfg.corpus / "text" / f"{safe_id(rec['id'])}{key}.jsonl"
+            rel_out = str(out.relative_to(cfg.root))
             if out.exists():
+                # Already extracted: skip the work, but keep the record pointing at it.
+                if rel_out not in files.setdefault("guideline_text", []):
+                    files["guideline_text"].append(rel_out)
+                    summary["guidelines_relinked"] = summary.get("guidelines_relinked", 0) + 1
                 continue
             pages = extract_markdown(gpath)
             if not pages:
@@ -169,7 +174,7 @@ def run(ctx) -> dict:
             sections, refs_block = split_sections(pages)
             write_text(cfg, rec["id"], pages, sections, split_reference_entries(refs_block),
                        origin=f"guideline:{gpath.name}", suffix=key)
-            files.setdefault("guideline_text", []).append(str(out.relative_to(cfg.root)))
+            files.setdefault("guideline_text", []).append(rel_out)
             summary["guidelines_extracted"] += 1
 
         rec["updated_at"] = iso_now()

@@ -95,6 +95,12 @@ def render(cfg, registry=None, source_status: dict | None = None) -> str:
                "logged in `06-run-report.md`.\n")
     for q in cfg["searches"]:
         out.append(f"- `{q}`")
+    supplementary = cfg.get("searches_supplementary") or {}
+    if supplementary:
+        out.append("\nSupplementary per-area queries, added so the quotas in under-served "
+                   "areas have a fair chance (logged separately in the run report):\n")
+        for area, qs in supplementary.items():
+            out.append(f"- **{area}**: " + ", ".join(f"`{q}`" for q in qs))
 
     out.append("\n## Tier rubric\n")
     for key in ("t1", "t2", "t3", "t4"):

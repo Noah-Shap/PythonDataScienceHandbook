@@ -131,18 +131,23 @@ def targeted_searches(ctx, pool: dict) -> list[dict]:
     cfg = ctx.cfg
     log_rows = []
     per_query_limit = int(cfg["scoring"].get("search_limit", 40))
-    for query in cfg["searches"]:
+    queries = [(q, "6.7") for q in cfg["searches"]]
+    for area, extra in (cfg.get("searches_supplementary") or {}).items():
+        queries.extend((q, f"supplementary:{area}") for q in extra)
+    for query, origin in queries:
         for source, fn in _search_fns(ctx).items():
             try:
                 views = fn(query, per_query_limit)
             except Exception as exc:                      # a single flaky source must not stop the run
                 ctx.log(f"  search failed ({source}, {query!r}): {str(exc)[:120]}")
-                log_rows.append({"query": query, "source": source, "hits": 0, "error": str(exc)[:120]})
+                log_rows.append({"query": query, "origin": origin, "source": source,
+                                 "hits": 0, "error": str(exc)[:120]})
                 continue
             for view in views:
                 _merge_candidate(pool, _record_from_view(view, {"id": f"search:{query}",
                                                                 "via": f"search:{query}"}))
-            log_rows.append({"query": query, "source": source, "hits": len(views)})
+            log_rows.append({"query": query, "origin": origin, "source": source,
+                             "hits": len(views)})
     for venue in cfg["scoring"].get("acl_venue_sweeps", []):
         if not ctx.live("acl"):
             break
@@ -150,9 +155,11 @@ def targeted_searches(ctx, pool: dict) -> list[dict]:
         for view in views:
             _merge_candidate(pool, _record_from_view(view, {"id": f"venue:{venue}",
                                                             "via": f"search:venue:{venue}"}))
-        log_rows.append({"query": f"venue:{venue}", "source": "acl", "hits": len(views)})
+        log_rows.append({"query": f"venue:{venue}", "origin": "venue sweep", "source": "acl",
+                         "hits": len(views)})
     for query, total in ctx.gh.queries_logged().items():
-        log_rows.append({"query": query, "source": "github", "hits": total})
+        log_rows.append({"query": query, "origin": "github discovery", "source": "github",
+                         "hits": total})
     return log_rows
 
 

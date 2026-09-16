@@ -461,3 +461,45 @@ searches:
   - "Kialo"
   - "internet argument corpus"
   - "moral maze"
+
+# Supplementary per-area queries. Section 6.7 fixes the list above; these exist only to
+# give the area quotas a fair chance in areas the citation graph and the 6.7 queries
+# under-serve (formal work lives in COMMA/AIJ/KER, not in the NLP venues). They are logged
+# separately from the 6.7 queries in the run report.
+searches_supplementary:
+  formal:
+    - "abstract argumentation semantics"
+    - "structured argumentation ASPIC"
+    - "assumption-based argumentation"
+    - "defeasible logic programming argumentation"
+    - "argumentation framework acceptability"
+    - "Toulmin model of argument"
+    - "argumentation scheme critical questions"
+  mining:
+    - "argument component classification"
+    - "argument relation identification"
+    - "end-to-end argument mining"
+    - "argumentative discourse unit segmentation"
+    - "cross-domain argument mining"
+  quality:
+    - "argument convincingness prediction"
+    - "argument strength prediction"
+    - "argumentation quality dimensions"
+    - "fallacy classification argumentation"
+  dialogue:
+    - "dialogical argumentation corpus"
+    - "broadcast debate argument corpus"
+    - "burden of proof dialogue"
+    - "online debate persuasion corpus"
+    - "argument mining in dialogue"
+  llm:
+    - "large language models argument quality"
+    - "LLM fallacy detection"
+    - "argument generation large language model"
+    - "prompting for argument mining"
+    - "LLM as a judge argument"
+  resources:
+    - "argument annotation scheme corpus"
+    - "AIFdb argument corpus"
+    - "argument search engine corpus"
+    - "argument quality dataset"

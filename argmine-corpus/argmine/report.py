@@ -97,9 +97,10 @@ def render(ctx, changes: dict | None = None, annotation: dict | None = None) -> 
     # -- searches ---------------------------------------------------------
     queries = (by_phase.get("snowball", {}).get("summary", {}) or {}).get("queries", [])
     if queries:
-        out += ["## Targeted searches (6.7)", "", "| Query | Source | Hits |", "|---|---|---|"]
+        out += ["## Targeted searches", "", "| Query | From | Source | Hits |", "|---|---|---|---|"]
         for row in queries:
-            out.append(f"| `{row['query']}` | {row['source']} | {row.get('hits', 0)}"
+            out.append(f"| `{row['query']}` | {row.get('origin', '6.7')} | {row['source']} | "
+                       f"{row.get('hits', 0)}"
                        + (f" (error: {truncate(row['error'], 60)})" if row.get("error") else "")
                        + " |")
         out.append("")

@@ -62,7 +62,7 @@ def link_repos(ctx) -> dict:
             score = len(overlap)
             if score > best_score:
                 best, best_score = (full_name, overlap), score
-        if best and best_score >= 3:
+        if best and best_score >= 4:
             full_name, overlap = best
             rec.setdefault("urls", {})["repo"] = f"https://github.com/{full_name}"
             rec["discovered_from"].append({"id": f"github:{full_name}", "via": f"github:{full_name}"})

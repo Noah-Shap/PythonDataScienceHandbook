@@ -15,23 +15,57 @@ import math
 
 from .util import norm_text, norm_title
 
+# A vocabulary term is "core" when it is about argumentation itself rather than about
+# research infrastructure. "dataset", "corpus", "benchmark" and "toolkit" are in the area
+# vocabularies because they separate a resource paper from a method paper - but on their
+# own they say nothing about whether a candidate belongs in this corpus at all.
+CORE_MARKERS = ("argument", "argumentation", "debate", "fallac", "persuasi", "rhetor",
+                "dialectic", "dialogical", "dialogue game", "toulmin", "walton", "aspic",
+                "enthymeme", "premise", "convincing", "deliberation", "changemyview",
+                "change my view", "kialo", "moral maze", "qt30", "us2016", "critical question",
+                "claim detection", "scheme", "defeasible", "nonmonotonic", "aif", "iat",
+                "burden of proof", "locution", "illocutionary", "cogency", "counter-argument")
+
 FOUNDATIONAL_MARKERS = ("survey", "introduction to", "overview", "tutorial", "state of the art",
                         "a review", "systematic review", "foundations")
 
 
 # -- exclusions -----------------------------------------------------------
-def off_topic(cfg, rec: dict) -> bool:
-    """True when nothing in the candidate is about argumentation.
+def is_core_term(term: str) -> bool:
+    t = norm_text(term)
+    return any(m in t for m in CORE_MARKERS)
 
-    Curated bibliographies are curated for *their* paper, not for this corpus, so a
-    general NLP or LLM bibliography drags in work with no argumentative content. Section
-    6.5 says as much explicitly: LLM-era work only counts where it touches the
-    representation or evaluation of natural-language arguments, so a candidate whose only
-    vocabulary match is the LLM area's generic terms is out.
+
+def core_hits(cfg, rec: dict) -> float:
+    """Weighted matches against core argumentation vocabulary only."""
+    title = norm_text(rec.get("title", ""))
+    abstract = norm_text(rec.get("abstract", ""))
+    venue = norm_text(rec.get("venue", ""))
+    total = 0.0
+    for spec in cfg["areas"].values():
+        for term, weight in spec["vocabulary"].items():
+            if not is_core_term(term):
+                continue
+            t = norm_text(term)
+            if t in title:
+                total += 2.0 * float(weight)
+            elif t in abstract:
+                total += float(weight)
+            elif t in venue:
+                total += 0.5 * float(weight)
+    return total
+
+
+def off_topic(cfg, rec: dict) -> bool:
+    """True when nothing in the candidate is about argumentation itself.
+
+    Bibliographies are curated for *their* paper, not for this corpus, so a general NLP,
+    LLM or web-conference bibliography drags in work with no argumentative content. A
+    candidate whose only vocabulary matches are infrastructure words ("dataset",
+    "benchmark") or the LLM area's generic terms is out; section 6.5 says as much
+    explicitly for the LLM area.
     """
-    raws = keyword_scores(cfg, rec)
-    argumentative = sum(v for area, v in raws.items() if area != "llm")
-    return argumentative <= 0
+    return core_hits(cfg, rec) <= 0
 
 
 def exclusion_reason(cfg, rec: dict) -> str | None:
