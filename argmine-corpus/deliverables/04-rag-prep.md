@@ -10,9 +10,9 @@ How the retrievable corpus was built, what a chunk carries, and what to do next.
 
 ## What was produced
 
-- 121 chunks over 126 records
-- 0 chunks from extracted full text, 38 from guidelines/READMEs, 83 from abstracts where no full text was available
-- token histogram: 0-199: 53, 200-399: 67, 400-599: 1
+- 99 chunks over 138 records
+- 0 chunks from extracted full text, 6 from guidelines/READMEs, 93 from abstracts where no full text was available
+- token histogram: 0-199: 59, 200-399: 39, 400-599: 1
 
 ## Chunk metadata
 
