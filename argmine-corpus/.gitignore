@@ -1,0 +1,18 @@
+# Retrieved artefacts: large, regenerable, or licence-encumbered. Never committed.
+corpus/pdfs/
+corpus/text/
+corpus/repos/
+corpus/chunks.jsonl
+corpus/http_cache.sqlite
+corpus/http_cache.sqlite-*
+corpus/acl_index.sqlite
+corpus/acl_index.sqlite-*
+corpus/bib_index.json
+corpus/.tmp/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/

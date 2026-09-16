@@ -1,0 +1,48 @@
+{
+  "acl": {
+    "_probed_this_run": true,
+    "reachable": true,
+    "reason": "local clone at corpus/repos/acl-org__acl-anthology"
+  },
+  "arxiv": {
+    "_probed_this_run": true,
+    "probe_url": "https://export.arxiv.org/api/query?search_query=all:argument+mining&max_results=1",
+    "reachable": false,
+    "reason": "ProxyError: HTTPSConnectionPool(host='export.arxiv.org', port=443): Max retries exceeded with url: /api/query?search_query=all:argument+mining&max_results=1 (Caused by Prox"
+  },
+  "bibcorpus": {
+    "_probed_this_run": true,
+    "reachable": false,
+    "reason": "0 bibliography repositories configured"
+  },
+  "crossref": {
+    "_probed_this_run": true,
+    "probe_url": "https://api.crossref.org/works?rows=1",
+    "reachable": false,
+    "reason": "ProxyError: HTTPSConnectionPool(host='api.crossref.org', port=443): Max retries exceeded with url: /works?rows=1 (Caused by ProxyError('Unable to connect to proxy', OSError"
+  },
+  "github": {
+    "_probed_this_run": true,
+    "probe_url": "https://api.github.com/rate_limit",
+    "reachable": true,
+    "reason": "HTTP 200"
+  },
+  "openalex": {
+    "_probed_this_run": true,
+    "probe_url": "https://api.openalex.org/works?per-page=1",
+    "reachable": false,
+    "reason": "ProxyError: HTTPSConnectionPool(host='api.openalex.org', port=443): Max retries exceeded with url: /works?per-page=1 (Caused by ProxyError('Unable to connect to proxy', OSE"
+  },
+  "semanticscholar": {
+    "_probed_this_run": true,
+    "probe_url": "https://api.semanticscholar.org/graph/v1/paper/search?query=argument+mining&limit=1",
+    "reachable": false,
+    "reason": "ProxyError: HTTPSConnectionPool(host='api.semanticscholar.org', port=443): Max retries exceeded with url: /graph/v1/paper/search?query=argument+mining&limit=1 (Caused by Pr"
+  },
+  "unpaywall": {
+    "_probed_this_run": true,
+    "probe_url": "https://api.unpaywall.org/v2/10.1162/coli_a_00364",
+    "reachable": false,
+    "reason": "ProxyError: HTTPSConnectionPool(host='api.unpaywall.org', port=443): Max retries exceeded with url: /v2/10.1162/coli_a_00364 (Caused by ProxyError('Unable to connect to pro"
+  }
+}

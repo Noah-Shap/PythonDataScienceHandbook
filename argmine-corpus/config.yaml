@@ -1,0 +1,424 @@
+# argmine-corpus configuration.
+# Everything the pipeline decides with lives here: cap, quotas, weights, vocabulary,
+# seeds, criteria_version, contact details. Bumping criteria_version re-scores
+# previously rejected candidates (it never re-fetches or re-extracts anything).
+
+run:
+  cap: 250
+  criteria_version: 1
+  contact_email: "noah.mshap@gmail.com"
+  user_agent: "argmine-corpus/0.1 (research bibliography builder; mailto:noah.mshap@gmail.com)"
+  # Deliverables and registry are regenerated from the registry on every run.
+  git_commit_each_phase: true
+
+http:
+  cache_path: "corpus/http_cache.sqlite"
+  metadata_ttl_days: 30          # metadata responses expire after 30 days
+  binary_never_expire: true      # PDF/binary responses are cached forever
+  timeout_seconds: 30
+  max_retries: 5                 # exponential backoff on 429 / 5xx
+  backoff_base_seconds: 2.0
+  backoff_max_seconds: 64.0
+  probe_timeout_seconds: 12
+  # Documented rate limits, expressed as a minimum delay between calls.
+  min_delay_seconds:
+    default: 1.0
+    semanticscholar: 3.0         # 1 req/s unauthenticated; 3s is deliberately polite
+    openalex: 0.2                # polite pool via mailto
+    crossref: 0.5                # polite pool via mailto + User-Agent
+    arxiv: 3.0                   # arXiv API terms ask for >= 3s between calls
+    unpaywall: 0.5
+    github: 1.0
+
+sources:
+  # Probed once per run; unreachable sources are skipped and recorded in the run report.
+  enabled: [acl, bibcorpus, github, openalex, semanticscholar, crossref, arxiv, unpaywall]
+  acl_anthology:
+    repo: "https://github.com/acl-org/acl-anthology.git"
+    clone_dir: "corpus/repos/acl-org__acl-anthology"
+    sparse_paths: ["data"]
+  bibcorpus:
+    # Curated GitHub repositories that carry BibTeX bibliographies of the field.
+    # Discovered via GitHub search in phase 2; pinned by commit in corpus/bib_repos.json.
+    clone_root: "corpus/repos"
+    max_repos: 60
+    max_bib_bytes: 8000000
+  github:
+    search_cache: "corpus/github_search_cache.json"
+    clone_root: "corpus/repos"
+
+scoring:
+  # A candidate is assigned every area scoring at least this share of its best area.
+  area_share: 0.6
+  weights:
+    cites_norm: 0.25
+    cocite: 0.35
+    keyword: 0.25
+    venue: 0.15
+  # 6.4 is the area closest to the downstream debate-transcript database.
+  area_cocite_multiplier:
+    dialogue: 1.25
+  admit_threshold: 0.30
+  venue_score:
+    whitelisted: 1.0
+    peer_reviewed: 0.5
+    preprint: 0.2
+
+venues:
+  whitelist_patterns:
+    - "annual meeting of the association for computational linguistics"
+    - "empirical methods in natural language processing"
+    - "north american chapter of the association for computational linguistics"
+    - "european chapter of the association for computational linguistics"
+    - "international conference on computational linguistics"
+    - "language resources and evaluation"
+    - "workshop on argument mining"
+    - "argument mining"
+    - "computational models of argument"
+    - "comma"
+    - "international joint conference on artificial intelligence"
+    - "ijcai"
+    - "aaai conference on artificial intelligence"
+    - "aaai"
+    - "transactions of the association for computational linguistics"
+    - "computational linguistics"
+    - "argument & computation"
+    - "argument and computation"
+    - "knowledge engineering review"
+    - "artificial intelligence"
+    - "journal of artificial intelligence research"
+    - "acl"
+    - "emnlp"
+    - "naacl"
+    - "eacl"
+    - "coling"
+    - "lrec"
+    - "tacl"
+    - "aij"
+    - "jair"
+    - "ker"
+  preprint_patterns: ["arxiv", "preprint", "corr"]
+
+quotas:
+  formal: 30
+  mining: 60
+  quality: 40
+  dialogue: 40
+  llm: 40
+  resources: 30
+
+areas:
+  formal:
+    number: "6.1"
+    name: "Formal foundations"
+    definition: >-
+      Representational theory of argument: Toulmin layout; Walton argumentation schemes and
+      critical questions; Dung abstract argumentation and its semantics (grounded, preferred,
+      stable, semi-stable, ideal); structured argumentation (ASPIC+, assumption-based
+      argumentation, DeLP); the Argument Interchange Format (AIF) ontology; Inference Anchoring
+      Theory (IAT).
+    include: >-
+      The defining papers and the standard tutorials/surveys for each formalism.
+    exclude: >-
+      Pure proof-theory or complexity results with no representational payoff.
+    vocabulary:
+      abstract argumentation: 3
+      argumentation framework: 3
+      argumentation semantics: 3
+      preferred extension: 3
+      grounded extension: 3
+      stable extension: 3
+      semi-stable: 3
+      admissible set: 3
+      structured argumentation: 3
+      aspic: 3
+      assumption-based argumentation: 3
+      defeasible logic programming: 3
+      delp: 2
+      argumentation scheme: 3
+      critical questions: 3
+      toulmin: 3
+      argument interchange format: 3
+      inference anchoring theory: 3
+      aif: 2
+      defeasible reasoning: 2
+      nonmonotonic: 2
+      acceptability: 2
+      attack relation: 2
+      argument graph: 2
+      dialectical: 1
+      warrant: 1
+      enthymeme: 2
+      formal argumentation: 3
+  mining:
+    number: "6.2"
+    name: "Argument mining (NLP)"
+    definition: >-
+      Extraction of argument structure from text: argumentative discourse unit segmentation;
+      component classification (claim, premise, major claim); relation classification (support,
+      attack); argument structure parsing; scheme classification; cross-domain and cross-lingual
+      transfer.
+    include: >-
+      Task-defining papers, the shared tasks, strong baselines.
+    exclude: >-
+      Papers whose only contribution is a leaderboard delta on a standard benchmark.
+    vocabulary:
+      argument mining: 3
+      argumentation mining: 3
+      argument component: 3
+      argumentative discourse unit: 3
+      claim detection: 3
+      premise: 3
+      argument structure parsing: 3
+      argument relation: 3
+      support and attack: 2
+      end-to-end argument: 2
+      argument extraction: 3
+      argument segmentation: 3
+      argumentative: 2
+      claim: 1
+      evidence detection: 2
+      scheme classification: 3
+      cross-domain argument: 3
+      cross-lingual argument: 3
+      shared task: 1
+      sequence tagging: 1
+      discourse: 1
+  quality:
+    number: "6.3"
+    name: "Argument quality and evaluation"
+    definition: >-
+      Quality taxonomies (logical, rhetorical, dialectical); convincingness and pairwise ranking;
+      argument strength; fallacy detection and classification; stance and stance-taking as they
+      bear on quality.
+    include: >-
+      Taxonomy papers, dataset papers with annotation studies, evaluation-metric papers.
+    exclude: >-
+      Persuasion research aimed at marketing or compliance outcomes.
+    vocabulary:
+      argument quality: 3
+      argumentation quality: 3
+      convincingness: 3
+      more convincing: 3
+      argument strength: 3
+      persuasiveness: 2
+      quality assessment: 2
+      quality dimensions: 3
+      fallacy: 3
+      fallacious: 3
+      logical fallacy: 3
+      ad hominem: 2
+      taxonomy: 1
+      cogency: 3
+      effectiveness: 1
+      reasonableness: 2
+      stance: 2
+      stance detection: 2
+      pairwise ranking: 2
+      argument ranking: 3
+      quality ranking: 3
+  dialogue:
+    number: "6.4"
+    name: "Dialogue and debate"
+    definition: >-
+      Dialogue games and protocols; IAT-annotated broadcast debates (Moral Maze, US2016, QT30);
+      dialogical argument mining; reply structure and burden of proof; level-shifting and
+      question-dodging phenomena; online argumentative dialogue (CMV, IAC, Kialo).
+    include: >-
+      Work that models who said what, in reply to what, with what dialogical force.
+    exclude: >-
+      Task-oriented dialogue systems with no argumentative representation.
+    vocabulary:
+      dialogue game: 3
+      dialogical: 3
+      dialogue protocol: 3
+      broadcast debate: 3
+      televised debate: 3
+      moral maze: 3
+      qt30: 3
+      us2016: 3
+      question time: 2
+      inference anchoring theory: 3
+      illocutionary: 3
+      locution: 3
+      transition: 1
+      burden of proof: 3
+      changemyview: 3
+      change my view: 3
+      cmv: 2
+      internet argument corpus: 3
+      kialo: 3
+      online debate: 3
+      deliberation: 2
+      persuasive dialogue: 2
+      reply structure: 3
+      turn-taking: 2
+      conversation: 1
+      debate: 2
+      disagreement: 2
+      ethos: 2
+  llm:
+    number: "6.5"
+    name: "LLM era, 2023-2026"
+    definition: >-
+      Large language models for argument mining, quality assessment, fallacy detection and
+      argument generation; LLM-as-judge for argument quality; argument-based reasoning with LLMs;
+      debate as an oversight or evaluation mechanism where it produces reusable argument
+      representations.
+    include: >-
+      Work published 2023 or later that changes how the pipeline downstream of this corpus
+      should be built.
+    exclude: >-
+      Safety-via-debate work that does not touch representation or evaluation of
+      natural-language arguments.
+    vocabulary:
+      large language model: 3
+      large language models: 3
+      llm: 3
+      gpt-4: 3
+      gpt-3: 2
+      chatgpt: 3
+      instruction-tuned: 2
+      prompting: 2
+      few-shot: 1
+      zero-shot: 1
+      in-context learning: 2
+      chain-of-thought: 2
+      llm-as-judge: 3
+      llm as a judge: 3
+      generative: 1
+      argument generation: 3
+      counter-argument generation: 3
+      retrieval-augmented: 2
+      multi-agent debate: 3
+  resources:
+    number: "6.6"
+    name: "Datasets, tools, annotation guidelines"
+    definition: >-
+      Corpora, software and the annotation manuals behind them, treated as documents in their own
+      right. Corpora include AAEC (persuasive essays), UKP sentential argument mining, IBM Debater
+      datasets (ArgQ, evidence, claims), CMV (Tan et al.), IAC, args.me, Webis argument quality
+      corpora, US2016, QT30, Moral Maze corpora, ArgMining shared-task data, Kialo-derived
+      datasets and logical-fallacy datasets. Tools include AIFdb, OVA, ArgumenText, TARGER,
+      Tweety and other argumentation libraries, and ASPIC+/DeLP implementations.
+    include: >-
+      Dataset papers and the primary repo / README / guideline document.
+    exclude: >-
+      Derivative repackagings of an existing corpus.
+    vocabulary:
+      corpus: 3
+      dataset: 3
+      annotation guidelines: 3
+      annotation scheme: 3
+      annotation study: 3
+      inter-annotator agreement: 3
+      annotated corpus: 3
+      benchmark: 2
+      resource: 2
+      toolkit: 3
+      we release: 2
+      publicly available: 1
+      aifdb: 3
+      ova: 2
+      argumentext: 3
+      targer: 3
+      tweety: 3
+      args.me: 3
+      webis: 2
+      ukp: 2
+      ibm debater: 3
+      persuasive essays: 3
+      shared task data: 2
+
+# Global exclusions, applied before scoring.
+exclusions:
+  domain_patterns:
+    - "legal argument"
+    - "legal reasoning"
+    - "court"
+    - "judicial"
+    - "scientific abstract"
+    - "biomedical"
+    - "clinical"
+    - "sentiment analysis"
+    - "opinion mining"
+    - "aspect-based sentiment"
+    - "product review"
+    - "marketing"
+    - "advertis"
+  # A domain-excluded item is still admissible when it is foundational for an area.
+  foundational_override_tier: 1
+
+tiers:
+  t1: "Foundational / survey. Read in full: theory anchors, major surveys, canonical papers."
+  t2: "Core method. Defines a task formulation, model, or evaluation still in use."
+  t3: "Dataset / tool / annotation guideline, including the guideline documents themselves."
+  t4: "Recent (2023-2026). LLM-era work; lower durability confidence, high build relevance."
+
+downstream_tags: [dialogue, quality, schemes, formal, extraction, dataset, fallacy]
+
+fetch:
+  tier_priority: [1, 2, 3, 4]
+  max_pdf_mb: 40
+  guideline_patterns: ["*guideline*", "*annotation*", "*manual*", "*scheme*", "*codebook*"]
+  repo_clone_depth: 1
+
+chunking:
+  target_tokens: 800
+  overlap_tokens: 100
+  guideline_target_tokens: 400
+  tokens_per_word: 1.3
+
+index:
+  # Out of scope for this run: argmine/index.py is a documented hook only.
+  backend: "none"
+  model: ""
+
+# Seeds are HYPOTHESES (section 7 of the brief). Every one is resolved against >= 2
+# sources; titles/years/venues are corrected from the sources; unresolvable seeds are
+# rejected with reason seed_unresolved. Nothing here is treated as fact.
+seeds:
+  - {title: "Argument Mining: A Survey", authors: ["Lawrence", "Reed"], year: 2020, venue: "Computational Linguistics", area: [mining, formal]}
+  - {title: "Argumentation Mining: State of the Art and Emerging Trends", authors: ["Lippi", "Torroni"], year: 2016, venue: "ACM Transactions on Internet Technology", area: [mining]}
+  - {title: "Argumentation Mining", authors: ["Stede", "Schneider"], year: 2018, venue: "Synthesis Lectures on Human Language Technologies", area: [mining]}
+  - {title: "Five Years of Argument Mining: a Data-driven Analysis", authors: ["Cabrio", "Villata"], year: 2018, venue: "IJCAI", area: [mining]}
+  - {title: "Argumentation Schemes", authors: ["Walton", "Reed", "Macagno"], year: 2008, venue: "Cambridge University Press", area: [formal]}
+  - {title: "The Uses of Argument", authors: ["Toulmin"], year: 1958, venue: "Cambridge University Press", area: [formal]}
+  - {title: "On the acceptability of arguments and its fundamental role in nonmonotonic reasoning, logic programming and n-person games", authors: ["Dung"], year: 1995, venue: "Artificial Intelligence", area: [formal]}
+  - {title: "An introduction to argumentation semantics", authors: ["Baroni", "Caminada", "Giacomin"], year: 2011, venue: "Knowledge Engineering Review", area: [formal]}
+  - {title: "The ASPIC+ framework for structured argumentation: a tutorial", authors: ["Modgil", "Prakken"], year: 2014, venue: "Argument & Computation", area: [formal]}
+  - {title: "Towards an argument interchange format", authors: ["Chesnevar", "McGinnis", "Modgil", "Rahwan", "Reed", "Simari", "South", "Vreeswijk", "Willmott"], year: 2006, venue: "Knowledge Engineering Review", area: [formal]}
+  - {title: "Whence inference", authors: ["Budzynska", "Reed"], year: 2011, venue: "University of Dundee Technical Report", area: [formal, dialogue], note: "Inference Anchoring Theory: exact title and venue must be verified, not assumed."}
+  - {title: "Parsing Argumentation Structures in Persuasive Essays", authors: ["Stab", "Gurevych"], year: 2017, venue: "Computational Linguistics", area: [mining, resources]}
+  - {title: "Computational Argumentation Quality Assessment in Natural Language", authors: ["Wachsmuth"], year: 2017, venue: "EACL", area: [quality]}
+  - {title: "Which argument is more convincing? Analyzing and predicting convincingness of Web arguments using bidirectional LSTM", authors: ["Habernal", "Gurevych"], year: 2016, venue: "ACL", area: [quality]}
+  - {title: "A Large-scale Dataset for Argument Quality Ranking: Construction and Analysis", authors: ["Gretz", "Friedman", "Cohen-Karlik", "Toledo", "Lahav", "Aharonov", "Slonim"], year: 2020, venue: "AAAI", area: [quality, resources]}
+  - {title: "Logical Fallacy Detection", authors: ["Jin"], year: 2022, venue: "Findings of EMNLP", area: [quality]}
+  - {title: "An autonomous debating system", authors: ["Slonim"], year: 2021, venue: "Nature", area: [dialogue, llm]}
+  - {title: "Visser US2016 annotated corpus of televised election debates and social media reaction", authors: ["Visser", "Konat", "Duthie", "Koszowy", "Budzynska", "Reed"], year: 2020, venue: "Language Resources and Evaluation", area: [dialogue, resources], note: "Exact title must be verified, not assumed."}
+  - {title: "QT30: A Corpus of Argument and Conflict in Broadcast Debate", authors: ["Hautli-Janisz"], year: 2022, venue: "LREC", area: [dialogue, resources]}
+  - {title: "Winning Arguments: Interaction Dynamics and Persuasion Strategies in Good-faith Online Discussions", authors: ["Tan", "Niculae", "Danescu-Niculescu-Mizil", "Lee"], year: 2016, venue: "WWW", area: [dialogue, resources]}
+  - {title: "A Corpus for Research on Deliberation and Debate", authors: ["Walker", "Tree", "Anand", "Abbott", "King"], year: 2012, venue: "LREC", area: [dialogue, resources], note: "Internet Argument Corpus; exact title must be verified."}
+
+# Targeted searches (6.7). Every query and its hit count is logged to the run report.
+searches:
+  - "argument mining"
+  - "argumentation mining survey"
+  - "argument quality assessment"
+  - "fallacy detection"
+  - "argumentation scheme classification"
+  - "inference anchoring theory"
+  - "dialogical argument mining"
+  - "argument interchange format"
+  - "large language models argument mining"
+  - "LLM argument quality evaluation"
+  - "argument mining dataset"
+  - "argument annotation guidelines"
+  - "debate transcript argument corpus"
+  - "persuasive essays corpus"
+  - "IBM Debater"
+  - "args.me argument search"
+  - "Webis argument quality"
+  - "Kialo"
+  - "internet argument corpus"
+  - "moral maze"
