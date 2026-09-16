@@ -10,9 +10,9 @@ How the retrievable corpus was built, what a chunk carries, and what to do next.
 
 ## What was produced
 
-- 102 chunks over 140 records
-- 0 chunks from extracted full text, 8 from guidelines/READMEs, 94 from abstracts where no full text was available
-- token histogram: 0-199: 57, 200-399: 44, 400-599: 1
+- 100 chunks over 139 records
+- 0 chunks from extracted full text, 8 from guidelines/READMEs, 92 from abstracts where no full text was available
+- token histogram: 0-199: 57, 200-399: 42, 400-599: 1
 
 ## Chunk metadata
 
@@ -58,8 +58,8 @@ Embedding and indexing are out of scope for this run. `argmine/index.py` holds t
 
 | Filter | Values in this corpus | Use it to |
 |---|---|---|
-| `tier` | unrecorded: 110, 2: 76, 3: 37, 4: 15, 1: 12 | T1/T2 to ground claims about the field, T3 for schema decisions, T4 for current practice |
-| `area` | mining: 125, resources: 67, quality: 59, llm: 55, formal: 53, dialogue: 40 | keep an answer inside one area's literature; `dialogue` is the one upstream of a transcript database |
+| `tier` | unrecorded: 111, 2: 72, 3: 41, 4: 14, 1: 12 | T1/T2 to ground claims about the field, T3 for schema decisions, T4 for current practice |
+| `area` | mining: 125, resources: 71, quality: 57, formal: 54, llm: 53, dialogue: 40 | keep an answer inside one area's literature; `dialogue` is the one upstream of a transcript database |
 | `doc_type` | conference: 119, workshop: 87, journal: 38, chapter: 3, book: 2, preprint: 1 | separate a dataset or guideline from a method paper - ask a schema question of `dataset`/`guideline`/`tool` only |
 | `downstream_tags` | dialogue, quality, schemes, formal, extraction, dataset, fallacy | `dialogue` and `schemes` are the two that matter most for a transcript database |
 | `source_text` | fulltext, guideline, abstract | exclude `abstract` chunks when an answer needs paper-internal detail |
