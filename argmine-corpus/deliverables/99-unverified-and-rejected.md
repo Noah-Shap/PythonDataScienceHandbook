@@ -2,11 +2,10 @@
 
 Nothing here is part of the bibliography. Unverified entries could not be confirmed against two independent sources; rejected candidates were scored and not admitted, or hit an exclusion rule. Both lists are kept so that raising the cap or bumping `criteria_version` re-decides them without a single new API call.
 
-## Unverified (112)
+## Unverified (110)
 
 | id | title | year | sources | why |
 |---|---|---|---|---|
-| `doi:10.24963/kr.2020/82` | ( )-toksia: An Efficient Abstract Argumentation Reasoner | 2020 | bibcorpus:p4s3r0/argumentation-framework-clustering | only one independent source could be reached |
 | `title:f6c7dd29d24b33c4d04a2e6265a5d404b5d9495b` | A Distributed Argumentation Framework using Defeasible Logic Programm… | 2008 | bibcorpus:davidar/dblp.yaml | only one independent source could be reached |
 | `doi:10.18653/v1/2022.emnlp-main.713` | A Generative Model for End-to-End Argument Mining with Reconstructed… | 2022 | acl | only one independent source could be reached |
 | `doi:10.18653/v1/2025.acl-long.593` | A Multi-persona Framework for Argument Quality Assessment | 2025 | acl | only one independent source could be reached |
@@ -25,12 +24,12 @@ Nothing here is part of the bibliography. Unverified entries could not be confir
 | `doi:10.18653/v1/w18-5208` | Argument Component Classification for Classroom Discussions | 2018 | acl | only one independent source could be reached |
 | `doi:10.18653/v1/2026.findings-eacl.272` | Argument Component Segmentation with Fine-Tuned Large Language Models | 2026 | acl | only one independent source could be reached |
 | `title:242c936e249102d4ae9a323445ac606f21136d7d` | Argument Quality Assessment in the Age of Instruction-Following Large… | 2024 | acl | bibcorpus:xinyannnnnnn/fact-driven-storytelling-with-llms: venue mismatch ('Proceedings of the 2024 Joint International… |
-| `doi:10.18653/v1/2025.emnlp-main.1797` | Argument Summarization and its Evaluation in the Era of Large Languag… | 2025 | acl | bibcorpus:CogSciPrag/project_ideas: venue mismatch ('Proceedings of the 2025 Conference on Empirical Methods in Natural… |
 | `doi:10.18653/v1/2023.findings-emnlp.724` | Argument mining as a multi-hop generative machine reading comprehensi… | 2023 | acl | only one independent source could be reached |
 | `doi:10.18653/v1/2026.argmining-1.6` | Argument-Based Comparative Question Answering Evaluation Benchmark | 2026 | acl | only one independent source could be reached |
 | `doi:10.1007/978-3-642-23963-2_10` | Argumentation Frameworks as Constraint Satisfaction Problems | 2011 | bibcorpus:davidar/dblp.yaml | bibcorpus:p4s3r0/argumentation-framework-clustering: year mismatch (2011 vs 2013) |
 | `doi:10.18653/v1/2021.argmining-1.10` | Argumentation Mining in Scientific Literature for Sustainable Develop… | 2021 | acl | only one independent source could be reached |
 | `doi:10.18653/v1/w19-4511` | Argumentative Evidences Classification and Argument Scheme Detection… | 2019 | acl | only one independent source could be reached |
+| `doi:10.1080/19462166.2010.485698` | Assessing debate strategies via computational agents | 2010 | bibcorpus:davidar/dblp.yaml | only one independent source could be reached |
 | `doi:10.18653/v1/d19-1564` | Automatic Argument Quality Assessment - New Datasets and Methods | 2019 | acl | only one independent source could be reached |
 | `doi:10.18653/v1/2026.acl-long.59` | Beyond Detection: Evaluating Fallacy Awareness of LLMs in Interactive… | 2026 | acl | only one independent source could be reached |
 | `doi:10.18653/v1/2026.argmining-1.2` | Beyond Logical Forms: LLM-Extracted Patterns for Fallacy Classificati… | 2026 | acl | only one independent source could be reached |
@@ -42,7 +41,6 @@ Nothing here is part of the bibliography. Unverified entries could not be confir
 | `doi:10.18653/v1/2025.findings-acl.702` | Can Large Language Models Understand Argument Schemes? | 2025 | acl | only one independent source could be reached |
 | `doi:10.18653/v1/2021.argmining-1.9` | Citizen Involvement in Urban Planning - How Can Municipalities Be Sup… | 2021 | acl | only one independent source could be reached |
 | `doi:10.18653/v1/2025.findings-emnlp.758` | Coherence of Argumentative Dialogue Snippets: A New Method for Large… | 2025 | acl | only one independent source could be reached |
-| `title:13bfaa0b44c99e5dc8d67cf03d56759c3c9a0fbb` | Computational Problems in Formal Argumentation and their Complexity | 2018 | bibcorpus:p4s3r0/argumentation-framework-clustering | only one independent source could be reached |
 | `doi:10.18653/v1/2024.naacl-short.28` | Contextualizing Argument Quality Assessment with Relevant Knowledge | 2024 | acl | only one independent source could be reached |
 | `doi:10.18653/v1/w18-5217` | Cross-Lingual Argumentative Relation Identification: from English to… | 2018 | acl | only one independent source could be reached |
 | `title:64fd029f5347768cf3d69a5b8db58aff82cf011a` | Cross-lingual Argumentation Mining: Machine Translation (and a bit of… | 2018 | acl | only one independent source could be reached |
@@ -54,6 +52,7 @@ Nothing here is part of the bibliography. Unverified entries could not be confir
 | `doi:10.18653/v1/2026.findings-eacl.97` | Detecting Winning Arguments with Large Language Models and Persuasion… | 2026 | acl | only one independent source could be reached |
 | `doi:10.18653/v1/2023.argmining-1.9` | Dimensionality Reduction for Machine Learning-based Argument Mining | 2023 | acl | only one independent source could be reached |
 | `doi:10.18653/v1/2024.findings-acl.689` | Discourse Structure-Aware Prefix for Generation-Based End-to-End Argu… | 2024 | acl | only one independent source could be reached |
+| `doi:10.1080/19462166.2012.708670` | Distinctive features of persuasion and deliberation dialogues | 2013 | bibcorpus:davidar/dblp.yaml | only one independent source could be reached |
 | `title:6f9c746eb239fbe1eddfe071a9e2d786943f9f82` | Do Discourse Indicators Reflect the Main Arguments in Scientific Pape… | 2022 | acl | only one independent source could be reached |
 | `doi:10.18653/v1/2025.argmining-1.31` | ELLIS Alicante at CQs-Gen 2025: Winning the critical thinking questio… | 2025 | acl | only one independent source could be reached |
 | `doi:10.18653/v1/2026.eacl-long.316` | Emotionally Charged, Logically Blurred: AI-driven Emotional Framing I… | 2026 | acl | only one independent source could be reached |
@@ -113,79 +112,78 @@ Nothing here is part of the bibliography. Unverified entries could not be confir
 | `doi:10.1162/coli_a_00553` | UniASA: A Unified Generative Framework for Argument Structure Analysis | 2025 | acl | only one independent source could be reached |
 | `doi:10.18653/v1/w16-2818` | Unshared task: (Dis)agreement in online debates | 2016 | acl | only one independent source could be reached |
 | `title:22e94cb9977bdaf4f3ae7c38417ac29e0fdd6fa9` | Unsupervised Argumentation Mining in Student Essays | 2020 | acl | only one independent source could be reached |
-| `doi:10.1145/3032989` | Using Argumentative Structure to Interpret Debates in Online Delibera… | 2017 | bibcorpus:CogSciPrag/project_ideas | only one independent source could be reached |
 | `doi:10.18653/v1/2025.argmining-1.26` | Webis at CQs-Gen 2025: Prompting and Reranking for Critical Questions | 2025 | acl | only one independent source could be reached |
 | `doi:10.18653/v1/2024.findings-acl.9` | Which Side Are You On? A Multi-task Dataset for End-to-End Argument S… | 2024 | acl | only one independent source could be reached |
 | `doi:10.18653/v1/p19-1463` | Yes, we can! Mining Arguments in 50 Years of US Presidential Campaign… | 2019 | acl | only one independent source could be reached |
 | `doi:10.18653/v1/2025.argmining-1.1` | “The Facts Speak for Themselves”: GPT and Fallacy Classification | 2025 | acl | only one independent source could be reached |
 
-## Rejected (723)
+## Rejected (737)
 
-### `off_topic:no argumentation vocabulary in title, abstract or venue` (434)
+### `off_topic:no argumentation vocabulary in title, abstract or venue` (445)
 
 | score | title | year | venue | criteria_version |
 |---|---|---|---|---|
 | - | Chain-Of-Thought Prompting Elicits Reasoning in Large Language Models | 2022 | Advances in Neural Information Processi… | 1 |
-| - | On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? | 2021 | Proceedings of the 2021 ACM Conference… | 1 |
 | - | Roberta: A robustly optimized bert pretraining approach | 2019 | arXiv preprint arXiv:1907.11692 | 1 |
-| - | Chain of Explanation: New Prompting Method to Generate Higher Quality… | 2022 |  | 1 |
 | - | Climbing towards NLU: On Meaning, Form, and Understanding in the Age… | 2020 | Proceedings of the 58th Annual Meeting… | 1 |
-| - | Information Flow Routes: Automatically Interpreting Language Models a… | 2024 | Proceedings of the 2024 Conference on E… | 1 |
-| - | Mining legal arguments in court decisions | 2024 | Artificial Intelligence and Law | 1 |
-| - | RTP-LX: Can LLMs Evaluate Toxicity in Multilingual Scenarios? | 2025 | AAAI-25, Sponsored by the Association f… | 1 |
-| - | Probing LLMs for Multilingual Discourse Generalization Through a Unif… | 2025 | Proceedings of the 63rd Annual Meeting… | 1 |
-| - | Latent Dirichlet Allocation | 2001 | Advances in Neural Information Processi… | 1 |
-| - | Testing Bayesian measures of relevance in discourse | 2022 | Proceedings of Sinn und Bedeutung 26 | 1 |
-| - | Pragmatics | 1983 | Cambridge Textbooks in Linguistics | 1 |
-| - | The Pandemic of Argumentation | 2022 | Argumentation Library | 1 |
-| - | The Study of Language | 2020 | Cambridge University Press | 1 |
-| - | Beyond Semantics: The Unreasonable Effectiveness of Reasonless Interm… | 2025 | CoRR | 1 |
-| - | Counterfactuals and the logic of causal selection | 2023 | Psychological Review | 1 |
-| - | Data Acquisition for Argument Search: The args.me corpus | 2019 | 42nd German Conference on Artificial In… | 1 |
-| - | LogitLens4LLMs: Extending Logit Lens Analysis to Modern Large Languag… | 2025 | CoRR | 1 |
-| - | MedHELM: Holistic Evaluation of Large Language Models for Medical Tas… | 2025 | CoRR | 1 |
-| - | Robust Pronoun Fidelity with English LLMs: Are they Reasoning, Repeat… | 2024 | Transactions of the Association for Com… | 1 |
-| - | Repetition Improves Language Model Embeddings | 2025 | The Thirteenth International Conference… | 1 |
+| - | Chain of Explanation: New Prompting Method to Generate Higher Quality… | 2022 |  | 1 |
+| - | On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? | 2021 | Proceedings of the 2021 ACM Conference… | 1 |
+| - | BertGCN: Transductive Text Classification by Combining GNN and BERT | 2021 | Findings of the Association for Computa… | 1 |
+| - | Learning Visually Grounded Words and Syntax for a Scene Description T… | 2002 | Computer Speech & Language | 1 |
+| - | Language as Social Semiotic: The Social Interpretation of Language an… | 1978 | Open University set book | 1 |
+| - | Talking about Large Language Models | 2024 | Commun. ACM | 1 |
+| - | Lost in the Middle: How Language Models Use Long Contexts | 2024 | Transactions of the Association for Com… | 1 |
+| - | Aspects of the Theory of Syntax | 1965 | The MIT Press | 1 |
+| - | Captum: A unified and generic model interpretability library for PyTo… | 2020 | CoRR | 1 |
+| - | Elements of World Knowledge ( EWoK ): A Cognition-Inspired Framework… | 2025 | Transactions of the Association for Com… | 1 |
+| - | GPT-4 Technical Report | 2023 |  | 1 |
+| - | Attribution Patching Outperforms Automated Circuit Discovery | 2024 | Proceedings of the 7th BlackboxNLP Work… | 1 |
+| - | Mapping the Increasing Use of LLMs in Scientific Papers | 2024 | First Conference on Language Modeling | 1 |
 | - | Monitoring AI-Modified Content at Scale: A Case Study on the Impact o… | 2024 | ICML | 1 |
-| - | Signalling games, sociolinguistic variation and the construction of s… | 2019 | Linguistics and Philosophy | 1 |
-| - | Speech and language processing: an introduction to natural language p… | 2000 | Prentice Hall series in artificial inte… | 1 |
+| - | Can Gender-Fair Language Reduce Gender Stereotyping and Discriminatio… | 2016 | Frontiers in Psychology | 1 |
+| - | GIMMICK: Globally Inclusive Multimodal Multitask Cultural Knowledge B… | 2025 | Findings of the Association for Computa… | 1 |
+| - | Scaling Monosemanticity: Extracting Interpretable Features from Claud… | 2024 | Transformer Circuits Thread | 1 |
+| - | Cognitive Neuroscience of Language | 2014 | Taylor & Francis | 1 |
+| - | Bias and Fairness in Large Language Models: A Survey | 2024 | Computational Linguistics | 1 |
+| - | LLMs instead of Human Judges? A Large Scale Empirical Study across 20… | 2025 | Proceedings of the 63rd Annual Meeting… | 1 |
+| - | Predictions from language models for multiple-choice tasks are not ro… | 2024 |  | 1 |
+| - | Data Acquisition for Argument Search: The args.me corpus | 2019 | 42nd German Conference on Artificial In… | 1 |
+| - | On Rhetoric: A Theory of Civic Discourse | 1991 | Oxford University Press | 1 |
+| - | Conversation Analysis: The Study of Talk-in-Interaction | 1995 | Conversation Analysis: The Study of Tal… | 1 |
+| - | Head-to-Tail: How Knowledgeable are Large Language Models (LLMs)? A.K… | 2024 | Proceedings of the 2024 Conference of t… | 1 |
+| - | Semantics | 1981 | Cambridge low priced editions | 1 |
+| - | Mechanistic Interpretability for AI Safety - A Review | 2024 | Transactions of Machine Learning Resear… | 1 |
+| - | Rhetoric of science | 2008 | The international encyclopedia of commu… | 1 |
 | - | LegalBench: A Collaboratively Built Benchmark for Measuring Legal Rea… | 2023 | Advances in Neural Information Processi… | 1 |
-| - | Network Epistemology: Communication in Epistemic Communities | 2013 | Philosophy Compass | 1 |
-| - | The Geometry of Categorical and Hierarchical Concepts in Large Langua… | 2025 | The Thirteenth International Conference… | 1 |
-| - | A short history of linguistics | 2013 | Routledge | 1 |
-| - | Stop treating 'AGI' as the north-star goal of AI research | 2025 | CoRR | 1 |
-| - | Direct Preference Optimization: Your Language Model is Secretly a Rew… | 2024 | arXiv | 1 |
-| - | Efficient Estimation of Word Representations in Vector Space | 2013 | 1st International Conference on Learnin… | 1 |
-| - | Stance Detection Benchmark: How Robust is Your Stance Detection? | 2021 | Kunstliche Intell. | 1 |
-| - | Building a Discourse-Tagged Corpus in the Framework of Rhetorical Str… | 2001 | Proceedings of the Second SIGdial Works… | 1 |
-| - | OPT: Open Pre-trained Transformer Language Models | 2022 | CoRR | 1 |
-| - | Aligned Probing: Relating Toxic Behavior and Model Internals | 2026 | Transactions of the Association for Com… | 1 |
-| - | Inside-Out: Hidden Factual Knowledge in LLMs | 2025 | CoRR | 1 |
+| - | tinyBenchmarks: evaluating LLMs with fewer examples | 2024 | Forty-first International Conference on… | 1 |
+| - | Holistic Evaluation of Language Models | 2023 | Trans. Mach. Learn. Res. | 1 |
+| - | State-of-the-art generalisation research in NLP: a taxonomy and review | 2022 | CoRR | 1 |
+| - | Artificial Intelligence and Human Trust in Healthcare: Focus on Clini… | 2020 | J Med Internet Res | 1 |
+| - | In-Context Learning Creates Task Vectors | 2023 | Findings of the Association for Computa… | 1 |
+| - | Neural Machine Translation by Jointly Learning to Align and Translate | 2015 | 3rd International Conference on Learnin… | 1 |
+| - | Explorations of Self-Repair in Language Models | 2024 | Forty-first International Conference on… | 1 |
+| - | Translating non-binary coming-out reports: Gender-fair language strat… | 2023 | The Journal of Specialised Translation | 1 |
+| - | ALBERT: A Lite BERT for Self-supervised Learning of Language Represen… | 2020 | 8th International Conference on Learnin… | 1 |
+| - | Repetition Improves Language Model Embeddings | 2025 | The Thirteenth International Conference… | 1 |
+| - | Using large language models in psychology | 2023 | Nature Reviews Psychology | 1 |
+| - | Cognitive foundations of learning argumentation | 2007 | Argumentation in science education: Per… | 1 |
+| - | Argumentation theory in formal and computational perspective | 2017 | Journal of Applied Logics—IfCoLog Journ… | 1 |
 | - | The Uses of Argument | 1958 | Cambridge University Press | 1 |
-| - | Research Community Perspectives on “Intelligence” and Large Language… | 2025 | Findings of the Association for Computa… | 1 |
-| - | Echo Chambers on Social Media: A Systematic Review of the Literature | 2021 | Review of Communication Research | 1 |
-| - | Introduction to Information Retrieval | 2010 | J. Assoc. Inf. Sci. Technol. | 1 |
-| - | X -stance: A Multilingual Multi-Target Dataset for Stance Detection | 2020 | Proceedings of the 5th Swiss Text Analy… | 1 |
-| - | Transforming Science with Large Language Models: A Survey on AI-assis… | 2025 | CoRR | 1 |
-| - | Bias and Fairness in Large Language Models: A Survey | 2024 | Computational Linguistics, Volume 50, I… | 1 |
-| - | SubjectivITA: An Italian Corpus for Subjectivity Detection in Newspap… | 2021 | Experimental IR Meets Multilinguality,… | 1 |
 | - | PaLM: Scaling Language Modeling with Pathways | 2022 | CoRR | 1 |
-| - | Fully-Semantic Parsing and Generation: the BabelNet Meaning Represent… | 2022 | Proceedings of the 60th Annual Meeting… | 1 |
+| - | SubjectivITA: An Italian Corpus for Subjectivity Detection in Newspap… | 2021 | Experimental IR Meets Multilinguality,… | 1 |
 | - | Automated Fact-Checking for Assisting Human Fact-Checkers | 2021 | IJCAI | 1 |
 | - | Two Contrasting Data Annotation Paradigms for Subjective NLP Tasks | 2022 | Proceedings of the 2022 Conference of t… | 1 |
+| - | Fully-Semantic Parsing and Generation: the BabelNet Meaning Represent… | 2022 | Proceedings of the 60th Annual Meeting… | 1 |
 | - | The Llama 3 Herd of Models | 2024 | CoRR | 1 |
-| - | Attention Is All You Need | 2017 | neurips | 1 |
-| - | GloVe: Global Vectors for Word Representation | 2014 | Proceedings of the 2014 Conference on E… | 1 |
 | - | BERT: Pre-training of Deep Bidirectional Transformers for Language Un… | 2019 | Proceedings of the 2019 Conference of t… | 1 |
-| - | Long Short-Term Memory | 1997 | Neural Comput. | 1 |
-| - | SemEval-2016 Task 4: Sentiment Analysis in Twitter | 2016 | Proceedings of the 10th International W… | 1 |
-| - | A Cluster Separation Measure | 1979 | IEEE Transactions on Pattern Analysis a… | 1 |
-| - | Elastic ChatNoir: Search Engine for the ClueWeb and the Common Crawl | 2018 | Proceedings of the 40th European Confer… | 1 |
-| - | Average number of search terms for online search queries in the Unite… | 2020 |  | 1 |
-| - | Unsupervised Expressive Rules Provide Explainability and Assist Human… | 2020 | Findings of the Association for Computa… | 1 |
-| - | About the Internet Archive | 2025 | rlhttps://archive.org/about/ | 1 |
+| - | GloVe: Global Vectors for Word Representation | 2014 | Proceedings of the 2014 Conference on E… | 1 |
+| - | Attention Is All You Need | 2017 | neurips | 1 |
+| - | Do You Hear The People Sing? Key Point Analysis via Iterative Cluster… | 2023 | Proceedings of the 61st Annual Meeting… | 1 |
+| - | The Archive Query Log: Mining Millions of Search Result Pages of Hund… | 2023 | Proceedings of the 46th International A… | 1 |
+| - | Quantitative argument summarization and beyond: Cross-domain key poin… | 2020 | Proceedings of the 2020 Conference on E… | 1 |
 | - | Industrialized disinformation: 2020 global inventory of organized soc… | 2021 | Computational Propaganda Project at the… | 1 |
-| ... | _374 more in `corpus/rejected.jsonl`_ | | | |
+| - | Task-Oriented Intrinsic Evaluation of Semantic Textual Similarity | 2016 | Proceedings of COLING 2016, the 26th In… | 1 |
+| ... | _385 more in `corpus/rejected.jsonl`_ | | | |
 
 ### `below_cutoff` (203)
 
@@ -196,8 +194,6 @@ Ranked by score: these are the first candidates a higher cap would admit.
 | 0.2958 | GRASP: Rich Patterns for Argumentation Mining | 2017 | EMNLP | 1 |
 | 0.2958 | Using Complex Argumentative Interactions to Reconstruct the Argumenta… | 2017 | Proceedings of the 4th Workshop on Argu… | 1 |
 | 0.2958 | Unit Segmentation of Argumentative Texts | 2017 | Proceedings of the 4th Workshop on Argu… | 1 |
-| 0.2958 | Assessing debate strategies via computational agents | 2010 | Argument & Computation | 1 |
-| 0.2958 | Distinctive features of persuasion and deliberation dialogues | 2013 | Argument & Computation | 1 |
 | 0.2958 | Argument Mining: the Bottleneck of Knowledge and Language Resources | 2016 | Proceedings of the Tenth International… | 1 |
 | 0.2958 | IAM: A Comprehensive and Large-Scale Dataset for Integrated Argument… | 2022 | Proceedings of the 60th Annual Meeting… | 1 |
 | 0.2958 | Argumentation Mining on Essays at Multi Scales | 2020 | Proceedings of the 28th International C… | 1 |
@@ -222,8 +218,8 @@ Ranked by score: these are the first candidates a higher cap would admit.
 | 0.285 | pygarg: A Python library for abstract argumentation | 2024 |  | 1 |
 | 0.2833 | Defeasible Reasoning and Degrees of Justification | 2010 | Argument & Computation | 1 |
 | 0.2833 | Strategies for question selection in argumentative dialogues about pl… | 2013 | Argument & Computation | 1 |
-| 0.2833 | Automatic argumentative analysis for interaction mining | 2011 | Argument & Computation | 1 |
 | 0.2833 | Constructing argument graphs with deductive arguments: a tutorial | 2014 | Argument & Computation | 1 |
+| 0.2833 | Automatic argumentative analysis for interaction mining | 2011 | Argument & Computation | 1 |
 | 0.2833 | Assumption-Based Argumentation for Closed and Consistent Defeasible R… | 2007 | JSAI | 1 |
 | 0.2833 | t-DeLP: an argumentation-based Temporal Defeasible Logic Programming… | 2013 | Ann. Math. Artif. Intell. | 1 |
 | 0.2833 | On the Acceptability of Arguments in Bipolar Argumentation Frameworks | 2005 | ECSQARU | 1 |
@@ -253,12 +249,16 @@ Ranked by score: these are the first candidates a higher cap would admit.
 | 0.275 | Boundary Detection and Categorization of Argument Aspects via Supervi… | 2022 | Proceedings of the 9th Workshop on Argu… | 1 |
 | 0.275 | A General Framework for Multimodal Argument Persuasiveness Classifica… | 2023 | Proceedings of the 10th Workshop on Arg… | 1 |
 | 0.275 | SPLIT: Stance and Persuasion Prediction with Multi-modal on Image and… | 2023 | Proceedings of the 10th Workshop on Arg… | 1 |
+| 0.275 | NUS-IDS at PragTag-2023: Improving Pragmatic Tagging of Peer Reviews… | 2023 | Proceedings of the 10th Workshop on Arg… | 1 |
+| 0.275 | Detecting Scientific Fraud Using Argument Mining | 2024 | Proceedings of the 11th Workshop on Arg… | 1 |
 | ... | _143 more in `corpus/rejected.jsonl`_ | | | |
 
-### `cap_reached` (73)
+### `cap_reached` (76)
 
 | score | title | year | venue | criteria_version |
 |---|---|---|---|---|
+| 0.35 | Computational Problems in Formal Argumentation and their Complexity | 2018 | Handbook of Formal Argumentation | 1 |
+| 0.35 | ( )-toksia: An Efficient Abstract Argumentation Reasoner | 2020 | Proceedings of the 17th International C… | 1 |
 | 0.3479 | Predicting the Usefulness of Amazon Reviews Using Off-The-Shelf Argum… | 2018 | Proceedings of the 5th Workshop on Argu… | 1 |
 | 0.3479 | Multi-Agent LLM Debate Unveils the Premise Left Unsaid | 2025 | Proceedings of the 12th Argument mining… | 1 |
 | 0.3479 | More or less controlled elicitation of argumentative text: Enlarging… | 2018 | Proceedings of the 5th Workshop on Argu… | 1 |
@@ -288,8 +288,8 @@ Ranked by score: these are the first candidates a higher cap would admit.
 | 0.3271 | Data Augmentation for Improving the Prediction of Validity and Novelt… | 2022 | Proceedings of the 9th Workshop on Argu… | 1 |
 | 0.3271 | Argumentative Link Prediction using Residual Networks and Multi-Objec… | 2018 | Proceedings of the 5th Workshop on Argu… | 1 |
 | 0.3271 | The Utility of Discourse Parsing Features for Predicting Argumentatio… | 2019 | Proceedings of the 6th Workshop on Argu… | 1 |
-| 0.325 | Senses of 'argument' in instantiated argumentation frameworks | 2015 | Argument & Computation | 1 |
 | 0.325 | Probabilistic abstract argumentation: an investigation with Boltzmann… | 2015 | Argument & Computation | 1 |
+| 0.325 | Senses of 'argument' in instantiated argumentation frameworks | 2015 | Argument & Computation | 1 |
 | 0.325 | Assessing Open-Weight Large Language Models on Argumentation Mining S… | 2025 | Proceedings of the 10th edition of the… | 1 |
 | 0.325 | SMM4H 2022 Task 2: Dataset for stance and premise detection in tweets… | 2022 | Proceedings of the Seventh Workshop on… | 1 |
 | 0.325 | Full-Text Argumentation Mining on Scientific Publications | 2022 | Proceedings of the First Workshop on In… | 1 |
@@ -317,9 +317,7 @@ Ranked by score: these are the first candidates a higher cap would admit.
 | 0.3167 | LLM-INSTRUCT at UZH Shared Task 2026: Constraint-Aware Retrieval and… | 2026 | Proceedings of the 13th Workshop on Arg… | 1 |
 | 0.3167 | Reasoning with Sarcasm by Reading In-Between | 2018 | Proceedings of the 56th Annual Meeting… | 1 |
 | 0.3167 | DebateSum: A large-scale argument mining and summarization dataset | 2020 | Proceedings of the 7th Workshop on Argu… | 1 |
-| 0.3167 | Is Stance Detection Topic-Independent and Cross-topic Generalizable?… | 2021 | Proceedings of the 8th Workshop on Argu… | 1 |
-| 0.3167 | Overview of the 2022 Validity and Novelty Prediction Shared Task | 2022 | Proceedings of the 9th Workshop on Argu… | 1 |
-| ... | _13 more in `corpus/rejected.jsonl`_ | | | |
+| ... | _16 more in `corpus/rejected.jsonl`_ | | | |
 
 ### `excluded_domain:biomedical` (7)
 

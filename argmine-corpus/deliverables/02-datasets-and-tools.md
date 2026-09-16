@@ -1,6 +1,6 @@
 # 02 - Datasets, tools and annotation guidelines
 
-36 resource entries. Every column is filled from text this pipeline retrieved (abstract or full text) or from a cloned repository; where the retrieved text does not state something, the cell says so rather than guessing.
+39 resource entries. Every column is filled from text this pipeline retrieved (abstract or full text) or from a cloned repository; where the retrieved text does not state something, the cell says so rather than guessing.
 
 | Resource | Paper id | Repo | Licence | Size (as stated) | Unit of annotation | Annotation scheme | Guideline retrieved |
 |---|---|---|---|---|---|---|---|
@@ -18,6 +18,7 @@
 | QT30: A Corpus of Argument and Conflict in Broadcast Debate | `title:e4827cf79a5103f624f48b2e7d4a4ccc7ab6c0ea` | none linked | not retrieved | 19,842 utterances; 280,000 words | not stated in retrieved text | not stated in retrieved text | no |
 | The Sensitivity of Annotator Bias to Task Definitions in Argument Mining | `title:61fadcac208eb3f58c0f9834cf909c5aaa5c7972` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
 | Breaking Down the Invisible Wall of Informal Fallacies in Online Discussions | `doi:10.18653/v1/2021.acl-long.53` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | fallacy types | no |
+| DeliData: A Dataset for Deliberation in Multi-party Problem Solving | `title:a53d191087c04c6d49d9d46488abffa0090e89de` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
 | A large-scale dataset for argument quality ranking: Construction and analysis | `doi:10.1609/aaai.v34i05.6285` | [Hellisotherpeople/DebateSum](https://github.com/Hellisotherpeople/DebateSum) | unstated | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | yes |
 | Annotating Topics, Stance, Argumentativeness and Claims in Dutch Social Media C… | `title:845517f340fa84f9278786e5e5f5cca686edfa5a` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
 | Corpus Wide Argument Mining - A Working Solution | `doi:10.1609/aaai.v34i05.6270` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
@@ -25,6 +26,7 @@
 | Classification and Clustering of Arguments with Contextualized Word Embeddings | `doi:10.18653/v1/p19-1054` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
 | TARGER: Neural Argument Mining at Your Fingertips | `doi:10.18653/v1/p19-3031` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
 | Annotating Claims in the Vaccination Debate | `doi:10.18653/v1/w18-5207` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
+| Modeling Deliberative Argumentation Strategies on Wikipedia | `doi:10.18653/v1/p18-1237` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
 | Multi-Task Learning for Argumentation Mining in Low-Resource Settings | `doi:10.18653/v1/n18-2006` | [UKPLab/naacl18-multitask_argument_mining](https://github.com/UKPLab/naacl18-multitask_argument_mining) | Apache-2.0 | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | yes |
 | Analyzing the Semantic Types of Claims and Premises in an Online Persuasive For… | `doi:10.18653/v1/w17-5102` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | claim / premise components; support / attack relations | no |
 | Argument Mining with Structured SVMs and RNNs | `doi:10.18653/v1/p17-1091` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
@@ -39,6 +41,7 @@
 | A Benchmark Dataset for Automatic Detection of Claims and Evidence in the Conte… | `doi:10.3115/v1/w14-2109` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
 | A Model for Processing Illocutionary Structures and Argumentation in Debates | `title:5c30e54b1303736b308e1674274f1a1132b052df` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | Inference Anchoring Theory | no |
 | Annotating Argument Components and Relations in Persuasive Essays | `title:97249276aac1f18259184dfbfac19f869827fdaa` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
+| Identifying Argumentative Discourse Structures in Persuasive Essays | `doi:10.3115/v1/d14-1006` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
 | A Corpus for Research on Deliberation and Debate | `title:ae7588dc60be7ab8f03855ae779ec0f0519a8728` | none linked | not retrieved | 390,704 posts; 11,800 discussions | not stated in retrieved text | not stated in retrieved text | no |
 
 ## Guideline documents retrieved

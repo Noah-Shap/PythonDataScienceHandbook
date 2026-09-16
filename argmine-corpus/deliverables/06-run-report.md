@@ -1,41 +1,43 @@
 # 06 - Run report
 
-Generated 2026-09-16T01:59:00+00:00 | cap 250 | criteria_version 1 | registry 250 entries
+Generated 2026-09-16T02:00:29+00:00 | cap 250 | criteria_version 1 | registry 250 entries
 
 ## Phases in this run
 
 | Phase | Seconds | Summary |
 |---|---|---|
 | 0 scaffold | 0.0 | cap=250, field_map=deliverables/00-field-map.md |
-| 1 seed | 229.5 |  |
-| 2 snowball | 21.9 | admitted=231, admitted_corroborated=119, already_decided=15 |
-| 3 verify | 0.0 | considered=231, oa_resolved=176, seconds=0.0 |
-| 4 tier | 0.0 | considered=138, retiered=0, seconds=0.0 |
+| 1 seed | 5.7 |  |
+| 2 snowball | 21.8 | admitted=231, admitted_corroborated=121, already_decided=15 |
+| 3 verify | 0.0 | considered=231, oa_resolved=177, seconds=0.0 |
+| 4 tier | 0.0 | considered=140, retiered=0, seconds=0.0 |
 | 5a fetch | 0.0 | guidelines=2, manifest=deliverables/05-fetch-manifest.csv, manifest_rows=250 |
-| 5b extract | 0.0 | guidelines_extracted=2, no_pdf=138 |
+| 5b extract | 0.0 | guidelines_extracted=2, no_pdf=140 |
 | 6 chunk | 0.0 | chunks=99, from_abstract=93, from_fulltext=0, from_guideline=6 |
 
 ## Corpus state
 
-- status: {'chunked': 95, 'extracted': 43, 'candidate': 112}
-- verification: {'verified': 138, 'unverified': 112}
-- tiers: T1: 16, T2: 73, T3: 34, T4: 15
-- doc types: conference: 119, workshop: 87, journal: 37, chapter: 3, book: 2, preprint: 1, unrecorded: 1
-- frontier: 138 nodes, 19 expanded
-- rejected ledger: 723 candidates remembered
+- status: {'chunked': 95, 'extracted': 45, 'candidate': 110}
+- verification: {'verified': 140, 'unverified': 110}
+- tiers: T1: 16, T2: 73, T3: 36, T4: 15
+- doc types: conference: 119, workshop: 87, journal: 38, book: 2, chapter: 2, preprint: 1, unrecorded: 1
+- frontier: 140 nodes, 19 expanded
+- rejected ledger: 737 candidates remembered
 
 ## Area quotas
 
 | Area | Quota | In registry | Verified | Met |
 |---|---|---|---|---|
-| formal | 30 | 53 | 30 | yes |
-| mining | 60 | 123 | 70 | yes |
+| formal | 30 | 51 | 30 | yes |
+| mining | 60 | 125 | 72 | yes |
 | quality | 40 | 58 | 30 | no |
-| dialogue | 40 | 40 | 28 | no |
-| llm | 40 | 55 | 14 | no |
-| resources | 30 | 68 | 36 | yes |
+| dialogue | 40 | 40 | 27 | no |
+| llm | 40 | 55 | 15 | no |
+| resources | 30 | 70 | 39 | yes |
 
-Areas below quota and why: **quality** (30/40); **dialogue** (28/40); **llm** (14/40). See *Limits of this run* below.
+Areas below quota: **quality** (30 verified of 40, 28 more admitted but pending verification); **dialogue** (27 verified of 40, 13 more admitted but pending verification); **llm** (15 verified of 40, 40 more admitted but pending verification).
+
+A pending entry is a registry record at status `candidate`: it was admitted and scored, but only one independent source could be reached for it. It is not rejected and needs no re-fetching - phase 3 processes exactly those records on the next run, so a run with the scholarly APIs reachable closes these gaps without repeating any earlier work.
 
 ## Source availability
 
@@ -170,27 +172,27 @@ Areas below quota and why: **quality** (30/40); **dialogue** (28/40); **llm** (1
 
 Source combinations backing the registry (a `bibcorpus` label counts once per independent repository, and never for a verbatim re-export of the ACL Anthology):
 
-- acl, bibcorpus: 92
-- acl: 90
-- bibcorpus: 68
+- acl, bibcorpus: 94
+- acl: 89
+- bibcorpus: 67
 
 ## Retrieval, extraction, chunking
 
-- PDFs: 0 fetched, 0 already cached, 138 unavailable
+- PDFs: 0 fetched, 0 already cached, 140 unavailable
 - repositories cloned: 2; guideline/README documents copied: 2
 - extraction: 0 PDFs (0 pages), 2 guideline documents, 0 failures
 - chunks: 99 (0 full text, 6 guideline, 93 abstract-only)
 
 Why PDFs were not fetched:
 
-- acl_web unreachable from this environment (ProxyError: HTTPSConnectionPool(host='aclanthology.org', por): 91
+- acl_web unreachable from this environment (ProxyError: HTTPSConnectionPool(host='aclanthology.org', por): 93
 - no open-access PDF url resolved: 45
 - arxiv unreachable from this environment (ProxyError: HTTPSConnectionPool(host='export.arxiv.org', por): 2
 
 ## Annotations
 
 - written this run: 250; unchanged: 0
-- grounding: {'fulltext': 0, 'abstract': 188, 'none': 62}
+- grounding: {'fulltext': 0, 'abstract': 186, 'none': 64}
 - every annotation quotes the retrieved text it was written from and names it in `grounded_on`; where nothing was retrieved the annotation says so and asserts nothing about content.
 
 ## Cost and caching
@@ -198,12 +200,12 @@ Why PDFs were not fetched:
 - HTTP: 0 network calls, 0 cache hits, 0 skipped because the source is unreachable, 0 retried errors
 - layer 1 (HTTP cache): metadata responses expire after 30 days, PDFs never expire
 - layer 2 (status gating): every phase processes only records at exactly its input status; fetch additionally skips a PDF whose sha256 matches, extract skips text whose source PDF hash is unchanged
-- layer 3 (frontier memory): 19 of 138 nodes expanded; directions recorded per node
-- layer 4 (decision memory): 723 rejected candidates kept with their scores at criteria_version 1; bumping it re-scores them without re-fetching anything
+- layer 3 (frontier memory): 19 of 140 nodes expanded; directions recorded per node
+- layer 4 (decision memory): 737 rejected candidates kept with their scores at criteria_version 1; bumping it re-scores them without re-fetching anything
 
 ## Changelog
 
-Run 1; previous run recorded at 2026-09-16T01:54:48+00:00.
+Run 1; previous run recorded at 2026-09-16T02:00:01+00:00.
 
 Added 250 entries:
 
@@ -222,8 +224,10 @@ Added 250 entries:
 - `doi:10.1038/s41586-021-03215-w` - An autonomous debating system (2021, T2)
 - `doi:10.1057/palgrave.ap.5500115` - Online Forums and Deliberative Democracy (2005, T2)
 - `doi:10.1080/19462160903564592` - An abstract framework for argumentation with structured arguments (2010, T2)
+- `doi:10.1080/19462166.2010.485698` - Assessing debate strategies via computational agents (2010, TNone)
 - `doi:10.1080/19462166.2010.486479` - Answer-set programming encodings for argumentation frameworks (2010, T2)
 - `doi:10.1080/19462166.2012.661766` - Relating Carneades with abstract argumentation via the ASPIC+ framework for structured ar… (2012, TNone)
+- `doi:10.1080/19462166.2012.708670` - Distinctive features of persuasion and deliberation dialogues (2013, TNone)
 - `doi:10.1080/19462166.2013.862303` - A natural language bipolar argumentation approach to support users in online debate inter… (2013, TNone)
 - `doi:10.1080/19462166.2013.869764` - Introduction to structured argumentation (2014, T1)
 - `doi:10.1080/19462166.2013.869766` - The ASPIC+ framework for structured argumentation: a tutorial (2014, T1)
@@ -235,14 +239,12 @@ Added 250 entries:
 - `doi:10.1111/coin.12111` - Assumption-Based Argumentation Equipped with Preferences and its Application to Decision… (2017, T2)
 - `doi:10.1145/2850417` - Argumentation Mining: State of the Art and Emerging Trends (2016, T1)
 - `doi:10.1145/2872427.2883081` - Winning Arguments: Interaction Dynamics and Persuasion Strategies in Good-Faith Online Di… (2016, T2)
-- `doi:10.1145/3032989` - Using Argumentative Structure to Interpret Debates in Online Deliberative Democracy and e… (2017, TNone)
 - `doi:10.1145/3308558.3314127` - Can You Give Me a Reason?: Argument-Inducing Online Forum by Argument Mining (2019, T2)
 - `doi:10.1162/coli_a_00276` - Argumentation Mining in User-Generated Web Discourse (2017, T3)
 - `doi:10.1162/coli_a_00295` - Parsing Argumentation Structures in Persuasive Essays (2017, T3)
 - `doi:10.1162/coli_a_00364` - Argument Mining: A Survey (2019, T1)
 - `doi:10.1162/coli_a_00553` - UniASA: A Unified Generative Framework for Argument Structure Analysis (2025, TNone)
 - `doi:10.1162/tacl_a_00481` - End-to-end Argument Mining with Cross-corpora Multi-task Learning (2022, TNone)
-- `doi:10.1177/1461444807081230` - Democracy, deliberation and design: the case of online discussion forums (2007, T2)
 - `doi:10.1609/aaai.v34i05.6270` - Corpus Wide Argument Mining - A Working Solution (2020, T3)
 - `doi:10.1609/aaai.v34i05.6285` - A large-scale dataset for argument quality ranking: Construction and analysis (2020, T3)
 - `doi:10.18653/v1/2020.acl-main.298` - Towards Better Non-Tree Argument Mining: Proposition-Level Biaffine Parsing with Task-Spe… (2020, T2)
@@ -296,6 +298,8 @@ Unreachable sources: acl_web, arxiv, crossref, openalex, semanticscholar, unpayw
 - no citation-graph expansion (`reference` / `citation` directions stay pending in `frontier.jsonl`; a later run with network access expands exactly those nodes and nothing else);
 - no citation counts, so the `cites_norm` component is computed from how many independent bibliographies list a work rather than from a citation count - the substitution is recorded per record in `score.components_source`;
 - OA PDFs could not be downloaded, so most annotations are grounded on abstracts rather than full text, and most chunks are abstract chunks. Every entry is still in `05-fetch-manifest.csv` with a resolvable URL, so the PDFs can be fetched elsewhere and `python -m argmine extract chunk` picks them up without re-running anything else.
+
+The same applies to verification: every entry that reached only one independent source is still a `candidate` in the registry, listed in `99-unverified-and-rejected.md`, and is re-examined by phase 3 on the next run. Nothing about it has to be fetched again.
 
 ## Reproducing this run
 
