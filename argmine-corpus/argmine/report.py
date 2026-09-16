@@ -63,7 +63,14 @@ def render(ctx, changes: dict | None = None, annotation: dict | None = None) -> 
         key = row.get("rejection_reason", "?").split(":")[0]
         rejected_by_reason[key] = rejected_by_reason.get(key, 0) + 1
     hist = chunk.get("histogram", {})
-    manifest_only = len(reg.records) - int(fetch.get("pdfs_fetched", 0)) - int(fetch.get("pdfs_cached", 0))
+    # Corpus state, not last-run activity: a re-run that correctly does nothing must not
+    # report that the corpus has no PDFs or no cloned repositories.
+    pdfs_held = sum(1 for r in reg.records.values() if r.get("files", {}).get("pdf"))
+    repos_held = len({r["files"]["repo_dir"] for r in reg.records.values()
+                      if r.get("files", {}).get("repo_dir")})
+    guidelines_held = sum(len(r.get("files", {}).get("guidelines", [])) for r in reg.records.values())
+    guideline_texts = sum(len(r.get("files", {}).get("guideline_text", [])) for r in reg.records.values())
+    manifest_only = len(reg.records) - pdfs_held
 
     out += ["## 1. Counts", "",
             f"- **{len(reg.records)} entries** in the registry (cap {cfg.cap}); "
@@ -75,11 +82,11 @@ def render(ctx, changes: dict | None = None, annotation: dict | None = None) -> 
             "- verification: " + ", ".join(f"{k} {v}" for k, v in sorted(verification.items())),
             "- rejected (" + str(len(reg.rejected)) + " remembered): "
             + ", ".join(f"{k} {v}" for k, v in sorted(rejected_by_reason.items(), key=lambda kv: -kv[1])),
-            f"- PDFs: {int(fetch.get('pdfs_fetched', 0)) + int(fetch.get('pdfs_cached', 0))} fetched, "
-            f"{manifest_only} manifest-only",
-            f"- repos cloned: {fetch.get('repos_cloned', 0)}; guideline/README documents "
-            f"retrieved: {fetch.get('guidelines', 0)} ({extract.get('guidelines_extracted', 0)} "
-            f"extracted to text)",
+            f"- PDFs: {pdfs_held} held locally, {manifest_only} manifest-only "
+            f"({fetch.get('pdfs_fetched', 0)} fetched in this run)",
+            f"- repos cloned: {repos_held}; guideline/README documents retrieved: "
+            f"{guidelines_held} ({guideline_texts} extracted to text; "
+            f"{extract.get('guidelines_extracted', 0)} extracted in this run)",
             f"- chunks: {chunk.get('chunks', 0)} "
             f"({chunk.get('from_fulltext', 0)} full text, {chunk.get('from_guideline', 0)} "
             f"guideline, {chunk.get('from_abstract', 0)} abstract)",

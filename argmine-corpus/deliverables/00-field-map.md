@@ -5,7 +5,7 @@ regenerated with live counts by every subsequent run. Six areas, each with a def
 inclusion and exclusion criteria, the vocabulary used for keyword scoring, and a minimum
 quota out of the 250-entry cap.
 
-Generated: 2026-09-16T03:28:07+00:00 | criteria_version: 1
+Generated: 2026-09-16T03:28:58+00:00 | criteria_version: 1
 
 
 ## Areas

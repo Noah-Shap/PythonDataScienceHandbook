@@ -1,6 +1,6 @@
 # 06 - Run report
 
-Generated 2026-09-16T03:28:07+00:00 | cap 250 | criteria_version 1
+Generated 2026-09-16T03:28:58+00:00 | cap 250 | criteria_version 1
 
 ## 1. Counts
 
@@ -10,8 +10,8 @@ Generated 2026-09-16T03:28:07+00:00 | cap 250 | criteria_version 1
 - per doc_type: conference 119, workshop 87, journal 38, chapter 3, book 2, preprint 1
 - verification: unverified 111, verified 139
 - rejected (722 remembered): off_topic 433, below_cutoff 202, cap_reached 73, excluded_domain 11, seed_unresolved 2, proceedings_volume 1
-- PDFs: 0 fetched, 250 manifest-only
-- repos cloned: 0; guideline/README documents retrieved: 0 (0 extracted to text)
+- PDFs: 0 held locally, 250 manifest-only (0 fetched in this run)
+- repos cloned: 3; guideline/README documents retrieved: 3 (3 extracted to text; 0 extracted in this run)
 - chunks: 100 (0 full text, 8 guideline, 92 abstract)
 - chunk token histogram: 0-199: 57, 200-399: 42, 400-599: 1
 
