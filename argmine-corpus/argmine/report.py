@@ -170,6 +170,14 @@ def render(ctx, changes: dict | None = None, annotation: dict | None = None) -> 
                        f"{truncate(str(c['verified']), 60)} | "
                        f"{truncate(', '.join(c.get('sources', [])), 60)} |")
         out.append("")
+    canonical = seed.get("canonicalised", [])
+    if canonical:
+        out += ["**Recorded in canonical form** (the hypothesis named the same venue, the "
+                "sources spell it out):", ""]
+        for c in canonical:
+            out.append(f"- `{c['id']}` - {c['field']}: {truncate(str(c['hypothesis']), 40)} -> "
+                       f"{truncate(str(c['verified']), 80)}")
+        out.append("")
     rejected_seeds = seed.get("rejected_seeds", [])
     if rejected_seeds:
         out += ["**Rejected** (no source could resolve them; nothing was invented to fill the "

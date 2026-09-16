@@ -26,6 +26,11 @@ CORE_MARKERS = ("argument", "argumentation", "debate", "fallac", "persuasi", "rh
                 "claim detection", "scheme", "defeasible", "nonmonotonic", "aif", "iat",
                 "burden of proof", "locution", "illocutionary", "cogency", "counter-argument")
 
+VOLUME_TITLE_RE = __import__("re").compile(
+    r"^\s*(proceedings\b|the\s+\d+(st|nd|rd|th)\s+workshop\b|"
+    r"(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth)"
+    r"\s+workshop\b|workshop\s+on\b.*\(\d{4}\)$|front\s?matter\b)", __import__("re").I)
+
 FOUNDATIONAL_MARKERS = ("survey", "introduction to", "overview", "tutorial", "state of the art",
                         "a review", "systematic review", "foundations")
 
@@ -82,6 +87,10 @@ def domain_match(cfg, rec: dict) -> str | None:
 def exclusion_reason(cfg, rec: dict) -> str | None:
     """Global exclusions (section 6). Foundational work survives them (section 6 allows it
     at T1); such a rescue is recorded as scope-uncertain rather than waved through."""
+    if VOLUME_TITLE_RE.match(rec.get("title", "")):
+        # A bibliography sometimes cites a whole proceedings volume. The volume is not a
+        # work in this field's literature; its papers are, and they are reachable anyway.
+        return "proceedings_volume:not an individual work"
     if off_topic(cfg, rec):
         return "off_topic:no argumentation vocabulary in title, abstract or venue"
     pat = domain_match(cfg, rec)

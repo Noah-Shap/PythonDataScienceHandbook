@@ -11,7 +11,7 @@ from rapidfuzz import fuzz
 
 from .registry import blank_record
 from .util import iso_now, norm_title, surnames
-from .verify import resolve_views, views_agree
+from .verify import resolve_views, venue_compatible, views_agree
 
 TITLE_MATCH = 88.0
 
@@ -42,8 +42,8 @@ def run(ctx) -> dict:
     cfg, reg = ctx.cfg, ctx.registry
     prep = ctx.prepare_local_sources()
     summary = {"seeds": len(cfg["seeds"]), "verified": 0, "unverified": 0, "rejected": 0,
-               "added_ids": [], "corrections": [], "verified_as_given": [],
-               "rejected_seeds": [], "prepared": prep}
+               "added_ids": [], "corrections": [], "canonicalised": [],
+               "verified_as_given": [], "rejected_seeds": [], "prepared": prep}
 
     for seed in cfg["seeds"]:
         views = [v for v in resolve_views(ctx, seed["title"], seed.get("year"),
@@ -76,6 +76,13 @@ def run(ctx) -> dict:
             hypothesis, actual = seed.get(field), stored.get(field)
             if hypothesis and actual and str(hypothesis).strip().lower() != str(actual).strip().lower():
                 if field == "title" and fuzz.ratio(norm_title(str(hypothesis)), norm_title(str(actual))) > 97:
+                    continue
+                if field == "venue" and venue_compatible(str(hypothesis), str(actual))[0]:
+                    # "LREC" -> "Proceedings of the Thirteenth ... Conference" is the same
+                    # venue written out, not a corrected hypothesis.
+                    summary["canonicalised"].append(
+                        {"id": stored["id"], "field": field, "hypothesis": hypothesis,
+                         "verified": actual})
                     continue
                 summary["corrections"].append(
                     {"id": stored["id"], "field": field, "hypothesis": hypothesis, "verified": actual,

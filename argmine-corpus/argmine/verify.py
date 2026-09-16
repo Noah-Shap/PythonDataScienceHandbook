@@ -143,6 +143,14 @@ def views_agree(views: list[dict]) -> tuple[str, list[str], str]:
     return status, sorted(labels), note
 
 
+def _venue_richness(venue: str) -> int:
+    """How much of a venue name a string actually spells out."""
+    v = (venue or "").strip()
+    if not v:
+        return 0
+    return sum(c.isalpha() for c in v) - 3 * v.count(".")
+
+
 def _consensus_view(views: list[dict]) -> dict:
     """The view the most other views agree with, breaking ties by source priority.
 
@@ -178,15 +186,20 @@ def merge_views(views: list[dict]) -> dict:
             authors = v["authors"]
         if len(v.get("abstract") or "") > len(abstract):
             abstract = v["abstract"]
-        venue = venue or v.get("venue", "")
+        # Prefer the fullest spelling: bibliographies abbreviate ("Nat.", "Knowl. Eng. Rev."),
+        # and a citation should carry the journal's name, not DBLP's short form.
+        if _venue_richness(v.get("venue", "")) > _venue_richness(venue):
+            venue = v.get("venue", "")
         doc_type = doc_type or v.get("doc_type", "")
         year = year if year is not None else v.get("year")
         title = title or v.get("title", "")
+    if _venue_richness(best.get("venue", "")) >= _venue_richness(venue):
+        venue = best.get("venue", "") or venue
     return {
         "title": best.get("title") or title,
         "authors": authors or best.get("authors", []),
         "year": best.get("year") or year,
-        "venue": best.get("venue") or venue,
+        "venue": venue,
         "doc_type": best.get("doc_type") or doc_type,
         "abstract": abstract,
         "aliases": sorted(a for a in aliases if a),
