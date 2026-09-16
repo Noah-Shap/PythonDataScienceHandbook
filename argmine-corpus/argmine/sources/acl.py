@@ -214,13 +214,25 @@ class AclAnthology:
         return rows, fts
 
     # -- queries -----------------------------------------------------------
+    JOURNAL_VOLUME_RE = re.compile(r"^(.*?),\s*(Volume|Issue)\b", re.IGNORECASE)
+
+    def _venue(self, row) -> str:
+        """The Anthology's journal booktitles carry the volume and issue; a citation wants
+        the journal name."""
+        venue = row["venue"] or ""
+        if row["doc_type"] == "journal":
+            m = self.JOURNAL_VOLUME_RE.match(venue)
+            if m:
+                return m.group(1).strip()
+        return venue
+
     def _row_to_candidate(self, row) -> dict:
         return candidate(
             self.name,
             title=row["title"],
             authors=json.loads(row["authors"]),
             year=row["year"],
-            venue=row["venue"],
+            venue=self._venue(row),
             doc_type=row["doc_type"],
             abstract=row["abstract"],
             doi=row["doi"] or "",

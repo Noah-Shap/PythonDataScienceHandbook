@@ -84,8 +84,19 @@ def render(ctx, changes: dict | None = None, annotation: dict | None = None) -> 
         out.append(f"| {area} | {quota} | {area_counts.get(area, 0)} | {got} | {met} |")
     out.append("")
     if unmet:
-        out += ["Areas below quota and why: " + "; ".join(
-            f"**{a}** ({g}/{q})" for a, q, g in unmet) + ". See *Limits of this run* below.", ""]
+        pending: dict[str, int] = {}
+        for rec in reg.records.values():
+            if rec.get("verification", {}).get("status") != "verified":
+                for a in rec.get("area", []):
+                    pending[a] = pending.get(a, 0) + 1
+        out += ["Areas below quota: " + "; ".join(
+            f"**{a}** ({g} verified of {q}, {pending.get(a, 0)} more admitted but pending "
+            f"verification)" for a, q, g in unmet) + ".", "",
+            "A pending entry is a registry record at status `candidate`: it was admitted and "
+            "scored, but only one independent source could be reached for it. It is not "
+            "rejected and needs no re-fetching - phase 3 processes exactly those records on "
+            "the next run, so a run with the scholarly APIs reachable closes these gaps "
+            "without repeating any earlier work.", ""]
 
     # -- sources ----------------------------------------------------------
     out += ["## Source availability", "", "| Source | Reachable | Detail |", "|---|---|---|"]
@@ -207,7 +218,11 @@ def render(ctx, changes: dict | None = None, annotation: dict | None = None) -> 
                 "rather than full text, and most chunks are abstract chunks. Every entry is still "
                 "in `05-fetch-manifest.csv` with a resolvable URL, so the PDFs can be fetched "
                 "elsewhere and `python -m argmine extract chunk` picks them up without re-running "
-                "anything else.", ""]
+                "anything else.", "",
+                "The same applies to verification: every entry that reached only one "
+                "independent source is still a `candidate` in the registry, listed in "
+                "`99-unverified-and-rejected.md`, and is re-examined by phase 3 on the next "
+                "run. Nothing about it has to be fetched again.", ""]
     else:
         out += ["All configured sources were reachable.", ""]
     out += ["## Reproducing this run", "",

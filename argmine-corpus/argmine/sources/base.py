@@ -18,7 +18,7 @@ def candidate(source: str, *, title: str, authors=None, year=None, venue: str = 
     return {
         "source": source,
         "title": (title or "").strip(),
-        "authors": list(authors or []),
+        "authors": [a.strip() for a in (authors or []) if a and a.strip()],
         "year": int(year) if str(year or "").isdigit() else None,
         "venue": (venue or "").strip(),
         "doc_type": doc_type,

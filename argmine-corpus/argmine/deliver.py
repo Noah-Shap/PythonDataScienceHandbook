@@ -35,7 +35,7 @@ SCHEME_MARKERS = [
 
 # -- helpers ---------------------------------------------------------------
 def citation(rec: dict) -> str:
-    authors = rec.get("authors", [])
+    authors = [a for a in rec.get("authors", []) if a and a.strip()]
     if len(authors) > 4:
         who = f"{authors[0]} et al."
     elif authors:
