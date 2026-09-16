@@ -79,7 +79,7 @@
       "discovered_via": "github-code-search:\"acceptability of arguments\" extension:bib",
       "sha": "aa725ca6a1bb88189ac84211a594aa4c86863a7b",
       "bib_files": 7,
-      "bib_entries": 339,
+      "bib_entries": 356,
       "cloned": true,
       "pruned_to_bibtex": true,
       "kept_files": 10
@@ -151,7 +151,7 @@
       "discovered_via": "github-code-search:\"Winning Arguments\" changemyview extension:bib",
       "sha": "0e65d68f5caae0eb902f4a3881575fd37fdb53e8",
       "bib_files": 905,
-      "bib_entries": 72537,
+      "bib_entries": 72814,
       "cloned": true,
       "pruned_to_bibtex": true,
       "kept_files": 907
@@ -198,8 +198,8 @@
       "why": "carries conf/stairs.bib",
       "discovered_via": "github-code-search:\"acceptability of arguments\" extension:bib",
       "sha": "7f7366315ddf6b4ff6260196937a53d172d09e6d",
-      "bib_files": 5415,
-      "bib_entries": 352453,
+      "bib_files": 5438,
+      "bib_entries": 354371,
       "cloned": true,
       "pruned_to_bibtex": true,
       "kept_files": 5589
@@ -247,7 +247,7 @@
       "discovered_via": "github-code-search:\"inference anchoring theory\" extension:bib",
       "sha": "63a8b1bc32f7fdbc9af9b0a08571bb0a99517fcd",
       "bib_files": 1,
-      "bib_entries": 13,
+      "bib_entries": 17,
       "cloned": true,
       "pruned_to_bibtex": true,
       "kept_files": 2
@@ -283,7 +283,7 @@
       "discovered_via": "github-code-search:\"argument mining\" extension:bib",
       "sha": "d4f03da67408950e8b43864ef539b9bcc90b4f1d",
       "bib_files": 355,
-      "bib_entries": 792,
+      "bib_entries": 801,
       "cloned": true,
       "pruned_to_bibtex": true,
       "kept_files": 357
@@ -307,7 +307,7 @@
       "discovered_via": "github-code-search:\"acceptability of arguments\" extension:bib",
       "sha": "ea61cdb00a0c0c0858561ab54bdbd7bc8fa846e4",
       "bib_files": 1101,
-      "bib_entries": 78191,
+      "bib_entries": 78266,
       "cloned": true,
       "pruned_to_bibtex": true,
       "kept_files": 1123
@@ -331,7 +331,7 @@
       "discovered_via": "github-code-search:\"inference anchoring theory\" extension:bib",
       "sha": "639e3c55037e4c89d354371ced10a7f4d4acb8ad",
       "bib_files": 1,
-      "bib_entries": 104,
+      "bib_entries": 106,
       "cloned": true,
       "pruned_to_bibtex": true,
       "kept_files": 4
@@ -343,7 +343,7 @@
       "discovered_via": "github-code-search:\"An autonomous debating system\" extension:bib",
       "sha": "cf8983155ea049663e414eeff6b2c8f4ddcb5786",
       "bib_files": 2,
-      "bib_entries": 151,
+      "bib_entries": 176,
       "cloned": true,
       "pruned_to_bibtex": true,
       "kept_files": 4
@@ -427,7 +427,7 @@
       "discovered_via": "github-code-search:\"acceptability of arguments\" extension:bib",
       "sha": "284f499af0eb96023896aac8f29f32b5e84cf010",
       "bib_files": 7,
-      "bib_entries": 327,
+      "bib_entries": 344,
       "cloned": true,
       "pruned_to_bibtex": true,
       "kept_files": 11

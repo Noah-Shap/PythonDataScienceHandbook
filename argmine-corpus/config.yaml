@@ -79,7 +79,10 @@ scoring:
   area_min_norm: 0.4
   keyword_saturation: 12.0
   # Maximum hits taken from any one source for any one targeted query.
-  search_limit: 40
+  search_limit: 80
+  # Whole-venue sweeps: coverage the citation graph and keyword search both miss, taken
+  # from the local ACL Anthology index. These venue keys are the Anthology's own.
+  acl_venue_sweeps: ["argmining"]
   weights:
     cites_norm: 0.25
     cocite: 0.35

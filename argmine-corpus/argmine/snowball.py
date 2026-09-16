@@ -143,6 +143,14 @@ def targeted_searches(ctx, pool: dict) -> list[dict]:
                 _merge_candidate(pool, _record_from_view(view, {"id": f"search:{query}",
                                                                 "via": f"search:{query}"}))
             log_rows.append({"query": query, "source": source, "hits": len(views)})
+    for venue in cfg["scoring"].get("acl_venue_sweeps", []):
+        if not ctx.live("acl"):
+            break
+        views = ctx.acl.venue_papers(venue)
+        for view in views:
+            _merge_candidate(pool, _record_from_view(view, {"id": f"venue:{venue}",
+                                                            "via": f"search:venue:{venue}"}))
+        log_rows.append({"query": f"venue:{venue}", "source": "acl", "hits": len(views)})
     for query, total in ctx.gh.queries_logged().items():
         log_rows.append({"query": query, "source": "github", "hits": total})
     return log_rows

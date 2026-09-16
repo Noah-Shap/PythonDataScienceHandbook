@@ -39,9 +39,13 @@ RELEVANCE_TERMS = (
     "fallac", "toulmin", "defeasible", "persuasi", "dialectic", "rhetoric", "debate",
     "enthymeme", "phan minh dung", "acceptability of arguments", "changemyview",
     "argument retrieval", "argument search", "claim detection", "stance",
+    # "argument" on its own is broad, but without it a paper called "Neural Argument
+    # Component Classification" is invisible to the corroboration corpus, which is the
+    # one thing it exists for. Precision is handled downstream by the scorer.
+    "argument", "premise", "walton",
 )
 ANTHOLOGY_KEY_RE = re.compile(r"^[a-z\-]+-(etal-)?(19|20)\d{2}-[a-z\-]+$")
-SCHEMA = 4
+SCHEMA = 5
 
 
 class BibCorpus:
@@ -60,6 +64,7 @@ class BibCorpus:
         self.repos_path = cfg.corpus / "bib_repos.json"
         self.index_path = cfg.corpus / "bib_index.json"
         self.entries: list[dict] = []
+        self.abstracts: dict[str, str] = {}
         self.by_title: dict[str, list[int]] = {}
         self.title_files: dict[str, set[str]] = {}
         self.files: dict[str, dict] = {}
@@ -218,7 +223,7 @@ class BibCorpus:
             if data.get("fingerprint") == self._fingerprint():
                 self._install(data)
                 return len(self.entries)
-        entries, files = [], {}
+        entries, files, abstracts = [], {}, {}
         repos = self.load_repos()
         for repo in repos:
             path = self.clone_dir(repo["full_name"])
@@ -248,6 +253,12 @@ class BibCorpus:
                         "eprint": f.get("eprint", "") if f.get("archiveprefix", "").lower() == "arxiv" else "",
                         "key": e["key"], "repo": repo["full_name"], "file": rel, "file_id": file_id,
                     })
+                    abstract = f.get("abstract", "")
+                    if len(abstract) > len(abstracts.get(nt, "")):
+                        # Bibliographies exported from reference managers often carry the
+                        # abstract; it is the difference between an annotation grounded on
+                        # retrieved text and one that can say nothing at all.
+                        abstracts[nt] = abstract[:4000]
                     titles.append(nt)
                 if titles:
                     ratio = round(anth_keys / max(len(titles), 1), 3)
@@ -263,11 +274,13 @@ class BibCorpus:
                     n_entries += len(titles)
             repo["bib_files"], repo["bib_entries"] = n_files, n_entries
         self.save_repos(repos)
-        data = {"fingerprint": self._fingerprint(), "entries": entries, "files": files}
+        data = {"fingerprint": self._fingerprint(), "entries": entries, "files": files,
+                "abstracts": abstracts}
         self.index_path.write_text(json.dumps(data))
         self._install(data)
         log(f"  bib corpus: {len(entries)} entries in {len(files)} bibliographies "
-            f"from {len({e['repo'] for e in entries})} repositories")
+            f"from {len({e['repo'] for e in entries})} repositories; "
+            f"{len(abstracts)} works carry an abstract")
         return len(entries)
 
     def _parse_bib_file(self, bib: Path) -> tuple[list[dict], bool]:
@@ -304,6 +317,7 @@ class BibCorpus:
     def _install(self, data: dict) -> None:
         self._match_cache = {}
         self.entries = data["entries"]
+        self.abstracts = data.get("abstracts", {})
         self.files = {k: {**v, "titles": set(v["titles"])} for k, v in data["files"].items()}
         self.by_title, self.title_files = {}, {}
         for idx, e in enumerate(self.entries):
@@ -317,6 +331,7 @@ class BibCorpus:
             self.name,
             title=e["title"], authors=e["authors"], year=e["year"], venue=e["venue"],
             doc_type=e["doc_type"], doi=e.get("doi", ""), arxiv=e.get("eprint", ""),
+            abstract=self.abstracts.get(e["ntitle"], ""),
             urls={"landing": e.get("url", "")},
             extra={"repo": e["repo"], "file": e["file"], "file_id": e["file_id"],
                    "bibkey": e["key"],
