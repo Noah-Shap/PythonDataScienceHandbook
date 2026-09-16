@@ -2,9 +2,9 @@
 
 140 verified entries, grouped by area and then by tier. Every entry here agreed across at least two independent metadata sources; anything that did not is in `99-unverified-and-rejected.md`. Each annotation says which retrieved text it was written from (`grounded_on`), and quotes that text rather than paraphrasing it from outside knowledge.
 
-Generated 2026-09-16T02:00:29+00:00 | criteria_version 1 | cap 250
+Generated 2026-09-16T02:03:12+00:00 | criteria_version 1 | cap 250
 
-**Added in the latest run (250):** `doi:10.1007/978-0-387-98197-0_19`, `doi:10.1007/978-3-642-23963-2_10`, `doi:10.1007/s10458-009-9116-7`, `doi:10.1007/s10506-010-9104-x`, `doi:10.1007/s10579-019-09446-8`, `doi:10.1007/s13222-020-00347-7`, `doi:10.1016/0004-3702(94)00041-x`, `doi:10.1016/j.artint.2007.04.010`, `doi:10.1016/j.artint.2015.12.004`, `doi:10.1017/cbo9780511802034`, `doi:10.1017/s0269888906001044`, `doi:10.1017/s0269888911000166`, `doi:10.1038/s41586-021-03215-w`, `doi:10.1057/palgrave.ap.5500115`, `doi:10.1080/19462160903564592`, `doi:10.1080/19462166.2010.485698`, `doi:10.1080/19462166.2010.486479`, `doi:10.1080/19462166.2012.661766`, `doi:10.1080/19462166.2012.708670`, `doi:10.1080/19462166.2013.862303`, `doi:10.1080/19462166.2013.869764`, `doi:10.1080/19462166.2013.869766`, `doi:10.1080/19462166.2013.869767`, `doi:10.1080/19462166.2013.869878`, `doi:10.1080/19462166.2014.1001790`, `doi:10.1093/logcom/14.5.675`, `doi:10.1093/oso/9780198862536.003.0005`, `doi:10.1111/coin.12111`, `doi:10.1145/2850417`, `doi:10.1145/2872427.2883081`, `doi:10.1145/3308558.3314127`, `doi:10.1162/coli_a_00276`, `doi:10.1162/coli_a_00295`, `doi:10.1162/coli_a_00364`, `doi:10.1162/coli_a_00553`, `doi:10.1162/tacl_a_00481`, `doi:10.1609/aaai.v34i05.6270`, `doi:10.1609/aaai.v34i05.6285`, `doi:10.18653/v1/2020.acl-main.298`, `doi:10.18653/v1/2020.coling-main.128` ...
+**Added in the latest run (250):** `doi:10.1007/978-0-387-98197-0_19`, `doi:10.1007/978-3-642-23963-2_10`, `doi:10.1007/s10458-009-9116-7`, `doi:10.1007/s10506-010-9104-x`, `doi:10.1007/s10579-019-09446-8`, `doi:10.1016/0004-3702(94)00041-x`, `doi:10.1016/j.artint.2007.04.010`, `doi:10.1016/j.artint.2015.12.004`, `doi:10.1017/cbo9780511802034`, `doi:10.1017/s0269888906001044`, `doi:10.1017/s0269888911000166`, `doi:10.1038/s41586-021-03215-w`, `doi:10.1080/19462160903564592`, `doi:10.1080/19462166.2010.486479`, `doi:10.1080/19462166.2012.661766`, `doi:10.1080/19462166.2012.708670`, `doi:10.1080/19462166.2013.862303`, `doi:10.1080/19462166.2013.869764`, `doi:10.1080/19462166.2013.869766`, `doi:10.1080/19462166.2013.869767`, `doi:10.1080/19462166.2013.869878`, `doi:10.1080/19462166.2014.1001790`, `doi:10.1093/logcom/14.5.675`, `doi:10.1111/coin.12111`, `doi:10.1145/2850417`, `doi:10.1145/2872427.2883081`, `doi:10.1145/3308558.3314127`, `doi:10.1162/coli_a_00276`, `doi:10.1162/coli_a_00295`, `doi:10.1162/coli_a_00364`, `doi:10.1162/coli_a_00553`, `doi:10.1162/tacl_a_00481`, `doi:10.1177/1461444807081230`, `doi:10.1609/aaai.v34i05.6270`, `doi:10.1609/aaai.v34i05.6285`, `doi:10.18653/v1/2020.acl-main.298`, `doi:10.18653/v1/2020.coling-main.128`, `doi:10.18653/v1/2020.coling-main.402`, `doi:10.18653/v1/2021.acl-long.107`, `doi:10.18653/v1/2021.acl-long.497` ...
 
 ## 6.1 Formal foundations (27 entries, quota 30)
 
@@ -632,33 +632,9 @@ Generated 2026-09-16T02:00:29+00:00 | criteria_version 1 | cap 250
 
 </details>
 
-## 6.2 Argument mining (NLP) (56 entries, quota 60)
+## 6.2 Argument mining (NLP) (55 entries, quota 60)
 
 ### T1 - Foundational / survey. Read in full: theory anchors, major surveys, canonical papers.
-
-#### Roni Friedman et al. (2021). *Overview of the 2021 Key Point Analysis Shared Task*. Proceedings of the 8th Workshop on Argument Mining.
-
-- `doi:10.18653/v1/2021.argmining-1.16` | aliases: `acl:2021.argmining-1.16`
-- doc_type: `workshop` | tier: T1 | tags: extraction
-- [landing](https://aclanthology.org/2021.argmining-1.16/) | [OA PDF](https://aclanthology.org/2021.argmining-1.16.pdf) (via acl)
-- verified against: acl, bibcorpus:NeWildeSache/argument-mining-in-the-web-archive
-- score 0.4542 (cites 0.0, cocite 0.5714, keyword 0.4167, venue 1.0)
-- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "We describe the 2021 Key Point Analysis (KPA-2021) shared task on key point analysis that we organized as a part of the 8th Workshop on Argument Mining (ArgMining 2021) at EMNLP 2021." "We expect the task and the findings reported in this paper to be relevant for researchers working on text summarization and argument mining." For a debate-transcript argument database it defines the extraction step that turns raw transcript text into stored components and relations.
-
-<details><summary>BibTeX</summary>
-
-```bibtex
-@inproceedings{friedman2021overviewo,
-  title = {Overview of the 2021 Key Point Analysis Shared Task},
-  author = {Roni Friedman and Lena Dankin and Yufang Hou and Ranit Aharonov and Yoav Katz and Noam Slonim},
-  year = {2021},
-  booktitle = {Proceedings of the 8th Workshop on Argument Mining},
-  doi = {10.18653/v1/2021.argmining-1.16},
-  url = {https://aclanthology.org/2021.argmining-1.16/},
-}
-```
-
-</details>
 
 #### Eva Maria Vecchi, Neele Falk, Iman Jundi and Gabriella Lapesa (2021). *Towards Argument Mining for Social Good: A Survey*. Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers).
 
@@ -1405,8 +1381,8 @@ Generated 2026-09-16T02:00:29+00:00 | criteria_version 1 | cap 250
 
 - `title:97249276aac1f18259184dfbfac19f869827fdaa` | aliases: `acl:C14-1142`
 - doc_type: `conference` | tier: T2 | tags: dataset, extraction | also in: resources
-- [landing](https://aclanthology.org/C14-1142/) | [OA PDF](https://aclanthology.org/C14-1142.pdf) (via acl)
-- verified against: acl, bibcorpus:NeWildeSache/argument-mining-in-the-web-archive, bibcorpus:davidar/dblp.yaml, bibcorpus:m0re4u/paper-database
+- [landing](https://aclanthology.org/C14-1142/) | [OA PDF](https://aclanthology.org/C14-1142.pdf) (via acl) | [repo](https://github.com/thiemowa/-argumentative_business_model_pitches)
+- verified against: acl, bibcorpus:NeWildeSache/argument-mining-in-the-web-archive, bibcorpus:davidar/dblp.yaml, bibcorpus:m0re4u/paper-database | note: repo linked on distinctive title/description overlap: ['components', 'persuasive', 'relations'] (all shared words: ['components', 'persuasive', 'relations'])
 - score 0.475 (cites 0.0, cocite 0.5714, keyword 0.5, venue 1.0)
 - annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (conference, Proceedings of COLING 2014, the 25th International Conference on Computational Linguistics: Technical Papers, 2014), verified against 4 sources. For a debate-transcript argument database it defines the extraction step that turns raw transcript text into stored components and relations; and it is a reusable resource whose annotation structure a transcript schema can copy rather than reinvent.
 
@@ -1548,8 +1524,8 @@ Generated 2026-09-16T02:00:29+00:00 | criteria_version 1 | cap 250
 
 - `doi:10.18653/v1/2025.argmining-1.20` | aliases: `acl:2025.argmining-1.20`
 - doc_type: `workshop` | tier: T3 | tags: dataset, dialogue, extraction | also in: resources
-- [landing](https://aclanthology.org/2025.argmining-1.20/) | [OA PDF](https://aclanthology.org/2025.argmining-1.20.pdf) (via acl)
-- verified against: acl, bibcorpus:mpoiaganova/poiaganova
+- [landing](https://aclanthology.org/2025.argmining-1.20/) | [OA PDF](https://aclanthology.org/2025.argmining-1.20.pdf) (via acl) | [repo](https://github.com/AzkaQadir/multimodal-fallacy-detection)
+- verified against: acl, bibcorpus:mpoiaganova/poiaganova | note: repo linked on distinctive title/description overlap: ['debates', 'political'] (all shared words: ['debates', 'political'])
 - score 0.4 (cites 0.0, cocite 0.0, keyword 1.0, venue 1.0)
 - annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "This paper addresses the problem of cross-register generalization in argument mining within political discourse." "As part of this work, we introduce ArgUNSC, a new corpus of 144 UNSC speeches manually annotated with claims, premises, and their argumentative links." For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store; and it defines the extraction step that turns raw transcript text into stored components and relations.
 
@@ -1568,33 +1544,9 @@ Generated 2026-09-16T02:00:29+00:00 | criteria_version 1 | cap 250
 
 </details>
 
-#### Marc Feger, Katarina Boland and Stefan Dietze (2025). *Limited Generalizability in Argument Mining: State-Of-The-Art Models Learn Datasets, Not Arguments*. Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), ACL 2025, Vienna, Austria, July 27 - August 1, 2025.
+#### Masayuki Kawarada, Tsutomu Hirao, Wataru Uchida and Masaaki Nagata (2024). *Argument Mining as a Text-to-Text Generation Task*. Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers).
 
-- `title:ecc66f83f08f4809231d027e9ba9ccb1e4c3f5ba` | aliases: `acl:2025.acl-long.1164`, `doi:10.18653/v1/2025.acl-long.1164`
-- doc_type: `conference` | tier: T3 | tags: dataset, dialogue, extraction | also in: resources
-- [landing](https://aclanthology.org/2025.acl-long.1164/) | [OA PDF](https://aclanthology.org/2025.acl-long.1164.pdf) (via acl)
-- verified against: acl, bibcorpus:CogSciPrag/project_ideas
-- score 0.475 (cites 0.0, cocite 0.5714, keyword 0.5, venue 1.0)
-- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "We evaluate four transformers, three standard and one enhanced with contrastive pre-training for better generalization, on 17 English sentence-level datasets as most relevant to the task." "While the models achieve strong results on familiar benchmarks, their performance drops markedly when applied to unseen datasets." For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store; and it defines the extraction step that turns raw transcript text into stored components and relations.
-
-<details><summary>BibTeX</summary>
-
-```bibtex
-@inproceedings{feger2025limitedge,
-  title = {Limited Generalizability in Argument Mining: State-Of-The-Art Models Learn Datasets, Not Arguments},
-  author = {Marc Feger and Katarina Boland and Stefan Dietze},
-  year = {2025},
-  booktitle = {Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), ACL 2025, Vienna, Austria, July 27 - August 1, 2025},
-  doi = {10.18653/v1/2025.acl-long.1164},
-  url = {https://aclanthology.org/2025.acl-long.1164/},
-}
-```
-
-</details>
-
-#### Masayuki Kawarada, Tsutomu Hirao, Wataru Uchida and Masaaki Nagata (2024). *Argument Mining as a Text-to-Text Generation Task*. Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics.
-
-- `title:36583f02715c3d8ccf234bd5ada01d711eff40a2` | aliases: `acl:2024.eacl-long.121`, `doi:10.18653/v1/2024.eacl-long.121`
+- `doi:10.18653/v1/2024.eacl-long.121` | aliases: `acl:2024.eacl-long.121`
 - doc_type: `conference` | tier: T3 | tags: dataset, extraction | also in: resources
 - [landing](https://aclanthology.org/2024.eacl-long.121/) | [OA PDF](https://aclanthology.org/2024.eacl-long.121.pdf) (via acl)
 - verified against: acl, bibcorpus:NeWildeSache/argument-mining-in-the-web-archive
@@ -1608,7 +1560,7 @@ Generated 2026-09-16T02:00:29+00:00 | criteria_version 1 | cap 250
   title = {Argument Mining as a Text-to-Text Generation Task},
   author = {Masayuki Kawarada and Tsutomu Hirao and Wataru Uchida and Masaaki Nagata},
   year = {2024},
-  booktitle = {Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics},
+  booktitle = {Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers)},
   doi = {10.18653/v1/2024.eacl-long.121},
   url = {https://aclanthology.org/2024.eacl-long.121/},
 }
@@ -1634,6 +1586,30 @@ Generated 2026-09-16T02:00:29+00:00 | criteria_version 1 | cap 250
   year = {2022},
   booktitle = {Proceedings of the 16th Linguistic Annotation Workshop (LAW-XVI) within LREC2022},
   url = {https://aclanthology.org/2022.law-1.6/},
+}
+```
+
+</details>
+
+#### Roni Friedman et al. (2021). *Overview of the 2021 Key Point Analysis Shared Task*. Proceedings of the 8th Workshop on Argument Mining.
+
+- `doi:10.18653/v1/2021.argmining-1.16` | aliases: `acl:2021.argmining-1.16`
+- doc_type: `workshop` | tier: T3 | tags: dataset, extraction
+- [landing](https://aclanthology.org/2021.argmining-1.16/) | [OA PDF](https://aclanthology.org/2021.argmining-1.16.pdf) (via acl)
+- verified against: acl, bibcorpus:NeWildeSache/argument-mining-in-the-web-archive
+- score 0.4542 (cites 0.0, cocite 0.5714, keyword 0.4167, venue 1.0)
+- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "We describe the 2021 Key Point Analysis (KPA-2021) shared task on key point analysis that we organized as a part of the 8th Workshop on Argument Mining (ArgMining 2021) at EMNLP 2021." "We expect the task and the findings reported in this paper to be relevant for researchers working on text summarization and argument mining." For a debate-transcript argument database it defines the extraction step that turns raw transcript text into stored components and relations; and it is a reusable resource whose annotation structure a transcript schema can copy rather than reinvent.
+
+<details><summary>BibTeX</summary>
+
+```bibtex
+@inproceedings{friedman2021overviewo,
+  title = {Overview of the 2021 Key Point Analysis Shared Task},
+  author = {Roni Friedman and Lena Dankin and Yufang Hou and Ranit Aharonov and Yoav Katz and Noam Slonim},
+  year = {2021},
+  booktitle = {Proceedings of the 8th Workshop on Argument Mining},
+  doi = {10.18653/v1/2021.argmining-1.16},
+  url = {https://aclanthology.org/2021.argmining-1.16/},
 }
 ```
 
@@ -1715,7 +1691,7 @@ Generated 2026-09-16T02:00:29+00:00 | criteria_version 1 | cap 250
 - `doi:10.18653/v1/n18-2006` | aliases: `acl:N18-2006`
 - doc_type: `conference` | tier: T3 | tags: dataset, extraction | also in: resources
 - [landing](https://aclanthology.org/N18-2006/) | [OA PDF](https://aclanthology.org/N18-2006.pdf) (via acl) | [repo](https://github.com/UKPLab/naacl18-multitask_argument_mining)
-- verified against: acl, bibcorpus:lihebi/biber-dist, bibcorpus:m0re4u/paper-database | note: repo linked on token overlap: ['argumentation', 'learning', 'low', 'mining', 'multi', 'resource', 'settings', 'task']
+- verified against: acl, bibcorpus:lihebi/biber-dist, bibcorpus:m0re4u/paper-database | note: repo linked on distinctive title/description overlap: ['low', 'multi', 'resource', 'settings'] (all shared words: ['argumentation', 'learning', 'low', 'mining', 'multi', 'resource', 'settings', 'task…
 - score 0.3375 (cites 0.0, cocite 0.0, keyword 0.75, venue 1.0)
 - annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "We investigate whether and where multi-task learning (MTL) can improve performance on NLP problems related to argumentation mining (AM), in particular argument component identification." "Our results show that MTL performs particularly well (and better than single-task learning) when little training data is available for the main task, a common scenario in AM." For a debate-transcript argument database it defines the extraction step that turns raw transcript text into stored components and relations; and it is a reusable resource whose annotation structure a transcript schema can copy rather than reinvent.
 
@@ -2340,7 +2316,7 @@ Generated 2026-09-16T02:00:29+00:00 | criteria_version 1 | cap 250
 - `doi:10.1609/aaai.v34i05.6285`
 - doc_type: `conference` | tier: T3 | tags: dataset, quality | also in: resources
 - [landing](https://doi.org/10.1609/aaai.v34i05.6285) | [repo](https://github.com/Hellisotherpeople/DebateSum)
-- verified against: bibcorpus:BarryMafu/LitLens, bibcorpus:NeWildeSache/argument-mining-in-the-web-archive, bibcorpus:xinyannnnnnn/fact-driven-storytelling-with-llms | note: bibcorpus:dimits-ts/llm_moderation_research: venue mismatch ('AAAI' vs 'ArXiv'); bibcorpus:dimits-ts/synthetic_moderation_experiments: venue mismatch ('AAAI' vs 'ArXiv') repo linked on token overlap:…
+- verified against: bibcorpus:BarryMafu/LitLens, bibcorpus:NeWildeSache/argument-mining-in-the-web-archive, bibcorpus:xinyannnnnnn/fact-driven-storytelling-with-llms | note: bibcorpus:dimits-ts/llm_moderation_research: venue mismatch ('AAAI' vs 'ArXiv'); bibcorpus:dimits-ts/synthetic_moderation_experiments: venue mismatch ('AAAI' vs 'ArXiv') repo linked on distinctive ti…
 - annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (conference, AAAI, 2020), verified against 3 sources. For a debate-transcript argument database it gives quality dimensions or a scoring target, which is what an argument-strength field in the database would be measured against; and it is a reusable resource whose annotation structure a transcript schema can copy rather than reinvent.
 
 <details><summary>BibTeX</summary>
@@ -2531,29 +2507,6 @@ Generated 2026-09-16T02:00:29+00:00 | criteria_version 1 | cap 250
 
 </details>
 
-#### Christopher T. Small et al. (2021). *Polis: Scaling Deliberation by Mapping High Dimensional Opinion Spaces*. Recerca: Revista de pensament i analisi.
-
-- `doi:10.6035/recerca.5516`
-- doc_type: `conference` | tier: T2 | tags: dialogue
-- no URL recorded
-- verified against: bibcorpus:dimits-ts/llm_moderation_research, bibcorpus:dimits-ts/synthetic_moderation_experiments, bibcorpus:ochyai/open-japan-politech-platform
-- score 0.5083 (cites 0.0, cocite 1.0, keyword 0.3333, venue 0.5)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (conference, Recerca: Revista de pensament i analisi, 2021), verified against 3 sources. For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store.
-
-<details><summary>BibTeX</summary>
-
-```bibtex
-@inproceedings{small2021polissca,
-  title = {Polis: Scaling Deliberation by Mapping High Dimensional Opinion Spaces},
-  author = {Christopher T. Small and Michael Bjorkegren and Timo Erkkilä and Lynette Shaw and Colin Megill},
-  year = {2021},
-  booktitle = {Recerca: Revista de pensament i analisi},
-  doi = {10.6035/recerca.5516},
-}
-```
-
-</details>
-
 #### Jacky Visser et al. (2019). *Argumentation in the 2016 US presidential elections: annotated corpora of television debates and social media reaction*. Language Resources and Evaluation.
 
 - `doi:10.1007/s10579-019-09446-8`
@@ -2626,30 +2579,6 @@ Generated 2026-09-16T02:00:29+00:00 | criteria_version 1 | cap 250
 
 </details>
 
-#### Chantal van Son et al. (2016). *Unshared Task at the 3rd Workshop on Argument Mining: Perspective Based Local Agreement and Disagreement in Online Debate*. Proceedings of the Third Workshop on Argument Mining (ArgMining2016).
-
-- `doi:10.18653/v1/w16-2819` | aliases: `acl:W16-2819`
-- doc_type: `workshop` | tier: T2 | tags: dialogue, extraction | also in: mining
-- [landing](https://aclanthology.org/W16-2819/) | [OA PDF](https://aclanthology.org/W16-2819.pdf) (via acl)
-- verified against: acl, bibcorpus:m0re4u/paper-database
-- score 0.4 (cites 0.0, cocite 0.0, keyword 1.0, venue 1.0)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (workshop, Proceedings of the Third Workshop on Argument Mining (ArgMining2016), 2016), verified against 2 sources. For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store; and it defines the extraction step that turns raw transcript text into stored components and relations.
-
-<details><summary>BibTeX</summary>
-
-```bibtex
-@inproceedings{son2016unsharedt,
-  title = {Unshared Task at the 3rd Workshop on Argument Mining: Perspective Based Local Agreement and Disagreement in Online Debate},
-  author = {Chantal van Son and Tommaso Caselli and Antske Fokkens and Isa Maks and Roser Morante and Lora Aroyo and Piek Vossen},
-  year = {2016},
-  booktitle = {Proceedings of the Third Workshop on Argument Mining (ArgMining2016)},
-  doi = {10.18653/v1/w16-2819},
-  url = {https://aclanthology.org/W16-2819/},
-}
-```
-
-</details>
-
 #### Chenhao Tan, Vlad Niculae, Cristian Danescu-Niculescu-Mizil and Lillian Lee (2016). *Winning Arguments: Interaction Dynamics and Persuasion Strategies in Good-Faith Online Discussions*. Proceedings of the 25th International Conference on World Wide Web.
 
 - `doi:10.1145/2872427.2883081`
@@ -2668,6 +2597,30 @@ Generated 2026-09-16T02:00:29+00:00 | criteria_version 1 | cap 250
   booktitle = {Proceedings of the 25th International Conference on World Wide Web},
   doi = {10.1145/2872427.2883081},
   url = {https://doi.org/10.1145/2872427.2883081},
+}
+```
+
+</details>
+
+#### Scott Wright and John Street (2007). *Democracy, deliberation and design: the case of online discussion forums*. New Media & Society.
+
+- `doi:10.1177/1461444807081230`
+- doc_type: `journal` | tier: T2 | tags: dialogue
+- [landing](https://doi.org/10.1177/1461444807081230)
+- verified against: bibcorpus:dimits-ts/llm_moderation_research, bibcorpus:dimits-ts/synthetic_moderation_experiments
+- score 0.4708 (cites 0.0, cocite 0.8929, keyword 0.3333, venue 0.5)
+- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "Within democratic theory, the deliberative variant has assumed pre-eminence." "It represents for many the ideal of democracy, and in pursuit of this ideal, online discussion forums have been proposed as solutions to the practical limits to mass deliberation." For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store.
+
+<details><summary>BibTeX</summary>
+
+```bibtex
+@article{wright2007democracy,
+  title = {Democracy, deliberation and design: the case of online discussion forums},
+  author = {Scott Wright and John Street},
+  year = {2007},
+  journal = {New Media & Society},
+  doi = {10.1177/1461444807081230},
+  url = {https://doi.org/10.1177/1461444807081230},
 }
 ```
 
@@ -2696,31 +2649,31 @@ Generated 2026-09-16T02:00:29+00:00 | criteria_version 1 | cap 250
 
 </details>
 
-#### Davy Janssen and Raphaël Kies (2005). *Online Forums and Deliberative Democracy*. Acta Politica.
+### T3 - Dataset / tool / annotation guideline, including the guideline documents themselves.
 
-- `doi:10.1057/palgrave.ap.5500115`
-- doc_type: `journal` | tier: T2 | tags: dialogue
-- [landing](https://doi.org/10.1057/palgrave.ap.5500115)
-- verified against: bibcorpus:dimits-ts/llm_moderation_research, bibcorpus:dimits-ts/synthetic_moderation_experiments
-- score 0.45 (cites 0.0, cocite 0.8929, keyword 0.25, venue 0.5)
-- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "In this article, we present an overview of some of the empirical research that evaluates the quality of political conversations in online forums." "In the conclusion, we present some objections to the previous research and offer some ideas for a more comprehensive approach to online forum analysis." For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store.
+#### Arne Binder, Tatiana Anikina, Leonhard Hennig and Simon Ostermann (2024). *DFKI-MLST at DialAM-2024 Shared Task: System Description*. Proceedings of the 11th Workshop on Argument Mining (ArgMining 2024).
+
+- `doi:10.18653/v1/2024.argmining-1.9` | aliases: `acl:2024.argmining-1.9`
+- doc_type: `workshop` | tier: T3 | tags: dataset, dialogue, extraction | also in: mining
+- [landing](https://aclanthology.org/2024.argmining-1.9/) | [OA PDF](https://aclanthology.org/2024.argmining-1.9.pdf) (via acl)
+- verified against: acl, bibcorpus:mystreamer/lt2326-final-project
+- score 0.4625 (cites 0.0, cocite 0.5357, keyword 0.5, venue 1.0)
+- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "This paper presents the dfki-mlst submission for the DialAM shared task (Ruiz-Dolz et al., 2024) on identification of argumentative and illocutionary relations in dialogue." "We describe our implementation of the data pre-processing, relation encoding and classification, evaluating 11 different base models and performing experiments with, e.g., node text combination and data augmentation." For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store; and it defines the extraction step that turns raw transcript text into stored components and relations.
 
 <details><summary>BibTeX</summary>
 
 ```bibtex
-@article{janssen2005onlinefor,
-  title = {Online Forums and Deliberative Democracy},
-  author = {Davy Janssen and Raphaël Kies},
-  year = {2005},
-  journal = {Acta Politica},
-  doi = {10.1057/palgrave.ap.5500115},
-  url = {https://doi.org/10.1057/palgrave.ap.5500115},
+@inproceedings{binder2024dfkimlst,
+  title = {DFKI-MLST at DialAM-2024 Shared Task: System Description},
+  author = {Arne Binder and Tatiana Anikina and Leonhard Hennig and Simon Ostermann},
+  year = {2024},
+  booktitle = {Proceedings of the 11th Workshop on Argument Mining (ArgMining 2024)},
+  doi = {10.18653/v1/2024.argmining-1.9},
+  url = {https://aclanthology.org/2024.argmining-1.9/},
 }
 ```
 
 </details>
-
-### T3 - Dataset / tool / annotation guideline, including the guideline documents themselves.
 
 #### Annette Hautli-Janisz et al. (2022). *QT30: A Corpus of Argument and Conflict in Broadcast Debate*. Proceedings of the Thirteenth Language Resources and Evaluation Conference.
 
@@ -2739,6 +2692,30 @@ Generated 2026-09-16T02:00:29+00:00 | criteria_version 1 | cap 250
   year = {2022},
   booktitle = {Proceedings of the Thirteenth Language Resources and Evaluation Conference},
   url = {https://aclanthology.org/2022.lrec-1.352/},
+}
+```
+
+</details>
+
+#### Chantal van Son et al. (2016). *Unshared Task at the 3rd Workshop on Argument Mining: Perspective Based Local Agreement and Disagreement in Online Debate*. Proceedings of the Third Workshop on Argument Mining (ArgMining2016).
+
+- `doi:10.18653/v1/w16-2819` | aliases: `acl:W16-2819`
+- doc_type: `workshop` | tier: T3 | tags: dataset, dialogue, extraction | also in: mining
+- [landing](https://aclanthology.org/W16-2819/) | [OA PDF](https://aclanthology.org/W16-2819.pdf) (via acl)
+- verified against: acl, bibcorpus:m0re4u/paper-database
+- score 0.4 (cites 0.0, cocite 0.0, keyword 1.0, venue 1.0)
+- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (workshop, Proceedings of the Third Workshop on Argument Mining (ArgMining2016), 2016), verified against 2 sources. For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store; and it defines the extraction step that turns raw transcript text into stored components and relations.
+
+<details><summary>BibTeX</summary>
+
+```bibtex
+@inproceedings{son2016unsharedt,
+  title = {Unshared Task at the 3rd Workshop on Argument Mining: Perspective Based Local Agreement and Disagreement in Online Debate},
+  author = {Chantal van Son and Tommaso Caselli and Antske Fokkens and Isa Maks and Roser Morante and Lora Aroyo and Piek Vossen},
+  year = {2016},
+  booktitle = {Proceedings of the Third Workshop on Argument Mining (ArgMining2016)},
+  doi = {10.18653/v1/w16-2819},
+  url = {https://aclanthology.org/W16-2819/},
 }
 ```
 
@@ -2791,25 +2768,25 @@ Generated 2026-09-16T02:00:29+00:00 | criteria_version 1 | cap 250
 
 ### T4 - Recent (2023-2026). LLM-era work; lower durability confidence, high build relevance.
 
-#### Arne Binder, Tatiana Anikina, Leonhard Hennig and Simon Ostermann (2024). *DFKI-MLST at DialAM-2024 Shared Task: System Description*. Proceedings of the 11th Workshop on Argument Mining (ArgMining 2024).
+#### Mohammad Khosravani, Chenyang Huang and Amine Trabelsi (2024). *Enhancing Argument Summarization: Prioritizing Exhaustiveness in Key Point Generation and Introducing an Automatic Coverage Evaluation Metric*. Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers).
 
-- `doi:10.18653/v1/2024.argmining-1.9` | aliases: `acl:2024.argmining-1.9`
-- doc_type: `workshop` | tier: T4 | tags: dialogue, extraction | also in: mining
-- [landing](https://aclanthology.org/2024.argmining-1.9/) | [OA PDF](https://aclanthology.org/2024.argmining-1.9.pdf) (via acl)
-- verified against: acl, bibcorpus:mystreamer/lt2326-final-project
-- score 0.4625 (cites 0.0, cocite 0.5357, keyword 0.5, venue 1.0)
-- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "This paper presents the dfki-mlst submission for the DialAM shared task (Ruiz-Dolz et al., 2024) on identification of argumentative and illocutionary relations in dialogue." "We describe our implementation of the data pre-processing, relation encoding and classification, evaluating 11 different base models and performing experiments with, e.g., node text combination and data augmentation." For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store; and it defines the extraction step that turns raw transcript text into stored components and relations.
+- `doi:10.18653/v1/2024.naacl-long.454` | aliases: `acl:2024.naacl-long.454`
+- doc_type: `conference` | tier: T4 | tags: dialogue
+- [landing](https://aclanthology.org/2024.naacl-long.454/) | [OA PDF](https://aclanthology.org/2024.naacl-long.454.pdf) (via acl)
+- verified against: acl, bibcorpus:NeWildeSache/argument-mining-in-the-web-archive
+- score 0.5042 (cites 0.0, cocite 0.7143, keyword 0.4167, venue 1.0)
+- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "This paper introduces a novel extractive approach for key point generation, that outperforms previous state-of-the-art methods for the task." "To this end, we propose a new evaluation metric for assessing the generated key points by their coverage." For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store.
 
 <details><summary>BibTeX</summary>
 
 ```bibtex
-@inproceedings{binder2024dfkimlst,
-  title = {DFKI-MLST at DialAM-2024 Shared Task: System Description},
-  author = {Arne Binder and Tatiana Anikina and Leonhard Hennig and Simon Ostermann},
+@inproceedings{khosravani2024enhancing,
+  title = {Enhancing Argument Summarization: Prioritizing Exhaustiveness in Key Point Generation and Introducing an Automatic Coverage Evaluation Metric},
+  author = {Mohammad Khosravani and Chenyang Huang and Amine Trabelsi},
   year = {2024},
-  booktitle = {Proceedings of the 11th Workshop on Argument Mining (ArgMining 2024)},
-  doi = {10.18653/v1/2024.argmining-1.9},
-  url = {https://aclanthology.org/2024.argmining-1.9/},
+  booktitle = {Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)},
+  doi = {10.18653/v1/2024.naacl-long.454},
+  url = {https://aclanthology.org/2024.naacl-long.454/},
 }
 ```
 
@@ -3108,7 +3085,7 @@ Generated 2026-09-16T02:00:29+00:00 | criteria_version 1 | cap 250
 
 </details>
 
-## 6.6 Datasets, tools, annotation guidelines (10 entries, quota 30)
+## 6.6 Datasets, tools, annotation guidelines (11 entries, quota 30)
 
 ### T3 - Dataset / tool / annotation guideline, including the guideline documents themselves.
 
@@ -3131,6 +3108,30 @@ Generated 2026-09-16T02:00:29+00:00 | criteria_version 1 | cap 250
   booktitle = {Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)},
   doi = {10.18653/v1/2025.naacl-long.34},
   url = {https://aclanthology.org/2025.naacl-long.34/},
+}
+```
+
+</details>
+
+#### Marc Feger, Katarina Boland and Stefan Dietze (2025). *Limited Generalizability in Argument Mining: State-Of-The-Art Models Learn Datasets, Not Arguments*. Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), ACL 2025, Vienna, Austria, July 27 - August 1, 2025.
+
+- `doi:10.18653/v1/2025.acl-long.1164` | aliases: `acl:2025.acl-long.1164`
+- doc_type: `conference` | tier: T3 | tags: dataset, dialogue, extraction | also in: mining
+- [landing](https://aclanthology.org/2025.acl-long.1164/) | [OA PDF](https://aclanthology.org/2025.acl-long.1164.pdf) (via acl)
+- verified against: acl, bibcorpus:CogSciPrag/project_ideas
+- score 0.5375 (cites 0.0, cocite 0.5714, keyword 0.75, venue 1.0)
+- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "We evaluate four transformers, three standard and one enhanced with contrastive pre-training for better generalization, on 17 English sentence-level datasets as most relevant to the task." "While the models achieve strong results on familiar benchmarks, their performance drops markedly when applied to unseen datasets." For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store; and it defines the extraction step that turns raw transcript text into stored components and relations.
+
+<details><summary>BibTeX</summary>
+
+```bibtex
+@inproceedings{feger2025limitedge,
+  title = {Limited Generalizability in Argument Mining: State-Of-The-Art Models Learn Datasets, Not Arguments},
+  author = {Marc Feger and Katarina Boland and Stefan Dietze},
+  year = {2025},
+  booktitle = {Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), ACL 2025, Vienna, Austria, July 27 - August 1, 2025},
+  doi = {10.18653/v1/2025.acl-long.1164},
+  url = {https://aclanthology.org/2025.acl-long.1164/},
 }
 ```
 

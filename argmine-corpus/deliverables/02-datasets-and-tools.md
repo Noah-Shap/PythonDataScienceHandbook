@@ -1,17 +1,21 @@
 # 02 - Datasets, tools and annotation guidelines
 
-39 resource entries. Every column is filled from text this pipeline retrieved (abstract or full text) or from a cloned repository; where the retrieved text does not state something, the cell says so rather than guessing.
+42 resource entries. Every column is filled from text this pipeline retrieved (abstract or full text) or from a cloned repository; where the retrieved text does not state something, the cell says so rather than guessing.
 
 | Resource | Paper id | Repo | Licence | Size (as stated) | Unit of annotation | Annotation scheme | Guideline retrieved |
 |---|---|---|---|---|---|---|---|
+| Winning Arguments: Interaction Dynamics and Persuasion Strategies in Good-Faith… | `doi:10.1145/2872427.2883081` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
+| Annotating Argument Components and Relations in Persuasive Essays | `title:97249276aac1f18259184dfbfac19f869827fdaa` | [thiemowa/-argumentative_business_model_pitches](https://github.com/thiemowa/-argumentative_business_model_pitches) | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
+| Identifying Argumentative Discourse Structures in Persuasive Essays | `doi:10.3115/v1/d14-1006` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
 | Argument Mining with Fine-Tuned Large Language Models | `title:b3f2fb478758d0b73038947a352f801896c15505` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
 | Fine-grained Fallacy Detection with Human Label Variation | `doi:10.18653/v1/2025.naacl-long.34` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | fallacy types | no |
-| From Debates to Diplomacy: Argument Mining Across Political Registers | `doi:10.18653/v1/2025.argmining-1.20` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | claim / premise components | no |
-| Limited Generalizability in Argument Mining: State-Of-The-Art Models Learn Data… | `title:ecc66f83f08f4809231d027e9ba9ccb1e4c3f5ba` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
+| From Debates to Diplomacy: Argument Mining Across Political Registers | `doi:10.18653/v1/2025.argmining-1.20` | [AzkaQadir/multimodal-fallacy-detection](https://github.com/AzkaQadir/multimodal-fallacy-detection) | unstated | not stated in retrieved text | not stated in retrieved text | claim / premise components | yes |
+| Limited Generalizability in Argument Mining: State-Of-The-Art Models Learn Data… | `doi:10.18653/v1/2025.acl-long.1164` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
 | Are LLMs Good Zero-Shot Fallacy Classifiers? | `doi:10.18653/v1/2024.emnlp-main.794` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | fallacy types | no |
-| Argument Mining as a Text-to-Text Generation Task | `title:36583f02715c3d8ccf234bd5ada01d711eff40a2` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
+| Argument Mining as a Text-to-Text Generation Task | `doi:10.18653/v1/2024.eacl-long.121` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
 | CoCoLoFa: A Dataset of News Comments with Common Logical Fallacies Written by L… | `doi:10.18653/v1/2024.emnlp-main.39` | none linked | not retrieved | 7,706 comments | not stated in retrieved text | fallacy types | no |
 | Critical Questions Generation: Motivation and Challenges | `doi:10.18653/v1/2024.conll-1.9` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
+| DFKI-MLST at DialAM-2024 Shared Task: System Description | `doi:10.18653/v1/2024.argmining-1.9` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
 | MAFALDA: A Benchmark and Comprehensive Study of Fallacy Detection and Classific… | `doi:10.18653/v1/2024.naacl-long.270` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | fallacy types | no |
 | MAMKit: A Comprehensive Multimodal Argument Mining Toolkit | `doi:10.18653/v1/2024.argmining-1.7` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
 | Bridging Argument Quality and Deliberative Quality Annotations with Adapters | `doi:10.18653/v1/2023.findings-eacl.187` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
@@ -19,6 +23,7 @@
 | The Sensitivity of Annotator Bias to Task Definitions in Argument Mining | `title:61fadcac208eb3f58c0f9834cf909c5aaa5c7972` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
 | Breaking Down the Invisible Wall of Informal Fallacies in Online Discussions | `doi:10.18653/v1/2021.acl-long.53` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | fallacy types | no |
 | DeliData: A Dataset for Deliberation in Multi-party Problem Solving | `title:a53d191087c04c6d49d9d46488abffa0090e89de` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
+| Overview of the 2021 Key Point Analysis Shared Task | `doi:10.18653/v1/2021.argmining-1.16` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
 | A large-scale dataset for argument quality ranking: Construction and analysis | `doi:10.1609/aaai.v34i05.6285` | [Hellisotherpeople/DebateSum](https://github.com/Hellisotherpeople/DebateSum) | unstated | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | yes |
 | Annotating Topics, Stance, Argumentativeness and Claims in Dutch Social Media C… | `title:845517f340fa84f9278786e5e5f5cca686edfa5a` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
 | Corpus Wide Argument Mining - A Working Solution | `doi:10.1609/aaai.v34i05.6270` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
@@ -37,14 +42,13 @@
 | Recognizing Insufficiently Supported Arguments in Argumentative Essays | `title:4548f0ff40575ec88d744f306fc5a7f696551502` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | claim / premise components | no |
 | Unsupervised corpus–wide claim detection | `doi:10.18653/v1/w17-5110` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
 | Internet Argument Corpus 2.0: An SQL schema for Dialogic Social Media and the C… | `title:5fdf28d47fecc818952baba478a8bd9d1b71a516` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
-| Winning Arguments: Interaction Dynamics and Persuasion Strategies in Good-Faith… | `doi:10.1145/2872427.2883081` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
+| Unshared Task at the 3rd Workshop on Argument Mining: Perspective Based Local A… | `doi:10.18653/v1/w16-2819` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
 | A Benchmark Dataset for Automatic Detection of Claims and Evidence in the Conte… | `doi:10.3115/v1/w14-2109` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
 | A Model for Processing Illocutionary Structures and Argumentation in Debates | `title:5c30e54b1303736b308e1674274f1a1132b052df` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | Inference Anchoring Theory | no |
-| Annotating Argument Components and Relations in Persuasive Essays | `title:97249276aac1f18259184dfbfac19f869827fdaa` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
-| Identifying Argumentative Discourse Structures in Persuasive Essays | `doi:10.3115/v1/d14-1006` | none linked | not retrieved | not stated in retrieved text | not stated in retrieved text | not stated in retrieved text | no |
 | A Corpus for Research on Deliberation and Debate | `title:ae7588dc60be7ab8f03855ae779ec0f0519a8728` | none linked | not retrieved | 390,704 posts; 11,800 discussions | not stated in retrieved text | not stated in retrieved text | no |
 
 ## Guideline documents retrieved
 
+- `corpus/text/guidelines/doi_10.18653_v1_2025.argmining-1.20__README.md` - from doi:10.18653/v1/2025.argmining-1.20 (From Debates to Diplomacy: Argument Mining Across Political Registers)
 - `corpus/text/guidelines/doi_10.1609_aaai.v34i05.6285__README.md` - from doi:10.1609/aaai.v34i05.6285 (A large-scale dataset for argument quality ranking: Construction and…)
 - `corpus/text/guidelines/doi_10.18653_v1_n18-2006__README.md` - from doi:10.18653/v1/n18-2006 (Multi-Task Learning for Argumentation Mining in Low-Resource Settings)
