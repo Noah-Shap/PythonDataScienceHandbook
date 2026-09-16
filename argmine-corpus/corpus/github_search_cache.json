@@ -124,6 +124,53 @@
       "total_count": 1,
       "via": "mcp:github.search_code"
     },
+    "\"Workshop on Argument Mining\" argmining extension:bib": {
+      "fetched_at": "2026-09-16T01:54:48+00:00",
+      "items": [
+        {
+          "path": "ir_datasets/docs/bibliography.bib",
+          "repository": "allenai/ir_datasets"
+        },
+        {
+          "path": "_bibliography/papers.bib",
+          "repository": "alessiopittiglio/alessiopittiglio.github.io"
+        },
+        {
+          "path": "content/publication/binder-etal-2024-dfki/cite.bib",
+          "repository": "DFKI-NLP/dfki-nlp.github.io"
+        },
+        {
+          "path": "_bibliography/papers.bib",
+          "repository": "helemanc/helemanc.github.io"
+        },
+        {
+          "path": "_bibliography/papers.bib",
+          "repository": "deborahdore/deborahdore.github.io"
+        },
+        {
+          "path": "_bibliography/papers.bib",
+          "repository": "StefanoColamonaco/StefanoColamonaco.github.io"
+        },
+        {
+          "path": "_bibliography/papers.bib",
+          "repository": "mpoiaganova/poiaganova"
+        },
+        {
+          "path": "bibliography/bibliography.bib",
+          "repository": "corite/ir-documentation"
+        },
+        {
+          "path": "content/publication/binder-2024-dialam/cite.bib",
+          "repository": "trails-dfki/trails-dfki.github.io"
+        },
+        {
+          "path": "paper/acl2018.bib",
+          "repository": "julia-zhou/Argmining"
+        }
+      ],
+      "total_count": 69,
+      "via": "mcp:github.search_code"
+    },
     "\"acceptability of arguments\" extension:bib": {
       "fetched_at": "2026-09-16T00:57:51+00:00",
       "items": [
@@ -184,6 +231,49 @@
         }
       ],
       "total_count": 1,
+      "via": "mcp:github.search_code"
+    },
+    "\"argmining\" \"10.18653\" extension:bib": {
+      "fetched_at": "2026-09-16T01:54:48+00:00",
+      "items": [
+        {
+          "path": "ir_datasets/docs/bibliography.bib",
+          "repository": "allenai/ir_datasets"
+        },
+        {
+          "path": "acl2019/paper/acl2019.bib",
+          "repository": "IKMLab/arct2"
+        },
+        {
+          "path": "_bibliography/papers.bib",
+          "repository": "helemanc/helemanc.github.io"
+        },
+        {
+          "path": "_bibliography/papers.bib",
+          "repository": "deborahdore/deborahdore.github.io"
+        },
+        {
+          "path": "_bibliography/papers.bib",
+          "repository": "mpoiaganova/poiaganova"
+        },
+        {
+          "path": "bibliography/bibliography.bib",
+          "repository": "corite/ir-documentation"
+        },
+        {
+          "path": "paper/references.bib",
+          "repository": "mystreamer/lt2326-final-project"
+        },
+        {
+          "path": "Doc/Latex/custom.bib",
+          "repository": "RicoStaedeli/NLP2025_CQG"
+        },
+        {
+          "path": "latex/literature.bib",
+          "repository": "NeWildeSache/argument-mining-in-the-web-archive"
+        }
+      ],
+      "total_count": 71,
       "via": "mcp:github.search_code"
     },
     "\"argument mining\" extension:bib": {
