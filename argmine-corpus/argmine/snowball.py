@@ -195,29 +195,34 @@ def admit(ctx, scored: list[dict]) -> dict:
     # Rank by score, but let a candidate that can already reach two independent sources
     # take a slot ahead of one that cannot: an unverifiable entry can never enter the
     # bibliography, only the appendix, so spending a capped slot on it is waste.
-    ranked = sorted(scored, key=lambda r: (-(1 if r.get("_corroboration", 0) >= 2 else 0),
+    ranked = sorted(scored, key=lambda r: (-(1 if r.get("_would_verify") else 0),
                                            -r["score"]["total"]))
     counts = dict(reg.area_counts())
     chosen: list[dict] = []
     taken: set[int] = set()
 
-    # Quota pass: starve no area because another one has more volume.
+    # Quota pass: starve no area because another one has more volume. Two rounds - the
+    # first fills each area only with candidates that will actually reach the bibliography,
+    # the second falls back to the best of the rest where an area cannot be filled that way.
     deficits = {a: max(cfg.area_quota(a) - counts.get(a, 0), 0) for a in cfg["areas"]}
-    for area in sorted(deficits, key=lambda a: -deficits[a]):
-        need = deficits[area]
-        if need <= 0:
-            continue
-        for idx, rec in enumerate(ranked):
-            if need <= 0 or len(chosen) >= room:
-                break
-            if idx in taken or area not in rec.get("area", []):
+    for verifiable_only in (True, False):
+        for area in sorted(deficits, key=lambda a: -deficits[a]):
+            need = deficits[area] - sum(1 for r in chosen if area in r.get("area", []))
+            if need <= 0:
                 continue
-            taken.add(idx)
-            chosen.append(rec)
-            summary["quota_admitted"] += 1
-            need -= 1
-            for a in rec.get("area", []):
-                counts[a] = counts.get(a, 0) + 1
+            for idx, rec in enumerate(ranked):
+                if need <= 0 or len(chosen) >= room:
+                    break
+                if idx in taken or area not in rec.get("area", []):
+                    continue
+                if verifiable_only and not rec.get("_would_verify"):
+                    continue
+                taken.add(idx)
+                chosen.append(rec)
+                summary["quota_admitted"] += 1
+                need -= 1
+                for a in rec.get("area", []):
+                    counts[a] = counts.get(a, 0) + 1
 
     # Score pass: fill what is left with the best of the rest.
     for idx, rec in enumerate(ranked):
@@ -227,7 +232,7 @@ def admit(ctx, scored: list[dict]) -> dict:
             continue
         taken.add(idx)
         chosen.append(rec)
-    summary["admitted_corroborated"] = sum(1 for r in chosen if r.get("_corroboration", 0) >= 2)
+    summary["admitted_corroborated"] = sum(1 for r in chosen if r.get("_would_verify"))
 
     for idx, rec in enumerate(ranked):
         if idx in taken:

@@ -160,24 +160,19 @@ def cocite_raw(ctx, rec: dict, verified_titles: set[str], registry_aliases: set[
     return 0.0, "none"
 
 
-def corroboration_count(ctx, rec: dict) -> int:
-    """How many independent sources already have this work.
+def corroboration(ctx, rec: dict) -> tuple[int, bool]:
+    """Run the phase-3 agreement test now: (independent sources, would verify?).
 
-    This is the phase-3 verification criterion, applied cheaply at admission time so the
-    cap is not spent on candidates that provably cannot reach two independent sources.
-    It never changes a score; it only breaks ties between candidates competing for the
-    same slot.
+    Applied at admission time so a capped slot is not spent on a candidate that provably
+    cannot reach two agreeing independent sources - such an entry can only ever reach the
+    appendix. It never changes a score; it decides which of two candidates takes a slot.
+    The work is not wasted: every lookup it makes is already cached for phase 3.
     """
-    sources = set()
-    if ctx.live("acl") and ctx.acl.lookup_title(rec.get("title", ""), rec.get("year")):
-        sources.add("acl")
-    if ctx.live("bibcorpus"):
-        for repo in ctx.bib.independent_repos(rec.get("title", "")):
-            sources.add(f"bibcorpus:{repo}")
-    for name in ("openalex", "semanticscholar", "crossref", "arxiv"):
-        if ctx.live(name):
-            sources.add(name)          # a reachable API is asked for real in phase 3
-    return len(sources)
+    from .verify import resolve_views, views_agree
+    views = resolve_views(ctx, rec.get("title", ""), rec.get("year"), rec.get("authors"),
+                          aliases=rec.get("aliases", []))
+    status, sources, _notes = views_agree(views)
+    return len(sources), status == "verified"
 
 
 def minmax(values: list[float]) -> list[float]:
@@ -210,10 +205,12 @@ def score_batch(cfg, ctx, candidates: list[dict], verified_titles: set[str],
         venue = venue_score(cfg, rec)
         total = (float(weights["cites_norm"]) * cn + float(weights["cocite"]) * con_w
                  + float(weights["keyword"]) * keyword + float(weights["venue"]) * venue)
-        rec["_corroboration"] = corroboration_count(ctx, rec)
+        n_sources, would_verify = corroboration(ctx, rec)
+        rec["_corroboration"] = n_sources
+        rec["_would_verify"] = would_verify
         rec["score"] = {
             "total": round(total, 4),
-            "corroborating_sources": rec["_corroboration"],
+            "corroborating_sources": n_sources,
             "components": {"cites_norm": round(cn, 4), "cocite": round(con_w, 4),
                            "keyword": round(keyword, 4), "venue": round(venue, 4)},
             "components_source": {"cites_norm": "citation-counts" if any(

@@ -12,6 +12,8 @@ metadata is genuine corroboration.
 """
 from __future__ import annotations
 
+import re
+
 from rapidfuzz import fuzz
 
 from .cache import advance
@@ -39,6 +41,35 @@ VENUE_ALIASES = {
 
 
 # -- comparison -----------------------------------------------------------
+def _abbrev_compatible(a: str, b: str) -> bool:
+    """DBLP-style abbreviations: 'Artif. Intell.' is 'Artificial Intelligence'.
+
+    Every token of the shorter name must be a prefix of the aligned token of the longer
+    one, ignoring stopwords - which is exactly how these abbreviations are formed.
+    """
+    stop = {"the", "of", "and", "on", "in", "for", "a", "an", "journal", "proceedings",
+            "conference", "international", "annual", "meeting"}
+    ta = [t for t in re.split(r"[^a-z0-9]+", a) if t and t not in stop]
+    tb = [t for t in re.split(r"[^a-z0-9]+", b) if t and t not in stop]
+    if not ta or not tb:
+        return False
+    short, long = (ta, tb) if len(ta) <= len(tb) else (tb, ta)
+    if len(short) == 1 and len(long) == 1:
+        # Single-word venues abbreviate too: "Nat." is "Nature", "Artif" is "Artificial".
+        s0, l0 = short[0], long[0]
+        return len(s0) >= 3 and l0.startswith(s0)
+    if len(short) < 2 or len(long) - len(short) > 3:
+        return False
+    i = 0
+    for token in short:
+        while i < len(long) and not (long[i].startswith(token) or token.startswith(long[i])):
+            i += 1
+        if i == len(long):
+            return False
+        i += 1
+    return True
+
+
 def venue_compatible(a: str, b: str) -> tuple[bool, str]:
     va, vb = norm_text(a), norm_text(b)
     if not va or not vb:
@@ -46,6 +77,8 @@ def venue_compatible(a: str, b: str) -> tuple[bool, str]:
     if va in vb or vb in va:
         return True, ""
     if fuzz.token_set_ratio(va, vb) >= 80:
+        return True, ""
+    if _abbrev_compatible(va, vb):
         return True, ""
     for canon, aliases in VENUE_ALIASES.items():
         forms = [canon] + aliases
