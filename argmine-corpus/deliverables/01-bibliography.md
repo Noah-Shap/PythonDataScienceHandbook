@@ -2,7 +2,9 @@
 
 140 verified entries, grouped by area and then by tier. Every entry here agreed across at least two independent metadata sources; anything that did not is in `99-unverified-and-rejected.md`. Each annotation says which retrieved text it was written from (`grounded_on`), and quotes that text rather than paraphrasing it from outside knowledge.
 
-Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
+Generated 2026-09-16T03:20:09+00:00 | criteria_version 1 | cap 250
+
+**Added in the latest run (250):** `doi:10.1007/978-0-387-98197-0_19`, `doi:10.1007/978-3-642-23963-2_10`, `doi:10.1007/s10458-009-9116-7`, `doi:10.1007/s10506-010-9104-x`, `doi:10.1007/s10579-019-09446-8`, `doi:10.1007/s13222-020-00347-7`, `doi:10.1016/0004-3702(94)00041-x`, `doi:10.1016/j.artint.2007.04.010`, `doi:10.1016/j.artint.2015.12.004`, `doi:10.1017/cbo9780511802034`, `doi:10.1017/s0269888906001044`, `doi:10.1017/s0269888911000166`, `doi:10.1038/s41586-021-03215-w`, `doi:10.1057/palgrave.ap.5500115`, `doi:10.1080/19462160903564592`, `doi:10.1080/19462166.2010.486479`, `doi:10.1080/19462166.2012.661766`, `doi:10.1080/19462166.2013.862303`, `doi:10.1080/19462166.2013.869764`, `doi:10.1080/19462166.2013.869766`, `doi:10.1080/19462166.2013.869767`, `doi:10.1080/19462166.2013.869878`, `doi:10.1080/19462166.2014.1001790`, `doi:10.1093/logcom/14.5.675`, `doi:10.1093/oso/9780198862536.003.0005`, `doi:10.1111/coin.12111`, `doi:10.1145/2850417`, `doi:10.1145/2872427.2883081`, `doi:10.1145/3308558.3314127`, `doi:10.1162/coli_a_00276`, `doi:10.1162/coli_a_00295`, `doi:10.1162/coli_a_00364`, `doi:10.1162/coli_a_00553`, `doi:10.1162/tacl_a_00481`, `doi:10.1177/1461444807081230`, `doi:10.1609/aaai.v34i05.6270`, `doi:10.1609/aaai.v34i05.6285`, `doi:10.18653/v1/2020.acl-main.298`, `doi:10.18653/v1/2020.coling-main.128`, `doi:10.18653/v1/2020.coling-main.402` ...
 
 ## 6.1 Formal foundations (27 entries, quota 30)
 
@@ -26,74 +28,6 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
   journal = {Computational Linguistics},
   doi = {10.1162/coli_a_00364},
   url = {https://aclanthology.org/J19-4006/},
-}
-```
-
-</details>
-
-#### Pietro Baroni, Dov Gabbay, Massimiliano Giacomin and Leendert van der Torre (2018). *Handbook of Formal Argumentation*. College Publications.
-
-- `title:c01257ffd78768bab2a908ba8509b177ebd2f015`
-- doc_type: `book` | tier: T1 | tags: formal
-- no URL recorded
-- verified against: bibcorpus:KWARC/bibs, bibcorpus:lmlearning/AFGraphLib, bibcorpus:p4s3r0/argumentation-framework-clustering, bibcorpus:slatex/sTeX | note: author list missing from one source; venue not corroborated by both sources
-- score 0.35 (cites 0.0, cocite 0.4286, keyword 0.5, venue 0.5)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (book, College Publications, 2018), verified against 4 sources. For a debate-transcript argument database it supplies the formal semantics for deciding what stands once arguments and attacks are stored, so strength is computed rather than asserted.
-
-<details><summary>BibTeX</summary>
-
-```bibtex
-@book{baroni2018handbooko,
-  title = {Handbook of Formal Argumentation},
-  author = {Pietro Baroni and Dov Gabbay and Massimiliano Giacomin and Leendert van der Torre},
-  year = {2018},
-  publisher = {College Publications},
-}
-```
-
-</details>
-
-####  (2014). *A tutorial on assumption-based argumentation*. Argument & Computation.
-
-- `doi:10.1080/19462166.2013.869878`
-- doc_type: `journal` | tier: T1 | tags: formal
-- no URL recorded
-- verified against: bibcorpus:davidar/dblp.yaml, bibcorpus:p4s3r0/argumentation-framework-clustering
-- score 0.475 (cites 0.0, cocite 0.5714, keyword 0.5, venue 1.0)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (journal, Argument & Computation, 2014), verified against 2 sources. For a debate-transcript argument database it supplies the formal semantics for deciding what stands once arguments and attacks are stored, so strength is computed rather than asserted.
-
-<details><summary>BibTeX</summary>
-
-```bibtex
-@article{toni2014atutorial,
-  title = {A tutorial on assumption-based argumentation},
-  author = {Francesca Toni},
-  year = {2014},
-  journal = {Argument & Computation},
-  doi = {10.1080/19462166.2013.869878},
-}
-```
-
-</details>
-
-#### Philippe Besnard et al. (2014). *Introduction to structured argumentation*. Argument & Computation.
-
-- `doi:10.1080/19462166.2013.869764`
-- doc_type: `journal` | tier: T1 | tags: formal
-- no URL recorded
-- verified against: bibcorpus:KWARC/bibs, bibcorpus:davidar/dblp.yaml, bibcorpus:slatex/sTeX
-- score 0.325 (cites 0.0, cocite 0.1429, keyword 0.5, venue 1.0)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (journal, Argument & Computation, 2014), verified against 3 sources. For a debate-transcript argument database it supplies the formal semantics for deciding what stands once arguments and attacks are stored, so strength is computed rather than asserted.
-
-<details><summary>BibTeX</summary>
-
-```bibtex
-@article{besnard2014introducti,
-  title = {Introduction to structured argumentation},
-  author = {Philippe Besnard and Alejandro Garcia and Anthony Hunter and Sanjay Modgil and Henry Prakken and Guillermo Simari and Francesca Toni},
-  year = {2014},
-  journal = {Argument & Computation},
-  doi = {10.1080/19462166.2013.869764},
 }
 ```
 
@@ -173,7 +107,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - doc_type: `journal` | tier: T1 | tags: formal
 - [landing](http://dx.doi.org/10.1017/s0269888906001044)
 - verified against: bibcorpus:KWARC/bibs, bibcorpus:davidar/dblp.yaml, bibcorpus:slatex/sTeX
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (journal, The Knowledge Engineering Review, 2006), verified against 3 sources. For a debate-transcript argument database it supplies the formal semantics for deciding what stands once arguments and attacks are stored, so strength is computed rather than asserted.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -219,7 +153,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - doc_type: `conference` | tier: T1 | tags: formal
 - [landing](https://api.semanticscholar.org/CorpusID:120694372)
 - verified against: bibcorpus:IKMLab/arct2, bibcorpus:NeWildeSache/argument-mining-in-the-web-archive | note: bibcorpus:CogSciPrag/project_ideas: year mismatch (1958 vs 1960)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (conference, Cambridge University Press, 1960), verified against 2 sources. For a debate-transcript argument database it supplies the formal semantics for deciding what stands once arguments and attacks are stored, so strength is computed rather than asserted.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -237,6 +171,28 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 
 ### T2 - Core method. Defines a task formulation, model, or evaluation still in use.
 
+#### Pietro Baroni, Dov Gabbay, Massimiliano Giacomin and Leendert van der Torre (2018). *Handbook of Formal Argumentation*. College Publications.
+
+- `title:c01257ffd78768bab2a908ba8509b177ebd2f015`
+- doc_type: `book` | tier: T2 | tags: formal
+- no URL recorded
+- verified against: bibcorpus:KWARC/bibs, bibcorpus:lmlearning/AFGraphLib, bibcorpus:p4s3r0/argumentation-framework-clustering, bibcorpus:slatex/sTeX | note: author list missing from one source; venue not corroborated by both sources
+- score 0.35 (cites 0.0, cocite 0.4286, keyword 0.5, venue 0.5)
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
+
+<details><summary>BibTeX</summary>
+
+```bibtex
+@book{baroni2018handbooko,
+  title = {Handbook of Formal Argumentation},
+  author = {Pietro Baroni and Dov Gabbay and Massimiliano Giacomin and Leendert van der Torre},
+  year = {2018},
+  publisher = {College Publications},
+}
+```
+
+</details>
+
 #### Fabrizio Macagno, Douglas Walton and Chris Reed (2017). *Argumentation Schemes. History, Classifications, and Computational Applications*. IFCoLog Journal of Logics and Their Applications.
 
 - `title:156478672e00c4f4e6cb6079e97120915f66c518`
@@ -244,7 +200,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - [landing](http://dougwalton.ca/papers in pdf/17IFColog SCHEMES.pdf)
 - verified against: bibcorpus:KWARC/bibs, bibcorpus:slatex/sTeX
 - score 0.2 (cites 0.0, cocite 0.0, keyword 0.5, venue 0.5)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (journal, IFCoLog Journal of Logics and Their Applications, 2017), verified against 2 sources. For a debate-transcript argument database it supplies argumentation-scheme and critical-question structure, which is how stored inferences can be typed rather than left as untyped support links; and it supplies the formal semantics for deciding what stands once arguments and attacks are stored.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -267,7 +223,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - [landing](https://onlinelibrary.wiley.com/doi/abs/10.1111/coin.12111)
 - verified against: bibcorpus:KWARC/bibs, bibcorpus:slatex/sTeX
 - score 0.2 (cites 0.0, cocite 0.0, keyword 0.5, venue 0.5)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (journal, Computational Intelligence, 2017), verified against 2 sources. For a debate-transcript argument database it supplies the formal semantics for deciding what stands once arguments and attacks are stored, so strength is computed rather than asserted.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -291,7 +247,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - no URL recorded
 - verified against: bibcorpus:KWARC/bibs, bibcorpus:slatex/sTeX
 - score 0.2 (cites 0.0, cocite 0.0, keyword 0.5, venue 0.5)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (journal, IFCoLog Journal of Logics and Their Applications, 2017), verified against 2 sources. For a debate-transcript argument database it supplies the formal semantics for deciding what stands once arguments and attacks are stored, so strength is computed rather than asserted.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -336,7 +292,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - no URL recorded
 - verified against: bibcorpus:KWARC/bibs, bibcorpus:slatex/sTeX
 - score 0.2833 (cites 0.0, cocite 0.0, keyword 0.8333, venue 0.5)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (journal, Artif. Intell., 2016), verified against 2 sources. For a debate-transcript argument database it supplies the formal semantics for deciding what stands once arguments and attacks are stored, so strength is computed rather than asserted.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -359,7 +315,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - [landing](https://aclanthology.org/W16-2804/) | [OA PDF](https://aclanthology.org/W16-2804.pdf) (via acl)
 - verified against: acl, bibcorpus:m0re4u/paper-database
 - score 0.2333 (cites 0.0, cocite 0.0, keyword 0.3333, venue 1.0)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (workshop, Proceedings of the Third Workshop on Argument Mining (ArgMining2016), 2016), verified against 2 sources. For a debate-transcript argument database it gives quality dimensions or a scoring target, which is what an argument-strength field in the database would be measured against; and it supplies the formal semantics for deciding what stands once arguments and attacks are stored.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -407,7 +363,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - [landing](http://www.aaai.org/ocs/index.php/AAAI/AAAI15/paper/view/9825)
 - verified against: bibcorpus:davidar/dblp.yaml, bibcorpus:lihebi/biber-dist | note: author order differs (0001 / schulz)
 - score 0.275 (cites 0.0, cocite 0.0, keyword 0.5, venue 1.0)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (conference, AAAI, 2015), verified against 2 sources. For a debate-transcript argument database it supplies the formal semantics for deciding what stands once arguments and attacks are stored, so strength is computed rather than asserted.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -430,7 +386,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - [landing](http://www.aaai.org/ocs/index.php/AAAI/AAAI15/paper/view/9827)
 - verified against: bibcorpus:davidar/dblp.yaml, bibcorpus:lihebi/biber-dist | note: author order differs (0001 / schulz)
 - score 0.275 (cites 0.0, cocite 0.0, keyword 0.5, venue 1.0)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (conference, AAAI, 2015), verified against 2 sources. For a debate-transcript argument database it supplies the formal semantics for deciding what stands once arguments and attacks are stored, so strength is computed rather than asserted.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -446,6 +402,29 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 
 </details>
 
+####  (2014). *A tutorial on assumption-based argumentation*. Argument & Computation.
+
+- `doi:10.1080/19462166.2013.869878`
+- doc_type: `journal` | tier: T2 | tags: formal
+- no URL recorded
+- verified against: bibcorpus:davidar/dblp.yaml, bibcorpus:p4s3r0/argumentation-framework-clustering
+- score 0.475 (cites 0.0, cocite 0.5714, keyword 0.5, venue 1.0)
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
+
+<details><summary>BibTeX</summary>
+
+```bibtex
+@article{toni2014atutorial,
+  title = {A tutorial on assumption-based argumentation},
+  author = {Francesca Toni},
+  year = {2014},
+  journal = {Argument & Computation},
+  doi = {10.1080/19462166.2013.869878},
+}
+```
+
+</details>
+
 #### Alejandro J. García and Guillermo R. Simari (2014). *Defeasible logic programming: DeLP-servers, contextual queries, and explanations for answers*. Argument & Computation.
 
 - `doi:10.1080/19462166.2013.869767`
@@ -453,7 +432,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - no URL recorded
 - verified against: bibcorpus:KWARC/bibs, bibcorpus:davidar/dblp.yaml, bibcorpus:slatex/sTeX
 - score 0.4083 (cites 0.0, cocite 0.1429, keyword 0.8333, venue 1.0)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (journal, Argument & Computation, 2014), verified against 3 sources. For a debate-transcript argument database it supplies the formal semantics for deciding what stands once arguments and attacks are stored, so strength is computed rather than asserted.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -469,6 +448,29 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 
 </details>
 
+#### Philippe Besnard et al. (2014). *Introduction to structured argumentation*. Argument & Computation.
+
+- `doi:10.1080/19462166.2013.869764`
+- doc_type: `journal` | tier: T2 | tags: formal
+- no URL recorded
+- verified against: bibcorpus:KWARC/bibs, bibcorpus:davidar/dblp.yaml, bibcorpus:slatex/sTeX
+- score 0.325 (cites 0.0, cocite 0.1429, keyword 0.5, venue 1.0)
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
+
+<details><summary>BibTeX</summary>
+
+```bibtex
+@article{besnard2014introducti,
+  title = {Introduction to structured argumentation},
+  author = {Philippe Besnard and Alejandro Garcia and Anthony Hunter and Sanjay Modgil and Henry Prakken and Guillermo Simari and Francesca Toni},
+  year = {2014},
+  journal = {Argument & Computation},
+  doi = {10.1080/19462166.2013.869764},
+}
+```
+
+</details>
+
 #### Xiuyi Fan and Francesca Toni (2011). *Assumption-Based Argumentation Dialogues*. IJCAI.
 
 - `title:7acff355fd26bb28fda645b20618cd58d743b7ae`
@@ -476,7 +478,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - [landing](http://ijcai.org/papers11/Papers/IJCAI11-044.pdf)
 - verified against: bibcorpus:davidar/dblp.yaml, bibcorpus:lihebi/biber-dist
 - score 0.275 (cites 0.0, cocite 0.0, keyword 0.5, venue 1.0)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (conference, IJCAI, 2011), verified against 2 sources. For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store; and it supplies the formal semantics for deciding what stands once arguments and attacks are stored.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -499,7 +501,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - [landing](http://ijcai.org/papers11/Papers/IJCAI11-076.pdf)
 - verified against: bibcorpus:davidar/dblp.yaml, bibcorpus:lihebi/biber-dist
 - score 0.275 (cites 0.0, cocite 0.0, keyword 0.5, venue 1.0)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (conference, IJCAI, 2011), verified against 2 sources. For a debate-transcript argument database it supplies the formal semantics for deciding what stands once arguments and attacks are stored, so strength is computed rather than asserted.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -522,7 +524,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - no URL recorded
 - verified against: bibcorpus:davidar/dblp.yaml, bibcorpus:ttmassa/ter
 - score 0.3 (cites 0.0, cocite 0.2857, keyword 0.5, venue 0.5)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (journal, Autonomous Agents and Multi-Agent Systems, 2011), verified against 2 sources. For a debate-transcript argument database it supplies the formal semantics for deciding what stands once arguments and attacks are stored, so strength is computed rather than asserted.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -545,7 +547,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - [landing](http://ijcai.org/papers11/Papers/IJCAI11-381.pdf)
 - verified against: bibcorpus:davidar/dblp.yaml, bibcorpus:lihebi/biber-dist, bibcorpus:ttmassa/ter
 - score 0.375 (cites 0.0, cocite 0.2857, keyword 0.5, venue 1.0)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (conference, IJCAI, 2011), verified against 3 sources. For a debate-transcript argument database it supplies the formal semantics for deciding what stands once arguments and attacks are stored, so strength is computed rather than asserted.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -591,7 +593,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - no URL recorded
 - verified against: bibcorpus:davidar/dblp.yaml, bibcorpus:p4s3r0/argumentation-framework-clustering
 - score 0.475 (cites 0.0, cocite 0.5714, keyword 0.5, venue 1.0)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (journal, Argument & Computation, 2010), verified against 2 sources. For a debate-transcript argument database it supplies the formal semantics for deciding what stands once arguments and attacks are stored, so strength is computed rather than asserted.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -614,7 +616,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - no URL recorded
 - verified against: bibcorpus:davidar/dblp.yaml, bibcorpus:p4s3r0/argumentation-framework-clustering
 - score 0.35 (cites 0.0, cocite 0.4286, keyword 0.5, venue 0.5)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (journal, J. Log. Comput., 2004), verified against 2 sources. For a debate-transcript argument database it supplies the formal semantics for deciding what stands once arguments and attacks are stored, so strength is computed rather than asserted.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -630,7 +632,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 
 </details>
 
-## 6.2 Argument mining (NLP) (55 entries, quota 60)
+## 6.2 Argument mining (NLP) (54 entries, quota 60)
 
 ### T1 - Foundational / survey. Read in full: theory anchors, major surveys, canonical papers.
 
@@ -638,7 +640,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 
 - `doi:10.18653/v1/2021.acl-long.107` | aliases: `acl:2021.acl-long.107`
 - doc_type: `conference` | tier: T1 | tags: dialogue, extraction
-- [landing](https://aclanthology.org/2021.acl-long.107) | [OA PDF](https://aclanthology.org/2021.acl-long.107.pdf) (via acl)
+- [landing](https://aclanthology.org/2021.acl-long.107/) | [OA PDF](https://aclanthology.org/2021.acl-long.107.pdf) (via acl)
 - verified against: acl, bibcorpus:dimits-ts/llm_moderation_research, bibcorpus:dimits-ts/synthetic_moderation_experiments, bibcorpus:m0re4u/paper-database
 - score 0.5458 (cites 0.0, cocite 0.7143, keyword 0.5833, venue 1.0)
 - annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "This survey builds an interdisciplinary picture of Argument Mining (AM), with a strong focus on its potential to address issues related to Social and Political Science." "We propose a novel definition of argument quality which is integrated with that of deliberative quality from the Social Science literature." For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store; and it defines the extraction step that turns raw transcript text into stored components and relations.
@@ -652,7 +654,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
   year = {2021},
   booktitle = {Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)},
   doi = {10.18653/v1/2021.acl-long.107},
-  url = {https://aclanthology.org/2021.acl-long.107},
+  url = {https://aclanthology.org/2021.acl-long.107/},
 }
 ```
 
@@ -664,7 +666,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - doc_type: `conference` | tier: T1 | tags: extraction
 - [landing](https://doi.org/10.24963/ijcai.2018/766)
 - verified against: bibcorpus:KWARC/bibs, bibcorpus:m0re4u/paper-database, bibcorpus:slatex/sTeX
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (conference, Proceedings of the Twenty-Seventh International Joint Conference on Artificial Intelligence, IJCAI-18, 2018), verified against 3 sources. For a debate-transcript argument database it defines the extraction step that turns raw transcript text into stored components and relations.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -904,7 +906,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - [landing](https://doi.org/10.3233/FAIA200334)
 - verified against: bibcorpus:NeWildeSache/argument-mining-in-the-web-archive, bibcorpus:m0re4u/paper-database
 - score 0.475 (cites 0.0, cocite 0.5714, keyword 0.5, venue 1.0)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (conference, Proceedings of the 24th European Conference on Artificial Intelligence ECAI Including 10th Conference on Prestigious Applications of Artificial Intelligence (PAIS 2020), 2020), verified against 2 sources. For a debate-transcript argument database it defines the extraction step that turns raw transcript text into stored components and relations.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -1023,7 +1025,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - doc_type: `journal` | tier: T2 | tags: extraction
 - [landing](https://doi.org/10.2200/S00883ED1V01Y201811HLT040)
 - verified against: bibcorpus:harisont/biboba, bibcorpus:ir-anthology/ir-anthology.github.io | note: bibcorpus:mystreamer/lt2326-final-project: venue mismatch ('Synthesis Lectures on Human Language Technologies' vs 'Springer')
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (journal, Synthesis Lectures on Human Language Technologies, 2018), verified against 2 sources. For a debate-transcript argument database it defines the extraction step that turns raw transcript text into stored components and relations.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -1263,7 +1265,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - [landing](https://aclanthology.org/N16-1164/) | [OA PDF](https://aclanthology.org/N16-1164.pdf) (via acl)
 - verified against: acl, bibcorpus:lihebi/biber-dist
 - score 0.3583 (cites 0.0, cocite 0.0, keyword 0.8333, venue 1.0)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (conference, Proceedings of the 2016 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, 2016), verified against 2 sources. For a debate-transcript argument database it defines the extraction step that turns raw transcript text into stored components and relations.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -1287,7 +1289,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - [landing](https://aclanthology.org/W16-2805/) | [OA PDF](https://aclanthology.org/W16-2805.pdf) (via acl)
 - verified against: acl, bibcorpus:mystreamer/lt2326-final-project
 - score 0.425 (cites 0.0, cocite 0.4286, keyword 0.5, venue 1.0)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (workshop, Proceedings of the Third Workshop on Argument Mining (ArgMining2016), 2016), verified against 2 sources. For a debate-transcript argument database it defines the extraction step that turns raw transcript text into stored components and relations.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -1311,7 +1313,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - [landing](http://ijcai.org/papers15/Abstracts/IJCAI15-033.html)
 - verified against: bibcorpus:davidar/dblp.yaml, bibcorpus:harisont/biboba, bibcorpus:lihebi/biber-dist
 - score 0.45 (cites 0.0, cocite 0.1429, keyword 1.0, venue 1.0)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (conference, IJCAI, 2015), verified against 3 sources. For a debate-transcript argument database it defines the extraction step that turns raw transcript text into stored components and relations.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -1334,7 +1336,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - [landing](https://aclanthology.org/D15-1255/) | [OA PDF](https://aclanthology.org/D15-1255.pdf) (via acl)
 - verified against: acl, bibcorpus:davidar/dblp.yaml, bibcorpus:lihebi/biber-dist, bibcorpus:m0re4u/paper-database
 - score 0.3167 (cites 0.0, cocite 0.0, keyword 0.6667, venue 1.0)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (conference, Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing, 2015), verified against 4 sources. For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store; and it defines the extraction step that turns raw transcript text into stored components and relations.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -1358,7 +1360,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - [landing](https://aclanthology.org/D15-1110/) | [OA PDF](https://aclanthology.org/D15-1110.pdf) (via acl)
 - verified against: acl, bibcorpus:davidar/dblp.yaml, bibcorpus:lihebi/biber-dist
 - score 0.3167 (cites 0.0, cocite 0.0, keyword 0.6667, venue 1.0)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (conference, Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing, 2015), verified against 3 sources. For a debate-transcript argument database it defines the extraction step that turns raw transcript text into stored components and relations.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -1375,29 +1377,6 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 
 </details>
 
-#### Christian Stab and Iryna Gurevych (2014). *Annotating Argument Components and Relations in Persuasive Essays*. Proceedings of COLING 2014, the 25th International Conference on Computational Linguistics: Technical Papers.
-
-- `title:97249276aac1f18259184dfbfac19f869827fdaa` | aliases: `acl:C14-1142`
-- doc_type: `conference` | tier: T2 | tags: dataset, extraction | also in: resources
-- [landing](https://aclanthology.org/C14-1142/) | [OA PDF](https://aclanthology.org/C14-1142.pdf) (via acl) | [repo](https://github.com/thiemowa/-argumentative_business_model_pitches)
-- verified against: acl, bibcorpus:NeWildeSache/argument-mining-in-the-web-archive, bibcorpus:davidar/dblp.yaml, bibcorpus:m0re4u/paper-database | note: repo linked on distinctive title/description overlap: ['components', 'persuasive', 'relations'] (all shared words: ['components', 'persuasive', 'relations'])
-- score 0.475 (cites 0.0, cocite 0.5714, keyword 0.5, venue 1.0)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (conference, Proceedings of COLING 2014, the 25th International Conference on Computational Linguistics: Technical Papers, 2014), verified against 4 sources. For a debate-transcript argument database it defines the extraction step that turns raw transcript text into stored components and relations; and it is a reusable resource whose annotation structure a transcript schema can copy rather than reinvent.
-
-<details><summary>BibTeX</summary>
-
-```bibtex
-@inproceedings{stab2014annotating,
-  title = {Annotating Argument Components and Relations in Persuasive Essays},
-  author = {Christian Stab and Iryna Gurevych},
-  year = {2014},
-  booktitle = {Proceedings of COLING 2014, the 25th International Conference on Computational Linguistics: Technical Papers},
-  url = {https://aclanthology.org/C14-1142/},
-}
-```
-
-</details>
-
 #### Ivan Habernal, Judith Eckle-Kohler and Iryna Gurevych (2014). *Argumentation Mining on the Web from Information Seeking Perspective*. ArgNLP.
 
 - `title:e2dd0248ee2104b83fabae9e89b7c5d7e89a5690`
@@ -1405,7 +1384,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - [landing](http://ceur-ws.org/Vol-1341/paper4.pdf)
 - verified against: bibcorpus:IKMLab/arct2, bibcorpus:davidar/dblp.yaml
 - score 0.35 (cites 0.0, cocite 0.4286, keyword 0.5, venue 0.5)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (conference, ArgNLP, 2014), verified against 2 sources. For a debate-transcript argument database it defines the extraction step that turns raw transcript text into stored components and relations.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -1428,7 +1407,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - [landing](https://aclanthology.org/W14-2105/) | [OA PDF](https://aclanthology.org/W14-2105.pdf) (via acl)
 - verified against: acl, bibcorpus:harisont/biboba
 - score 0.3062 (cites 0.0, cocite 0.5714, keyword 0.125, venue 0.5)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (workshop, Proceedings of the First Workshop on Argumentation Mining, 2014), verified against 2 sources. For a debate-transcript argument database it defines the extraction step that turns raw transcript text into stored components and relations.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -1452,7 +1431,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - [landing](https://aclanthology.org/D14-1006/) | [OA PDF](https://aclanthology.org/D14-1006.pdf) (via acl)
 - verified against: acl, bibcorpus:davidar/dblp.yaml, bibcorpus:lihebi/biber-dist
 - score 0.475 (cites 0.0, cocite 0.5714, keyword 0.5, venue 1.0)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (conference, Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP), 2014), verified against 3 sources. For a debate-transcript argument database it defines the extraction step that turns raw transcript text into stored components and relations; and it is a reusable resource whose annotation structure a transcript schema can copy rather than reinvent.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -1476,7 +1455,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - [landing](http://dx.doi.org/10.1007/s10506-010-9104-x)
 - verified against: bibcorpus:IKMLab/arct2, bibcorpus:NeWildeSache/argument-mining-in-the-web-archive, bibcorpus:davidar/dblp.yaml, bibcorpus:m0re4u/paper-database, bibcorpus:nshkrdotcom/research_papers | note: author order differs (mochales / palau)
 - score 0.45 (cites 0.0, cocite 0.7143, keyword 0.5, venue 0.5)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (journal, Artif. Intell. Law, 2011), verified against 5 sources. For a debate-transcript argument database it defines the extraction step that turns raw transcript text into stored components and relations.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -1500,7 +1479,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - [landing](http://doi.acm.org/10.1145/1568234.1568246)
 - verified against: bibcorpus:BarryMafu/LitLens, bibcorpus:davidar/dblp.yaml | note: bibcorpus:ljvmiranda921/ljvmiranda921.github.io: venue mismatch ('ICAIL' vs 'Proceedings of the 12th International Conference on Artificial Intelligence and Law')
 - score 0.35 (cites 0.0, cocite 0.4286, keyword 0.5, venue 0.5)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (conference, ICAIL, 2009), verified against 2 sources. For a debate-transcript argument database it defines the extraction step that turns raw transcript text into stored components and relations.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -1537,6 +1516,30 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
   booktitle = {Proceedings of the 12th Argument mining Workshop},
   doi = {10.18653/v1/2025.argmining-1.20},
   url = {https://aclanthology.org/2025.argmining-1.20/},
+}
+```
+
+</details>
+
+#### Marc Feger, Katarina Boland and Stefan Dietze (2025). *Limited Generalizability in Argument Mining: State-Of-The-Art Models Learn Datasets, Not Arguments*. Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), ACL 2025, Vienna, Austria, July 27 - August 1, 2025.
+
+- `title:ecc66f83f08f4809231d027e9ba9ccb1e4c3f5ba` | aliases: `acl:2025.acl-long.1164`, `doi:10.18653/v1/2025.acl-long.1164`
+- doc_type: `conference` | tier: T3 | tags: dataset, dialogue, extraction | also in: resources
+- [landing](https://aclanthology.org/2025.acl-long.1164/) | [OA PDF](https://aclanthology.org/2025.acl-long.1164.pdf) (via acl)
+- verified against: acl, bibcorpus:CogSciPrag/project_ideas
+- score 0.475 (cites 0.0, cocite 0.5714, keyword 0.5, venue 1.0)
+- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "We evaluate four transformers, three standard and one enhanced with contrastive pre-training for better generalization, on 17 English sentence-level datasets as most relevant to the task." "While the models achieve strong results on familiar benchmarks, their performance drops markedly when applied to unseen datasets." For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store; and it defines the extraction step that turns raw transcript text into stored components and relations.
+
+<details><summary>BibTeX</summary>
+
+```bibtex
+@inproceedings{feger2025limitedge,
+  title = {Limited Generalizability in Argument Mining: State-Of-The-Art Models Learn Datasets, Not Arguments},
+  author = {Marc Feger and Katarina Boland and Stefan Dietze},
+  year = {2025},
+  booktitle = {Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), ACL 2025, Vienna, Austria, July 27 - August 1, 2025},
+  doi = {10.18653/v1/2025.acl-long.1164},
+  url = {https://aclanthology.org/2025.acl-long.1164/},
 }
 ```
 
@@ -1827,29 +1830,6 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 
 </details>
 
-#### Christian Stab and Iryna Gurevych (2017). *Recognizing Insufficiently Supported Arguments in Argumentative Essays*. Proceedings of the 15th Conference of the European Chapter of the Association for Computational Linguistics: Volume 1, Long Papers.
-
-- `title:4548f0ff40575ec88d744f306fc5a7f696551502` | aliases: `acl:E17-1092`
-- doc_type: `conference` | tier: T3 | tags: dataset, extraction | also in: resources
-- [landing](https://aclanthology.org/E17-1092/) | [OA PDF](https://aclanthology.org/E17-1092.pdf) (via acl)
-- verified against: acl, bibcorpus:lihebi/biber-dist, bibcorpus:npnkhoi/memefal-paper, bibcorpus:xinyannnnnnn/fact-driven-storytelling-with-llms
-- score 0.4667 (cites 0.0, cocite 0.4286, keyword 0.6667, venue 1.0)
-- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "In this paper, we propose a new task for assessing the quality of natural language arguments." "In this work, we show that human annotators substantially agree on the sufficiency criterion and introduce a novel annotated corpus." For a debate-transcript argument database it defines the extraction step that turns raw transcript text into stored components and relations; and it is a reusable resource whose annotation structure a transcript schema can copy rather than reinvent.
-
-<details><summary>BibTeX</summary>
-
-```bibtex
-@inproceedings{stab2017recognizin,
-  title = {Recognizing Insufficiently Supported Arguments in Argumentative Essays},
-  author = {Christian Stab and Iryna Gurevych},
-  year = {2017},
-  booktitle = {Proceedings of the 15th Conference of the European Chapter of the Association for Computational Linguistics: Volume 1, Long Papers},
-  url = {https://aclanthology.org/E17-1092/},
-}
-```
-
-</details>
-
 #### Ran Levy et al. (2017). *Unsupervised corpus–wide claim detection*. Proceedings of the 4th Workshop on Argument Mining.
 
 - `doi:10.18653/v1/w17-5110` | aliases: `acl:W17-5110`
@@ -1948,7 +1928,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 
 </details>
 
-## 6.3 Argument quality and evaluation (18 entries, quota 40)
+## 6.3 Argument quality and evaluation (20 entries, quota 40)
 
 ### T2 - Core method. Defines a task formulation, model, or evaluation still in use.
 
@@ -1970,6 +1950,30 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
   booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2022},
   doi = {10.18653/v1/2022.findings-emnlp.532},
   url = {https://aclanthology.org/2022.findings-emnlp.532/},
+}
+```
+
+</details>
+
+#### Tariq Alhindi, Tuhin Chakrabarty, Elena Musi and Smaranda Muresan (2022). *Multitask Instruction-based Prompting for Fallacy Recognition*. Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing.
+
+- `doi:10.18653/v1/2022.emnlp-main.560` | aliases: `acl:2022.emnlp-main.560`
+- doc_type: `conference` | tier: T2 | tags: dialogue, fallacy, quality | also in: llm
+- [landing](https://aclanthology.org/2022.emnlp-main.560/) | [OA PDF](https://aclanthology.org/2022.emnlp-main.560.pdf) (via acl)
+- verified against: acl, bibcorpus:lefteriskat/Logical-Fallacy-Detection-Using-LLMs
+- score 0.325 (cites 0.0, cocite 0.1429, keyword 0.5, venue 1.0)
+- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "Moreover, a big challenge for computational models lies in the fact that fallacies are formulated differently across the datasets with differences in the input format (e.g., question-answer pair, sentence with fallacy fragment), genre (e.g., social media, dialogue, news), as well as types and number of fallacies (from…" "We show the ability of this multitask prompting approach to recognize 28 unique fallacies across domains and genres and study the effect of model size and prompt choice by analyzing the per-class (i.e., fallacy type) results." For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store; and it gives quality dimensions or a scoring target.
+
+<details><summary>BibTeX</summary>
+
+```bibtex
+@inproceedings{alhindi2022multitask,
+  title = {Multitask Instruction-based Prompting for Fallacy Recognition},
+  author = {Tariq Alhindi and Tuhin Chakrabarty and Elena Musi and Smaranda Muresan},
+  year = {2022},
+  booktitle = {Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing},
+  doi = {10.18653/v1/2022.emnlp-main.560},
+  url = {https://aclanthology.org/2022.emnlp-main.560/},
 }
 ```
 
@@ -2041,30 +2045,6 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
   booktitle = {Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics},
   doi = {10.18653/v1/p19-1093},
   url = {https://aclanthology.org/P19-1093/},
-}
-```
-
-</details>
-
-#### Ivan Habernal, Henning Wachsmuth, Iryna Gurevych and Benno Stein (2018). *Before Name-Calling: Dynamics and Triggers of Ad Hominem Fallacies in Web Argumentation*. Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers).
-
-- `doi:10.18653/v1/n18-1036` | aliases: `acl:N18-1036`
-- doc_type: `conference` | tier: T2 | tags: dialogue, fallacy, quality
-- [landing](https://aclanthology.org/N18-1036/) | [OA PDF](https://aclanthology.org/N18-1036.pdf) (via acl)
-- verified against: acl, bibcorpus:lihebi/biber-dist, bibcorpus:npnkhoi/memefal-paper
-- score 0.45 (cites 0.0, cocite 0.1429, keyword 1.0, venue 1.0)
-- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "Arguing without committing a fallacy is one of the main requirements of an ideal debate." "But even when debating rules are strictly enforced and fallacious arguments punished, arguers often lapse into attacking the opponent by an ad hominem argument." For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store; and it gives quality dimensions or a scoring target.
-
-<details><summary>BibTeX</summary>
-
-```bibtex
-@inproceedings{habernal2018beforenam,
-  title = {Before Name-Calling: Dynamics and Triggers of Ad Hominem Fallacies in Web Argumentation},
-  author = {Ivan Habernal and Henning Wachsmuth and Iryna Gurevych and Benno Stein},
-  year = {2018},
-  booktitle = {Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers)},
-  doi = {10.18653/v1/n18-1036},
-  url = {https://aclanthology.org/N18-1036/},
 }
 ```
 
@@ -2171,7 +2151,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - [landing](https://aclanthology.org/W16-2814/) | [OA PDF](https://aclanthology.org/W16-2814.pdf) (via acl)
 - verified against: acl, bibcorpus:julia-zhou/Argmining
 - score 0.2333 (cites 0.0, cocite 0.0, keyword 0.3333, venue 1.0)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (workshop, Proceedings of the Third Workshop on Argument Mining (ArgMining2016), 2016), verified against 2 sources. For a debate-transcript argument database it gives quality dimensions or a scoring target, which is what an argument-strength field in the database would be measured against; and it defines the extraction step that turns raw transcript text into stored components and relations.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -2194,7 +2174,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - doc_type: `conference` | tier: T2 | tags: quality
 - [landing](https://aclanthology.org/P16-1150/) | [OA PDF](https://aclanthology.org/P16-1150.pdf)
 - verified against: acl, bibcorpus:lihebi/biber-dist, bibcorpus:xinyannnnnnn/fact-driven-storytelling-with-llms
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (conference, Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), 2016), verified against 3 sources. For a debate-transcript argument database it gives quality dimensions or a scoring target, which is what an argument-strength field in the database would be measured against.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -2212,6 +2192,30 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 </details>
 
 ### T3 - Dataset / tool / annotation guideline, including the guideline documents themselves.
+
+#### Min-Hsuan Yeh, Ruyuan Wan and Ting-Hao Kenneth Huang (2024). *CoCoLoFa: A Dataset of News Comments with Common Logical Fallacies Written by LLM-Assisted Crowds*. Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing.
+
+- `doi:10.18653/v1/2024.emnlp-main.39` | aliases: `acl:2024.emnlp-main.39`
+- doc_type: `conference` | tier: T3 | tags: dataset, extraction, fallacy, quality | also in: llm, resources
+- [landing](https://aclanthology.org/2024.emnlp-main.39/) | [OA PDF](https://aclanthology.org/2024.emnlp-main.39.pdf) (via acl)
+- verified against: acl, bibcorpus:npnkhoi/memefal-paper
+- score 0.325 (cites 0.0, cocite 0.1429, keyword 0.5, venue 1.0)
+- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "Manually annotating fallacies in large-scale, real-world text data to create datasets for developing and validating detection models is costly." "This paper introduces CoCoLoFa, the largest known logical fallacy dataset, containing 7,706 comments for 648 news articles, with each comment labeled for fallacy presence and type." For a debate-transcript argument database it gives quality dimensions or a scoring target, which is what an argument-strength field in the database would be measured against; and it types defective inference.
+
+<details><summary>BibTeX</summary>
+
+```bibtex
+@inproceedings{yeh2024cocolofa,
+  title = {CoCoLoFa: A Dataset of News Comments with Common Logical Fallacies Written by LLM-Assisted Crowds},
+  author = {Min-Hsuan Yeh and Ruyuan Wan and Ting-Hao Kenneth Huang},
+  year = {2024},
+  booktitle = {Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing},
+  doi = {10.18653/v1/2024.emnlp-main.39},
+  url = {https://aclanthology.org/2024.emnlp-main.39/},
+}
+```
+
+</details>
 
 #### Neele Falk and Gabriella Lapesa (2023). *Bridging Argument Quality and Deliberative Quality Annotations with Adapters*. Findings of the Association for Computational Linguistics: EACL 2023.
 
@@ -2237,13 +2241,37 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 
 </details>
 
+#### Saumya Sahai, Oana Balalau and Roxana Horincar (2021). *Breaking Down the Invisible Wall of Informal Fallacies in Online Discussions*. Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers).
+
+- `doi:10.18653/v1/2021.acl-long.53` | aliases: `acl:2021.acl-long.53`
+- doc_type: `conference` | tier: T3 | tags: dataset, dialogue, fallacy, quality | also in: dialogue, resources
+- [landing](https://aclanthology.org/2021.acl-long.53/) | [OA PDF](https://aclanthology.org/2021.acl-long.53.pdf) (via acl)
+- verified against: acl, bibcorpus:lefteriskat/Logical-Fallacy-Detection-Using-LLMs, bibcorpus:npnkhoi/memefal-paper
+- score 0.275 (cites 0.0, cocite 0.1786, keyword 0.25, venue 1.0)
+- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "In this paper, we study the most frequent fallacies on Reddit, and we present them using the pragma-dialectical theory of argumentation." "We construct a new annotated dataset of fallacies, using user comments containing fallacy mentions as noisy labels, and cleaning the data via crowdsourcing." For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store; and it gives quality dimensions or a scoring target.
+
+<details><summary>BibTeX</summary>
+
+```bibtex
+@inproceedings{sahai2021breakingd,
+  title = {Breaking Down the Invisible Wall of Informal Fallacies in Online Discussions},
+  author = {Saumya Sahai and Oana Balalau and Roxana Horincar},
+  year = {2021},
+  booktitle = {Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)},
+  doi = {10.18653/v1/2021.acl-long.53},
+  url = {https://aclanthology.org/2021.acl-long.53/},
+}
+```
+
+</details>
+
 #### Shai Gretz et al. (2020). *A large-scale dataset for argument quality ranking: Construction and analysis*. AAAI.
 
 - `doi:10.1609/aaai.v34i05.6285`
 - doc_type: `conference` | tier: T3 | tags: dataset, quality | also in: resources
 - [landing](https://doi.org/10.1609/aaai.v34i05.6285) | [repo](https://github.com/Hellisotherpeople/DebateSum)
 - verified against: bibcorpus:BarryMafu/LitLens, bibcorpus:NeWildeSache/argument-mining-in-the-web-archive, bibcorpus:xinyannnnnnn/fact-driven-storytelling-with-llms | note: bibcorpus:dimits-ts/llm_moderation_research: venue mismatch ('AAAI' vs 'ArXiv'); bibcorpus:dimits-ts/synthetic_moderation_experiments: venue mismatch ('AAAI' vs 'ArXiv') repo linked on distinctive ti…
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (conference, AAAI, 2020), verified against 3 sources. For a debate-transcript argument database it gives quality dimensions or a scoring target, which is what an argument-strength field in the database would be measured against; and it is a reusable resource whose annotation structure a transcript schema can copy rather than reinvent.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -2380,7 +2408,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 
 </details>
 
-## 6.4 Dialogue and debate (17 entries, quota 40)
+## 6.4 Dialogue and debate (19 entries, quota 40)
 
 ### T1 - Foundational / survey. Read in full: theory anchors, major surveys, canonical papers.
 
@@ -2433,6 +2461,29 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 
 </details>
 
+#### Christopher T. Small et al. (2021). *Polis: Scaling Deliberation by Mapping High Dimensional Opinion Spaces*. Recerca: Revista de pensament i analisi.
+
+- `doi:10.6035/recerca.5516`
+- doc_type: `conference` | tier: T2 | tags: dialogue
+- no URL recorded
+- verified against: bibcorpus:dimits-ts/llm_moderation_research, bibcorpus:dimits-ts/synthetic_moderation_experiments, bibcorpus:ochyai/open-japan-politech-platform
+- score 0.5083 (cites 0.0, cocite 1.0, keyword 0.3333, venue 0.5)
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
+
+<details><summary>BibTeX</summary>
+
+```bibtex
+@inproceedings{small2021polissca,
+  title = {Polis: Scaling Deliberation by Mapping High Dimensional Opinion Spaces},
+  author = {Christopher T. Small and Michael Bjorkegren and Timo Erkkilä and Lynette Shaw and Colin Megill},
+  year = {2021},
+  booktitle = {Recerca: Revista de pensament i analisi},
+  doi = {10.6035/recerca.5516},
+}
+```
+
+</details>
+
 #### Jacky Visser et al. (2019). *Argumentation in the 2016 US presidential elections: annotated corpora of television debates and social media reaction*. Language Resources and Evaluation.
 
 - `doi:10.1007/s10579-019-09446-8`
@@ -2440,7 +2491,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - [landing](https://doi.org/10.1007/s10579-019-09446-8)
 - verified against: bibcorpus:IKMLab/argalign1, bibcorpus:RicoStaedeli/NLP2025_CQG, bibcorpus:m0re4u/paper-database
 - score 0.2958 (cites 0.0, cocite 0.1786, keyword 0.3333, venue 1.0)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (journal, Language Resources and Evaluation, 2019), verified against 3 sources. For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -2457,30 +2508,6 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 
 </details>
 
-#### Justine Zhang, Ravi Kumar, Sujith Ravi and Cristian Danescu-Niculescu-Mizil (2016). *Conversational Flow in Oxford-style Debates*. Proceedings of the 2016 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies.
-
-- `doi:10.18653/v1/n16-1017` | aliases: `acl:N16-1017`
-- doc_type: `conference` | tier: T2 | tags: dialogue
-- [landing](https://aclanthology.org/N16-1017/) | [OA PDF](https://aclanthology.org/N16-1017.pdf) (via acl)
-- verified against: acl, bibcorpus:dimits-ts/llm_moderation_research, bibcorpus:dimits-ts/synthetic_moderation_experiments, bibcorpus:lihebi/biber-dist | note: venue not corroborated by both sources
-- score 0.5875 (cites 0.0, cocite 0.8929, keyword 0.5, venue 1.0)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (conference, Proceedings of the 2016 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, 2016), verified against 4 sources. For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store.
-
-<details><summary>BibTeX</summary>
-
-```bibtex
-@inproceedings{zhang2016conversati,
-  title = {Conversational Flow in Oxford-style Debates},
-  author = {Justine Zhang and Ravi Kumar and Sujith Ravi and Cristian Danescu-Niculescu-Mizil},
-  year = {2016},
-  booktitle = {Proceedings of the 2016 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies},
-  doi = {10.18653/v1/n16-1017},
-  url = {https://aclanthology.org/N16-1017/},
-}
-```
-
-</details>
-
 #### Filip Boltužić and Jan Šnajder (2016). *Fill the Gap! Analyzing Implicit Premises between Claims from Online Debates*. Proceedings of the Third Workshop on Argument Mining (ArgMining2016).
 
 - `doi:10.18653/v1/w16-2815` | aliases: `acl:W16-2815`
@@ -2488,7 +2515,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - [landing](https://aclanthology.org/W16-2815/) | [OA PDF](https://aclanthology.org/W16-2815.pdf) (via acl)
 - verified against: acl, bibcorpus:m0re4u/paper-database
 - score 0.4208 (cites 0.0, cocite 0.1786, keyword 0.8333, venue 1.0)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (workshop, Proceedings of the Third Workshop on Argument Mining (ArgMining2016), 2016), verified against 2 sources. For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store; and it defines the extraction step that turns raw transcript text into stored components and relations.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -2528,6 +2555,29 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 
 </details>
 
+#### Elena Cabrio and Serena Villata (2012). *Combining Textual Entailment and Argumentation Theory for Supporting Online Debates Interactions*. Proceedings of the 50th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers).
+
+- `title:04de605196707797716434e48b369cdc30e5332b` | aliases: `acl:P12-2041`
+- doc_type: `conference` | tier: T2 | tags: dialogue
+- [landing](https://aclanthology.org/P12-2041/) | [OA PDF](https://aclanthology.org/P12-2041.pdf) (via acl)
+- verified against: acl, bibcorpus:davidar/dblp.yaml, bibcorpus:lihebi/biber-dist
+- score 0.4833 (cites 0.0, cocite 0.3571, keyword 0.8333, venue 1.0)
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
+
+<details><summary>BibTeX</summary>
+
+```bibtex
+@inproceedings{cabrio2012combining,
+  title = {Combining Textual Entailment and Argumentation Theory for Supporting Online Debates Interactions},
+  author = {Elena Cabrio and Serena Villata},
+  year = {2012},
+  booktitle = {Proceedings of the 50th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)},
+  url = {https://aclanthology.org/P12-2041/},
+}
+```
+
+</details>
+
 #### Scott Wright and John Street (2007). *Democracy, deliberation and design: the case of online discussion forums*. New Media & Society.
 
 - `doi:10.1177/1461444807081230`
@@ -2559,7 +2609,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - no URL recorded
 - verified against: bibcorpus:carneades/carneades-3, bibcorpus:davidar/dblp.yaml
 - score 0.2625 (cites 0.0, cocite 0.1786, keyword 0.5, venue 0.5)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (journal, Artif. Intell., 2007), verified against 2 sources. For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -2570,6 +2620,30 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
   year = {2007},
   journal = {Artif. Intell.},
   doi = {10.1016/j.artint.2007.04.010},
+}
+```
+
+</details>
+
+#### Davy Janssen and Raphaël Kies (2005). *Online Forums and Deliberative Democracy*. Acta Politica.
+
+- `doi:10.1057/palgrave.ap.5500115`
+- doc_type: `journal` | tier: T2 | tags: dialogue
+- [landing](https://doi.org/10.1057/palgrave.ap.5500115)
+- verified against: bibcorpus:dimits-ts/llm_moderation_research, bibcorpus:dimits-ts/synthetic_moderation_experiments
+- score 0.45 (cites 0.0, cocite 0.8929, keyword 0.25, venue 0.5)
+- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "In this article, we present an overview of some of the empirical research that evaluates the quality of political conversations in online forums." "In the conclusion, we present some objections to the previous research and offer some ideas for a more comprehensive approach to online forum analysis." For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store.
+
+<details><summary>BibTeX</summary>
+
+```bibtex
+@article{janssen2005onlinefor,
+  title = {Online Forums and Deliberative Democracy},
+  author = {Davy Janssen and Raphaël Kies},
+  year = {2005},
+  journal = {Acta Politica},
+  doi = {10.1057/palgrave.ap.5500115},
+  url = {https://doi.org/10.1057/palgrave.ap.5500115},
 }
 ```
 
@@ -2623,25 +2697,25 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 
 </details>
 
-#### Saumya Sahai, Oana Balalau and Roxana Horincar (2021). *Breaking Down the Invisible Wall of Informal Fallacies in Online Discussions*. Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers).
+#### Sihao Chen et al. (2019). *Seeing Things from a Different Angle:Discovering Diverse Perspectives about Claims*. Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers).
 
-- `doi:10.18653/v1/2021.acl-long.53` | aliases: `acl:2021.acl-long.53`
-- doc_type: `conference` | tier: T3 | tags: dataset, dialogue, fallacy, quality | also in: quality, resources
-- [landing](https://aclanthology.org/2021.acl-long.53/) | [OA PDF](https://aclanthology.org/2021.acl-long.53.pdf) (via acl)
-- verified against: acl, bibcorpus:lefteriskat/Logical-Fallacy-Detection-Using-LLMs, bibcorpus:npnkhoi/memefal-paper
-- score 0.275 (cites 0.0, cocite 0.1786, keyword 0.25, venue 1.0)
-- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "In this paper, we study the most frequent fallacies on Reddit, and we present them using the pragma-dialectical theory of argumentation." "We construct a new annotated dataset of fallacies, using user comments containing fallacy mentions as noisy labels, and cleaning the data via crowdsourcing." For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store; and it gives quality dimensions or a scoring target.
+- `doi:10.18653/v1/n19-1053` | aliases: `acl:N19-1053`
+- doc_type: `conference` | tier: T3 | tags: dataset, dialogue | also in: resources
+- [landing](https://aclanthology.org/N19-1053/) | [OA PDF](https://aclanthology.org/N19-1053.pdf) (via acl)
+- verified against: acl, bibcorpus:BarryMafu/LitLens
+- score 0.3792 (cites 0.0, cocite 0.3571, keyword 0.4167, venue 1.0)
+- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "Specifically, we propose the task of substantiated perspective discovery where, given a claim, a system is expected to discover a diverse set of well-corroborated perspectives that take a stance with respect to the claim." "We construct PERSPECTRUM, a dataset of claims, perspectives and evidence, making use of online debate websites to create the initial data collection, and augmenting it using search engines in order to expand and diversify our dataset." For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store; and it is a reusable resource whose annotation structure a transcript schema can copy rather than reinvent.
 
 <details><summary>BibTeX</summary>
 
 ```bibtex
-@inproceedings{sahai2021breakingd,
-  title = {Breaking Down the Invisible Wall of Informal Fallacies in Online Discussions},
-  author = {Saumya Sahai and Oana Balalau and Roxana Horincar},
-  year = {2021},
-  booktitle = {Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)},
-  doi = {10.18653/v1/2021.acl-long.53},
-  url = {https://aclanthology.org/2021.acl-long.53/},
+@inproceedings{chen2019seeingthi,
+  title = {Seeing Things from a Different Angle:Discovering Diverse Perspectives about Claims},
+  author = {Sihao Chen and Daniel Khashabi and Wenpeng Yin and Chris Callison-Burch and Dan Roth},
+  year = {2019},
+  booktitle = {Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers)},
+  doi = {10.18653/v1/n19-1053},
+  url = {https://aclanthology.org/N19-1053/},
 }
 ```
 
@@ -2654,7 +2728,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - [landing](https://aclanthology.org/W16-2819/) | [OA PDF](https://aclanthology.org/W16-2819.pdf) (via acl)
 - verified against: acl, bibcorpus:m0re4u/paper-database
 - score 0.4 (cites 0.0, cocite 0.0, keyword 1.0, venue 1.0)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (workshop, Proceedings of the Third Workshop on Argument Mining (ArgMining2016), 2016), verified against 2 sources. For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store; and it defines the extraction step that turns raw transcript text into stored components and relations.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -2790,33 +2864,9 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 
 </details>
 
-## 6.5 LLM era, 2023-2026 (12 entries, quota 40)
+## 6.5 LLM era, 2023-2026 (9 entries, quota 40)
 
 ### T2 - Core method. Defines a task formulation, model, or evaluation still in use.
-
-#### Tariq Alhindi, Tuhin Chakrabarty, Elena Musi and Smaranda Muresan (2022). *Multitask Instruction-based Prompting for Fallacy Recognition*. Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing.
-
-- `doi:10.18653/v1/2022.emnlp-main.560` | aliases: `acl:2022.emnlp-main.560`
-- doc_type: `conference` | tier: T2 | tags: dialogue, fallacy, quality | also in: quality
-- [landing](https://aclanthology.org/2022.emnlp-main.560/) | [OA PDF](https://aclanthology.org/2022.emnlp-main.560.pdf) (via acl)
-- verified against: acl, bibcorpus:lefteriskat/Logical-Fallacy-Detection-Using-LLMs
-- score 0.325 (cites 0.0, cocite 0.1429, keyword 0.5, venue 1.0)
-- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "Moreover, a big challenge for computational models lies in the fact that fallacies are formulated differently across the datasets with differences in the input format (e.g., question-answer pair, sentence with fallacy fragment), genre (e.g., social media, dialogue, news), as well as types and number of fallacies (from…" "We show the ability of this multitask prompting approach to recognize 28 unique fallacies across domains and genres and study the effect of model size and prompt choice by analyzing the per-class (i.e., fallacy type) results." For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store; and it gives quality dimensions or a scoring target.
-
-<details><summary>BibTeX</summary>
-
-```bibtex
-@inproceedings{alhindi2022multitask,
-  title = {Multitask Instruction-based Prompting for Fallacy Recognition},
-  author = {Tariq Alhindi and Tuhin Chakrabarty and Elena Musi and Smaranda Muresan},
-  year = {2022},
-  booktitle = {Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing},
-  doi = {10.18653/v1/2022.emnlp-main.560},
-  url = {https://aclanthology.org/2022.emnlp-main.560/},
-}
-```
-
-</details>
 
 #### Michiel van der Meer et al. (2022). *Will It Blend? Mixing Training Paradigms & Prompting for Argument Quality Prediction*. Proceedings of the 9th Workshop on Argument Mining.
 
@@ -2914,30 +2964,6 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 
 </details>
 
-#### Min-Hsuan Yeh, Ruyuan Wan and Ting-Hao Kenneth Huang (2024). *CoCoLoFa: A Dataset of News Comments with Common Logical Fallacies Written by LLM-Assisted Crowds*. Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing.
-
-- `doi:10.18653/v1/2024.emnlp-main.39` | aliases: `acl:2024.emnlp-main.39`
-- doc_type: `conference` | tier: T3 | tags: dataset, extraction, fallacy, quality | also in: quality, resources
-- [landing](https://aclanthology.org/2024.emnlp-main.39/) | [OA PDF](https://aclanthology.org/2024.emnlp-main.39.pdf) (via acl)
-- verified against: acl, bibcorpus:npnkhoi/memefal-paper
-- score 0.325 (cites 0.0, cocite 0.1429, keyword 0.5, venue 1.0)
-- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "Manually annotating fallacies in large-scale, real-world text data to create datasets for developing and validating detection models is costly." "This paper introduces CoCoLoFa, the largest known logical fallacy dataset, containing 7,706 comments for 648 news articles, with each comment labeled for fallacy presence and type." For a debate-transcript argument database it gives quality dimensions or a scoring target, which is what an argument-strength field in the database would be measured against; and it types defective inference.
-
-<details><summary>BibTeX</summary>
-
-```bibtex
-@inproceedings{yeh2024cocolofa,
-  title = {CoCoLoFa: A Dataset of News Comments with Common Logical Fallacies Written by LLM-Assisted Crowds},
-  author = {Min-Hsuan Yeh and Ruyuan Wan and Ting-Hao Kenneth Huang},
-  year = {2024},
-  booktitle = {Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing},
-  doi = {10.18653/v1/2024.emnlp-main.39},
-  url = {https://aclanthology.org/2024.emnlp-main.39/},
-}
-```
-
-</details>
-
 #### Blanca Calvo Figueras and Rodrigo Agerri (2024). *Critical Questions Generation: Motivation and Challenges*. Proceedings of the 28th Conference on Computational Natural Language Learning.
 
 - `doi:10.18653/v1/2024.conll-1.9` | aliases: `acl:2024.conll-1.9`
@@ -2963,30 +2989,6 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 </details>
 
 ### T4 - Recent (2023-2026). LLM-era work; lower durability confidence, high build relevance.
-
-#### Yanda Li et al. (2024). *Reason from Fallacy: Enhancing Large Language Models’ Logical Reasoning through Logical Fallacy Understanding*. Findings of the Association for Computational Linguistics: NAACL 2024.
-
-- `doi:10.18653/v1/2024.findings-naacl.192` | aliases: `acl:2024.findings-naacl.192`
-- doc_type: `conference` | tier: T4 | tags: fallacy, quality | also in: quality
-- [landing](https://aclanthology.org/2024.findings-naacl.192/) | [OA PDF](https://aclanthology.org/2024.findings-naacl.192.pdf) (via acl)
-- verified against: acl, bibcorpus:npnkhoi/memefal-paper
-- score 0.45 (cites 0.0, cocite 0.1429, keyword 1.0, venue 1.0)
-- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "To evaluate LLMs’ capability of logical fallacy understanding (LFU), we propose five concrete tasks from three cognitive dimensions of WHAT, WHY, and HOW in this paper." "Towards these LFU tasks, we have successfully constructed a new dataset LFUD based on GPT-4 accompanied by a little human effort." For a debate-transcript argument database it gives quality dimensions or a scoring target, which is what an argument-strength field in the database would be measured against; and it types defective inference.
-
-<details><summary>BibTeX</summary>
-
-```bibtex
-@inproceedings{li2024reasonfro,
-  title = {Reason from Fallacy: Enhancing Large Language Models’ Logical Reasoning through Logical Fallacy Understanding},
-  author = {Yanda Li and Dixuan Wang and Jiaqing Liang and Guochao Jiang and Qianyu He and Yanghua Xiao and Deqing Yang},
-  year = {2024},
-  booktitle = {Findings of the Association for Computational Linguistics: NAACL 2024},
-  doi = {10.18653/v1/2024.findings-naacl.192},
-  url = {https://aclanthology.org/2024.findings-naacl.192/},
-}
-```
-
-</details>
 
 #### Amir Taubenfeld, Yaniv Dover, Roi Reichart and Ariel Goldstein (2024). *Systematic Biases in LLM Simulations of Debates*. Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing.
 
@@ -3067,7 +3069,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - [landing](https://api.semanticscholar.org/CorpusID:259211996)
 - verified against: bibcorpus:dimits-ts/llm_moderation_research, bibcorpus:dimits-ts/synthetic_moderation_experiments
 - score 0.4675 (cites 0.0, cocite 0.8929, keyword 0.5, venue 0.2)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (preprint, ArXiv, 2023), verified against 2 sources. For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -3106,30 +3108,6 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
   booktitle = {Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)},
   doi = {10.18653/v1/2025.naacl-long.34},
   url = {https://aclanthology.org/2025.naacl-long.34/},
-}
-```
-
-</details>
-
-#### Marc Feger, Katarina Boland and Stefan Dietze (2025). *Limited Generalizability in Argument Mining: State-Of-The-Art Models Learn Datasets, Not Arguments*. Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), ACL 2025, Vienna, Austria, July 27 - August 1, 2025.
-
-- `doi:10.18653/v1/2025.acl-long.1164` | aliases: `acl:2025.acl-long.1164`
-- doc_type: `conference` | tier: T3 | tags: dataset, dialogue, extraction | also in: mining
-- [landing](https://aclanthology.org/2025.acl-long.1164/) | [OA PDF](https://aclanthology.org/2025.acl-long.1164.pdf) (via acl)
-- verified against: acl, bibcorpus:CogSciPrag/project_ideas
-- score 0.5375 (cites 0.0, cocite 0.5714, keyword 0.75, venue 1.0)
-- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "We evaluate four transformers, three standard and one enhanced with contrastive pre-training for better generalization, on 17 English sentence-level datasets as most relevant to the task." "While the models achieve strong results on familiar benchmarks, their performance drops markedly when applied to unseen datasets." For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store; and it defines the extraction step that turns raw transcript text into stored components and relations.
-
-<details><summary>BibTeX</summary>
-
-```bibtex
-@inproceedings{feger2025limitedge,
-  title = {Limited Generalizability in Argument Mining: State-Of-The-Art Models Learn Datasets, Not Arguments},
-  author = {Marc Feger and Katarina Boland and Stefan Dietze},
-  year = {2025},
-  booktitle = {Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), ACL 2025, Vienna, Austria, July 27 - August 1, 2025},
-  doi = {10.18653/v1/2025.acl-long.1164},
-  url = {https://aclanthology.org/2025.acl-long.1164/},
 }
 ```
 
@@ -3183,24 +3161,24 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 
 </details>
 
-#### Georgi Karadzhov, Tom Stafford and Andreas Vlachos (2021). *DeliData: A Dataset for Deliberation in Multi-party Problem Solving*. Proceedings of the ACM on Human-Computer Interaction.
+#### Piyawat Lertvittayakumjorn, Leshem Choshen, Eyal Shnarch and Francesca Toni (2022). *GrASP: A Library for Extracting and Exploring Human-Interpretable Textual Patterns*. Proceedings of the Thirteenth Language Resources and Evaluation Conference.
 
-- `title:a53d191087c04c6d49d9d46488abffa0090e89de`
-- doc_type: `journal` | tier: T3 | tags: dataset, dialogue | also in: dialogue
-- [landing](https://api.semanticscholar.org/CorpusID:236975941)
-- verified against: bibcorpus:dimits-ts/llm_moderation_research, bibcorpus:dimits-ts/synthetic_moderation_experiments
-- score 0.5125 (cites 0.0, cocite 0.8929, keyword 0.5, venue 0.5)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (journal, Proceedings of the ACM on Human-Computer Interaction, 2021), verified against 2 sources. For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store; and it is a reusable resource whose annotation structure a transcript schema can copy rather than reinvent.
+- `title:e2a93c40b76ce4eddf41b9e0d9939d3c6ef4f1fd` | aliases: `acl:2022.lrec-1.655`
+- doc_type: `conference` | tier: T3 | tags: dataset, extraction | also in: mining
+- [landing](https://aclanthology.org/2022.lrec-1.655/) | [OA PDF](https://aclanthology.org/2022.lrec-1.655.pdf) (via acl)
+- verified against: acl, bibcorpus:borgr/publications
+- score 0.3042 (cites 0.0, cocite 0.1429, keyword 0.4167, venue 1.0)
+- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "Data exploration is an important step of every data science and machine learning project, including those involving textual data." "We demonstrate the usefulness of the library in classification (spam detection and argument mining), model analysis (machine translation), and artifact discovery in datasets (SNLI and 20Newsgroups)." For a debate-transcript argument database it defines the extraction step that turns raw transcript text into stored components and relations; and it is a reusable resource whose annotation structure a transcript schema can copy rather than reinvent.
 
 <details><summary>BibTeX</summary>
 
 ```bibtex
-@article{karadzhov2021delidata,
-  title = {DeliData: A Dataset for Deliberation in Multi-party Problem Solving},
-  author = {Georgi Karadzhov and Tom Stafford and Andreas Vlachos},
-  year = {2021},
-  journal = {Proceedings of the ACM on Human-Computer Interaction},
-  url = {https://api.semanticscholar.org/CorpusID:236975941},
+@inproceedings{lertvittayakumjorn2022graspal,
+  title = {GrASP: A Library for Extracting and Exploring Human-Interpretable Textual Patterns},
+  author = {Piyawat Lertvittayakumjorn and Leshem Choshen and Eyal Shnarch and Francesca Toni},
+  year = {2022},
+  booktitle = {Proceedings of the Thirteenth Language Resources and Evaluation Conference},
+  url = {https://aclanthology.org/2022.lrec-1.655/},
 }
 ```
 
@@ -3213,7 +3191,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - [landing](https://doi.org/10.1609/aaai.v34i05.6270)
 - verified against: bibcorpus:NeWildeSache/argument-mining-in-the-web-archive, bibcorpus:borgr/publications, bibcorpus:m0re4u/paper-database | note: bibcorpus:lihebi/biber-dist: venue mismatch ('Proceedings of the Thirty-Fourth AAAI Conference on Artificial Intelligence, AAAI 2020, The Thirty-Second Innovative Applications of Artificial Intellige…
 - score 0.5458 (cites 0.0, cocite 0.7143, keyword 0.5833, venue 1.0)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (conference, Proceedings of the Thirty-Fourth AAAI Conference on Artificial Intelligence, AAAI 2020, The Thirty-Second Innovative Applications of Artificial Intelligence Conference, IAAI 2020, The Tenth AAAI Symposium on Educational Advances in Artificial Intelligence, EAAI 2020, 2020), verified against 3 sources. For a debate-transcript argument database it defines the extraction step that turns raw transcript text into stored components and relations; and it is a reusable resource whose annotation structure a transcript schema can copy rather than reinvent.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
@@ -3249,6 +3227,30 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
   booktitle = {Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics},
   doi = {10.18653/v1/p19-1054},
   url = {https://aclanthology.org/P19-1054/},
+}
+```
+
+</details>
+
+#### Yamen Ajjour, Milad Alshomary, Henning Wachsmuth and Benno Stein (2019). *Modeling Frames in Argumentation*. Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP).
+
+- `doi:10.18653/v1/d19-1290` | aliases: `acl:D19-1290`
+- doc_type: `conference` | tier: T3 | tags: dataset, dialogue, extraction, quality | also in: dialogue, mining, quality
+- [landing](https://aclanthology.org/D19-1290/) | [OA PDF](https://aclanthology.org/D19-1290.pdf) (via acl)
+- verified against: acl, bibcorpus:NeWildeSache/argument-mining-in-the-web-archive
+- score 0.4625 (cites 0.0, cocite 0.7143, keyword 0.25, venue 1.0)
+- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "This paper introduces frame identification, which is the task of splitting a set of arguments into non-overlapping frames." "We present a fully unsupervised approach to this task, which first removes topical information and then identifies frames using clustering." For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store; and it gives quality dimensions or a scoring target.
+
+<details><summary>BibTeX</summary>
+
+```bibtex
+@inproceedings{ajjour2019modelingf,
+  title = {Modeling Frames in Argumentation},
+  author = {Yamen Ajjour and Milad Alshomary and Henning Wachsmuth and Benno Stein},
+  year = {2019},
+  booktitle = {Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)},
+  doi = {10.18653/v1/d19-1290},
+  url = {https://aclanthology.org/D19-1290/},
 }
 ```
 
@@ -3332,7 +3334,7 @@ Generated 2026-09-16T02:06:29+00:00 | criteria_version 1 | cap 250
 - [landing](https://aclanthology.org/W14-2109/) | [OA PDF](https://aclanthology.org/W14-2109.pdf) (via acl)
 - verified against: acl, bibcorpus:NeWildeSache/argument-mining-in-the-web-archive
 - score 0.4833 (cites 0.0, cocite 0.5714, keyword 0.8333, venue 0.5)
-- annotation (`grounded_on: none`): No abstract or full text was retrieved for this entry, so nothing about its content is asserted here. It is recorded from bibliographic metadata only (workshop, Proceedings of the First Workshop on Argumentation Mining, 2014), verified against 2 sources. For a debate-transcript argument database it defines the extraction step that turns raw transcript text into stored components and relations; and it is a reusable resource whose annotation structure a transcript schema can copy rather than reinvent.
+- annotation: none. No abstract or full text was retrieved for this entry (`grounded_on: none`), so nothing is written about its content.
 
 <details><summary>BibTeX</summary>
 
