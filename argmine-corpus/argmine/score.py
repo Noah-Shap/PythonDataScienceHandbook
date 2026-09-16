@@ -20,8 +20,24 @@ FOUNDATIONAL_MARKERS = ("survey", "introduction to", "overview", "tutorial", "st
 
 
 # -- exclusions -----------------------------------------------------------
+def off_topic(cfg, rec: dict) -> bool:
+    """True when nothing in the candidate is about argumentation.
+
+    Curated bibliographies are curated for *their* paper, not for this corpus, so a
+    general NLP or LLM bibliography drags in work with no argumentative content. Section
+    6.5 says as much explicitly: LLM-era work only counts where it touches the
+    representation or evaluation of natural-language arguments, so a candidate whose only
+    vocabulary match is the LLM area's generic terms is out.
+    """
+    raws = keyword_scores(cfg, rec)
+    argumentative = sum(v for area, v in raws.items() if area != "llm")
+    return argumentative <= 0
+
+
 def exclusion_reason(cfg, rec: dict) -> str | None:
     """Global exclusions (section 6). Foundational work survives them; it is admitted at T1."""
+    if off_topic(cfg, rec):
+        return "off_topic:no argumentation vocabulary in title, abstract or venue"
     text = norm_text(f"{rec.get('title', '')} {rec.get('abstract', '')}")
     title = norm_text(rec.get("title", ""))
     for pat in cfg["exclusions"]["domain_patterns"]:
@@ -110,6 +126,26 @@ def cocite_raw(ctx, rec: dict, verified_titles: set[str], registry_aliases: set[
     return 0.0, "none"
 
 
+def corroboration_count(ctx, rec: dict) -> int:
+    """How many independent sources already have this work.
+
+    This is the phase-3 verification criterion, applied cheaply at admission time so the
+    cap is not spent on candidates that provably cannot reach two independent sources.
+    It never changes a score; it only breaks ties between candidates competing for the
+    same slot.
+    """
+    sources = set()
+    if ctx.live("acl") and ctx.acl.lookup_title(rec.get("title", ""), rec.get("year")):
+        sources.add("acl")
+    if ctx.live("bibcorpus"):
+        for repo in ctx.bib.independent_repos(rec.get("title", "")):
+            sources.add(f"bibcorpus:{repo}")
+    for name in ("openalex", "semanticscholar", "crossref", "arxiv"):
+        if ctx.live(name):
+            sources.add(name)          # a reachable API is asked for real in phase 3
+    return len(sources)
+
+
 def minmax(values: list[float]) -> list[float]:
     if not values:
         return []
@@ -140,8 +176,10 @@ def score_batch(cfg, ctx, candidates: list[dict], verified_titles: set[str],
         venue = venue_score(cfg, rec)
         total = (float(weights["cites_norm"]) * cn + float(weights["cocite"]) * con_w
                  + float(weights["keyword"]) * keyword + float(weights["venue"]) * venue)
+        rec["_corroboration"] = corroboration_count(ctx, rec)
         rec["score"] = {
             "total": round(total, 4),
+            "corroborating_sources": rec["_corroboration"],
             "components": {"cites_norm": round(cn, 4), "cocite": round(con_w, 4),
                            "keyword": round(keyword, 4), "venue": round(venue, 4)},
             "components_source": {"cites_norm": "citation-counts" if any(

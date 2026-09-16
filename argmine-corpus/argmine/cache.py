@@ -40,6 +40,7 @@ class Http:
         self.probe_timeout = float(http.get("probe_timeout_seconds", 12))
         self.min_delay = dict(http.get("min_delay_seconds", {}))
         self._last_call: dict[str, float] = {}
+        self._fail_streak: dict[str, int] = {}
         self.calls = {"network": 0, "cache": 0, "skipped_unreachable": 0, "errors": 0}
 
         cache_path = cfg.path(http["cache_path"])
@@ -146,6 +147,14 @@ class Http:
             except requests.RequestException as exc:
                 attempt += 1
                 self.calls["errors"] += 1
+                streak = self._fail_streak.get(source, 0) + 1
+                self._fail_streak[source] = streak
+                if streak >= 3 and source not in self.status:
+                    # A host that refuses three connections in a row is not going to
+                    # answer the next two hundred; stop paying the backoff for it.
+                    self.status[source] = {"reachable": False, "_probed_this_run": True,
+                                           "reason": f"{type(exc).__name__}: {str(exc)[:120]}"}
+                    return None
                 if attempt > self.max_retries:
                     if allow_error:
                         return None
@@ -159,6 +168,7 @@ class Http:
                     return None if allow_error else resp
                 self._sleep_backoff(attempt, resp.headers.get("Retry-After"))
                 continue
+            self._fail_streak[source] = 0
             return resp
 
     def _sleep_backoff(self, attempt: int, retry_after: str | None = None) -> None:

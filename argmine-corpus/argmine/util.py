@@ -51,8 +51,16 @@ def canonical_id(aliases, title: str = "", year=None) -> str:
         scheme = a.split(":", 1)[0].lower()
         by_scheme.setdefault(scheme, []).append(a)
     for scheme in ID_PRECEDENCE:
-        if by_scheme.get(scheme):
-            return sorted(by_scheme[scheme])[0]
+        options = by_scheme.get(scheme)
+        if not options:
+            continue
+        if scheme == "doi":
+            # Bibliographies sometimes carry a truncated DOI ("10.1162/coli"). A DOI that
+            # is a strict prefix of another DOI for the same work is that truncation, and
+            # must never become the canonical id - it still survives as an alias.
+            options = [o for o in options
+                       if not any(other != o and other.startswith(o) for other in options)]
+        return sorted(options)[0] if options else title_id(title, year)
     return title_id(title, year)
 
 

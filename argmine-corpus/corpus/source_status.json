@@ -4,6 +4,12 @@
     "reachable": true,
     "reason": "local clone at corpus/repos/acl-org__acl-anthology"
   },
+  "acl_web": {
+    "_probed_this_run": true,
+    "probe_url": "https://aclanthology.org/",
+    "reachable": false,
+    "reason": "ProxyError: HTTPSConnectionPool(host='aclanthology.org', port=443): Max retries exceeded with url: / (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel con"
+  },
   "arxiv": {
     "_probed_this_run": true,
     "probe_url": "https://export.arxiv.org/api/query?search_query=all:argument+mining&max_results=1",
@@ -13,7 +19,7 @@
   "bibcorpus": {
     "_probed_this_run": true,
     "reachable": true,
-    "reason": "33 bibliography repositories configured"
+    "reason": "40 bibliography repositories configured"
   },
   "crossref": {
     "_probed_this_run": true,

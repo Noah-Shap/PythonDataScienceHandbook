@@ -5,7 +5,7 @@ regenerated with live counts by every subsequent run. Six areas, each with a def
 inclusion and exclusion criteria, the vocabulary used for keyword scoring, and a minimum
 quota out of the 250-entry cap.
 
-Generated: 2026-09-16T00:55:38+00:00 | criteria_version: 1
+Generated: 2026-09-16T01:33:26+00:00 | criteria_version: 1
 
 
 ## Areas
@@ -96,11 +96,13 @@ Pattern list actually used by the scorer: `legal argument`, `legal reasoning`, `
 ## How an area is assigned
 
 `keyword` score: title and abstract are matched against the per-area vocabulary below.
-Each term carries a weight (3 = defining, 2 = strong, 1 = weak); an area's raw score is
-the sum of the weights it matches, normalised by the best-scoring area in the batch. A
-candidate is assigned every area whose raw score is at least 60% of its best
-area's score, so genuinely cross-area work (a dialogue corpus paper, say) counts toward
-both quotas.
+Each term carries a weight (3 = defining, 2 = strong, 1 = weak), doubled for a match in
+the title and halved for one in the venue name; an area's raw score is the sum of the
+weights it matches. The record's `keyword` component is its best area's raw score divided
+by a saturation constant (12), capped at 1. A candidate is assigned its best
+area plus every other area scoring at least 60% of the best or at least
+40% of saturation, so genuinely cross-area work (a dialogue corpus paper, say)
+counts toward both quotas.
 
 Total candidate score = cites_norm 0.25, cocite 0.35, keyword 0.25, venue 0.15. `cocite` is multiplied by dialogue x1.25 for the areas
 listed, because those areas sit closest to the downstream debate-transcript database.
@@ -147,8 +149,9 @@ Run in phase 2 across every reachable source; each query and its hit count is lo
 | Source | Reachable | Detail |
 |--------|-----------|--------|
 | acl | yes | local clone at corpus/repos/acl-org__acl-anthology |
+| acl_web | no | ProxyError: HTTPSConnectionPool(host='aclanthology.org', port=443): Max retries exceeded w |
 | arxiv | no | ProxyError: HTTPSConnectionPool(host='export.arxiv.org', port=443): Max retries exceeded w |
-| bibcorpus | no | 0 bibliography repositories configured |
+| bibcorpus | yes | 40 bibliography repositories configured |
 | crossref | no | ProxyError: HTTPSConnectionPool(host='api.crossref.org', port=443): Max retries exceeded w |
 | github | yes | HTTP 200 |
 | openalex | no | ProxyError: HTTPSConnectionPool(host='api.openalex.org', port=443): Max retries exceeded w |

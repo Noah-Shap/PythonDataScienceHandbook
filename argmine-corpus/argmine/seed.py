@@ -31,7 +31,7 @@ def _plausible(view: dict, seed: dict) -> bool:
     author_ok = bool(want and have and ({w.split()[-1] for w in want} & have))
     if want and have and not author_ok:
         return False
-    strong = title_sim >= 97 and (author_ok or not want)
+    strong = title_sim >= 97 and not (want and have and not author_ok)
     if not strong and seed.get("year") and view.get("year") \
             and abs(int(view["year"]) - int(seed["year"])) > 3:
         return False

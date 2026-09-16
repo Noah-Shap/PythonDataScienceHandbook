@@ -177,7 +177,11 @@ def admit(ctx, scored: list[dict]) -> dict:
         summary["below_cutoff"] = len(scored)
         return summary
 
-    ranked = sorted(scored, key=lambda r: -r["score"]["total"])
+    # Rank by score, but let a candidate that can already reach two independent sources
+    # take a slot ahead of one that cannot: an unverifiable entry can never enter the
+    # bibliography, only the appendix, so spending a capped slot on it is waste.
+    ranked = sorted(scored, key=lambda r: (-(1 if r.get("_corroboration", 0) >= 2 else 0),
+                                           -r["score"]["total"]))
     counts = dict(reg.area_counts())
     chosen: list[dict] = []
     taken: set[int] = set()
@@ -208,6 +212,7 @@ def admit(ctx, scored: list[dict]) -> dict:
             continue
         taken.add(idx)
         chosen.append(rec)
+    summary["admitted_corroborated"] = sum(1 for r in chosen if r.get("_corroboration", 0) >= 2)
 
     for idx, rec in enumerate(ranked):
         if idx in taken:

@@ -181,6 +181,18 @@
       "kept_files": 91
     },
     {
+      "full_name": "danny-v-nguyen/thesis",
+      "url": "https://github.com/danny-v-nguyen/thesis.git",
+      "why": "carries reports/refs.bib",
+      "discovered_via": "github-code-search:\"Logical Fallacy Detection\" jin extension:bib",
+      "sha": "915cd63696c95fbf67492d04e1ecadafe4fdd71a",
+      "bib_files": 1,
+      "bib_entries": 15,
+      "cloned": true,
+      "pruned_to_bibtex": true,
+      "kept_files": 3
+    },
+    {
       "full_name": "davidar/dblp.yaml",
       "url": "https://github.com/davidar/dblp.yaml.git",
       "why": "carries conf/stairs.bib",
@@ -217,6 +229,18 @@
       "kept_files": 5
     },
     {
+      "full_name": "edgar-demeude/KEIGO-SYNC",
+      "url": "https://github.com/edgar-demeude/KEIGO-SYNC.git",
+      "why": "carries report/references.bib",
+      "discovered_via": "github-code-search:\"Logical Fallacy Detection\" jin extension:bib",
+      "sha": "33b704ebe5e15029b82e67da4736577e9f116fe7",
+      "bib_files": 1,
+      "bib_entries": 8,
+      "cloned": true,
+      "pruned_to_bibtex": true,
+      "kept_files": 2
+    },
+    {
       "full_name": "exp2exp/exp2exp.github.io",
       "url": "https://github.com/exp2exp/exp2exp.github.io.git",
       "why": "carries src/erg/erg.bib",
@@ -227,6 +251,18 @@
       "cloned": true,
       "pruned_to_bibtex": true,
       "kept_files": 2
+    },
+    {
+      "full_name": "harisont/biboba",
+      "url": "https://github.com/harisont/biboba.git",
+      "why": "carries argmining.bib",
+      "discovered_via": "github-code-search:\"Argumentation Mining\" Stede Schneider \"Synthesis Lectures\" extension:bib",
+      "sha": "3208dd87b0f7576d0dd239743e449f6b199e50fb",
+      "bib_files": 6,
+      "bib_entries": 225,
+      "cloned": true,
+      "pruned_to_bibtex": true,
+      "kept_files": 6
     },
     {
       "full_name": "ir-anthology/ir-anthology.github.io",
@@ -251,6 +287,18 @@
       "cloned": true,
       "pruned_to_bibtex": true,
       "kept_files": 357
+    },
+    {
+      "full_name": "lefteriskat/Logical-Fallacy-Detection-Using-LLMs",
+      "url": "https://github.com/lefteriskat/Logical-Fallacy-Detection-Using-LLMs.git",
+      "why": "carries bibliography/Bibliography.bib",
+      "discovered_via": "github-code-search:\"Logical Fallacy Detection\" jin extension:bib",
+      "sha": "340f80ffe533d184d6a142102a649729edc3f50c",
+      "bib_files": 1,
+      "bib_entries": 42,
+      "cloned": true,
+      "pruned_to_bibtex": true,
+      "kept_files": 2
     },
     {
       "full_name": "lihebi/biber-dist",
@@ -325,6 +373,18 @@
       "kept_files": 3
     },
     {
+      "full_name": "npnkhoi/memefal-paper",
+      "url": "https://github.com/npnkhoi/memefal-paper.git",
+      "why": "carries custom.bib",
+      "discovered_via": "github-code-search:\"Logical Fallacy Detection\" jin extension:bib",
+      "sha": "844e30dde691a8fbb9bc4a7e3163ab2421837d59",
+      "bib_files": 1,
+      "bib_entries": 16,
+      "cloned": true,
+      "pruned_to_bibtex": true,
+      "kept_files": 2
+    },
+    {
       "full_name": "nshkrdotcom/research_papers",
       "url": "https://github.com/nshkrdotcom/research_papers.git",
       "why": "carries tex/20250730/references.bib",
@@ -349,6 +409,18 @@
       "kept_files": 4
     },
     {
+      "full_name": "p4s3r0/argumentation-framework-clustering",
+      "url": "https://github.com/p4s3r0/argumentation-framework-clustering.git",
+      "why": "carries thesis/helper/references.bib",
+      "discovered_via": "github-code-search:\"An introduction to argumentation semantics\" extension:bib",
+      "sha": "21175324093718a57d36fdd4f3d89a3174772460",
+      "bib_files": 1,
+      "bib_entries": 33,
+      "cloned": true,
+      "pruned_to_bibtex": true,
+      "kept_files": 3
+    },
+    {
       "full_name": "slatex/sTeX",
       "url": "https://github.com/slatex/sTeX.git",
       "why": "carries lib/bib/deprecated.bib",
@@ -371,6 +443,18 @@
       "cloned": true,
       "pruned_to_bibtex": true,
       "kept_files": 35
+    },
+    {
+      "full_name": "ttmassa/ter",
+      "url": "https://github.com/ttmassa/ter.git",
+      "why": "carries report/resources/bib/references.bib",
+      "discovered_via": "github-code-search:\"An introduction to argumentation semantics\" extension:bib",
+      "sha": "c7e50cb70b9d8f6fb6e2b461dc5b01bdf76d5b40",
+      "bib_files": 1,
+      "bib_entries": 9,
+      "cloned": true,
+      "pruned_to_bibtex": true,
+      "kept_files": 2
     },
     {
       "full_name": "xinyannnnnnn/fact-driven-storytelling-with-llms",

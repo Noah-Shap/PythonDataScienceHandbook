@@ -112,9 +112,12 @@ def fetch_pdf(ctx, rec: dict) -> tuple[bool, str]:
         return False, "no open-access PDF url resolved"
     if not oa_allowed(cfg, rec, url):
         return False, f"host not on the open-access allowlist ({urlsplit(url).netloc})"
-    source = "arxiv" if "arxiv.org" in url else ("acl" if "aclanthology.org" in url else "openalex")
-    if ctx.http.unreachable(source) and source in ctx.http.status:
-        return False, f"{source} unreachable from this environment"
+    source = ("arxiv" if "arxiv.org" in url
+              else "acl_web" if "aclanthology.org" in url
+              else rec.get("urls", {}).get("pdf_oa_source") or "oa_host")
+    if ctx.http.unreachable(source):
+        reason = ctx.http.status.get(source, {}).get("reason", "")
+        return False, f"{source} unreachable from this environment ({reason[:60]})"
     dest = cfg.corpus / "pdfs" / f"{safe_id(rec['id'])}.pdf"
     ok = ctx.http.download(source, url, dest)
     if not ok:

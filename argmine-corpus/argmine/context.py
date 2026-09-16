@@ -42,6 +42,9 @@ class Context:
             if client.name in enabled:
                 self.http.probe(client.name, client.probe_url)
         if "acl" in enabled:
+            # The local clone and the website are different things: the clone answers
+            # metadata questions offline, the website is where a PDF would come from.
+            self.http.probe("acl_web", "https://aclanthology.org/")
             self.http.status["acl"] = {
                 "reachable": self.acl.available(),
                 "reason": f"local clone at {self.cfg['sources']['acl_anthology']['clone_dir']}"
@@ -103,6 +106,8 @@ class Context:
             repos = self.bib.ensure_clones(log=log)
             out["bib_repos"] = sum(1 for r in repos if r.get("cloned"))
             out["bib_entries"] = self.bib.build_index(force=force, log=log)
+            if self.acl.available():
+                self.bib.set_anthology_bibkeys(self.acl.bibkeys())
         self.probe_sources()
         self._prepared = True
         self._prepare_summary = out

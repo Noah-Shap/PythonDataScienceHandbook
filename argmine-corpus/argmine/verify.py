@@ -88,8 +88,7 @@ def views_agree(views: list[dict]) -> tuple[str, list[str], str]:
     """Returns (status, corroborating source labels, notes)."""
     if not views:
         return "unverified", [], "no source returned a record"
-    primary = sorted(views, key=lambda v: (SOURCE_PRIORITY.index(v["source"])
-                                           if v["source"] in SOURCE_PRIORITY else 99))[0]
+    primary = _consensus_view(views)
     labels, notes, conflicts = {_source_label(primary)}, [], []
     for other in views:
         if other is primary:
@@ -106,6 +105,25 @@ def views_agree(views: list[dict]) -> tuple[str, list[str], str]:
     if status == "unverified" and not conflicts:
         note = (note + "; only one independent source could be reached").strip("; ")
     return status, sorted(labels), note
+
+
+def _consensus_view(views: list[dict]) -> dict:
+    """The view the most other views agree with, breaking ties by source priority.
+
+    Comparing everything against an arbitrary first view would let one outlier - a
+    bibliography listing a later edition of a classic, say - decide that a work no source
+    actually disputes is unverified.
+    """
+    def priority(v):
+        return SOURCE_PRIORITY.index(v["source"]) if v["source"] in SOURCE_PRIORITY else 99
+
+    best, best_key = views[0], None
+    for view in views:
+        agree = sum(1 for other in views if other is not view and views_match(view, other)[0])
+        key = (agree, -priority(view), len(view.get("abstract") or ""))
+        if best_key is None or key > best_key:
+            best, best_key = view, key
+    return best
 
 
 def merge_views(views: list[dict]) -> dict:

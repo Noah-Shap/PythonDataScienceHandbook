@@ -64,6 +64,23 @@ class BibCorpus:
         self.title_files: dict[str, set[str]] = {}
         self.files: dict[str, dict] = {}
         self._ntitles: list[str] = []
+        self._acl_bibkeys: set[str] | None = None
+        self._match_cache: dict[tuple[str, float], str] = {}
+
+    def set_anthology_bibkeys(self, keys) -> None:
+        """Teach the corpus which bibkeys the ACL Anthology itself issues.
+
+        Without this the test is a guess from the key's shape, which wrongly flags other
+        anthologies (the IR Anthology uses the same ``author-year-word`` convention) as
+        re-exports and throws away real corroboration.
+        """
+        self._acl_bibkeys = {k.lower() for k in keys if k}
+
+    def _anthology_derived(self, key: str) -> bool:
+        k = (key or "").lower()
+        if self._acl_bibkeys is not None:
+            return k in self._acl_bibkeys
+        return bool(ANTHOLOGY_KEY_RE.match(k))
 
     # -- repo list ---------------------------------------------------------
     def load_repos(self) -> list[dict]:
@@ -285,6 +302,7 @@ class BibCorpus:
         return out, False
 
     def _install(self, data: dict) -> None:
+        self._match_cache = {}
         self.entries = data["entries"]
         self.files = {k: {**v, "titles": set(v["titles"])} for k, v in data["files"].items()}
         self.by_title, self.title_files = {}, {}
@@ -302,17 +320,27 @@ class BibCorpus:
             urls={"landing": e.get("url", "")},
             extra={"repo": e["repo"], "file": e["file"], "file_id": e["file_id"],
                    "bibkey": e["key"],
-                   "anthology_derived": bool(ANTHOLOGY_KEY_RE.match(e["key"].lower()))},
+                   "anthology_derived": self._anthology_derived(e["key"])},
         )
 
     def match_title(self, title: str, cutoff: float = 95.0) -> str | None:
+        """Exact normalised match, else a fuzzy match over every indexed title.
+
+        Memoised: a record is looked up several times per phase (metadata, independence,
+        co-citation), and the fuzzy scan is the most expensive thing the local sources do.
+        """
         nt = norm_title(title)
         if nt in self.by_title:
             return nt
         if not self._ntitles:
             return None
+        cached = self._match_cache.get((nt, cutoff))
+        if cached is not None:
+            return cached or None
         hit = process.extractOne(nt, self._ntitles, scorer=fuzz.ratio, score_cutoff=cutoff)
-        return hit[0] if hit else None
+        result = hit[0] if hit else ""
+        self._match_cache[(nt, cutoff)] = result
+        return result or None
 
     def lookup(self, title: str, year=None) -> list[dict]:
         nt = self.match_title(title)
@@ -328,9 +356,7 @@ class BibCorpus:
         copy of the ACL Anthology's own BibTeX export."""
         repos = set()
         for c in self.lookup(title):
-            fid = c["extra"]["file_id"]
-            finfo = self.files.get(fid, {})
-            if finfo.get("anthology_ratio", 0) > 0.8 or "anthology" in finfo.get("path", "").lower():
+            if c["extra"].get("anthology_derived"):
                 continue
             repos.add(c["extra"]["repo"])
         return sorted(repos)

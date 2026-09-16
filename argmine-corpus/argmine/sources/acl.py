@@ -248,6 +248,13 @@ class AclAnthology:
         row = self.db().execute("SELECT * FROM paper WHERE anth_id = ?", (anth_id,)).fetchone()
         return self._row_to_candidate(row) if row else None
 
+    def bibkeys(self) -> set[str]:
+        """Every bibkey the Anthology issues - used to spot verbatim re-exports."""
+        if not self.db_path.exists():
+            return set()
+        return {r[0] for r in self.db().execute(
+            "SELECT bibkey FROM paper WHERE bibkey IS NOT NULL AND bibkey != ''")}
+
     def search(self, query: str, limit: int = 100) -> list[dict]:
         """FTS over title+abstract. Returns normalised candidates."""
         if not self.db_path.exists():

@@ -27,6 +27,44 @@
       "total_count": 14,
       "via": "mcp:github.search_code"
     },
+    "\"An introduction to argumentation semantics\" extension:bib": {
+      "fetched_at": "2026-09-16T01:25:26+00:00",
+      "items": [
+        {
+          "path": "journals/ker.bib",
+          "repository": "davidar/dblp.yaml"
+        },
+        {
+          "path": "report/resources/bib/references.bib",
+          "repository": "ttmassa/ter"
+        },
+        {
+          "path": "AFGCNv2/paper/references.bib",
+          "repository": "lmlearning/AFGraphLib"
+        },
+        {
+          "path": "thesis/helper/references.bib",
+          "repository": "p4s3r0/argumentation-framework-clustering"
+        }
+      ],
+      "total_count": 9,
+      "via": "mcp:github.search_code"
+    },
+    "\"Argumentation Mining\" Stede Schneider \"Synthesis Lectures\" extension:bib": {
+      "fetched_at": "2026-09-16T01:25:26+00:00",
+      "items": [
+        {
+          "path": "anthology/files/stede-2018-argumentation.bib",
+          "repository": "ir-anthology/ir-anthology.github.io"
+        },
+        {
+          "path": "argmining.bib",
+          "repository": "harisont/biboba"
+        }
+      ],
+      "total_count": 2,
+      "via": "mcp:github.search_code"
+    },
     "\"Argumentation Mining: State of the Art and Emerging Trends\" extension:bib": {
       "fetched_at": "2026-09-16T01:18:27+00:00",
       "items": [
@@ -44,6 +82,29 @@
         }
       ],
       "total_count": 27,
+      "via": "mcp:github.search_code"
+    },
+    "\"Logical Fallacy Detection\" jin extension:bib": {
+      "fetched_at": "2026-09-16T01:25:26+00:00",
+      "items": [
+        {
+          "path": "report/references.bib",
+          "repository": "edgar-demeude/KEIGO-SYNC"
+        },
+        {
+          "path": "reports/refs.bib",
+          "repository": "danny-v-nguyen/thesis"
+        },
+        {
+          "path": "custom.bib",
+          "repository": "npnkhoi/memefal-paper"
+        },
+        {
+          "path": "bibliography/Bibliography.bib",
+          "repository": "lefteriskat/Logical-Fallacy-Detection-Using-LLMs"
+        }
+      ],
+      "total_count": 12,
       "via": "mcp:github.search_code"
     },
     "\"Whence inference\" Budzynska extension:bib": {
