@@ -38,8 +38,10 @@ def citation(rec: dict) -> str:
     authors = [a for a in rec.get("authors", []) if a and a.strip()]
     if len(authors) > 4:
         who = f"{authors[0]} et al."
+    elif len(authors) > 1:
+        who = ", ".join(authors[:-1]) + " and " + authors[-1]
     elif authors:
-        who = ", ".join(authors[:-1]) + (" and " + authors[-1] if len(authors) > 1 else "")
+        who = authors[0]
     else:
         who = "[authors not recorded]"
     year = rec.get("year") or "n.d."

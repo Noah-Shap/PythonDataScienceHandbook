@@ -2,7 +2,7 @@
 
 140 verified entries, grouped by area and then by tier. Every entry here agreed across at least two independent metadata sources; anything that did not is in `99-unverified-and-rejected.md`. Each annotation says which retrieved text it was written from (`grounded_on`), and quotes that text rather than paraphrasing it from outside knowledge.
 
-Generated 2026-09-16T03:22:41+00:00 | criteria_version 1 | cap 250
+Generated 2026-09-16T03:24:36+00:00 | criteria_version 1 | cap 250
 
 **Added in the latest run (250):** `doi:10.1007/978-0-387-98197-0_19`, `doi:10.1007/978-3-642-23963-2_10`, `doi:10.1007/s10458-009-9116-7`, `doi:10.1007/s10506-010-9104-x`, `doi:10.1007/s10579-019-09446-8`, `doi:10.1007/s13222-020-00347-7`, `doi:10.1016/0004-3702(94)00041-x`, `doi:10.1016/j.artint.2007.04.010`, `doi:10.1016/j.artint.2015.12.004`, `doi:10.1017/cbo9780511802034`, `doi:10.1017/s0269888906001044`, `doi:10.1017/s0269888911000166`, `doi:10.1038/s41586-021-03215-w`, `doi:10.1057/palgrave.ap.5500115`, `doi:10.1080/19462160903564592`, `doi:10.1080/19462166.2010.486479`, `doi:10.1080/19462166.2012.661766`, `doi:10.1080/19462166.2013.862303`, `doi:10.1080/19462166.2013.869764`, `doi:10.1080/19462166.2013.869766`, `doi:10.1080/19462166.2013.869767`, `doi:10.1080/19462166.2013.869878`, `doi:10.1080/19462166.2014.1001790`, `doi:10.1093/logcom/14.5.675`, `doi:10.1093/oso/9780198862536.003.0005`, `doi:10.1111/coin.12111`, `doi:10.1145/2850417`, `doi:10.1145/2872427.2883081`, `doi:10.1145/3308558.3314127`, `doi:10.1145/3331184.3331327`, `doi:10.1162/coli_a_00276`, `doi:10.1162/coli_a_00295`, `doi:10.1162/coli_a_00364`, `doi:10.1162/coli_a_00502`, `doi:10.1162/coli_a_00553`, `doi:10.1162/tacl_a_00481`, `doi:10.1177/1461444807081230`, `doi:10.1609/aaai.v34i05.6270`, `doi:10.1609/aaai.v34i05.6285`, `doi:10.18653/v1/2020.acl-main.298` ...
 
@@ -124,7 +124,7 @@ Generated 2026-09-16T03:22:41+00:00 | criteria_version 1 | cap 250
 
 </details>
 
-####  (1995). *On the Acceptability of Arguments and its Fundamental Role in Nonmonotonic Reasoning, Logic Programming and n-Person Games*. Artificial Intelligence.
+#### P.M. Dung (1995). *On the Acceptability of Arguments and its Fundamental Role in Nonmonotonic Reasoning, Logic Programming and n-Person Games*. Artificial Intelligence.
 
 - `doi:10.1016/0004-3702(94)00041-x`
 - doc_type: `journal` | tier: T1 | tags: formal
@@ -147,7 +147,7 @@ Generated 2026-09-16T03:22:41+00:00 | criteria_version 1 | cap 250
 
 </details>
 
-####  (1960). *The uses of argument*. Cambridge University Press.
+#### Stephen E. Toulmin (1960). *The uses of argument*. Cambridge University Press.
 
 - `title:df299e3284c272f02cac357fba80718526676f2a`
 - doc_type: `conference` | tier: T1 | tags: formal
@@ -216,7 +216,7 @@ Generated 2026-09-16T03:22:41+00:00 | criteria_version 1 | cap 250
 
 </details>
 
-####  (2017). *Assumption-Based Argumentation Equipped with Preferences and its Application to Decision Making, Practical Reasoning, and Epistemic Reasoning*. Computational Intelligence.
+#### Toshiko Wakaki (2017). *Assumption-Based Argumentation Equipped with Preferences and its Application to Decision Making, Practical Reasoning, and Epistemic Reasoning*. Computational Intelligence.
 
 - `doi:10.1111/coin.12111`
 - doc_type: `journal` | tier: T2 | tags: formal
@@ -356,7 +356,7 @@ Generated 2026-09-16T03:22:41+00:00 | criteria_version 1 | cap 250
 
 </details>
 
-####  (2015). *Graphical Representation of Assumption-Based Argumentation*. AAAI.
+#### Claudia Schulz 0001 (2015). *Graphical Representation of Assumption-Based Argumentation*. AAAI.
 
 - `title:68b73e54770197cc7438c73cef166bb69e8041e5`
 - doc_type: `conference` | tier: T2 | tags: formal
@@ -402,7 +402,7 @@ Generated 2026-09-16T03:22:41+00:00 | criteria_version 1 | cap 250
 
 </details>
 
-####  (2014). *A tutorial on assumption-based argumentation*. Argument & Computation.
+#### Francesca Toni (2014). *A tutorial on assumption-based argumentation*. Argument & Computation.
 
 - `doi:10.1080/19462166.2013.869878`
 - doc_type: `journal` | tier: T2 | tags: formal
@@ -563,7 +563,7 @@ Generated 2026-09-16T03:22:41+00:00 | criteria_version 1 | cap 250
 
 </details>
 
-####  (2010). *An abstract framework for argumentation with structured arguments*. Argument & Computation.
+#### Henry Prakken (2010). *An abstract framework for argumentation with structured arguments*. Argument & Computation.
 
 - `doi:10.1080/19462160903564592`
 - doc_type: `journal` | tier: T2 | tags: formal
@@ -1161,7 +1161,7 @@ Generated 2026-09-16T03:22:41+00:00 | criteria_version 1 | cap 250
 
 </details>
 
-####  (2017). *Manual Identification of Arguments with Implicit Conclusions Using Semantic Rules for Argument Mining*. Proceedings of the 4th Workshop on Argument Mining.
+#### Nancy L. Green (2017). *Manual Identification of Arguments with Implicit Conclusions Using Semantic Rules for Argument Mining*. Proceedings of the 4th Workshop on Argument Mining.
 
 - `doi:10.18653/v1/w17-5109` | aliases: `acl:W17-5109`
 - doc_type: `workshop` | tier: T2 | tags: extraction, schemes
@@ -1926,7 +1926,7 @@ Generated 2026-09-16T03:22:41+00:00 | criteria_version 1 | cap 250
 
 </details>
 
-## 6.3 Argument quality and evaluation (22 entries, quota 40)
+## 6.3 Argument quality and evaluation (19 entries, quota 40)
 
 ### T2 - Core method. Defines a task formulation, model, or evaluation still in use.
 
@@ -1948,30 +1948,6 @@ Generated 2026-09-16T03:22:41+00:00 | criteria_version 1 | cap 250
   booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2022},
   doi = {10.18653/v1/2022.findings-emnlp.532},
   url = {https://aclanthology.org/2022.findings-emnlp.532/},
-}
-```
-
-</details>
-
-#### Tariq Alhindi, Tuhin Chakrabarty, Elena Musi and Smaranda Muresan (2022). *Multitask Instruction-based Prompting for Fallacy Recognition*. Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing.
-
-- `doi:10.18653/v1/2022.emnlp-main.560` | aliases: `acl:2022.emnlp-main.560`
-- doc_type: `conference` | tier: T2 | tags: dialogue, fallacy, quality | also in: llm
-- [landing](https://aclanthology.org/2022.emnlp-main.560/) | [OA PDF](https://aclanthology.org/2022.emnlp-main.560.pdf) (via acl)
-- verified against: acl, bibcorpus:lefteriskat/Logical-Fallacy-Detection-Using-LLMs
-- score 0.325 (cites 0.0, cocite 0.1429, keyword 0.5, venue 1.0)
-- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "Moreover, a big challenge for computational models lies in the fact that fallacies are formulated differently across the datasets with differences in the input format (e.g., question-answer pair, sentence with fallacy fragment), genre (e.g., social media, dialogue, news), as well as types and number of fallacies (from…" "We show the ability of this multitask prompting approach to recognize 28 unique fallacies across domains and genres and study the effect of model size and prompt choice by analyzing the per-class (i.e., fallacy type) results." For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store; and it gives quality dimensions or a scoring target.
-
-<details><summary>BibTeX</summary>
-
-```bibtex
-@inproceedings{alhindi2022multitask,
-  title = {Multitask Instruction-based Prompting for Fallacy Recognition},
-  author = {Tariq Alhindi and Tuhin Chakrabarty and Elena Musi and Smaranda Muresan},
-  year = {2022},
-  booktitle = {Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing},
-  doi = {10.18653/v1/2022.emnlp-main.560},
-  url = {https://aclanthology.org/2022.emnlp-main.560/},
 }
 ```
 
@@ -2239,30 +2215,6 @@ Generated 2026-09-16T03:22:41+00:00 | criteria_version 1 | cap 250
 
 ### T3 - Dataset / tool / annotation guideline, including the guideline documents themselves.
 
-#### Min-Hsuan Yeh, Ruyuan Wan and Ting-Hao Kenneth Huang (2024). *CoCoLoFa: A Dataset of News Comments with Common Logical Fallacies Written by LLM-Assisted Crowds*. Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing.
-
-- `doi:10.18653/v1/2024.emnlp-main.39` | aliases: `acl:2024.emnlp-main.39`
-- doc_type: `conference` | tier: T3 | tags: dataset, extraction, fallacy, quality | also in: llm, resources
-- [landing](https://aclanthology.org/2024.emnlp-main.39/) | [OA PDF](https://aclanthology.org/2024.emnlp-main.39.pdf) (via acl)
-- verified against: acl, bibcorpus:npnkhoi/memefal-paper
-- score 0.325 (cites 0.0, cocite 0.1429, keyword 0.5, venue 1.0)
-- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "Manually annotating fallacies in large-scale, real-world text data to create datasets for developing and validating detection models is costly." "This paper introduces CoCoLoFa, the largest known logical fallacy dataset, containing 7,706 comments for 648 news articles, with each comment labeled for fallacy presence and type." For a debate-transcript argument database it gives quality dimensions or a scoring target, which is what an argument-strength field in the database would be measured against; and it types defective inference.
-
-<details><summary>BibTeX</summary>
-
-```bibtex
-@inproceedings{yeh2024cocolofa,
-  title = {CoCoLoFa: A Dataset of News Comments with Common Logical Fallacies Written by LLM-Assisted Crowds},
-  author = {Min-Hsuan Yeh and Ruyuan Wan and Ting-Hao Kenneth Huang},
-  year = {2024},
-  booktitle = {Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing},
-  doi = {10.18653/v1/2024.emnlp-main.39},
-  url = {https://aclanthology.org/2024.emnlp-main.39/},
-}
-```
-
-</details>
-
 #### Neele Falk and Gabriella Lapesa (2023). *Bridging Argument Quality and Deliberative Quality Annotations with Adapters*. Findings of the Association for Computational Linguistics: EACL 2023.
 
 - `doi:10.18653/v1/2023.findings-eacl.187` | aliases: `acl:2023.findings-eacl.187`
@@ -2282,30 +2234,6 @@ Generated 2026-09-16T03:22:41+00:00 | criteria_version 1 | cap 250
   booktitle = {Findings of the Association for Computational Linguistics: EACL 2023},
   doi = {10.18653/v1/2023.findings-eacl.187},
   url = {https://aclanthology.org/2023.findings-eacl.187/},
-}
-```
-
-</details>
-
-#### Saumya Sahai, Oana Balalau and Roxana Horincar (2021). *Breaking Down the Invisible Wall of Informal Fallacies in Online Discussions*. Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers).
-
-- `doi:10.18653/v1/2021.acl-long.53` | aliases: `acl:2021.acl-long.53`
-- doc_type: `conference` | tier: T3 | tags: dataset, dialogue, fallacy, quality | also in: dialogue, resources
-- [landing](https://aclanthology.org/2021.acl-long.53/) | [OA PDF](https://aclanthology.org/2021.acl-long.53.pdf) (via acl)
-- verified against: acl, bibcorpus:lefteriskat/Logical-Fallacy-Detection-Using-LLMs, bibcorpus:npnkhoi/memefal-paper
-- score 0.275 (cites 0.0, cocite 0.1786, keyword 0.25, venue 1.0)
-- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "In this paper, we study the most frequent fallacies on Reddit, and we present them using the pragma-dialectical theory of argumentation." "We construct a new annotated dataset of fallacies, using user comments containing fallacy mentions as noisy labels, and cleaning the data via crowdsourcing." For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store; and it gives quality dimensions or a scoring target.
-
-<details><summary>BibTeX</summary>
-
-```bibtex
-@inproceedings{sahai2021breakingd,
-  title = {Breaking Down the Invisible Wall of Informal Fallacies in Online Discussions},
-  author = {Saumya Sahai and Oana Balalau and Roxana Horincar},
-  year = {2021},
-  booktitle = {Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)},
-  doi = {10.18653/v1/2021.acl-long.53},
-  url = {https://aclanthology.org/2021.acl-long.53/},
 }
 ```
 
@@ -2407,7 +2335,7 @@ Generated 2026-09-16T03:22:41+00:00 | criteria_version 1 | cap 250
 
 </details>
 
-####  (2025). *Leveraging Context for Multimodal Fallacy Classification in Political Debates*. Proceedings of the 12th Argument mining Workshop.
+#### Alessio Pittiglio (2025). *Leveraging Context for Multimodal Fallacy Classification in Political Debates*. Proceedings of the 12th Argument mining Workshop.
 
 - `doi:10.18653/v1/2025.argmining-1.39` | aliases: `acl:2025.argmining-1.39`
 - doc_type: `workshop` | tier: T4 | tags: dialogue, extraction, fallacy, quality | also in: dialogue, mining
@@ -2454,7 +2382,7 @@ Generated 2026-09-16T03:22:41+00:00 | criteria_version 1 | cap 250
 
 </details>
 
-## 6.4 Dialogue and debate (18 entries, quota 40)
+## 6.4 Dialogue and debate (19 entries, quota 40)
 
 ### T1 - Foundational / survey. Read in full: theory anchors, major surveys, canonical papers.
 
@@ -2744,6 +2672,30 @@ Generated 2026-09-16T03:22:41+00:00 | criteria_version 1 | cap 250
 
 </details>
 
+#### Saumya Sahai, Oana Balalau and Roxana Horincar (2021). *Breaking Down the Invisible Wall of Informal Fallacies in Online Discussions*. Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers).
+
+- `doi:10.18653/v1/2021.acl-long.53` | aliases: `acl:2021.acl-long.53`
+- doc_type: `conference` | tier: T3 | tags: dataset, dialogue, fallacy, quality | also in: quality, resources
+- [landing](https://aclanthology.org/2021.acl-long.53/) | [OA PDF](https://aclanthology.org/2021.acl-long.53.pdf) (via acl)
+- verified against: acl, bibcorpus:lefteriskat/Logical-Fallacy-Detection-Using-LLMs, bibcorpus:npnkhoi/memefal-paper
+- score 0.275 (cites 0.0, cocite 0.1786, keyword 0.25, venue 1.0)
+- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "In this paper, we study the most frequent fallacies on Reddit, and we present them using the pragma-dialectical theory of argumentation." "We construct a new annotated dataset of fallacies, using user comments containing fallacy mentions as noisy labels, and cleaning the data via crowdsourcing." For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store; and it gives quality dimensions or a scoring target.
+
+<details><summary>BibTeX</summary>
+
+```bibtex
+@inproceedings{sahai2021breakingd,
+  title = {Breaking Down the Invisible Wall of Informal Fallacies in Online Discussions},
+  author = {Saumya Sahai and Oana Balalau and Roxana Horincar},
+  year = {2021},
+  booktitle = {Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)},
+  doi = {10.18653/v1/2021.acl-long.53},
+  url = {https://aclanthology.org/2021.acl-long.53/},
+}
+```
+
+</details>
+
 #### Chantal van Son et al. (2016). *Unshared Task at the 3rd Workshop on Argument Mining: Perspective Based Local Agreement and Disagreement in Online Debate*. Proceedings of the Third Workshop on Argument Mining (ArgMining2016).
 
 - `doi:10.18653/v1/w16-2819` | aliases: `acl:W16-2819`
@@ -2887,9 +2839,33 @@ Generated 2026-09-16T03:22:41+00:00 | criteria_version 1 | cap 250
 
 </details>
 
-## 6.5 LLM era, 2023-2026 (9 entries, quota 40)
+## 6.5 LLM era, 2023-2026 (11 entries, quota 40)
 
 ### T2 - Core method. Defines a task formulation, model, or evaluation still in use.
+
+#### Tariq Alhindi, Tuhin Chakrabarty, Elena Musi and Smaranda Muresan (2022). *Multitask Instruction-based Prompting for Fallacy Recognition*. Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing.
+
+- `doi:10.18653/v1/2022.emnlp-main.560` | aliases: `acl:2022.emnlp-main.560`
+- doc_type: `conference` | tier: T2 | tags: dialogue, fallacy, quality | also in: quality
+- [landing](https://aclanthology.org/2022.emnlp-main.560/) | [OA PDF](https://aclanthology.org/2022.emnlp-main.560.pdf) (via acl)
+- verified against: acl, bibcorpus:lefteriskat/Logical-Fallacy-Detection-Using-LLMs
+- score 0.325 (cites 0.0, cocite 0.1429, keyword 0.5, venue 1.0)
+- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "Moreover, a big challenge for computational models lies in the fact that fallacies are formulated differently across the datasets with differences in the input format (e.g., question-answer pair, sentence with fallacy fragment), genre (e.g., social media, dialogue, news), as well as types and number of fallacies (from…" "We show the ability of this multitask prompting approach to recognize 28 unique fallacies across domains and genres and study the effect of model size and prompt choice by analyzing the per-class (i.e., fallacy type) results." For a debate-transcript argument database it supplies dialogue-level structure - who said what, in reply to what - which is exactly the relation layer a debate-transcript database has to store; and it gives quality dimensions or a scoring target.
+
+<details><summary>BibTeX</summary>
+
+```bibtex
+@inproceedings{alhindi2022multitask,
+  title = {Multitask Instruction-based Prompting for Fallacy Recognition},
+  author = {Tariq Alhindi and Tuhin Chakrabarty and Elena Musi and Smaranda Muresan},
+  year = {2022},
+  booktitle = {Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing},
+  doi = {10.18653/v1/2022.emnlp-main.560},
+  url = {https://aclanthology.org/2022.emnlp-main.560/},
+}
+```
+
+</details>
 
 #### Michiel van der Meer et al. (2022). *Will It Blend? Mixing Training Paradigms & Prompting for Argument Quality Prediction*. Proceedings of the 9th Workshop on Argument Mining.
 
@@ -2958,6 +2934,30 @@ Generated 2026-09-16T03:22:41+00:00 | criteria_version 1 | cap 250
   booktitle = {Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing},
   doi = {10.18653/v1/2024.emnlp-main.794},
   url = {https://aclanthology.org/2024.emnlp-main.794/},
+}
+```
+
+</details>
+
+#### Min-Hsuan Yeh, Ruyuan Wan and Ting-Hao Kenneth Huang (2024). *CoCoLoFa: A Dataset of News Comments with Common Logical Fallacies Written by LLM-Assisted Crowds*. Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing.
+
+- `doi:10.18653/v1/2024.emnlp-main.39` | aliases: `acl:2024.emnlp-main.39`
+- doc_type: `conference` | tier: T3 | tags: dataset, extraction, fallacy, quality | also in: quality, resources
+- [landing](https://aclanthology.org/2024.emnlp-main.39/) | [OA PDF](https://aclanthology.org/2024.emnlp-main.39.pdf) (via acl)
+- verified against: acl, bibcorpus:npnkhoi/memefal-paper
+- score 0.325 (cites 0.0, cocite 0.1429, keyword 0.5, venue 1.0)
+- annotation (`grounded_on: abstract`): Contribution, in the work's own words from its abstract: "Manually annotating fallacies in large-scale, real-world text data to create datasets for developing and validating detection models is costly." "This paper introduces CoCoLoFa, the largest known logical fallacy dataset, containing 7,706 comments for 648 news articles, with each comment labeled for fallacy presence and type." For a debate-transcript argument database it gives quality dimensions or a scoring target, which is what an argument-strength field in the database would be measured against; and it types defective inference.
+
+<details><summary>BibTeX</summary>
+
+```bibtex
+@inproceedings{yeh2024cocolofa,
+  title = {CoCoLoFa: A Dataset of News Comments with Common Logical Fallacies Written by LLM-Assisted Crowds},
+  author = {Min-Hsuan Yeh and Ruyuan Wan and Ting-Hao Kenneth Huang},
+  year = {2024},
+  booktitle = {Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing},
+  doi = {10.18653/v1/2024.emnlp-main.39},
+  url = {https://aclanthology.org/2024.emnlp-main.39/},
 }
 ```
 

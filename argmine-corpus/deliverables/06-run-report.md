@@ -1,6 +1,6 @@
 # 06 - Run report
 
-Generated 2026-09-16T03:22:41+00:00 | cap 250 | criteria_version 1
+Generated 2026-09-16T03:24:36+00:00 | cap 250 | criteria_version 1
 
 ## 1. Counts
 
@@ -15,7 +15,7 @@ Generated 2026-09-16T03:22:41+00:00 | cap 250 | criteria_version 1
 - chunks: 102 (0 full text, 8 guideline, 94 abstract)
 - chunk token histogram: 0-199: 57, 200-399: 44, 400-599: 1
 
-- annotations: 250 written this run, 0 unchanged; grounding fulltext 0, abstract 189, none 61 (an entry with no retrieved text carries no annotation, by rule)
+- annotations: 61 written this run, 189 unchanged; grounding fulltext 0, abstract 189, none 61 (an entry with no retrieved text carries no annotation, by rule)
 
 ## 2. Coverage gaps
 
@@ -34,21 +34,21 @@ Below quota, and why: **quality** 31/40 verified, 28 more admitted but pending; 
 
 - Modeling Appropriate Language in Argumentation (2023) - found by acl - only one independent source could be reached
 - Towards Argument Mining from Dialogue (2014) - found by bibcorpus:davidar/dblp.yaml - bibcorpus:lmlearning/AFGraphLib: venue mismatch ('COMMA' vs 'Frontiers in Artificial Inte…
-- MARGOT: A web server for argumentation mining (2016) - found by bibcorpus:NeWildeSache/argument-mining-in-the-web-archive - only one independent source could be reached
 - ArgumenText: Argument Classification and Clustering in a Generalized Search Scenario (2020) - found by bibcorpus:NeWildeSache/argument-mining-in-the-web-archive - only one independent source could be reached
+- MARGOT: A web server for argumentation mining (2016) - found by bibcorpus:NeWildeSache/argument-mining-in-the-web-archive - only one independent source could be reached
 
 **Scope-uncertain admissions (62).** Admitted at the lowest plausible tier and flagged here rather than dropped:
 
-- Corpus Wide Argument Mining - A Working Solution (T3) - no abstract retrieved, so scope was judged from the title and venue
-- Transformer-Based Argument Mining for Healthcare Applications (T2) - no abstract retrieved, so scope was judged from the title and venue
-- Annotating Argument Components and Relations in Persuasive Essays (T2) - no abstract retrieved, so scope was judged from the title and venue
-- Limited Generalizability in Argument Mining: State-Of-The-Art Models Learn… (T3) - no abstract retrieved, so scope was judged from the title and venue
-- Modeling Frames in Argumentation (T3) - weak vocabulary match (keyword 0.25)
+- The Argument Interchange Format (TNone) - no abstract retrieved, so scope was judged from the title and venue
+- Argumentation Frameworks as Constraint Satisfaction Problems (TNone) - no abstract retrieved, so scope was judged from the title and venue
+- On judgment aggregation in abstract argumentation (T2) - no abstract retrieved, so scope was judged from the title and venue
 - Argumentation Mining (T2) - no abstract retrieved, so scope was judged from the title and venue
-- Context-Independent Claim Detection for Argument Mining (T2) - no abstract retrieved, so scope was judged from the title and venue
-- Building an Argument Search Engine for the Web (T3) - weak vocabulary match (keyword 0.17)
-- The CASS Technique for Evaluating the Performance of Argument Mining (T2) - no abstract retrieved, so scope was judged from the title and venue
-- Fill the Gap! Analyzing Implicit Premises between Claims from Online Debat… (T2) - no abstract retrieved, so scope was judged from the title and venue
+- Argumentation in the 2016 US presidential elections: annotated corpora of… (T2) - no abstract retrieved, so scope was judged from the title and venue
+- ArgumenText: Argument Classification and Clustering in a Generalized Searc… (TNone) - no abstract retrieved, so scope was judged from the title and venue
+- The Carneades model of argument and burden of proof (T2) - no abstract retrieved, so scope was judged from the title and venue
+- Argument Graphs and Assumption-based Argumentation (T2) - no abstract retrieved, so scope was judged from the title and venue
+- Online Forums and Deliberative Democracy (T2) - weak vocabulary match (keyword 0.25)
+- Answer-set programming encodings for argumentation frameworks (T2) - no abstract retrieved, so scope was judged from the title and venue
 - ... and 52 more (`scope_uncertain` in registry.jsonl)
 
 ## 3. Seeds
@@ -201,6 +201,7 @@ Added 250 entries:
 | 5a fetch | 0.1 | guidelines=3, manifest=deliverables/05-fetch-manifest.csv, manifest_rows=250 |
 | 5b extract | 0.0 | guidelines_extracted=3, no_pdf=140 |
 | 6 chunk | 0.0 | chunks=102, from_abstract=94, from_fulltext=0, from_guideline=8 |
+| 7 deliver | 0.0 |  |
 
 ## Appendix B - source availability
 
