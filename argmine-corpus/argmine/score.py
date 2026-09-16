@@ -211,6 +211,7 @@ def score_batch(cfg, ctx, candidates: list[dict], verified_titles: set[str],
         rec["score"] = {
             "total": round(total, 4),
             "corroborating_sources": n_sources,
+            "would_verify": would_verify,
             "components": {"cites_norm": round(cn, 4), "cocite": round(con_w, 4),
                            "keyword": round(keyword, 4), "venue": round(venue, 4)},
             "components_source": {"cites_norm": "citation-counts" if any(

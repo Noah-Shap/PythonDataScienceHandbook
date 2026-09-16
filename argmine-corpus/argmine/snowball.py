@@ -178,6 +178,47 @@ def _search_fns(ctx) -> dict:
     return fns
 
 
+# -- promotion from the rejection ledger ----------------------------------
+PROMOTABLE = {"below_cutoff", "cap_reached"}
+
+
+def promote_from_rejected(ctx) -> list[dict]:
+    """Rebuild previously rejected candidates as admission candidates.
+
+    This is what makes raising the cap cheap: a candidate rejected only because the cap
+    was full, or because it fell below the cutoff, was stored with its full metadata and
+    its score. Promoting it costs nothing - no API call, no re-scoring, no re-fetching -
+    and it competes for the new slots on exactly the score it already had.
+
+    Rejections for any other reason (an exclusion rule, an unresolvable seed) are not
+    promotable: those are decisions about the candidate, not about the cap.
+    """
+    reg, cfg = ctx.registry, ctx.cfg
+    out = []
+    for row in reg.rejected.values():
+        if row.get("rejection_reason") not in PROMOTABLE:
+            continue
+        if int(row.get("criteria_version", 0)) < cfg.criteria_version:
+            continue                      # a bump re-scores it through the normal path
+        rec = blank_record(
+            id=row.get("id", ""), aliases=list(row.get("aliases", [])),
+            title=row.get("title", ""), authors=list(row.get("authors", [])),
+            year=row.get("year"), venue=row.get("venue", ""),
+            doc_type=row.get("doc_type", ""), abstract=row.get("abstract", ""),
+            urls=dict(row.get("urls", {})), area=list(row.get("area", [])),
+            discovered_from=list(row.get("discovered_from", [])),
+            score=dict(row.get("score", {})),
+            criteria_version=int(row.get("criteria_version", cfg.criteria_version)),
+        )
+        if not rec["score"].get("total"):
+            continue
+        rec["_would_verify"] = bool(rec["score"].get("would_verify"))
+        rec["_corroboration"] = int(rec["score"].get("corroborating_sources", 0))
+        rec["_promoted"] = True
+        out.append(rec)
+    return out
+
+
 # -- admission ------------------------------------------------------------
 def admit(ctx, scored: list[dict]) -> dict:
     """Admit by score, honouring the cap and the per-area minimum quotas."""
@@ -188,8 +229,10 @@ def admit(ctx, scored: list[dict]) -> dict:
                "added_ids": [], "by_area": {}}
     if room <= 0:
         for rec in scored:
-            reg.reject(_strip_private(rec), "cap_reached", rec.get("score"))
+            if not rec.get("_promoted"):     # a promoted record is already in the ledger
+                reg.reject(_strip_private(rec), "cap_reached", rec.get("score"))
         summary["below_cutoff"] = len(scored)
+        summary["admitted_records"] = []
         return summary
 
     # Rank by score, but let a candidate that can already reach two independent sources
@@ -241,6 +284,7 @@ def admit(ctx, scored: list[dict]) -> dict:
         reg.reject(_strip_private(rec), reason, rec.get("score"))
         summary["below_cutoff"] += 1
 
+    summary["admitted_records"] = chosen
     for rec in chosen:
         rec["criteria_version"] = cfg.criteria_version
         rec["updated_at"] = iso_now()
@@ -258,6 +302,20 @@ def run(ctx) -> dict:
     cfg, reg = ctx.cfg, ctx.registry
     prep = ctx.prepare_local_sources()
     pool: dict[str, dict] = {}
+
+    room = cfg.cap - len(reg.records)
+    if room <= 0:
+        # Nothing can be admitted, so nothing is expanded or searched: with live APIs that
+        # would be paid-for work with no possible outcome. Raise the cap and this phase
+        # picks up exactly where it left off - the unexpanded frontier nodes are still
+        # flagged unexpanded, and the rejected ledger still holds every score.
+        ctx.log(f"  registry is at the cap ({len(reg.records)}/{cfg.cap}): no expansion, "
+                f"no searches, nothing scored. Raise --cap to continue.")
+        return {"at_cap": True, "room": 0, "pool": 0, "excluded": 0, "already_decided": 0,
+                "scored": 0, "promotable": len(promote_from_rejected(ctx)), "promoted": 0,
+                "admitted": 0, "quota_admitted": 0, "below_cutoff": 0, "added_ids": [],
+                "by_area": {}, "expansion": {}, "queries": [], "prepared": prep,
+                "unexpanded_frontier": len(reg.frontier_pending("bibliography"))}
 
     expansion = expand_frontier(ctx, pool)
     ctx.log(f"  frontier expansion: {expansion}")
@@ -285,14 +343,26 @@ def run(ctx) -> dict:
         registry_aliases.update(r.get("aliases", []))
     score_batch(cfg, ctx, fresh, verified_titles, registry_aliases)
 
-    result = admit(ctx, fresh)
+    # Candidates rejected by an earlier run purely because of the cap or the cutoff come
+    # back into contention on the score they already have.
+    promoted = promote_from_rejected(ctx)
+    result = admit(ctx, fresh + promoted)
     result.update({"pool": len(pool), "excluded": excluded, "already_decided": known,
-                   "scored": len(fresh), "expansion": expansion, "queries": queries,
-                   "prepared": prep})
+                   "scored": len(fresh), "promotable": len(promoted),
+                   "promoted": sum(1 for r in result.get("admitted_records", [])
+                                   if r.get("_promoted")),
+                   "expansion": expansion, "queries": queries, "prepared": prep})
+    result.pop("admitted_records", None)
     return result
 
 
 def paragraph(summary: dict) -> str:
+    if summary.get("at_cap"):
+        return (f"Phase snowball: the registry is already at the cap, so nothing was expanded, "
+                f"searched or scored - with live APIs that would be paid-for work with no "
+                f"possible outcome. {summary.get('unexpanded_frontier', 0)} frontier nodes and "
+                f"{summary.get('promotable', 0)} scored-but-rejected candidates are waiting for "
+                f"a higher cap; neither needs any re-fetching.")
     exp = summary.get("expansion", {})
     directions = ", ".join(f"{d}: {v['nodes']} nodes -> {v['candidates']} candidates"
                            for d, v in exp.items()) or "no pending frontier nodes"
@@ -303,7 +373,9 @@ def paragraph(summary: dict) -> str:
             f"pooled {summary.get('pool', 0)} distinct candidates, of which "
             f"{summary.get('already_decided', 0)} were already decided and "
             f"{summary.get('excluded', 0)} hit a global exclusion. "
-            f"Scored {summary.get('scored', 0)}; admitted {summary.get('admitted', 0)} "
+            f"Scored {summary.get('scored', 0)} new candidates and reconsidered "
+            f"{summary.get('promotable', 0)} previously rejected ones from the ledger "
+            f"({summary.get('promoted', 0)} promoted); admitted {summary.get('admitted', 0)} "
             f"({summary.get('quota_admitted', 0)} to meet area quotas) with "
             f"{summary.get('room', 0)} slots of room under the cap; "
             f"{summary.get('below_cutoff', 0)} were written to rejected.jsonl with their "
