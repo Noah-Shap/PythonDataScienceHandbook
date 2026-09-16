@@ -1,19 +1,138 @@
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.1007/978-3-030-30179-8_4", "title": "Data Acquisition for Argument Search: The args.me corpus"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.1007/978-3-030-85251-1_4", "title": "SubjectivITA: An Italian Corpus for Subjectivity Detection in Newspapers"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.1007/s10458-009-9116-7", "title": "On judgment aggregation in abstract argumentation"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.1007/s10506-010-9104-x", "title": "Argumentation Mining"}
 {"directions": ["bibliography"], "expanded": true, "expanded_at": "2026-09-16T01:33:31+00:00", "id": "doi:10.1016/0004-3702(94)00041-x", "title": "On the Acceptability of Arguments and its Fundamental Role in Nonmonotonic Reasoning, Logic Programming and n-Person Games"}
 {"directions": ["bibliography"], "expanded": true, "expanded_at": "2026-09-16T01:33:31+00:00", "id": "doi:10.1017/cbo9780511802034", "title": "Argumentation Schemes"}
 {"directions": ["bibliography"], "expanded": true, "expanded_at": "2026-09-16T01:33:31+00:00", "id": "doi:10.1017/s0269888906001044", "title": "Towards an Argument Interchange Format"}
 {"directions": ["bibliography"], "expanded": true, "expanded_at": "2026-09-16T01:33:31+00:00", "id": "doi:10.1017/s0269888911000166", "title": "An introduction to argumentation semantics"}
 {"directions": ["bibliography"], "expanded": true, "expanded_at": "2026-09-16T01:33:31+00:00", "id": "doi:10.1038/s41586-021-03215-w", "title": "An autonomous debating system"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.1080/19462166.2010.486479", "title": "Answer-set programming encodings for argumentation frameworks"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.1080/19462166.2013.869764", "title": "Introduction to structured argumentation"}
 {"directions": ["bibliography"], "expanded": true, "expanded_at": "2026-09-16T01:33:31+00:00", "id": "doi:10.1080/19462166.2013.869766", "title": "The ASPIC+ framework for structured argumentation: a tutorial"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.1080/19462166.2013.869767", "title": "Defeasible logic programming: DeLP-servers, contextual queries, and explanations for answers"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.1080/19462166.2013.869878", "title": "A tutorial on assumption-based argumentation"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.1080/19462166.2014.1001790", "title": "Context-aware reconfiguration of large-scale surveillance systems: argumentative approach"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.1093/logcom/exp064", "title": "A Relevance-theoretic Framework for Constructing and Deconstructing Enthymemes"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.1145/2701336.2701635", "title": "Argumentation Mining: Where Are We Now, Where Do We Want to Be and How Do We Get There?"}
 {"directions": ["bibliography"], "expanded": true, "expanded_at": "2026-09-16T01:33:31+00:00", "id": "doi:10.1145/2850417", "title": "Argumentation Mining: State of the Art and Emerging Trends"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.1145/2872427.2883039", "title": "Remedying Web Hijacking: Notification Effectiveness and Webmaster Comprehension"}
 {"directions": ["bibliography"], "expanded": true, "expanded_at": "2026-09-16T01:33:31+00:00", "id": "doi:10.1145/2872427.2883081", "title": "Winning Arguments: Interaction Dynamics and Persuasion Strategies in Good-Faith Online Discussions"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.1145/2872427.2883091", "title": "A Robust Framework for Estimating Linguistic Alignment in Twitter Conversations"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.1145/3308558.3314127", "title": "Can You Give Me a Reason?: Argument-Inducing Online Forum by Argument Mining"}
 {"directions": ["bibliography"], "expanded": true, "expanded_at": "2026-09-16T01:33:31+00:00", "id": "doi:10.1162/coli_a_00295", "title": "Parsing Argumentation Structures in Persuasive Essays"}
 {"directions": ["bibliography"], "expanded": true, "expanded_at": "2026-09-16T01:33:31+00:00", "id": "doi:10.1162/coli_a_00364", "title": "Argument Mining: A Survey"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.1177/1461444807081230", "title": "Democracy, deliberation and design: the case of online discussion forums"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.1609/aaai.v34i05.6270", "title": "Corpus Wide Argument Mining - A Working Solution"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2020.coling-main.540", "title": "Fact vs. Opinion: the Role of Argumentation Features in News Classification"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2020.findings-emnlp.243", "title": "Unsupervised Expressive Rules Provide Explainability and Assist Human Experts Grasping New Domains"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2021.acl-long.107", "title": "Towards Argument Mining for Social Good: A Survey"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2021.acl-long.53", "title": "Breaking Down the Invisible Wall of Informal Fallacies in Online Discussions"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2021.eacl-main.55", "title": "End-to-End Argument Mining as Biaffine Dependency Parsing"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2021.eacl-main.74", "title": "Leveraging Passage Retrieval with Generative Models for Open Domain Question Answering"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2021.emnlp-main.619", "title": "Q^{2}: Evaluating Factual Consistency in Knowledge-Grounded Dialogues via Question Generation and Question Answering"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2021.naacl-main.8", "title": "Mediators in Determining what Processing BERT Performs First"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2021.semeval-1.7", "title": "SemEval-2021 Task 6: Detection of Persuasion Techniques in Texts and Images"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2022.acl-long.121", "title": "Fully-Semantic Parsing and Generation: the BabelNet Meaning Representation"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2022.acl-long.526", "title": "Cluster & Tune: Boost Cold Start Performance in Text Classification"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2022.conll-1.27", "title": "Enhancing the Transformer Decoder with Transition-based Syntax"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2022.emnlp-main.252", "title": "How to disagree well: Investigating the dispute tactics used on Wikipedia"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2022.emnlp-main.560", "title": "Multitask Instruction-based Prompting for Fallacy Recognition"}
 {"directions": ["bibliography"], "expanded": true, "expanded_at": "2026-09-16T01:33:31+00:00", "id": "doi:10.18653/v1/2022.findings-emnlp.532", "title": "Logical Fallacy Detection"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2022.naacl-main.13", "title": "Two Contrasting Data Annotation Paradigms for Subjective NLP Tasks"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2023.acl-long.46", "title": "ColD Fusion: Collaborative Descent for Distributed Multitask Finetuning"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2023.acl-long.559", "title": "DisentQA: Disentangling Parametric and Contextual Knowledge with Counterfactual Question Answering"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2023.acl-long.708", "title": "Understanding In-Context Learning via Supportive Pretraining Data"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2023.emnlp-main.684", "title": "Argument-based Detection and Classification of Fallacies in Political Debates"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2023.findings-acl.321", "title": "Coupling Large Language Models with Logic Programming for Robust and General Reasoning from Text"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2024.acl-long.511", "title": "Large Language Models are not Fair Evaluators"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2024.argmining-1.10", "title": "KnowComp at DialAM-2024: Fine-tuning Pre-trained Language Models for Dialogical Argument Mining with Inference Anchoring Theory"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2024.argmining-1.11", "title": "KNOWCOMP POKEMON Team at DialAM-2024: A Two-Stage Pipeline for Detecting Relations in Dialogue Argument Mining"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2024.argmining-1.12", "title": "Pungene at DialAM-2024: Identification of Propositional and Illocutionary Relations"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2024.argmining-1.13", "title": "Turiya at DialAM-2024: Inference Anchoring Theory Based LLM Parsers"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2024.argmining-1.8", "title": "Overview of DialAM-2024: Argument Mining in Natural Language Dialogues"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2024.argmining-1.9", "title": "DFKI-MLST at DialAM-2024 Shared Task: System Description"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2024.emnlp-main.12", "title": "NumeroLogic: Number Encoding for Enhanced LLMs’ Numerical Reasoning"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2024.emnlp-main.16", "title": "Systematic Biases in LLM Simulations of Debates"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2024.emnlp-main.39", "title": "CoCoLoFa: A Dataset of News Comments with Common Logical Fallacies Written by LLM-Assisted Crowds"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2024.emnlp-main.794", "title": "Are LLMs Good Zero-Shot Fallacy Classifiers?"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2024.findings-acl.566", "title": "Bootstrapping LLM-based Task-Oriented Dialogue Agents via Self-Talk"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2024.findings-acl.584", "title": "Deductive Closure Training of Language Models for Coherence, Accuracy, and Updatability"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2024.findings-naacl.192", "title": "Reason from Fallacy: Enhancing Large Language Models’ Logical Reasoning through Logical Fallacy Understanding"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2024.naacl-demo.21", "title": "Unitxt: Flexible, Shareable and Reusable Data Preparation and Evaluation for Generative AI"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2024.naacl-long.270", "title": "MAFALDA: A Benchmark and Comprehensive Study of Fallacy Detection and Classification"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2025.acl-long.919", "title": "Global MMLU: Understanding and Addressing Cultural and Linguistic Biases in Multilingual Evaluation"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2025.findings-ijcnlp.8", "title": "Autoformalizing Natural Language to First-Order Logic: A Case Study in Logical Fallacy Detection"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2025.naacl-long.34", "title": "Fine-grained Fallacy Detection with Human Label Variation"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2026.acl-long.1527", "title": "CommonLID: Re-evaluating State-of-the-Art Language Identification Performance on Web Data"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2026.acl-long.706", "title": "Mediocrity is the key for LLM as a Judge Anchor Selection"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2026.findings-acl.1322", "title": "Will it Merge? On The Causes of Model Mergeability"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/2026.findings-acl.43", "title": "Stop Guessing When to Stop Testing: Efficient Model Evaluation with Just Enough Data"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/d15-1075", "title": "A large annotated corpus for learning natural language inference"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/d15-1110", "title": "Joint prediction in MST-style discourse parsing for argumentation mining"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/d15-1255", "title": "Exploiting Debate Portals for Semi-Supervised Argumentation Mining in User-Generated Web Discourse"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/d17-1143", "title": "Here's my point: Joint pointer architecture for argument mining"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/d17-1215", "title": "Adversarial Examples for Evaluating Reading Comprehension Systems"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/d17-2002", "title": "Argotario: Computational Argumentation Meets Serious Games"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/d18-1305", "title": "WikiConv: A Corpus of the Complete Conversational History of a Large Online Collaborative Community"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/d18-1402", "title": "Cross-topic Argument Mining from Heterogeneous Sources"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/d19-1291", "title": "AMPERSAND: Argument Mining for PERSuAsive oNline Discussions"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/k19-1028", "title": "Automatically Extracting Challenge Sets for Non-Local Phenomena in Neural Machine Translation"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/n16-1017", "title": "Conversational Flow in Oxford-style Debates"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/n16-1164", "title": "End-to-End Argumentation Mining in Student Essays"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/n18-1036", "title": "Before Name-Calling: Dynamics and Triggers of Ad Hominem Fallacies in Web Argumentation"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/n18-1175", "title": "The Argument Reasoning Comprehension Task: Identification and Reconstruction of Implicit Warrants"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/n18-1179", "title": "Behavior Analysis of NLI Models: Uncovering the Influence of Three Factors on Robustness"}
 {"directions": ["bibliography"], "expanded": true, "expanded_at": "2026-09-16T01:33:31+00:00", "id": "doi:10.18653/v1/p16-1150", "title": "Which argument is more convincing? Analyzing and predicting convincingness of Web arguments using bidirectional LSTM"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/p17-1171", "title": "Reading Wikipedia to Answer Open-Domain Questions"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/p17-2039", "title": "Argumentation Quality Assessment: Theory vs. Practice"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/p18-1059", "title": "Inherent Biases in Reference-based Evaluation for Grammatical Error Correction"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/p18-1237", "title": "Modeling Deliberative Argumentation Strategies on Wikipedia"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/p18-2095", "title": "Will it Blend? Blending Weak and Strong Labeled Data in a Neural Network for Argumentation Mining"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/p19-1093", "title": "Are You Convinced? Choosing the More Convincing Evidence with a Siamese Network"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/s18-1121", "title": "SemEval-2018 Task 12: The Argument Reasoning Comprehension Task"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/s18-1122", "title": "GIST at SemEval-2018 Task 12: A network transferring inference knowledge to Argument Reasoning Comprehension task"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/s18-1185", "title": "NLITrans at SemEval-2018 Task 12: Transfer of Semantic Knowledge for Argument Comprehension"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/s18-1186", "title": "BLCU_NLP at SemEval-2018 Task 12: An Ensemble Model for Argument Reasoning Based on Hierarchical Attention"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/s19-2001", "title": "SemEval-2019 Task 1: Cross-lingual Semantic Parsing with UCCA"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/w15-4631", "title": "Argument Mining: Extracting Arguments from Online Dialogue"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/w16-2805", "title": "The CASS Technique for Evaluating the Performance of Argument Mining"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/w16-2815", "title": "Fill the Gap! Analyzing Implicit Premises between Claims from Online Debates"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/w17-5111", "title": "Using Question-Answering Techniques to Implement a Knowledge-Driven Argument Mining Approach"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/w17-5112", "title": "What works and what does not: Classifier and feature analysis for argument mining"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.18653/v1/w18-5211", "title": "Frame- and Entity-Based Knowledge for Common-Sense Argumentative Reasoning"}
 {"directions": ["bibliography"], "expanded": true, "expanded_at": "2026-09-16T01:33:31+00:00", "id": "doi:10.2200/s00883ed1v01y201811hlt040", "title": "Argumentation mining"}
 {"directions": ["bibliography"], "expanded": true, "expanded_at": "2026-09-16T01:33:31+00:00", "id": "doi:10.24963/ijcai.2018/766", "title": "Five Years of Argument Mining: a Data-driven Analysis"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.3115/v1/w14-2105", "title": "Identifying Appropriate Support for Propositions in Online User Comments"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.3115/v1/w15-0516", "title": "Combining Argument Mining Techniques"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "doi:10.4018/jcini.2013010101", "title": "From Argument Diagrams to Argumentation Mining in Texts: A Survey"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "title:156478672e00c4f4e6cb6079e97120915f66c518", "title": "Argumentation Schemes. History, Classifications, and Computational Applications"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "title:301be2f14805fc8646b001ef9b132eb5f8bbd02b", "title": "Context-Independent Claim Detection for Argument Mining"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "title:3081c2f49d86b933976822d3e21e4f8fdc9410a6", "title": "The Shift from Logic to Dialectic in Argumentation Theory: Implications for Computational Argument Quality Assessment"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "title:3b6e82826f260ecbbce1a01398ed3ab9749f3820", "title": "Argument Mining on Twitter: Arguments, Facts and Sources"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "title:4548f0ff40575ec88d744f306fc5a7f696551502", "title": "Recognizing Insufficiently Supported Arguments in Argumentative Essays"}
 {"directions": ["bibliography"], "expanded": true, "expanded_at": "2026-09-16T01:33:31+00:00", "id": "title:55893f7c5565660a055d8f689db3e97c66843203", "title": "Computational Argumentation Quality Assessment in Natural Language"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "title:5c30e54b1303736b308e1674274f1a1132b052df", "title": "A Model for Processing Illocutionary Structures and Argumentation in Debates"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "title:5fdf28d47fecc818952baba478a8bd9d1b71a516", "title": "Internet Argument Corpus 2.0: An SQL schema for Dialogic Social Media and the Corpora to go with it"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "title:61fadcac208eb3f58c0f9834cf909c5aaa5c7972", "title": "The Sensitivity of Annotator Bias to Task Definitions in Argument Mining"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "title:6430e3971735a1240942ff8809e124281b95267b", "title": "Navigating the Modern Evaluation Landscape: Considerations in Benchmarks and Frameworks for Large Language Models (LLMs)"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "title:64dc8586a606c06f88cadd787c29a74d629851a5", "title": "Social Abstract Argumentation"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "title:78f1e57af8f02b9283a4449a8e757f4f62a0ae0a", "title": "Beneath the Surface of Consistency: Exploring Cross-lingual Knowledge Representation Sharing in LLMs"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "title:8973c9782426ec9080181ce8b676df529016c076", "title": "Creating a Domain-diverse Corpus for Theory-based Argument Quality Assessment"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "title:8b3f61648db920b2a250f881b93c556a099c2a21", "title": "Opportunities and Risks of LLMs for Scalable Deliberation with Polis"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "title:a53d191087c04c6d49d9d46488abffa0090e89de", "title": "DeliData: A Dataset for Deliberation in Multi-party Problem Solving"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "title:a5c50d63741d8b767183270f762294ea5fa75236", "title": "Argumentation Mining: The Detection, Classification and Structure of Arguments in Text"}
 {"directions": ["bibliography"], "expanded": true, "expanded_at": "2026-09-16T01:33:31+00:00", "id": "title:a9d9191746f644eca733d0b0d7b6a25bd4853ba2", "title": "A large-scale dataset for argument quality ranking: Construction and analysis"}
 {"directions": ["bibliography"], "expanded": true, "expanded_at": "2026-09-16T01:33:31+00:00", "id": "title:ae7588dc60be7ab8f03855ae779ec0f0519a8728", "title": "A Corpus for Research on Deliberation and Debate"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "title:c01257ffd78768bab2a908ba8509b177ebd2f015", "title": "Handbook of Formal Argumentation"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "title:c60c719a9320f01f8ebf567305e6334f8c7a0202", "title": "Cross-Domain Mining of Argumentative Text through Distant Supervision"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "title:ca6f9e03a1dcd4266f5306de7e9977daf3fcad22", "title": "Argumentation Mining in User-Generated Web Discourse"}
 {"directions": [], "expanded": false, "expanded_at": "", "id": "title:df299e3284c272f02cac357fba80718526676f2a", "title": "The uses of argument"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "title:e2dd0248ee2104b83fabae9e89b7c5d7e89a5690", "title": "Argumentation Mining on the Web from Information Seeking Perspective"}
 {"directions": ["bibliography"], "expanded": true, "expanded_at": "2026-09-16T01:33:31+00:00", "id": "title:e4827cf79a5103f624f48b2e7d4a4ccc7ab6c0ea", "title": "QT30: A Corpus of Argument and Conflict in Broadcast Debate"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "title:e9c7f56b7cb5ad8351386161cee2a74b4cb0aa7f", "title": "Multi-Task Learning for Argumentation Mining in Low-Resource Settings"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "title:ecc66f83f08f4809231d027e9ba9ccb1e4c3f5ba", "title": "Limited Generalizability in Argument Mining: State-Of-The-Art Models Learn Datasets, Not Arguments"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "title:edb3d8bd1cbd986fc1430e09234833845d0bfe69", "title": "tinyBenchmarks: evaluating LLMs with fewer examples"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "title:f36bd2c70ff42e41d1283ef243b7b55af248697f", "title": "GRASP: Rich Patterns for Argumentation Mining"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "title:fb5f11e278c8bd8c14ae4a205093409670e5bba3", "title": "A Corpus of eRulemaking User Comments for Measuring Evaluability of Arguments"}
+{"directions": [], "expanded": false, "expanded_at": "", "id": "title:fc0205dac13ac46c067f284b16656e1b179d8904", "title": "Neural End-to-End Learning for Computational Argumentation Mining"}
