@@ -2,7 +2,7 @@
 
 139 verified entries, grouped by area and then by tier. Every entry here agreed across at least two independent metadata sources; anything that did not is in `99-unverified-and-rejected.md`. Each annotation says which retrieved text it was written from (`grounded_on`), and quotes that text rather than paraphrasing it from outside knowledge.
 
-Generated 2026-09-16T03:27:33+00:00 | criteria_version 1 | cap 250
+Generated 2026-09-16T03:28:07+00:00 | criteria_version 1 | cap 250
 
 ## 6.1 Formal foundations (27 entries, quota 30)
 
