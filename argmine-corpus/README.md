@@ -96,6 +96,25 @@ are blocked:
 `corpus/source_status.json` records which sources a run could actually reach, and
 `deliverables/06-run-report.md` says what the unreachable ones cost.
 
+## What the first run reached
+
+The environment this corpus was first built in blocks the scholarly APIs (Semantic
+Scholar, OpenAlex, Crossref, arXiv, Unpaywall, and aclanthology.org itself) at the network
+policy level; GitHub is reachable. `corpus/source_status.json` records that, and
+`deliverables/06-run-report.md` says exactly what it cost. In short:
+
+- 250 registry entries under the cap. 140 are verified against two independent sources and
+  make up `01-bibliography.md`; the remaining 110 reached only one source and are listed as
+  pending in `99-unverified-and-rejected.md`. Pending is not rejected: those records sit at
+  status `candidate`, so phase 3 re-examines exactly them on the next run, and a run with
+  the APIs reachable closes the gap without repeating any earlier work.
+- No OA PDF could be downloaded, so annotations are grounded on abstracts (or, for a
+  handful of README/guideline documents, on their full text) and say so.
+  `05-fetch-manifest.csv` carries a resolvable URL for every entry, so the PDFs can be
+  fetched elsewhere and `python -m argmine extract chunk` picks them up.
+- The citation-graph directions (`reference`, `citation`) are still flagged unexpanded on
+  every frontier node, so a networked run expands exactly those and nothing else.
+
 ## Layout
 
 ```
