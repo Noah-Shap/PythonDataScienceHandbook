@@ -4,6 +4,7 @@ corpus/text/
 corpus/repos/
 corpus/chunks.jsonl
 corpus/http_cache.sqlite
+corpus/requests.log
 corpus/http_cache.sqlite-*
 corpus/acl_index.sqlite
 corpus/acl_index.sqlite-*

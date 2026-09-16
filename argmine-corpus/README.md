@@ -21,12 +21,18 @@ down in `config.yaml` and `deliverables/00-field-map.md` rather than decided ad 
    candidates, no re-expansion of expanded frontier nodes. Four layers, below.
 4. **Annotations are grounded.** Each annotation is written from retrieved text - full text
    if a PDF was fetched, otherwise the abstract - quotes it, and records which in
-   `grounded_on`. Where nothing was retrieved, the annotation says so and asserts nothing.
+   `grounded_on`. Where no text was retrieved the annotation is left **empty** with
+   `grounded_on: none`; the entry keeps its verified metadata and says nothing about content
+   it has not seen.
 5. **Polite retrieval.** Descriptive User-Agent with a contact address, documented rate
    limits respected, exponential backoff on 429/5xx, open-access PDFs only, no paywall is
    ever touched.
 6. **Git-tracked, PDFs excluded.** Registry, config, code and deliverables are committed;
-   PDFs, extracted text, the HTTP cache and cloned repos are not.
+   PDFs, extracted text, the HTTP cache, `corpus/requests.log` and cloned repos are not.
+7. **Nothing is silently dropped.** A candidate whose scope is a judgement call is admitted,
+   flagged in `scope_uncertain`, never promoted to T1, and listed in the run report.
+8. **Every external request is logged** - URL, cache hit or miss, status - to
+   `corpus/requests.log`, and counted per source in the report's API budget.
 
 ## Running it
 
@@ -42,7 +48,12 @@ Individual phases: `scaffold`, `seed`, `snowball`, `verify`, `tier`, `fetch`, `e
 `--force-index`.
 
 Optional environment: `S2_API_KEY` (higher Semantic Scholar rate limit), `GITHUB_TOKEN`
-(GitHub search), `ARGMINE_COMMIT_TRAILERS` (trailers appended to each phase commit).
+(GitHub search), `UNPAYWALL_EMAIL` (defaults to `run.contact_email`),
+`ARGMINE_COMMIT_TRAILERS` (trailers appended to each phase commit). Whatever is missing is
+named in the run report's API budget, with what it degrades.
+
+Each phase commits with its own counts in the message, and the run stops rather than
+committing if a phase ever leaves the registry above the cap.
 
 ## Expanding the corpus
 

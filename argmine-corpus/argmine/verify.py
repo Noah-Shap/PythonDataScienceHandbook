@@ -20,6 +20,9 @@ from .cache import advance
 from .util import iso_now, norm_text, norm_title, surname
 
 TITLE_AGREE = 95.0
+# Section 9: Crossref is the authority on DOI metadata, so it outranks the aggregators;
+# the local ACL Anthology data outranks everything for the venues it covers, because it is
+# the publisher's own record.
 SOURCE_PRIORITY = ["acl", "crossref", "openalex", "semanticscholar", "arxiv", "bibcorpus"]
 
 VENUE_ALIASES = {

@@ -68,19 +68,45 @@ def off_topic(cfg, rec: dict) -> bool:
     return core_hits(cfg, rec) <= 0
 
 
-def exclusion_reason(cfg, rec: dict) -> str | None:
-    """Global exclusions (section 6). Foundational work survives them; it is admitted at T1."""
-    if off_topic(cfg, rec):
-        return "off_topic:no argumentation vocabulary in title, abstract or venue"
+def domain_match(cfg, rec: dict) -> str | None:
+    """The excluded-domain pattern this candidate matches, if any."""
     text = norm_text(f"{rec.get('title', '')} {rec.get('abstract', '')}")
     title = norm_text(rec.get("title", ""))
     for pat in cfg["exclusions"]["domain_patterns"]:
         p = norm_text(pat)
         if p in title or text.count(p) >= 2:
-            if any(m in title for m in FOUNDATIONAL_MARKERS):
-                return None
-            return f"excluded_domain:{pat}"
+            return pat
     return None
+
+
+def exclusion_reason(cfg, rec: dict) -> str | None:
+    """Global exclusions (section 6). Foundational work survives them (section 6 allows it
+    at T1); such a rescue is recorded as scope-uncertain rather than waved through."""
+    if off_topic(cfg, rec):
+        return "off_topic:no argumentation vocabulary in title, abstract or venue"
+    pat = domain_match(cfg, rec)
+    if pat:
+        if any(m in norm_text(rec.get("title", "")) for m in FOUNDATIONAL_MARKERS):
+            return None
+        return f"excluded_domain:{pat}"
+    return None
+
+
+def scope_uncertainty(cfg, rec: dict, keyword: float) -> str:
+    """Why this candidate's membership of the corpus is a judgement call, or "".
+
+    Section 9: where scope is uncertain, admit at the lowest plausible tier and flag it in
+    the report rather than silently dropping it.
+    """
+    reasons = []
+    if domain_match(cfg, rec):
+        reasons.append(f"matches the excluded domain '{domain_match(cfg, rec)}' but reads as "
+                       f"foundational")
+    if keyword < float(cfg["scoring"].get("scope_uncertain_keyword", 0.3)):
+        reasons.append(f"weak vocabulary match (keyword {keyword:.2f})")
+    if not (rec.get("abstract") or "").strip():
+        reasons.append("no abstract retrieved, so scope was judged from the title and venue")
+    return "; ".join(reasons)
 
 
 # -- components -----------------------------------------------------------
@@ -208,6 +234,9 @@ def score_batch(cfg, ctx, candidates: list[dict], verified_titles: set[str],
         n_sources, would_verify = corroboration(ctx, rec)
         rec["_corroboration"] = n_sources
         rec["_would_verify"] = would_verify
+        uncertainty = scope_uncertainty(cfg, rec, keyword)
+        if uncertainty:
+            rec["scope_uncertain"] = uncertainty
         rec["score"] = {
             "total": round(total, 4),
             "corroborating_sources": n_sources,

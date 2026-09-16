@@ -323,6 +323,8 @@ def merge_records(a: dict, b: dict) -> dict:
     out["status"] = max((sa, sb), key=lambda s: PHASE_ORDER.index(s) if s in PHASE_ORDER else -1)
 
     out["tier"] = a.get("tier") or b.get("tier")
+    if a.get("scope_uncertain") or b.get("scope_uncertain"):
+        out["scope_uncertain"] = a.get("scope_uncertain") or b.get("scope_uncertain")
     ann_a, ann_b = a.get("annotation", {}), b.get("annotation", {})
     out["annotation"] = ann_a if ann_a.get("text") else ann_b
     out["score"] = a.get("score") or b.get("score") or {}

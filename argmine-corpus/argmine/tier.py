@@ -93,6 +93,11 @@ def run(ctx) -> dict:
     for rec in todo:
         old = rec.get("tier")
         tier = choose_tier(cfg, rec)
+        if tier == 1 and rec.get("scope_uncertain"):
+            # Section 9: lowest plausible tier for an uncertain admission. T1 means "read
+            # this in full"; that is not a recommendation to make on a judgement call.
+            tier = 2
+            summary["scope_uncertain_demoted"] = summary.get("scope_uncertain_demoted", 0) + 1
         if old and not retier:
             tier = old
         rec["tier"] = tier
@@ -105,6 +110,7 @@ def run(ctx) -> dict:
         if old and old != tier:
             summary["retiered"] += 1
         summary["tiered"] += 1
+    summary["scope_uncertain"] = sum(1 for r in reg.records.values() if r.get("scope_uncertain"))
     summary["untagged"] = sum(1 for r in reg.records.values()
                               if r.get("tier") and not r.get("downstream_tags"))
     return summary

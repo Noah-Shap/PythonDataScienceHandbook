@@ -23,6 +23,8 @@ from urllib.parse import urlsplit
 import requests
 import requests_cache
 
+from .util import iso_now
+
 NEVER = requests_cache.NEVER_EXPIRE
 
 BINARY_HINTS = ("application/pdf", "application/octet-stream", "application/zip")
@@ -42,6 +44,11 @@ class Http:
         self._last_call: dict[str, float] = {}
         self._fail_streak: dict[str, int] = {}
         self.calls = {"network": 0, "cache": 0, "skipped_unreachable": 0, "errors": 0}
+        # Section 9: every external request is logged with its URL, cache hit/miss and
+        # status, and counted per source so the run report can show an API budget.
+        self.by_source: dict[str, dict] = {}
+        self.request_log = cfg.corpus / "requests.log"
+        self.request_log.parent.mkdir(parents=True, exist_ok=True)
 
         cache_path = cfg.path(http["cache_path"])
         cache_path.parent.mkdir(parents=True, exist_ok=True)
@@ -64,6 +71,27 @@ class Http:
         self.status_path = cfg.corpus / "source_status.json"
         self.status = self._load_status()
 
+    def _account(self, source: str, url: str, outcome: str, status=None,
+                 params: dict | None = None) -> None:
+        row = self.by_source.setdefault(
+            source, {"network": 0, "cache": 0, "skipped": 0, "errors": 0})
+        key = {"hit": "cache", "miss": "network", "skipped": "skipped"}.get(outcome, "errors")
+        row[key] += 1
+        try:
+            with open(self.request_log, "a", encoding="utf-8") as fh:
+                full = url
+                if params:
+                    from urllib.parse import urlencode
+                    full = f"{url}?{urlencode({k: v for k, v in params.items() if v is not None})}"
+                fh.write(f"{iso_now()}\t{source}\t{outcome}\t{status if status is not None else '-'}"
+                         f"\t{full}\n")
+        except OSError:
+            pass
+
+    def hit_rate(self) -> float:
+        total = self.calls["network"] + self.calls["cache"]
+        return (self.calls["cache"] / total) if total else 0.0
+
     # -- reachability ------------------------------------------------------
     def _load_status(self) -> dict:
         if self.status_path.exists():
@@ -76,6 +104,17 @@ class Http:
     def save_status(self) -> None:
         self.status_path.parent.mkdir(parents=True, exist_ok=True)
         self.status_path.write_text(json.dumps(self.status, indent=2, sort_keys=True) + "\n")
+
+    def credentials(self) -> dict:
+        """Which optional credentials this run has, so the report can name what is degraded."""
+        import os
+        return {
+            "S2_API_KEY": bool(os.environ.get("S2_API_KEY")),
+            "GITHUB_TOKEN": bool(os.environ.get("GITHUB_TOKEN")
+                                 and os.environ.get("GITHUB_TOKEN") != "proxy-injected"),
+            "contact_email": bool(self.cfg.contact),
+            "UNPAYWALL_EMAIL": bool(os.environ.get("UNPAYWALL_EMAIL") or self.cfg.contact),
+        }
 
     def probe(self, source: str, url: str) -> bool:
         """Probe a source once per process; remember the verdict for the report."""
@@ -125,6 +164,7 @@ class Http:
         """Cached GET. Returns None when the source is unreachable or exhausted."""
         if self.unreachable(source) or self.offline:
             self.calls["skipped_unreachable"] += 1
+            self._account(source, url, "skipped", params=params)
             return None
         expire = NEVER if binary else None
         attempt = 0
@@ -144,9 +184,11 @@ class Http:
                     self._throttle(source)
                     self.calls["network"] += 1
                 resp = self.session.get(url, **kwargs)
+                self._account(source, url, "hit" if cached else "miss", resp.status_code, params)
             except requests.RequestException as exc:
                 attempt += 1
                 self.calls["errors"] += 1
+                self._account(source, url, "error", type(exc).__name__, params)
                 streak = self._fail_streak.get(source, 0) + 1
                 self._fail_streak[source] = streak
                 if streak >= 3 and source not in self.status:

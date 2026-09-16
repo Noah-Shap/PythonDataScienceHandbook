@@ -43,6 +43,27 @@ def summarise(phase: str, summary: dict) -> str:
     return f"Phase {phase}: " + ", ".join(bits) + "."
 
 
+def commit_counts(phase: str, summary: dict, ctx) -> str:
+    """The counts that belong in the commit message for this phase."""
+    reg = ctx.registry
+    keys = {
+        "scaffold": ["sources_reachable", "sources_unreachable"],
+        "seed": ["seeds", "verified", "unverified", "rejected", "corrections"],
+        "snowball": ["pool", "excluded", "scored", "promoted", "admitted", "below_cutoff"],
+        "verify": ["considered", "verified", "unverified", "oa_resolved"],
+        "tier": ["tiered", "retiered", "scope_uncertain"],
+        "fetch": ["repos_linked", "pdfs_fetched", "pdfs_unavailable", "repos_cloned", "guidelines"],
+        "extract": ["pdfs_extracted", "guidelines_extracted", "no_pdf"],
+        "chunk": ["records", "chunks", "from_fulltext", "from_abstract"],
+        "deliver": [],
+    }.get(phase, [])
+    bits = [f"{k}={summary[k] if not isinstance(summary.get(k), list) else len(summary[k])}"
+            for k in keys if k in summary]
+    bits.append(f"registry={len(reg.records)}/{ctx.cfg.cap}")
+    bits.append(f"verified={len(reg.verified())}")
+    return ", ".join(bits)
+
+
 def run_phase(phase: str, ctx, commit: bool = True) -> dict:
     ctx.log(f"\n== {phase} ==")
     started = time.time()
@@ -54,9 +75,16 @@ def run_phase(phase: str, ctx, commit: bool = True) -> dict:
     if not ctx.dry_run:
         ctx.log_phase(phase, summary)
     ctx.log(summarise(phase, summary))
+    if len(ctx.registry.records) > ctx.cfg.cap:
+        # Section 9: if a phase would exceed the cap, stop and ask.
+        ctx.log(f"\nSTOP: phase {phase} left the registry at {len(ctx.registry.records)} "
+                f"entries, over the cap of {ctx.cfg.cap}. Nothing has been committed. Re-run "
+                f"with an explicit --cap once that increase has been agreed.")
+        raise SystemExit(2)
     if commit and not ctx.dry_run and ctx.cfg["run"].get("git_commit_each_phase", True):
-        gitops.commit(ctx.cfg, COMMIT_MESSAGE.get(phase, f"argmine: {phase}"),
-                      paths=["."], log=ctx.log)
+        message = f"{COMMIT_MESSAGE.get(phase, f'argmine: {phase}')}\n\n" \
+                  f"{commit_counts(phase, summary, ctx)}"
+        gitops.commit(ctx.cfg, message, paths=["."], log=ctx.log)
     return summary
 
 

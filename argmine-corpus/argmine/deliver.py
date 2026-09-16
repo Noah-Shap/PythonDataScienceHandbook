@@ -86,6 +86,44 @@ def retrieved_text(cfg, rec: dict) -> str:
     return text or (rec.get("abstract") or "")
 
 
+DIALOGUE_EVIDENCE = ("dialogue", "dialogical", "debate", "turn", "utterance", "locution",
+                     "speaker", "conversation", "reply", "interaction", "thread", "comment",
+                     "moderator", "panel", "broadcast")
+
+
+def fit_note(cfg, rec: dict, facts: dict) -> str:
+    """Two sentences: what the resource is, and how it fits dialogue-level transcript work.
+
+    The first sentence reports only what the retrieved text states. The second is an
+    inference and is written as one, from evidence in that same text plus the record's tags.
+    """
+    grounded = rec.get("annotation", {}).get("grounded_on", "none")
+    where = {"fulltext": "its full text", "abstract": "its abstract"}.get(grounded, "")
+    stated = [f"{k} {v}" for k, v in (("size", facts["size"]), ("unit", facts["unit"]),
+                                      ("scheme", facts["scheme"]))
+              if not v.startswith("not stated")]
+    if stated and where:
+        first = f"As stated in {where}: {'; '.join(stated)}."
+    elif where:
+        first = (f"{where.capitalize()} does not state its size, unit of annotation or "
+                 f"annotation scheme.")
+    else:
+        first = "No abstract or full text was retrieved, so nothing is claimed about its contents."
+
+    text = norm_text(retrieved_text(cfg, rec))
+    evidence = sorted({t for t in DIALOGUE_EVIDENCE if t in text})
+    if evidence:
+        second = (f"Inferred fit: the retrieved text mentions {', '.join(evidence[:4])}, so its "
+                  f"units plausibly map onto transcript turns rather than to standalone texts.")
+    elif "dialogue" in rec.get("downstream_tags", []):
+        second = ("Inferred fit: tagged `dialogue` from its own text, but the retrieved text "
+                  "names no turn-level unit, so treat the mapping to transcript turns as unchecked.")
+    else:
+        second = ("Inferred fit: nothing in the retrieved text indicates dialogue-level units, so "
+                  "it transfers as a component/relation scheme rather than as a turn-level model.")
+    return f"{first} {second}"
+
+
 def resource_facts(cfg, rec: dict) -> dict:
     """Facts about a resource, taken only from text this pipeline retrieved."""
     text = retrieved_text(cfg, rec)
@@ -201,8 +239,12 @@ def entry_block(cfg, rec: dict) -> list[str]:
         lines.append(f"- score {score.get('total')} (cites {comp.get('cites_norm')}, "
                      f"cocite {comp.get('cocite')}, keyword {comp.get('keyword')}, "
                      f"venue {comp.get('venue')})")
-    lines.append(f"- annotation (`grounded_on: {ann.get('grounded_on', 'none')}`): "
-                 f"{ann.get('text', '')}")
+    if ann.get("text"):
+        lines.append(f"- annotation (`grounded_on: {ann.get('grounded_on', 'none')}`): "
+                     f"{ann['text']}")
+    else:
+        lines.append("- annotation: none. No abstract or full text was retrieved for this entry "
+                     "(`grounded_on: none`), so nothing is written about its content.")
     lines.append("")
     lines.append("<details><summary>BibTeX</summary>")
     lines.append("")
@@ -226,14 +268,16 @@ def datasets_and_tools(ctx) -> str:
            f"retrieved (abstract or full text) or from a cloned repository; where the retrieved "
            f"text does not state something, the cell says so rather than guessing.", "",
            "| Resource | Paper id | Repo | Licence | Size (as stated) | Unit of annotation | "
-           "Annotation scheme | Guideline retrieved |",
-           "|---|---|---|---|---|---|---|---|"]
+           "Annotation scheme | Guideline retrieved | Fit for dialogue-level transcript work |",
+           "|---|---|---|---|---|---|---|---|---|"]
     for rec in recs:
         f = resource_facts(cfg, rec)
         repo = rec.get("urls", {}).get("repo", "")
         repo_cell = f"[{repo.split('github.com/')[-1]}]({repo})" if repo else "none linked"
+        note = fit_note(cfg, rec, f).replace("|", "/")
         out.append(f"| {truncate(rec.get('title', ''), 80)} | `{rec['id']}` | {repo_cell} | "
-                   f"{f['licence']} | {f['size']} | {f['unit']} | {f['scheme']} | {f['guideline']} |")
+                   f"{f['licence']} | {f['size']} | {f['unit']} | {f['scheme']} | {f['guideline']} | "
+                   f"{note} |")
     out.append("")
     out.append("## Guideline documents retrieved")
     out.append("")
@@ -249,66 +293,138 @@ def datasets_and_tools(ctx) -> str:
     return "\n".join(out)
 
 
+# Heuristic reading budget: derived from document type and tier, not measured. Stated as a
+# heuristic wherever it is printed.
+HOURS_BY_TYPE = {"book": 12.0, "thesis": 8.0, "journal": 3.0, "chapter": 3.0,
+                 "conference": 1.5, "workshop": 1.5, "preprint": 2.0,
+                 "guideline": 1.0, "dataset": 1.0, "tool": 1.0}
+# Areas in dependency order: later areas assume the vocabulary of earlier ones.
+AREA_ORDER = ["formal", "mining", "quality", "dialogue", "resources", "llm"]
+
+OUTCOME_BY_TAG = {
+    "formal": "say which arguments survive an attack graph under each standard semantics, and "
+              "what a schema must store for that to be computable",
+    "schemes": "type an inference by its scheme and list the critical questions it licenses",
+    "dialogue": "annotate a transcript turn with its dialogical function and the turn it answers",
+    "quality": "name the quality dimensions you are scoring an argument on, and how they were "
+               "annotated by people first",
+    "fallacy": "recognise the fallacy types a quality flag on a stored argument would have to catch",
+    "extraction": "specify the extraction step that turns transcript text into stored components "
+                  "and relations",
+    "dataset": "reuse this resource's annotation structure instead of inventing one",
+}
+
+
+def hours(rec: dict) -> float:
+    base = HOURS_BY_TYPE.get(rec.get("doc_type", ""), 2.0)
+    if rec.get("tier") == 1:
+        base *= 1.5
+    return round(base * 2) / 2
+
+
+def outcome_line(rec: dict) -> str:
+    tags = [t for t in rec.get("downstream_tags", []) if t in OUTCOME_BY_TAG]
+    tags.sort(key=lambda t: AREA_ORDER.index("formal") if t == "formal" else 99)
+    order = ["dialogue", "schemes", "quality", "fallacy", "formal", "extraction", "dataset"]
+    tags.sort(key=lambda t: order.index(t) if t in order else 99)
+    if not tags:
+        return "place this work in the field (no downstream tag was derived from its text)"
+    return OUTCOME_BY_TAG[tags[0]]
+
+
+def _reading_item(rec: dict) -> str:
+    return (f"- **{truncate(rec.get('title', ''), 88)}** ({rec.get('year')}, "
+            f"{rec.get('doc_type') or 'type unrecorded'}, `{rec['id']}`) - ~{hours(rec):g} h - "
+            f"after this you should be able to {outcome_line(rec)}.")
+
+
 def reading_order(ctx) -> str:
     cfg, reg = ctx.cfg, ctx.registry
     verified = [r for r in reg.records.values()
                 if r.get("verification", {}).get("status") == "verified"]
+    by_tier = {t: [r for r in verified if r.get("tier") == t] for t in (1, 2, 3, 4)}
 
-    def pick(area=None, tiers=(1,), tag=None, limit=12):
-        out = []
-        for r in sorted(verified, key=lambda r: (r.get("tier") or 9, -(r.get("year") or 0))):
-            if r.get("tier") not in tiers:
-                continue
-            if area and primary_area(r) != area and area not in r.get("area", []):
-                continue
-            if tag and tag not in r.get("downstream_tags", []):
-                continue
-            out.append(r)
-            if len(out) >= limit:
-                break
-        return out
+    def area_key(rec):
+        area = primary_area(rec)
+        return AREA_ORDER.index(area) if area in AREA_ORDER else len(AREA_ORDER)
 
-    stages = [
-        ("Stage 1 - orient", "Surveys and field maps. Read these first; they give the vocabulary "
-         "the rest of the corpus assumes.", pick(tiers=(1,), limit=10)),
-        ("Stage 2 - representation", "What an argument *is* formally, and how a stored argument "
-         "can be typed and scored.", pick(area="formal", tiers=(1, 2), limit=12)),
-        ("Stage 3 - dialogue structure", "The layer closest to a debate transcript: who said "
-         "what, in reply to what, with what dialogical force.", pick(area="dialogue", tiers=(1, 2, 3), limit=14)),
-        ("Stage 4 - extraction", "How text becomes components and relations.",
-         pick(area="mining", tiers=(2,), limit=14)),
-        ("Stage 5 - quality", "How a stored argument's strength can be measured, and how it fails.",
-         pick(area="quality", tiers=(1, 2), limit=12)),
-        ("Stage 6 - resources", "Corpora, tools and the annotation guidelines behind them - the "
-         "schema decisions have mostly been made before, here.", pick(tiers=(3,), limit=18)),
-        ("Stage 7 - current practice", "2023-2026 work. Lower durability, highest relevance to "
-         "build decisions being taken now.", pick(tiers=(4,), limit=16)),
-    ]
     out = ["# 03 - Reading order", "",
-           "Ordered for one purpose: building a database that stores arguments extracted from "
-           "debate transcripts, with their reply structure, inferential and conflict relations, "
-           "and strength. Within a stage, read top to bottom.", ""]
-    seen = set()
-    for title, why, recs in stages:
-        out.append(f"## {title}")
-        out.append("")
-        out.append(why)
-        out.append("")
-        if not recs:
-            out.append("_Nothing in the corpus for this stage yet._\n")
-            continue
+           "A sequence to working expertise, ordered for one purpose: building a database that "
+           "stores arguments extracted from debate transcripts with their reply structure, "
+           "inferential and conflict relations, and strength.", "",
+           "T1 comes first in dependency order (an area's foundations before the work that "
+           "assumes them), then T2 area by area, then the T3 resources and guidelines, then the "
+           "recent T4 work. Hours are a **heuristic** from document type and tier - a book is "
+           "budgeted at 12 h, a journal article at 3 h, a conference or workshop paper at 1.5 h, "
+           "a guideline or README at 1 h, and anything at T1 by half as much again. They are not "
+           "measured. The line after each item is what you should be able to do afterwards, "
+           "derived from that entry's own downstream tags.", ""]
+
+    total = 0.0
+    t1 = sorted(by_tier[1], key=lambda r: (area_key(r), r.get("year") or 0))
+    out += [f"## Stage 1 - foundations (T1, dependency order): {len(t1)} items, "
+            f"~{sum(hours(r) for r in t1):g} h", "",
+            "Theory anchors and surveys, earliest first within each area, because the later ones "
+            "argue with the earlier ones.", ""]
+    for rec in t1:
+        out.append(_reading_item(rec))
+        total += hours(rec)
+    if not t1:
+        out.append("_No T1 entries in the corpus._")
+    out.append("")
+
+    stage = 2
+    for area in AREA_ORDER:
+        recs = sorted([r for r in by_tier[2] if area == primary_area(r) or area in r.get("area", [])],
+                      key=lambda r: -(r.get("year") or 0))
+        seen_here = []
         for rec in recs:
-            mark = " (already listed above)" if rec["id"] in seen else ""
-            seen.add(rec["id"])
-            rel = annotate.relevance_clause(rec)
-            out.append(f"1. **{truncate(rec.get('title', ''), 90)}** ({rec.get('year')}, "
-                       f"T{rec.get('tier')}, `{rec['id']}`){mark} - {rel}")
+            if any(rec["id"] == x["id"] for x in seen_here):
+                continue
+            seen_here.append(rec)
+        spec = cfg["areas"][area]
+        out += [f"## Stage {stage} - {spec['name']} methods (T2): {len(seen_here)} items, "
+                f"~{sum(hours(r) for r in seen_here):g} h", "",
+                spec["definition"].strip(), ""]
+        for rec in seen_here:
+            out.append(_reading_item(rec))
+            total += hours(rec)
+        if not seen_here:
+            out.append("_Nothing at T2 in this area._")
         out.append("")
+        stage += 1
+
+    t3 = sorted(by_tier[3], key=lambda r: (0 if r.get("files", {}).get("guideline_text") else 1,
+                                           -(r.get("year") or 0)))
+    out += [f"## Stage {stage} - resources and annotation guidelines (T3): {len(t3)} items, "
+            f"~{sum(hours(r) for r in t3):g} h", "",
+            "The schema decisions have mostly been made before, here. Entries whose guideline "
+            "document was actually retrieved come first.", ""]
+    for rec in t3:
+        marker = " **(guideline retrieved)**" if rec.get("files", {}).get("guideline_text") else ""
+        out.append(_reading_item(rec)[:-1] + marker + ".")
+        total += hours(rec)
+    if not t3:
+        out.append("_No T3 entries in the corpus._")
+    out.append("")
+    stage += 1
+
+    t4 = sorted(by_tier[4], key=lambda r: -(r.get("year") or 0))
+    out += [f"## Stage {stage} - current practice, 2023-2026 (T4): {len(t4)} items, "
+            f"~{sum(hours(r) for r in t4):g} h", "",
+            "Lowest confidence in durability, highest relevance to build decisions being taken "
+            "now. Read last, and re-run the pipeline before trusting this stage to be current.", ""]
+    for rec in t4:
+        out.append(_reading_item(rec))
+        total += hours(rec)
+    if not t4:
+        out.append("_No T4 entries in the corpus._")
+    out += ["", f"**Whole path: {len(verified)} items, ~{total:g} heuristic hours.**", ""]
     return "\n".join(out)
 
 
 def rag_prep(ctx, chunk_summary: dict) -> str:
-    cfg, reg = ctx.cfg, ctx.registry
+    cfg, reg = ctx.cfg, ctx.registry  # noqa: F841 - reg is used by the filter tables
     spec = cfg["chunking"]
     hist = chunk_summary.get("histogram", {})
     out = ["# 04 - RAG preparation", "",
@@ -351,15 +467,56 @@ def rag_prep(ctx, chunk_summary: dict) -> str:
            "Embedding and indexing are out of scope for this run. `argmine/index.py` holds the "
            "hook: implement `EmbeddingBackend`, `register()` it, set `index.backend` in "
            "config.yaml, and nothing else in the pipeline changes.", "",
-           "## Retrieval filters worth having", "",
-           "- `tier` - T1/T2 for grounding claims about the field, T3 for schema decisions, "
-           "T4 for current practice",
-           "- `downstream_tags` - `dialogue` and `schemes` are the two that matter most for a "
-           "transcript database",
-           "- `source_text` - exclude `abstract` chunks when an answer needs paper-internal detail",
-           "- `year` - the LLM-era area moves fast enough that recency is a real filter",
-           ""]
+           "## Recommended retrieval filters", "",
+           "| Filter | Values in this corpus | Use it to |",
+           "|---|---|---|",
+           f"| `tier` | {_dist(reg, 'tier')} | T1/T2 to ground claims about the field, T3 for "
+           f"schema decisions, T4 for current practice |",
+           f"| `area` | {_dist_list(reg, 'area')} | keep an answer inside one area's literature; "
+           f"`dialogue` is the one upstream of a transcript database |",
+           f"| `doc_type` | {_dist(reg, 'doc_type')} | separate a dataset or guideline from a "
+           f"method paper - ask a schema question of `dataset`/`guideline`/`tool` only |",
+           "| `downstream_tags` | " + ", ".join(cfg["downstream_tags"]) + " | `dialogue` and "
+           "`schemes` are the two that matter most for a transcript database |",
+           "| `source_text` | fulltext, guideline, abstract | exclude `abstract` chunks when an "
+           "answer needs paper-internal detail |",
+           "| `year` | per record | the LLM-era area moves fast enough that recency is a real "
+           "filter |",
+           "",
+           "## The index.py interface", "",
+           "```python",
+           "class EmbeddingBackend(Protocol):",
+           "    name: str",
+           "    dim: int",
+           "",
+           "    def embed(self, texts: list[str]) -> list[list[float]]:",
+           "        \"\"\"Return one vector per input text, in order.\"\"\"",
+           "",
+           "def register(backend: EmbeddingBackend) -> None: ...   # make a backend available",
+           "def get(name: str) -> EmbeddingBackend | None: ...     # look one up by name",
+           "def iter_chunks(path: Path) -> Iterable[dict]: ...     # stream corpus/chunks.jsonl",
+           "def build(cfg, log=print) -> dict: ...                 # no-op while backend is 'none'",
+           "```", "",
+           "`build()` refuses to run rather than guessing: with `index.backend` set to a name "
+           "that nothing has registered it raises, and with `none` it returns "
+           "`{'status': 'skipped'}`. Adding a backend touches no other module.", ""]
     return "\n".join(out)
+
+
+def _dist(reg, field: str) -> str:
+    counts: dict = {}
+    for rec in reg.records.values():
+        v = rec.get(field) or "unrecorded"
+        counts[v] = counts.get(v, 0) + 1
+    return ", ".join(f"{k}: {v}" for k, v in sorted(counts.items(), key=lambda kv: -kv[1])[:8])
+
+
+def _dist_list(reg, field: str) -> str:
+    counts: dict = {}
+    for rec in reg.records.values():
+        for v in rec.get(field) or ["unassigned"]:
+            counts[v] = counts.get(v, 0) + 1
+    return ", ".join(f"{k}: {v}" for k, v in sorted(counts.items(), key=lambda kv: -kv[1]))
 
 
 def unverified_and_rejected(ctx) -> str:

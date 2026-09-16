@@ -164,6 +164,9 @@ def targeted_searches(ctx, pool: dict) -> list[dict]:
 
 
 def _search_fns(ctx) -> dict:
+    """Section 9's source preference for volume: OpenAlex and the local ACL Anthology data
+    first, the others as corroboration. The citation graph is Semantic Scholar's job
+    (_expand_one), and authoritative DOI metadata is Crossref's (verify.SOURCE_PRIORITY)."""
     fns = {}
     if ctx.live("acl"):
         fns["acl"] = lambda q, n: ctx.acl.search(q, limit=n)

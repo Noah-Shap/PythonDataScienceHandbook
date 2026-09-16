@@ -42,7 +42,8 @@ def run(ctx) -> dict:
     cfg, reg = ctx.cfg, ctx.registry
     prep = ctx.prepare_local_sources()
     summary = {"seeds": len(cfg["seeds"]), "verified": 0, "unverified": 0, "rejected": 0,
-               "added_ids": [], "corrections": [], "prepared": prep}
+               "added_ids": [], "corrections": [], "verified_as_given": [],
+               "rejected_seeds": [], "prepared": prep}
 
     for seed in cfg["seeds"]:
         views = [v for v in resolve_views(ctx, seed["title"], seed.get("year"),
@@ -54,6 +55,10 @@ def run(ctx) -> dict:
                         "discovered_from": [{"id": "seed", "via": "seed"}]},
                        "seed_unresolved")
             summary["rejected"] += 1
+            summary["rejected_seeds"].append(
+                {"title": seed["title"], "year": seed.get("year"),
+                 "reason": "seed_unresolved: no source returned a plausible match for this "
+                           "title, author and year"})
             ctx.log(f"  [unresolved] {seed['title'][:70]}")
             continue
 
@@ -75,6 +80,10 @@ def run(ctx) -> dict:
                 summary["corrections"].append(
                     {"id": stored["id"], "field": field, "hypothesis": hypothesis, "verified": actual,
                      "sources": stored["verification"]["sources"]})
+        if not any(c["id"] == stored["id"] for c in summary["corrections"]):
+            summary["verified_as_given"].append(
+                {"id": stored["id"], "title": stored["title"],
+                 "status": stored["verification"]["status"]})
         ctx.log(f"  [{stored['verification']['status']:10}] {stored['id'][:48]:48} "
                 f"{stored['title'][:52]} ({', '.join(agreement)})")
 

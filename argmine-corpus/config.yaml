@@ -78,6 +78,9 @@ scoring:
   area_share: 0.6
   area_min_norm: 0.4
   keyword_saturation: 12.0
+  # Below this keyword component a candidate is admitted but flagged scope-uncertain
+  # (section 9: never silently dropped, never promoted to T1).
+  scope_uncertain_keyword: 0.3
   # Maximum hits taken from any one source for any one targeted query.
   search_limit: 80
   # Whole-venue sweeps: coverage the citation graph and keyword search both miss, taken

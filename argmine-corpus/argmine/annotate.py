@@ -125,13 +125,9 @@ def write(cfg, rec: dict) -> dict:
         return {"text": _WRITER(rec, text, grounded_on), "grounded_on": grounded_on,
                 "written_at": iso_now(), "writer": "custom"}
     if grounded_on == "none":
-        body = (f"No abstract or full text was retrieved for this entry, so nothing about its "
-                f"content is asserted here. It is recorded from bibliographic metadata only "
-                f"({rec.get('doc_type') or 'work'}, {rec.get('venue') or 'venue unrecorded'}, "
-                f"{rec.get('year') or 'year unrecorded'}), verified against "
-                f"{len(rec.get('verification', {}).get('sources', []))} sources. "
-                + relevance_clause(rec))
-        return {"text": body, "grounded_on": "none", "written_at": iso_now(),
+        # Section 9: no retrieved text, no annotation. The entry still carries its verified
+        # metadata; it simply says nothing about content it has not seen.
+        return {"text": "", "grounded_on": "none", "written_at": iso_now(),
                 "writer": "extractive"}
 
     picked = pick_sentences(text)
