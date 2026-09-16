@@ -1,6 +1,6 @@
 # 06 - Run report
 
-Generated 2026-09-16T03:27:15+00:00 | cap 250 | criteria_version 1
+Generated 2026-09-16T03:27:33+00:00 | cap 250 | criteria_version 1
 
 ## 1. Counts
 
@@ -15,7 +15,7 @@ Generated 2026-09-16T03:27:15+00:00 | cap 250 | criteria_version 1
 - chunks: 100 (0 full text, 8 guideline, 92 abstract)
 - chunk token histogram: 0-199: 57, 200-399: 42, 400-599: 1
 
-- annotations: 63 written this run, 187 unchanged; grounding fulltext 0, abstract 187, none 63 (an entry with no retrieved text carries no annotation, by rule)
+- annotations: 0 written this run, 250 unchanged; grounding fulltext 0, abstract 187, none 63 (an entry with no retrieved text carries no annotation, by rule)
 
 ## 2. Coverage gaps
 
@@ -140,6 +140,7 @@ No new entries were admitted in this run.
 | 5a fetch | 0.0 | guidelines=0, manifest=deliverables/05-fetch-manifest.csv, manifest_rows=250 |
 | 5b extract | 0.0 | guidelines_extracted=0, no_pdf=44 |
 | 6 chunk | 0.0 | chunks=100, from_abstract=92, from_fulltext=0, from_guideline=8 |
+| 7 deliver | 0.0 |  |
 
 ## Appendix B - source availability
 

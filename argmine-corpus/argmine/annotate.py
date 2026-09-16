@@ -146,7 +146,9 @@ def annotate_all(ctx, force: bool = False) -> dict:
     for rec in reg.records.values():
         current = rec.get("annotation") or {}
         _text, grounded_on = grounding(cfg, rec)
-        if current.get("text") and current.get("grounded_on") == grounded_on and not force:
+        # An empty annotation is a decision (no text was retrieved), not a missing one:
+        # written_at is what says the decision has already been made.
+        if current.get("written_at") and current.get("grounded_on") == grounded_on and not force:
             summary["unchanged"] += 1
         else:
             rec["annotation"] = write(cfg, rec)
