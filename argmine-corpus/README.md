@@ -34,6 +34,10 @@ down in `config.yaml` and `deliverables/00-field-map.md` rather than decided ad 
 8. **Every external request is logged** - URL, cache hit or miss, status - to
    `corpus/requests.log`, and counted per source in the report's API budget.
 
+Moving this into its own repository: see **[HANDOFF.md](HANDOFF.md)** — a verified
+`git subtree split` procedure, what to rebuild on the other side, the state as handed over,
+and the backlog.
+
 ## Running it
 
 ```bash
